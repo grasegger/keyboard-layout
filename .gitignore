@@ -1,0 +1,4 @@
+obj_*
+*.hex
+*.elf
+*.map
