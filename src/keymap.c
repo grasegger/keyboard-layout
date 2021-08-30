@@ -42,8 +42,6 @@ enum {
 
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
-    [TD_AEUE] = ACTION_TAP_DANCE_DOUBLE(DE_ADIA, DE_UDIA),
-    [TD_OESS] = ACTION_TAP_DANCE_DOUBLE(DE_ODIA, DE_SS),
     [TD_CV] = ACTION_TAP_DANCE_DOUBLE(DE_C, DE_V),
     [TD_HK] = ACTION_TAP_DANCE_DOUBLE(DE_H, DE_K),
     [TD_COLN] = ACTION_TAP_DANCE_DOUBLE(DE_COLN, DE_SCLN),
@@ -59,8 +57,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define _A(key) MT(MOD_LALT, key)
 #define _L(key) MT(MOD_LCTL , key)
 
-#define KC_AEUE TD(TD_AEUE)
-#define KC_OESS TD(TD_OESS)
 #define KC_CV TD(TD_CV)
 #define KC_HK TD(TD_HK)
 #define _G_COLN TD(TD_COLN)
@@ -75,9 +71,9 @@ KC_NO,    DE_Z,_L(DE_L),_G(DE_U),_A(DE_A), _______,/*                           
     //--------|--------|--------|--------|--------|-|                                        |-|--------|--------|--------|--------|--------|
 KC_NO,   KC_CV,_S(DE_R),_T(DE_I),_C(DE_E), _______,/*                                        */  _______,_C(DE_N),_T(DE_T),_S(DE_S),   KC_HK, KC_NO,
     //--------|--------|--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|--------|--------|
-KC_NO, _______,    DE_X,    DE_Q, KC_AEUE, _______, _______, _______,/*    */  _______, _______, _______,    DE_F,  DE_DOT, DE_COMM, _______, KC_NO,
+KC_NO, _______,    DE_X,    DE_Q, KC_BSPC, _______, _______, _______,/*    */  _______, _______, _______,    DE_F,  DE_DOT, DE_COMM, _______, KC_NO,
     //--------|--------|--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                         _______, _______,    DE_J,    DE_O, KC_OESS,/*    */     DE_P,    DE_M,    DE_W, _______, _______
+                         _______, _______,    DE_J,    DE_O,    DE_M,/*    */     DE_P,  KC_SPC,    DE_W, _______, _______
     ),
     [_CODE] = LAYOUT(
     //--------|--------|--------|--------|--------|-\                                        /-|--------|--------|--------|--------|--------|

@@ -1,3 +1,5 @@
-COMB(fdot_space,   KC_SPC,    DE_DOT, DE_F)
-COMB(dotcom_bs,   KC_BSPC,    DE_DOT, DE_COMM)
+COMB(fdot_ue,     DE_ODIA,    DE_DOT, DE_F)
+COMB(dotcom_ss,     DE_SS,    DE_DOT, DE_COMM)
+COMB(bspcq_oe,    DE_ODIA,    DE_Q, KC_BSPC)
+COMB(qx_ae,       DE_ADIA,    DE_Q, DE_X)
 COMB(zy_lead,     STRT_LD,    DE_Y, DE_Z)
