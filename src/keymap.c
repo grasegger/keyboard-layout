@@ -37,6 +37,7 @@ enum {
     TD_COLN,
     TD_SLSH,
     TD_DLR_EUR,
+    TD_AS_SL
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -48,6 +49,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_COLN] = ACTION_TAP_DANCE_DOUBLE(DE_COLN, DE_SCLN),
     [TD_SLSH] = ACTION_TAP_DANCE_DOUBLE(DE_SLSH, DE_BSLS),
     [TD_DLR_EUR] = ACTION_TAP_DANCE_DOUBLE(DE_DLR, DE_EURO),
+    [TD_AS_SL] = ACTION_TAP_DANCE_DOUBLE(DE_ASTR, DE_SLSH),
 };
 
 #define _C(key) LT(_CODE, key)
@@ -64,6 +66,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define _G_COLN TD(TD_COLN)
 #define _G_SLSH TD(TD_SLSH)
 #define _G_DLR TD(TD_DLR_EUR)
+#define _G_ASSL TD(TD_AS_SL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MINE] = LAYOUT(
@@ -88,13 +91,13 @@ KC_NO, _______,  _G_DLR, DE_PIPE, DE_TILD, _______, _______, _______,/*    */  _
     ),
     [_TABLE] = LAYOUT(
     //--------|--------|--------|--------|--------|-\                                        /-|--------|--------|--------|--------|--------|
-KC_NO, _______, _______,   KC_UP, _______, _______,/*                                        */  _______,    KC_7,    KC_8,    KC_9, _______, KC_NO,
+KC_NO, KC_VOLU, KC_MPRV,   KC_UP, KC_MNXT, _______,/*                                        */  _______,    KC_7,    KC_8,    KC_9, _G_ASSL, KC_NO,
     //--------|--------|--------|--------|--------|-|                                        |-|--------|--------|--------|--------|--------|
-KC_NO, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______,/*                                        */  _______,    KC_4,    KC_5,    KC_6, _______, KC_NO,
+KC_NO, KC_VOLD, KC_LEFT, KC_DOWN, KC_RGHT, _______,/*                                        */  _______,    KC_4,    KC_5,    KC_6, DE_MINS, KC_NO,
     //--------|--------|--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|--------|--------|
 KC_NO, _______ , KC_TAB, KC_DEL , KC_BSPC, _______, _______, _______,/*    */  _______, _______, _______,    KC_1,    KC_2,    KC_3, _______, KC_NO,
     //--------|--------|--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                         _______,  KC_ESC,  KC_SPC,  KC_ENT, _______,/*    */  _______, _______,    KC_0, _______, _______
+                         _______,  KC_ESC,  KC_SPC,  KC_ENT, _______,/*    */  _______,  DE_EQL,    KC_0, DE_PLUS, _______
     ),
 };
 
