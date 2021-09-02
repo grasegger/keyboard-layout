@@ -1,10 +1,12 @@
 .PHONY: firmware
 firmware: lint
 	make BUILD_DIR=$(shell pwd) -j4 -C qmk_firmware splitkb/kyria:karl
+	cd qmk_firmware; git clean -df	
 
 .PHONY: flash
 flash: prepare
 	make BUILD_DIR=$(shell pwd) -j4 -C qmk_firmware splitkb/kyria:karl:flash
+	cd qmk_firmware; git clean -df	
 
 .PHONY: prepare
 prepare: 

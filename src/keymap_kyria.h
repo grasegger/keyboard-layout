@@ -6,6 +6,7 @@
 #define _G(key) MT(MOD_LGUI, key)
 #define _A(key) MT(MOD_LALT, key)
 #define _L(key) MT(MOD_LCTL , key)
+#define H(key) S(C(A(G(key))))
 
 #define KY_A _L(DE_A)
 #define KY_B _L(DE_B)
@@ -41,3 +42,13 @@
 #define KY_COMM DE_COMM
 #define KY_DOT DE_DOT
 #define KY_SPC KC_SPC
+
+#define KY_FIFX H(DE_S)
+#define KY_CHRM H(DE_C)
+#define KY_MAIL H(DE_M)
+#define KY_TERM H(DE_T)
+#define KY_MUSC H(DE_A)
+#define KY_FILE H(DE_F)
+#define KY_TODO H(DE_R)
+#define KY_VSCO H(DE_V)
+#define KY_IAWR H(DE_W)
