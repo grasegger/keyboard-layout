@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef OSX
+#include "keymap_german_osx.h"
+#else
+#include "keymap_german.h"
+#endif
+
 #define _C(key) LT(_CODE, key)
 #define _T(key) LT(_TABLE, key)
 #define _S(key) MT(MOD_LSFT, key)

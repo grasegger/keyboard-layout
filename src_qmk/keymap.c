@@ -14,22 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "keymap_german_osx.h"
 #include "keymap_kyria.h"
-#include "send_string.h"
-
-enum layers {
-    _MINE = 0,
-    _CODE,
-    _TABLE
-};
-
-enum my_keycodes {
-    STRT_LD = SAFE_RANGE,
-};
-
-
- #include "g/keymap_combo.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 
