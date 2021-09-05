@@ -25,13 +25,13 @@
 #define KY_K DE_K
 #define KY_L DE_L
 #define KY_M DE_M
-#define KY_N DE_N
+#define KY_N _CTL(DE_N)
 #define KY_O DE_O
 #define KY_P DE_P
 #define KY_Q DE_Q
 #define KY_R _ALT(DE_R)
-#define KY_S DE_S
-#define KY_T DE_T
+#define KY_S _ALT(DE_S)
+#define KY_T _NUM(DE_T)
 #define KY_U DE_U
 #define KY_V KC_V
 #define KY_W DE_W
