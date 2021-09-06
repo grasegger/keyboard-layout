@@ -17,5 +17,4 @@ WPM_ENABLE = no
 MOUSEKEY_ENABLE = no
 RAW_ENABLE = no
 
-VPATH  +=  keyboards/gboards/
-COMBO_ENABLE = yes
+COMBO_ENABLE = no
