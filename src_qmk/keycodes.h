@@ -52,17 +52,22 @@
 #define KY_ENT _NUM(KC_ENT)
 
 #define KY_FIFX H(DE_S)
-#define KY_CHRM H(DE_C)
 #define KY_MAIL H(DE_M)
 #define KY_TERM H(DE_T)
 #define KY_MUSC H(DE_A)
-#define KY_FILE H(DE_F)
 #define KY_TODO H(DE_R)
+#define KY_FILE H(DE_F)
 #define KY_VSCO H(DE_V)
 #define KY_IAWR H(DE_W)
-#define KY_ZOOM H(DE_Z)
 #define KY_DAYO H(DE_Y)
 #define KY_CAL H(DE_K)
+
+#define KY_NWDO H(KC_1)
+#define KY_NOTE H(KC_2)
+
+#define KY_PHPS H(DE_P)
+#define KY_CHRM H(DE_C)
+#define KY_SLCK H(DE_L)
 
 #define _A_00 KY_Z
 #define _A_01 KY_L
