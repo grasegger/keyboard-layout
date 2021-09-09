@@ -1,0 +1,6 @@
+COMB(bn, KC_ENT, KY_B, KY_N)
+COMB(dt, KC_ESC, KY_D, KY_T)
+COMB(ae, KC_BSPC, KY_A, KY_E)
+COMB(ui, KC_TAB, KY_U, KY_I)
+COMB(nt, KC_DOT, KY_N, KY_T)
+COMB(ei, KC_COMM, KY_E, KY_I)
