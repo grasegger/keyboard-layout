@@ -26,3 +26,5 @@ RAW_ENABLE = no
 
 COMBO_ENABLE = yes
 VPATH += keyboards/gboards
+
+MOUSEKEY_ENABLE = yes
