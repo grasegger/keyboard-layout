@@ -25,7 +25,7 @@ enum layers {
 
 #include "keycodes.h"
 #include "g/keymap_combo.h"
-#define COMBO_ONLY_FROM_LAYER _MINE
+
 
 // clang-format off
 
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
           KY_V,    KY_X, KY_ADIA, KY_ODIA,    KY_Q,/*    */     KY_P,    KY_F,    KY_K, KY_UDIA,   KY_SS, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                                TO(_NUM),OSL(_SYM),/*    */   KY_SPC, OSL(_F)
+                                  KY_SHFT,  KY_DOT,/*    */  KY_COMM, KY_SPC
     ),
 
     [_SYM] = LAYOUT(
@@ -49,32 +49,72 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
        DE_HASH,  DE_DLR, DE_PIPE, DE_TILD, DE_ACUT,/*    */  DE_PLUS, DE_PERC, DE_DQUO, DE_QUOT, DE_SCLN, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                                 TO(_NUM),TO(_MINE),/*    */    DE_AT, OSL(_F)
+                                  KY_SHFT, _______,/*    */  KC_LGUI,   DE_AT
     ),
 
     [_NUM] = LAYOUT(
     //--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|
-       KC_BRMU,  KC_DEL,   KC_UP, KC_BSPC, _______,/*    */  DE_PLUS,    KC_7,    KC_8,    KC_9, DE_ASTR, 
+       KC_PGDN,  KC_DEL,   KC_UP, KC_BSPC, KC_PGUP,/*    */  DE_PLUS,    KC_7,    KC_8,    KC_9, DE_ASTR, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-       KC_BRMD, KC_LEFT, KC_DOWN, KC_RGHT, _______,/*    */     KC_0,    KC_4,    KC_5,    KC_6,  DE_EQL, 
+       KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END,/*    */     KC_0,    KC_4,    KC_5,    KC_6,  DE_EQL, 
     //--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|
-        KC_ESC,  KC_TAB, _______,  KY_ENT, _______,/*    */  DE_MINS,    KC_1,    KC_2,    KC_3, DE_SLSH, 
+       _______,  KC_TAB,  KC_ESC,  KY_ENT, _______,/*    */  DE_MINS,    KC_1,    KC_2,    KC_3, DE_SLSH, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                                 TO(_NUM),TO(_MINE),/*    */  _______, OSL(_F)
+                                  KY_SHFT, _______,/*    */  KC_LGUI, KC_LCTL
     ),
 
     [_F] = LAYOUT(
     //--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|
-       KY_DAYO, KC_MPRV, KC_MPLY, KC_MNXT, KY_MUSC,/*    */   KC_F12,   KC_F7,   KC_F8,   KC_F9, KY_SLCK, 
+         RESET, KC_MPRV, KC_MPLY, KC_MNXT, _______,/*    */   KC_F12,   KC_F7,   KC_F8,   KC_F9, _______, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-       KY_MAIL, KC_VOLD, KC_MUTE, KC_VOLU, KY_TODO,/*    */   KC_F10,   KC_F4,   KC_F5,   KC_F6, KY_CHRM, 
+       KC_BRMD, KC_VOLD, KC_MUTE, KC_VOLU, KC_BRMU,/*    */   KC_F10,   KC_F4,   KC_F5,   KC_F6, _______, 
     //--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|
-        KY_CAL, KY_VSCO, KY_IAWR, KY_FILE, KY_TERM,/*    */   KC_F11,   KC_F1,   KC_F2,   KC_F3, KY_PHPS, 
+       _______, _______, _______, _______, _______,/*    */   KC_F11,   KC_F1,   KC_F2,   KC_F3, _______, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-                                 TO(_NUM),TO(_MINE),/*    */  KY_FIFX, OSL(_F)
+                                  KY_SHFT, _______,/*    */  KC_LGUI, KC_LCTL
     ),
 };
 
 bool get_combo_must_tap(uint16_t index, combo_t *combo) {
     return true;
+}
+
+#define hyperx(key) SEQ_ONE_KEY(KY_ ## key) { tap_code16(S(G(C(A(DE_ ## key))))); }
+LEADER_EXTERNS();
+void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+   leading = false;
+
+   hyperx(Z)
+   hyperx(L)
+   hyperx(U)
+   hyperx(A)
+   hyperx(J)
+   hyperx(W)
+   hyperx(B)
+   hyperx(D)
+   hyperx(G)
+   hyperx(Y)
+   hyperx(C)
+   hyperx(R)
+   hyperx(I)
+   hyperx(E)
+   hyperx(O)
+   hyperx(M)
+   hyperx(N)
+   hyperx(T)
+   hyperx(S)
+   hyperx(H)
+   hyperx(V)
+   hyperx(X)
+   hyperx(ADIA)
+   hyperx(ODIA)
+   hyperx(P)
+   hyperx(F)
+   hyperx(K)
+   hyperx(UDIA)
+   hyperx(SS)
+   
+   leader_end();
+  }
 }
