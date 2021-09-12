@@ -24,10 +24,6 @@
 // comment the next line to build a firmware that works on linux and windows german qwertz layouts
 #define OSX
 
-#define COMBO_TERM 50
-#define COMBO_MUST_TAP_PER_COMBO
-#define COMBO_ONLY_FROM_LAYER 0
-
 #define EE_HANDS
 
 #define LEADER_TIMEOUT 250
