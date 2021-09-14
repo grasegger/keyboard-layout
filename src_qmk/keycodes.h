@@ -7,9 +7,9 @@
 #endif
 
 #define KY_A GUI_T(DE_A)
-#define KY_B CTL_T(DE_B)
+#define KY_B GUI_T(DE_B)
 #define KY_C LT(_FR, DE_C)
-#define KY_D GUI_T(DE_D)
+#define KY_D CTL_T(DE_D)
 #define KY_E SFT_T(DE_E)
 #define KY_F HYPR_T(DE_F)
 #define KY_G ALT_T(DE_G)
