@@ -1,53 +1,89 @@
 #pragma once
 
 #ifdef OSX
+
 #include "keymap_german_osx.h"
+
+#define HRI(key) SFT_T(key) 
+#define HRM(key) GUI_T(key)
+#define HRR(key) ALT_T(key)
+#define HRP(key) CTL_T(key)
+#define HRE(key) HYPR_T(key)
+
 #else
+
 #include "keymap_german.h"
+
+#define HRI(key) SFT_T(key) 
+#define HRM(key) CTL_T(key)
+#define HRR(key) ALT_T(key)
+#define HRP(key) GUI_T(key)
+
 #endif
 
-#define KY_A GUI_T(DE_A)
-#define KY_B GUI_T(DE_B)
-#define KY_C LT(_FR, DE_C)
-#define KY_D CTL_T(DE_D)
-#define KY_E SFT_T(DE_E)
-#define KY_F HYPR_T(DE_F)
-#define KY_G ALT_T(DE_G)
-#define KY_H LT(_FL,DE_H)
-#define KY_I LT(_NUMR, DE_I)
+#define LRI_L(key) LT(_SYM_RGHT, key)
+#define LRM_L(key) LT(_NUM_RGHT, key)
+#define LRR_L(key) LT(_EXT_RGHT, key)
+#define LRP_L(key) LT(_FUN_RGHT, key)
+
+#define LRP_R(key) LT(_FUN_LEFT, key)
+#define LRR_R(key) LT(_EXT_LEFT, key)
+#define LRM_R(key) LT(_NUM_LEFT, key)
+#define LRI_R(key) LT(_SYM_LEFT, key)
+
+#define KY_A DE_A
+#define KY_B DE_B
+#define KY_C HRP(DE_C)
+#define KY_D DE_D
+#define KY_E HRI(DE_E)
+#define KY_F LRI_R(DE_F)
+#define KY_G DE_G
+#define KY_H HRP(DE_H)
+#define KY_I HRM(DE_I)
 #define KY_J DE_J
-#define KY_K LT(_M, DE_K)
-#define KY_L ALT_T(DE_L)
-#define KY_M DE_M
-#define KY_N SFT_T(DE_N)
-#define KY_O DE_O
+#define KY_K LRP_R(DE_K)
+#define KY_L DE_L
+#define KY_M HRE(DE_M)
+#define KY_N HRI(DE_N)
+#define KY_O HRE(DE_O)
 #define KY_P DE_P
-#define KY_Q DE_Q
-#define KY_R LT(_SYMR, DE_R)
-#define KY_S LT(_SYML, DE_S)
-#define KY_T LT(_NUML,DE_T)
-#define KY_U CTL_T(DE_U)
-#define KY_V KC_V
+#define KY_Q LRM_L(DE_Q)
+#define KY_R HRR(DE_R)
+#define KY_S HRR(DE_S)
+#define KY_T HRM(DE_T)
+#define KY_U DE_U
+#define KY_V LRP_L(KC_V)
 #define KY_W DE_W
-#define KY_X DE_X
+#define KY_X LRR_L(DE_X)
 #define KY_Y DE_Y
 #define KY_Z DE_Z
-#define KY_ADIA LT(_M, DE_ADIA)
-#define KY_ODIA HYPR_T(DE_ODIA)
-#define KY_UDIA DE_UDIA
-#define KY_SS DE_SS
 #define KY_BSPC KC_BSPC
-#define KY_COMM DE_COMM
-#define KY_DOT DE_DOT
-#define KY_SPC KC_SPC
-#define KY_SHFT OSM(MOD_LSFT)
+#define KY_COMM LRM_R(DE_COMM)
+#define KY_DOT LRR_R(DE_DOT)
+#define KY_SPC LRI_L(KC_SPC)
 #define KY_ENT KC_ENT
 
-#define KY_UNDO LGUI(DE_Z)
-#define KY_REDO LGUI(LSFT(DE_Z))
-#define KY_COPY LGUI(DE_C)
-#define KY_PAST LGUI(DE_V)
-#define KY_CUT  LGUI(DE_X)
-#define KY_TNXT LCTL(KC_TAB)
-#define KY_TPRV LCTL(LSFT(KC_TAB))
-#define KY_TCLS LGUI(DE_W)
+ 
+#define KY_4 HRI(KC_4)
+#define KY_5 HRM(KC_5)
+#define KY_6 HRR(KC_6)
+#define KY_ACL0 HRI(KC_ACL0)
+#define KY_ACL1 HRM(KC_ACL1)
+#define KY_ACL2 HRR(KC_ACL2)
+#define KY_ADIA HRI(DE_ADIA)
+#define KY_DOWN HRR(KC_DOWN)
+#define KY_EQL HRP(DE_EQL)
+#define KY_F11 HRP(KC_F11)
+#define KY_F4 HRI(KC_F4)
+#define KY_F5 HRM(KC_F5)
+#define KY_F6 HRR(KC_F6)
+#define KY_LEFT HRP(KC_LEFT)
+#define KY_MS_D HRR(KC_MS_D)
+#define KY_MS_L HRP(KC_MS_L)
+#define KY_MS_R HRI(KC_MS_R)
+#define KY_MS_U HRM(KC_MS_U)
+#define KY_ODIA HRM(DE_ODIA)
+#define KY_SS HRP(DE_SS)
+#define KY_UDIA HRR(DE_UDIA)
+#define KY_UP HRM(KC_UP)
+#define KY_RGHT HRM(KC_RGHT)

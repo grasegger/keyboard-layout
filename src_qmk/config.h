@@ -18,19 +18,17 @@
 
 #define TAPPING_TERM 200
 #define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_FORCE_HOLD
-// #define PERMISSIVE_HOLD
+#define TAPPING_FORCE_HOLD_PER_KEY
 
 // comment the next line to build a firmware that works on linux and windows german qwertz layouts
 #define OSX
 
 #define EE_HANDS
 
-#define LEADER_TIMEOUT 250
-#define LEADER_KEY_STRICT_KEY_PROCESSING
-#define LEADER_NO_TIMEOUT
-
 #define MK_COMBINED
 #define MOUSEKEY_INTERVAL 16
 #define MOUSEKEY_MAX_SPEED 3
 #define MOUSEKEY_MOVE_DELTA 5
+
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
