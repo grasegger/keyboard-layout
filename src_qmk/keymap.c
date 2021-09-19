@@ -28,17 +28,18 @@ enum layers {
 };
 
 #include "keycodes.h"
+#include "g/keymap_combo.h"
 
 // clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MIN] = LAYOUT(
     //--------|--------|--------|--------|--------|-\    /-|--------|--------|--------|--------|--------|
-          KY_Z,    KY_L,    KY_U,    KY_A,    KY_J,/*    */     KY_W,    KY_B,    KY_D,    KY_G,    KY_Y, 
+          KY_Z,    KY_L,    KY_U,    KY_A, _______,/*    */  _______,    KY_B,    KY_D,    KY_G,    KY_Y, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-          KY_C,    KY_R,    KY_I,    KY_E,    KY_O,/*    */     KY_M,    KY_N,    KY_T,    KY_S,    KY_H, 
+          KY_C,    KY_R,    KY_I,    KY_E, _______,/*    */  _______,    KY_N,    KY_T,    KY_S,    KY_H, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
-          KY_V,    KY_X,    KY_Q,  KY_SPC, KY_BSPC,/*    */     KY_P,    KY_F, KY_COMM,  KY_DOT,    KY_K, 
+          KY_V,    KY_X,    KY_Q,  KY_SPC, _______,/*    */  _______,    KY_F, KY_COMM,  KY_DOT,    KY_K, 
     //--------|--------|--------|--------|--------|-|    |-|--------|--------|--------|--------|--------|
                                   _______, _______,/*    */  _______, _______ 
     ),

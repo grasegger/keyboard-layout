@@ -8,7 +8,7 @@
 #define HRM(key) GUI_T(key)
 #define HRR(key) ALT_T(key)
 #define HRP(key) CTL_T(key)
-#define HRE(key) HYPR_T(key)
+#define HRE(key) key
 
 #else
 
