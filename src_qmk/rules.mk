@@ -22,9 +22,7 @@ TERMINAL_ENABLE = no
 UNICODE_ENABLE = no
 WPM_ENABLE = no
 RAW_ENABLE = no
-COMBO_ENABLE = yes
+COMBO_ENABLE = no
 MOUSEKEY_ENABLE = yes
 
 LTO_ENABLE = yes
-
-VPATH += keyboards/gboards
