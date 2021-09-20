@@ -5,6 +5,11 @@ firmware-qmk: prepare-qmk
 
 .PHONY: flash-qmk
 flash-qmk: prepare-qmk
+	make BUILD_DIR=$(shell pwd) -j4 -C qmk_firmware ferris/sweep:karl:flash
+	cd qmk_firmware; git clean -df	
+
+.PHONY: flash-qmk-left
+flash-qmk-left: prepare-qmk
 	make BUILD_DIR=$(shell pwd) -j4 -C qmk_firmware ferris/sweep:karl:dfu-split-left
 	cd qmk_firmware; git clean -df	
 
