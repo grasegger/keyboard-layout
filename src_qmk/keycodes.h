@@ -66,7 +66,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define KY_Z RGHT_RING(DE_Z)
 #define KY_BSPC KC_BSPC
 #define KY_COMM TD(TD_COMM_DOT)
-#define KY_SPC KC_SPC
+#define KY_SPC LT(_NUML, KC_SPC)
 #define KY_ENT KC_ENT
 
 #define KY_TMIN DF(_MIN)
