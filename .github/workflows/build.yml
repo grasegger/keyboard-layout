@@ -4,7 +4,7 @@ name: Build
 
 defaults:
   run:
-    working-directory: ./zmk-config
+    working-directory: ./zmk_firmware
 
 jobs:
   build:
@@ -21,12 +21,12 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            zmk-config/modules/
-            zmk-config/tools/
-            zmk-config/zephyr/
-            zmk-config/bootloader/
-            zmk-config/zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('zmk-config/manifest-dir/west.yml') }}
+            zmk_firmware/modules/
+            zmk_firmware/tools/
+            zmk_firmware/zephyr/
+            zmk_firmware/bootloader/
+            zmk_firmware/zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('zmk_firmware/manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -46,11 +46,6 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 a_dux_left_nice_nano_v2.uf2
-      - name: Archive (A. Dux Left)
-        uses: actions/upload-artifact@v2
-        with:
-          name: firmware
-          path: a_dux_left_nice_nano_v2.uf2
       - name: West Build (A. Dux Right)
         run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
@@ -62,4 +57,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: a_dux_right_nice_nano_v2.uf2
+          path: zmk_firmware
