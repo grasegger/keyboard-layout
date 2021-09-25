@@ -2,6 +2,10 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
+defaults:
+  run:
+    working-directory: ./zmk-config
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,12 +21,12 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+            zmk-config/modules/
+            zmk-config/tools/
+            zmk-config/zephyr/
+            zmk-config/bootloader/
+            zmk-config/zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('zmk-config/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
