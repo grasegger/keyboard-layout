@@ -46,6 +46,11 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 a_dux_left_nice_nano_v2.uf2
+      - name: Archive (A. Dux Left)
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: zmk_firmware/a_dux_left_nice_nano_v2.uf2
       - name: West Build (A. Dux Right)
         run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
@@ -57,4 +62,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: zmk_firmware
+          path: zmk_firmware/a_dux_right_nice_nano_v2.uf2
