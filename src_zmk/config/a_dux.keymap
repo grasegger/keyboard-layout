@@ -254,7 +254,7 @@
 			bindings = <
 				&hm LCTRL DE_C &kp DE_L      &kp DE_U      &kp DE_A        &kp DE_A    &kp DE_A     &kp DE_B        &kp DE_D      &kp DE_G      &kp DE_H
 				&hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &kp DE_O &kp DE_M  &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H
-				&kp DE_V       &lt EXTR DE_X &lt NUMR DE_Q &kp SYMR DE_Y   &kp DE_J &kp DE_W  &kp DE_F        &kp DE_P      &kp DE_Z      &kp DE_K
+				&kp DE_V       &lt EXTR DE_X &lt NUMR DE_Q &hm SYMR DE_Y   &kp DE_J &kp DE_W  &kp DE_F        &kp DE_P      &kp DE_Z      &kp DE_K
 				                                           &kp SPACE       &kp DE_A    &kp DE_A     &kp DE_COMM
 			>;
 		};
