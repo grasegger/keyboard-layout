@@ -263,7 +263,7 @@
 			binding =< 
 				&kp DE_BSLS &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &none       &none &none      &none      &none       &none
 				&kp DE_HASH &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ACUT &none &kp LSHIFT &kp LGUI   &kp LALT    &kp LCTRL
-				&none       &kp DE_DLR  &kp DE_PIPE &pk DE_TILD &kp DE_GRV  &none &none      &kp DE_DOT &kp DE_EURO &kp DE_AT
+				&none       &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &none &none      &kp DE_DOT &kp DE_EURO &kp DE_AT
 				                                    &none       &none       &none &none
 			>;
 		};
@@ -281,7 +281,7 @@
 			binding =< 
 				&kp LEFT &kp DELETE     &kp TAB     &kp BACKSPACE &none      &none &none      &none    &none    &none
 				&kp HOME &kp DOWN       &kp UP      &kp LEFT      &kp ENTER  &none &kp LSHIFT &kp LGUI &kp LALT &kp LCTRL
-				&none    &kp PAGE_DOWN  &kp PAGE_UP &pk END       &kp ESCAPE &none &none      &none    &none    &none
+				&none    &kp PAGE_DOWN  &kp PAGE_UP &kp END       &kp ESCAPE &none &none      &none    &none    &none
 				                                    &none         &none      &none &none
 			>;
 		};
@@ -299,7 +299,7 @@
 			binding =< 
 				&kp DE_SS &none       &none        &none        &none &none &none      &none      &none    &none
 				&kp C_RW  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA  &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
-				&none     &kp C_FF    &kp C_VOL_UP &pk C_VOL_DN &none &none &kp C_PP   &kp C_MUTE &none    &none
+				&none     &kp C_FF    &kp C_VOL_UP &kp C_VOL_DN &none &none &kp C_PP   &kp C_MUTE &none    &none
 				                                    &none       &none &none &none
 			>;
 		};
