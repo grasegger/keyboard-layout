@@ -297,10 +297,10 @@
 
 		extra_left {
 			binding =< 
-				&kp DE_SS &none       &none        &none          &none &none &none      &none      &none    &none
-				&kp C_RW  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA    &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
-				&none     &kp C_FF    &kp C_VOL_UP &pk C_VOL_DOWN &none &none &kp C_PP   &kp C_MUTE &none    &none
-				                                    &none         &none &none &none
+				&kp DE_SS &none       &none        &none        &none &none &none      &none      &none    &none
+				&kp C_RW  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA  &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
+				&none     &kp C_FF    &kp C_VOL_UP &pk C_VOL_DN &none &none &kp C_PP   &kp C_MUTE &none    &none
+				                                    &none       &none &none &none
 			>;
 		};
 
