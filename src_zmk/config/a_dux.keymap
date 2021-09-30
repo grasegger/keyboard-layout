@@ -298,8 +298,8 @@
 		extra_left {
 			bindings =< 
 				&kp DE_SS &none       &none        &none        &none &none &none      &none      &none    &none
-				&kp K_RW  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA  &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
-				&none     &kp K_FF    &kp K_VOL_UP &kp K_VOL_DN &none &none &kp K_PP   &kp K_MUTE &none    &none
+				&kp K_PREV  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA  &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
+				&none     &kp K_NEXT    &kp K_VOL_UP &kp K_VOL_DN &none &none &kp K_PP   &kp K_MUTE &none    &none
 				                                    &none       &none &none &none
 			>;
 		};
