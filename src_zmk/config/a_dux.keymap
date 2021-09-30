@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <keycodes_de.h>
 
 #define DEFAULT 0
 #define SYML    1
