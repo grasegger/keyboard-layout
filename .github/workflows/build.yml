@@ -38,7 +38,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (A. Dux Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/src_zmk/config"
       - name: A. Dux DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
@@ -52,7 +52,7 @@ jobs:
           name: firmware
           path: src_zmk/a_dux_left_nice_nano_v2.uf2
       - name: West Build (A. Dux Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/src_zmk/config"
 
       - name: A. Dux Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
