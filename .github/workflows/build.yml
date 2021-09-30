@@ -49,7 +49,7 @@ jobs:
       - name: Archive (A. Dux Left)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware-${{GITHUB_SHA}}
+          name: firmware-${GITHUB_SHA}
           path: src_zmk/a_dux_left_nice_nano_v2.uf2
       - name: West Build (A. Dux Right)
         run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/src_zmk/config"
@@ -61,5 +61,5 @@ jobs:
       - name: Archive (A. Dux Right)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware-${{GITHUB_SHA}}
+          name: firmware-${GITHUB_SHA}
           path: src_zmk/a_dux_right_nice_nano_v2.uf2
