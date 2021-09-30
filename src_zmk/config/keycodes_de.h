@@ -16,8 +16,6 @@
 
 #pragma once
 
-#include "keymap.h"
-
 // clang-format off
 
 /*
