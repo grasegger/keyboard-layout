@@ -304,7 +304,7 @@
 			>;
 		};
 
-		numpad_right {
+		extra_right {
 			binding =< 
 				&none     &none    &none    &none      &none &none   &kp F7 &kp F8 &kp F9 &none
 				&kp LCTRL &kp LALT &kp LGUI &kp LSHIFT &none &kp F11 &kp F8 &kp F5 &kp F6 &kp F10
