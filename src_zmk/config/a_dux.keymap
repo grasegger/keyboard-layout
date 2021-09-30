@@ -233,8 +233,6 @@
 #define EXTR    6
 
 #define NONE 0
-
-#define DE_UNDS LS(SLASH) 
 / {
 
     behaviors {
@@ -274,7 +272,7 @@
 			binding =< 
 				&none       &none       &none       &none      &none &none       &kp DE_LABK &kp DE_RABK &kp DE_EQL  &none
 				&kp LCTRL   &kp LALT    &kp LGUI    &kp LSHIFT &none &kp DE_AMPR &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-				&kp DE_PLUS &kp DE_QEUS &kp DE_EXLM &none      &none &kp DE_ASTR &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+				&kp DE_PLUS &none &kp DE_EXLM &none      &none &kp DE_ASTR &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
 				                                    &none      &none &none       &none
 			>;
 		};
