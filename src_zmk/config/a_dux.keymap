@@ -357,7 +357,7 @@
 				&kp ESCAPE     &kp DE_L      &udia         &adia           &enter_ss   &kp TAB    &kp DE_B        &kp DE_D      &kp DE_G      &kp BACKSPACE
 				&hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &odia       &kp DE_M   &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H
 				&kp DE_V       &kp DE_X      &kp DE_Q      &kp DE_Y        &kp DE_J    &kp DE_W   &kp DE_F        &kp DE_P      &kp DE_Z      &kp DE_K
-				                                           &kp SPACE       &sl SYM     &sk LSHIFT &hm RALT DE_COMM
+				                                           &kp SPACE       &sl SYM     &sk LSHIFT &hm LALT DE_COMM
 			>;
 		};
 
@@ -372,10 +372,10 @@
 
 		numpad {
 			bindings =< 
-				&kp LCTRL &kp LALT      &kp LGUI    &kp LSHIFT  &none        &kp KP_EQUAL &f_7     &f_8 &f_9 &f_12
-				&kp LEFT  &kp DOWN      &kp UP      &kp RIGHT   &none        &kp KP_PLUS  &f_4     &f_5 &f_6 &f_10
-				&kp HOME  &kp PAGE_DOWN &kp PAGE_UP &kp END     &none        &kp KP_MINUS &f_1     &f_2 &f_3 &f_11
-			                                        &kp KP_DOT  &kp KP_COMMA &kp RALT     &to HOME
+				&kp LCTRL &kp LALT      &kp LGUI    &kp LSHIFT  &kp TAB       &kp KP_EQUAL &f_7     &f_8 &f_9 &f_12
+				&kp LEFT  &kp DOWN      &kp UP      &kp RIGHT   &kp BACKSPACE &kp KP_PLUS  &f_4     &f_5 &f_6 &f_10
+				&kp HOME  &kp PAGE_DOWN &kp PAGE_UP &kp END     &kp ENTER     &kp KP_MINUS &f_1     &f_2 &f_3 &f_11
+			                                          &kp KP_DOT  &kp KP_COMMA  &kp RALT     &to HOME
 			>;
 		};
 
