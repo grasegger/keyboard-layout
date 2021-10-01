@@ -256,6 +256,13 @@
             bindings = <&kp O>, <&kp DE_ODIA>;
             mods = <(MOD_RALT)>;
         };
+        odia: udia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "udia";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp DE_UDIA>;
+            mods = <(MOD_RALT)>;
+        };
 		enter_ss: enter_ss {
             compatible = "zmk,behavior-mod-morph";
             label = "enter_ss";
@@ -357,7 +364,7 @@
 				&kp ESCAPE     &kp DE_L      &udia         &adia           &enter_ss   &kp TAB    &kp DE_B        &kp DE_D      &kp DE_G      &kp BACKSPACE
 				&hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &odia       &kp DE_M   &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H
 				&kp DE_V       &kp DE_X      &kp DE_Q      &kp DE_Y        &kp DE_J    &kp DE_W   &kp DE_F        &kp DE_P      &kp DE_Z      &kp DE_K
-				                                           &kp SPACE       &sl SYM     &sk LSHIFT &hm LALT DE_COMM
+				                                           &kp SPACE       &sl SYM     &sk LSHIFT &hm RALT DE_COMM
 			>;
 		};
 
