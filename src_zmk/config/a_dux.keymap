@@ -256,7 +256,7 @@
             bindings = <&kp O>, <&kp DE_ODIA>;
             mods = <(MOD_RALT)>;
         };
-        odia: udia {
+        udia: udia {
             compatible = "zmk,behavior-mod-morph";
             label = "udia";
             #binding-cells = <0>;
