@@ -225,12 +225,9 @@
 #define DE_DIV  LS(LA(DE_DOT))  // ÷
 
 #define DEFAULT 0
-#define SYML    1
-#define SYMR    2
-#define NUML    3
-#define NUMR    4
-#define EXTL    5
-#define EXTR    6
+#define SYM    1
+#define NUM    3
+#define EXT    5
 
 #define NONE 0
 / {
@@ -245,6 +242,111 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        adia: adia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "adia";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp DE_ADIA>;
+            mods = <(MOD_RALT)>;
+        };
+        odia: odia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "odia";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp DE_ODIA>;
+            mods = <(MOD_RALT)>;
+        };
+		enter_ss: enter_ss {
+            compatible = "zmk,behavior-mod-morph";
+            label = "enter_ss";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&kp DE_SS>;
+            mods = <(MOD_RALT)>;
+		};
+		f_1: f1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_1";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N1>, <&kp F1>;
+            mods = <(MOD_RALT)>;
+		};
+		f_2: f2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_2";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N2>, <&kp F2>;
+            mods = <(MOD_RALT)>;
+		};
+		f_3: f3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_3";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N3>, <&kp F3>;
+            mods = <(MOD_RALT)>;
+		};
+		f_4: f4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_4";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N4>, <&kp F4>;
+            mods = <(MOD_RALT)>;
+		};
+		f_5: f5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_5";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N5>, <&kp F5>;
+            mods = <(MOD_RALT)>;
+		};
+		f_6: f6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_6";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N6>, <&kp F6>;
+            mods = <(MOD_RALT)>;
+		};
+		f_7: f7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_7";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N7>, <&kp F7>;
+            mods = <(MOD_RALT)>;
+		};
+		f_8: f8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_8";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N8>, <&kp F8>;
+            mods = <(MOD_RALT)>;
+		};
+		f_9: f9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_9";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N9>, <&kp F9>;
+            mods = <(MOD_RALT)>;
+		};
+		f_10: f10 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_10";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N0>, <&kp F10>;
+            mods = <(MOD_RALT)>;
+		};
+		f_11: f11 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_11";
+            #binding-cells = <0>;
+            bindings = <&kp KP_MULTIPLY>, <&kp F11>;
+            mods = <(MOD_RALT)>;
+		};
+		f_12: f12 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "f_12";
+            #binding-cells = <0>;
+            bindings = <&kp KP_SLASH>, <&kp F12>;
+            mods = <(MOD_RALT)>;
+		};
     };
 
 	keymap {
@@ -252,66 +354,39 @@
 
 		base_layer {
 			bindings = <
-				&kp C_RESET          &kp DE_L      &kp DE_U      &kp DE_A        &none    &none     &kp DE_B        &kp DE_D      &kp DE_G      &kp C_RESET
-				&hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &kp DE_O &kp DE_M  &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H
-				&kp DE_V       &lt EXTR DE_X &lt NUMR DE_Q &lt SYMR DE_Y   &kp DE_J &kp DE_W  &lt SYML DE_F   &lt NUML DE_P &lt EXTL DE_Z      &kp DE_K
-				                                           &kp SPACE       &none    &none     &kp DE_COMM
+				&kp ESCAPE     &kp DE_L      &udia         &adia           &enter_ss   &kp TAB    &kp DE_B        &kp DE_D      &kp DE_G      &kp BACKSPACE
+				&hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &odia       &kp DE_M   &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H
+				&kp DE_V       &kp DE_X      &kp DE_Q      &kp DE_Y        &kp DE_J    &kp DE_W   &kp DE_F        &kp DE_P      &kp DE_Z      &kp DE_K
+				                                           &kp SPACE       &sl SYM     &sk LSHIFT &hm RALT DE_COMM
 			>;
 		};
 
-		symbols_left {
+		symbols {
 			bindings =< 
-				&kp DE_BSLS &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &none       &none &none      &none      &none       &none
-				&kp DE_HASH &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ACUT &none &kp LSHIFT &kp LGUI   &kp LALT    &kp LCTRL
-				&none       &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &none &none      &kp DE_DOT &kp DE_EURO &kp DE_AT
-				                                    &none       &none       &none &none
+				&kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_ACUT &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AT
+				&kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+				&kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+				                                    &kp DE_DOT  &sl EXT     &tog NUM    &to HOME
 			>;
 		};
 
-		symbols_right {
+		numpad {
 			bindings =< 
-				&none       &none       &none       &none      &none &none       &kp DE_LABK &kp DE_RABK &kp DE_EQL  &none
-				&kp LCTRL   &kp LALT    &kp LGUI    &kp LSHIFT &none &kp DE_AMPR &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-				&kp DE_PLUS &kp DE_QUES &kp DE_EXLM &none      &none &kp DE_ASTR &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-				                                    &none      &none &none       &none
+				&kp LCTRL &kp LALT      &kp LGUI    &kp LSHIFT  &none        &kp KP_EQUAL &f_7     &f_8 &f_9 &f_12
+				&kp LEFT  &kp DOWN      &kp UP      &kp RIGHT   &none        &kp KP_PLUS  &f_4     &f_5 &f_6 &f_10
+				&kp HOME  &kp PAGE_DOWN &kp PAGE_UP &kp END     &none        &kp KP_MINS  &f_1     &f_2 &f_3 &f_11
+			                                        &kp KP_DOT  &kp KP_COMMA &kp RALT     &to HOME
 			>;
 		};
 
-		numpad_left {
+		extra {
 			bindings =< 
-				&kp LEFT &kp DELETE     &kp TAB     &kp BACKSPACE &none      &none &none      &none    &none    &none
-				&kp HOME &kp DOWN       &kp UP      &kp LEFT      &kp ENTER  &none &kp LSHIFT &kp LGUI &kp LALT &kp LCTRL
-				&none    &kp PAGE_DOWN  &kp PAGE_UP &kp END       &kp ESCAPE &none &none      &none    &none    &none
-				                                    &none         &none      &none &none
+				&none      &none      &none        &none        &none &none &none            &none      &none &none
+				&kp K_PREV &kp K_NEXT &kp K_VOL_DN &kp K_VOL_UP &none &none &kp K_PLAY_PAUSE &kp K_MUTE &none &none
+				&none      &none      &none        &none        &none &none &none            &none      &none &none
+				                                   &to HOME     &none &none &none
 			>;
 		};
-
-		numpad_right {
-			bindings =< 
-				&none       &none       &none      &none      &none &none       &kp N7 &kp N8 &kp N9 &none
-				&kp LCTRL   &kp LALT    &kp LGUI   &kp LSHIFT &none &kp DE_PLUS &kp N4 &kp N5 &kp N6 &kp N0
-				&kp DE_SLSH &kp DE_ASTR &kp DE_EQL &none      &none &kp DE_MINS &kp N1 &kp N2 &kp N3 &none
-			                                       &none      &none &none       &none
-			>;
-		};
-
-		extra_left {
-			bindings =< 
-				&kp DE_SS &none       &none        &none        &none &none &none      &none      &none    &none
-				&kp K_PREV  &kp DE_UDIA &kp DE_ODIA  &kp DE_ADIA  &none &none &kp LSHIFT &kp LGUI   &kp LALT &kp LCTRL
-				&none     &kp K_NEXT    &kp K_VOL_UP &kp K_VOL_DN &none &none &kp K_PP   &kp K_MUTE &none    &none
-				                                    &none       &none &none &none
-			>;
-		};
-
-		extra_right {
-			bindings =< 
-				&none     &none    &none    &none      &none &none   &kp F7 &kp F8 &kp F9 &none
-				&kp LCTRL &kp LALT &kp LGUI &kp LSHIFT &none &kp F11 &kp F8 &kp F5 &kp F6 &kp F10
-				&none     &none    &none    &none      &none &kp F12 &kp F9 &kp F2 &kp F3 &none
-			                                &none      &none &none       &none
-			>;
-		};	
 
 	};
 };
