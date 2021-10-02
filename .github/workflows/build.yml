@@ -2,6 +2,10 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
+defaults:
+  run:
+    working-directory: ./src_zmk
+
 jobs:
   ferris_sweep_elite_c:
     runs-on: ubuntu-latest
@@ -67,7 +71,7 @@ jobs:
             zmk_src/zephyr/
             zmk_src/bootloader/
             zmk_src/zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('zmk_src/config/west.yml') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('src_zmk/manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
