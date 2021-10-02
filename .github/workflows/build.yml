@@ -33,6 +33,7 @@ jobs:
           pwd
           ls keyboards/ferris/sweep/keymaps
           ls -lah keyboards/ferris/sweep/keymaps/karl
+          ls /home/runner/work/keyboard-layout/keyboard-layout/qmk_firmware/../elite_c/ferris_sweep
           make ferris/sweep:karl
       - name: Archive (Ferris Sweep)
         uses: actions/upload-artifact@v2
