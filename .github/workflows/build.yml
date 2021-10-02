@@ -26,7 +26,7 @@ jobs:
         working-directory: ./qmk_firmware
         run: |
           mkdir -p keyboards/ferris/sweep/keymaps
-          ln -s ../elite_c/ferris_sweep keyboards/ferris/sweep/keymaps/karl
+          ln -s $(pwd)/../elite_c/ferris_sweep keyboards/ferris/sweep/keymaps/karl
       - name: Build ferris firmware
         working-directory: ./qmk_firmware
         run: |
