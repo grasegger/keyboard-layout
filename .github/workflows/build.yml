@@ -2,10 +2,6 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
-defaults:
-  run:
-    working-directory: ./src_zmk
-
 jobs:
   ferris_sweep_elite_c:
     runs-on: ubuntu-latest
@@ -52,11 +48,11 @@ jobs:
           path: qmk_firmware/ferris_sweep_karl.hex 
 
 
-  a_dux:
+  kyria_nice_nano:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
-    name: Nice!Nano V2 for a.dux
+    name: Kyria nice!nano V2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -66,45 +62,45 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            src_zmk/modules/
-            src_zmk/tools/
-            src_zmk/zephyr/
-            src_zmk/bootloader/
-            src_zmk/zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('src_zmk/manifest-dir/west.yml') }}
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('nice_nano_v2/kyria/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: West Init
-        run: west init -l config
+        run: west init -l nice_nano_v2/kyria
       - name: West Update
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (A. Dux Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/src_zmk/config"
-      - name: A. Dux DTS File
+      - name: West Build (Kyria Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/nice_nano_v2/kyria"
+      - name: Kyria DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: A. Dux Left Kconfig file
+      - name: Kyria Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 a_dux_left_nice_nano_v2.uf2
-      - name: Archive (A. Dux Left)
+        run: cp build/zephyr/zmk.uf2 kyria_left_nice_nano_v2.uf2
+      - name: Archive (Kyria Left)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
-          path: src_zmk/a_dux_left_nice_nano_v2.uf2
-      - name: West Build (A. Dux Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=a_dux_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/src_zmk/config"
+          name: kyria_nice_nano_v2
+          path: kyria_left_nice_nano_v2.uf2
+      - name: West Build (Kyria Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/nice_nano_v2/kyria"
 
-      - name: A. Dux Right Kconfig file
+      - name: Kyria Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 a_dux_right_nice_nano_v2.uf2
-      - name: Archive (A. Dux Right)
+        run: cp build/zephyr/zmk.uf2 kyria_right_nice_nano_v2.uf2
+      - name: Archive (Kyria Right)
         uses: actions/upload-artifact@v2
         with:
-          name: firmware
-          path: src_zmk/a_dux_right_nice_nano_v2.uf2
+          name: kyria_nice_nano_v2
+          path: kyria_right_nice_nano_v2.uf2
