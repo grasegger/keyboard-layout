@@ -62,12 +62,12 @@ jobs:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('nice_nano_v2/kyria/west.yml') }}
+            zmk_src/modules/
+            zmk_src/tools/
+            zmk_src/zephyr/
+            zmk_src/bootloader/
+            zmk_src/zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('zmk_src/config/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -79,7 +79,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Kyria Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src/config"
       - name: Kyria DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
@@ -93,7 +93,7 @@ jobs:
           name: kyria_nice_nano_v2
           path: kyria_left_nice_nano_v2.uf2
       - name: West Build (Kyria Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src/config"
 
       - name: Kyria Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
