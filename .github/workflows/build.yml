@@ -76,6 +76,8 @@ jobs:
         run: west init -l nice_nano_v2/kyria
       - name: West Update
         run: west update
+        env:
+          ZEPHYR_BASE: /__w/keyboard-layout/keyboard-layout/nice_nano_v2/
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Kyria Left)
