@@ -21,7 +21,9 @@ jobs:
         with:
           apt-get: git python3-pip
       - name: Install qmk using pip
-        run: python3 -m pip install --user qmk
+        run: |
+          python3 -m pip install --user qmk
+          qmk setup --yes
       - name: Prepare qmk_firmware folder
         working-directory: ./qmk_firmware
         run: |
