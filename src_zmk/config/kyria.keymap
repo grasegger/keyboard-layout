@@ -7,24 +7,294 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+/*
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │ ^ │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ ß │ ´ │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │ Q │ W │ E │ R │ T │ Z │ U │ I │ O │ P │ Ü │ + │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │ A │ S │ D │ F │ G │ H │ J │ K │ L │ Ö │ Ä │ # │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ < │ Y │ X │ C │ V │ B │ N │ M │ , │ . │ - │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_CIRC GRAVE // ^ (dead)
+#define DE_SS   MINUS // ß
+#define DE_ACUT EQUAL // ´ (dead)
+
+// Row 2
+#define DE_Q    Q            // Q
+#define DE_W    W            // W
+#define DE_E    E            // E
+#define DE_R    R            // R
+#define DE_T    T            // T
+#define DE_Z    Y            // Z
+#define DE_U    U            // U
+#define DE_I    I            // I
+#define DE_O    O            // O
+#define DE_P    P            // P
+#define DE_UDIA LEFT_BRACKET // Ü
+#define DE_PLUS RIGHT_BRACE  // +
+
+// Row 3
+#define DE_A    A            // A
+#define DE_S    S            // S
+#define DE_D    D            // D
+#define DE_F    F            // F
+#define DE_G    G            // G
+#define DE_H    H            // H
+#define DE_J    J            // J
+#define DE_K    K            // K
+#define DE_L    L            // L
+#define DE_ODIA SEMICOLON    // Ö
+#define DE_ADIA SINGLE_QUOTE // Ä
+#define DE_HASH NON_US_HASH  // #
+
+// Row 4
+#define DE_LABK NON_US_BACKSLASH // <
+#define DE_Y    Z                // Y
+#define DE_X    X                // X
+#define DE_C    C                // C
+#define DE_V    V                // V
+#define DE_B    B                // B
+#define DE_N    N                // N
+#define DE_M    M                // M
+#define DE_COMM COMMA            // ,
+#define DE_DOT  PERIOD           // .
+#define DE_MINS SLASH            // -
+
+/* Shifted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │ ° │ ! │ " │ § │ $ │ % │ & │ / │ ( │ ) │ = │ ? │ ` │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │   │   │   │   │   │   │   │   │   │   │   │ * │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │ ' │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ > │   │   │   │   │   │   │   │ ; │ : │ _ │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_DEG  LS(DE_CIRC) // °
+#define DE_EXLM LS(NUMBER_1)    // !
+#define DE_DQUO LS(NUMBER_2)    // "
+#define DE_SECT LS(NUMBER_3)    // §
+#define DE_DLR  LS(NUMBER_4)    // $
+#define DE_PERC LS(NUMBER_5)    // %
+#define DE_AMPR LS(NUMBER_6)    // &
+#define DE_SLSH LS(NUMBER_7)    // /
+#define DE_LPRN LS(NUMBER_8)    // (
+#define DE_RPRN LS(NUMBER_9)    // )
+#define DE_EQL  LS(NUMBER_0)    // =
+#define DE_QUES LS(DE_SS)   // ?
+#define DE_GRV  LS(DE_ACUT) // ` (dead)
+// Row 2
+#define DE_ASTR LS(DE_PLUS) // *
+// Row 3
+#define DE_QUOT LS(DE_HASH) // '
+// Row 4
+#define DE_RABK LS(DE_LABK) // >
+#define DE_SCLN LS(DE_COMM) // ;
+#define DE_COLN LS(DE_DOT)  // :
+#define DE_UNDS LS(DE_MINS) // _
+
+/* Alted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │ „ │ ¡ │ “ │ ¶ │ ¢ │ [ │ ] │ | │ { │ } │ ≠ │ ¿ │   │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │ « │ ∑ │ € │ ® │ † │ Ω │ ¨ │ ⁄ │ Ø │ π │ • │ ± │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │ Å │ ‚ │ ∂ │ ƒ │ © │ ª │ º │ ∆ │ @ │ Œ │ Æ │ ‘ │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ ≤ │ ¥ │ ≈ │ Ç │ √ │ ∫ │ ~ │ µ │ ∞ │ … │ – │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_DLQU LA(DE_CIRC) // „
+#define DE_IEXL LA(NUMBER_1)    // ¡
+#define DE_LDQU LA(NUMBER_2)    // “
+#define DE_PILC LA(NUMBER_3)    // ¶
+#define DE_CENT LA(NUMBER_4)    // ¢
+#define DE_LBRC LA(NUMBER_5)    // [
+#define DE_RBRC LA(NUMBER_6)    // ]
+#define DE_PIPE LA(NUMBER_7)    // |
+#define DE_LCBR LA(NUMBER_8)    // {
+#define DE_RCBR LA(NUMBER_9)    // }
+#define DE_NEQL LA(NUMBER_0)    // ≠
+#define DE_IQUE LA(DE_SS)   // ¿
+// Row 2
+#define DE_LDAQ LA(DE_Q)    // «
+#define DE_NARS LA(DE_W)    // ∑
+#define DE_EURO LA(DE_E)    // €
+#define DE_REGD LA(DE_R)    // ®
+#define DE_DAGG LA(DE_T)    // †
+#define DE_OMEG LA(DE_Z)    // Ω
+#define DE_DIAE LA(DE_U)    // ¨ (dead)
+#define DE_FRSL LA(DE_I)    // ⁄
+#define DE_OSTR LA(DE_O)    // Ø
+#define DE_PI   LA(DE_P)    // π
+#define DE_BULT LA(DE_UDIA) // •
+#define DE_PLMN LA(DE_PLUS) // ±
+// Row 3
+#define DE_ARNG LA(DE_A)    // Å
+#define DE_SLQU LA(DE_S)    // ‚
+#define DE_PDIF LA(DE_D)    // ∂
+#define DE_FHK  LA(DE_F)    // ƒ
+#define DE_COPY LA(DE_G)    // ©
+#define DE_FORD LA(DE_H)    // ª
+#define DE_MORD LA(DE_J)    // º
+#define DE_INCR LA(DE_K)    // ∆
+#define DE_AT   LA(DE_L)    // @
+#define DE_OE   LA(DE_ODIA) // Œ
+#define DE_AE   LA(DE_ADIA) // Æ
+#define DE_LSQU LA(DE_HASH) // ‘
+// Row 4
+#define DE_LTEQ LA(DE_LABK) // ≤
+#define DE_YEN  LA(DE_Y)    // ¥
+#define DE_AEQL LA(DE_X)    // ≈
+#define DE_CCCE LA(DE_C)    // Ç
+#define DE_SQRT LA(DE_V)    // √
+#define DE_INTG LA(DE_B)    // ∫
+#define DE_TILD LA(DE_N)    // ~ (dead)
+#define DE_MICR LA(DE_M)    // µ
+#define DE_INFN LA(DE_COMM) // ∞
+#define DE_ELLP LA(DE_DOT)  // …
+#define DE_NDSH LA(DE_MINS) // –
+
+/* Shift+Alted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
+ * │   │ ¬ │ ” │   │ £ │ ﬁ │   │ \ │ ˜ │ · │ ¯ │ ˙ │ ˚ │     │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬───┤
+ * │     │ » │   │ ‰ │ ¸ │ ˝ │ ˇ │ Á │ Û │   │ ∏ │   │  │   │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐  │
+ * │      │   │ Í │ ™ │ Ï │ Ì │ Ó │ ı │   │ ﬂ │   │   │   │  │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴──┤
+ * │    │ ≥ │ ‡ │ Ù │   │ ◊ │ ‹ │ › │ ˘ │ ˛ │ ÷ │ — │        │
+ * ├────┴┬──┴─┬─┴───┼───┴───┴───┴───┴───┴───┼───┴─┬─┴──┬─────┤
+ * │     │    │     │                       │     │    │     │
+ * └─────┴────┴─────┴───────────────────────┴─────┴────┴─────┘
+ */
+// Row 1
+#define DE_NOT  LS(LA(NUMBER_1))    // ¬
+#define DE_RDQU LS(LA(NUMBER_2))    // ”
+#define DE_PND  LS(LA(NUMBER_4))    // £
+#define DE_FI   LS(LA(NUMBER_5))    // ﬁ
+#define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
+#define DE_STIL LS(LA(NUMBER_8))    // ˜
+#define DE_MDDT LS(LA(NUMBER_9))    // ·
+#define DE_MACR LS(LA(NUMBER_0))    // ¯
+#define DE_DOTA LS(LA(DE_SS))   // ˙
+#define DE_RNGA LS(LA(DE_ACUT)) // ˚
+// Row 2
+#define DE_RDAQ LS(LA(DE_Q))    // »
+#define DE_PERM LS(LA(DE_E))    // ‰
+#define DE_CEDL LS(LA(DE_R))    // ¸
+#define DE_DACU LS(LA(DE_T))    // ˝
+#define DE_CARN LS(LA(DE_Z))    // ˇ
+#define DE_AACU LS(LA(DE_U))    // Á
+#define DE_UCIR LS(LA(DE_I))    // Û
+#define DE_NARP LS(LA(DE_P))    // ∏
+#define DE_APPL LS(LA(DE_PLUS)) //  (Apple logo)
+// Row 3
+#define DE_IACU LS(LA(DE_S))    // Í
+#define DE_TM   LS(LA(DE_D))    // ™
+#define DE_IDIA LS(LA(DE_F))    // Ï
+#define DE_IGRV LS(LA(DE_G))    // Ì
+#define DE_OACU LS(LA(DE_H))    // Ó
+#define DE_DLSI LS(LA(DE_J))    // ı
+#define DE_FL   LS(LA(DE_L))    // ﬂ
+// Row 4
+#define DE_GTEQ LS(LA(DE_LABK)) // ≥
+#define DE_DDAG LS(LA(DE_Y))    // ‡
+#define DE_UGRV LS(LA(DE_X))    // Ù
+#define DE_LOZN LS(LA(DE_V))    // ◊
+#define DE_LSAQ LS(LA(DE_B))    // ‹
+#define DE_RSAQ LS(LA(DE_N))    // ›
+#define DE_BREV LS(LA(DE_M))    // ˘
+#define DE_OGON LS(LA(DE_COMM)) // ˛
+#define DE_DIV  LS(LA(DE_DOT))  // ÷
+
+#define DEFAULT 0
+#define SYM    1
+#define NUM    3
+#define EXT    5
+
+#define NONE 0
+
 / {
-	keymap {
-		compatible = "zmk,keymap";
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;
+     behaviors {
+        adia: adia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "adia";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp DE_ADIA>;
+            mods = <(MOD_RALT)>;
+        };
+        odia: odia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "odia";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp DE_ODIA>;
+            mods = <(MOD_RALT)>;
+        };
+        udia: udia {
+            compatible = "zmk,behavior-mod-morph";
+            label = "udia";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp DE_UDIA>;
+            mods = <(MOD_RALT)>;
+        };
+        enter_ss: enter_ss {
+            compatible = "zmk,behavior-mod-morph";
+            label = "enter_ss";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&kp DE_SS>;
+            mods = <(MOD_RALT)>;
+        };
+    };
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
-	};
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+            &none &kp ESCAPE &kp DE_L &udia      &adia    &enter_ss                                                  &kp TAB  &kp DE_B     &kp DE_D &kp DE_G &kp BACKSPACE &none
+            &none &kp DE_C   &kp DE_R &kp DE_I   &kp DE_E &odia                                                      &kp DE_M &kp DE_N     &kp DE_T &kp DE_S &kp DE_H      &none
+            &none &kp DE_V   &kp DE_X &kp DE_Q   &kp DE_Y &kp DE_J &kp K_PREV &kp K_NEXT &none      &kp K_PLAY_PAUSE &kp DE_W &kp DE_F     &kp DE_P &kp DE_Z &kp DE_K      &none
+                                      &kp K_MUTE &sm LALT &sm LGUI &kp SPACE  &sl SYM    &sm LSHIFT &kp DE_COMM      &sm LGUI &sm LCONTROL &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        symbols {
+            bindings =< 
+            &none &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_ACUT                                   &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AT   &none
+            &none &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR                                   &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN &none
+            &none &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &none &none   &none    &none      &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &none
+                                          &none       &sm LALT    &sm LGUI    &none &sl NUM &to HOME &kp DE_DOT &sm LSHIFT  &sm LCONTROL &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        numpad {
+            bindings =< 
+            &none &none     &none         &none       &none       &none                                                &kp KP_EQUAL &kp KP_N7    &kp KP_N8 &kp KP_N9 &kp F12   &none
+            &none &kp LEFT  &kp DOWN      &kp UP      &kp RIGHT   &kp BACKSPACE                                        &kp KP_PLUS  &kp KP_N4    &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
+            &none &kp HOME  &kp PAGE_DOWN &kp PAGE_UP &kp END     &kp ENTER     &none      &none &none    &none        &kp KP_MINUS &kp KP_N1    &kp KP_N2 &kp KP_N3 &kp F11   &none
+                                          &none       &sm LALT    &sm LGUI      &kp KP_DOT &none &to HOME &kp KP_COMMA &sm LSHIFT   &sm LCONTROL &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
 };
