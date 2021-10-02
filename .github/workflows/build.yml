@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout
-        users: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           submodules: ecursive
       - name: Install dependencies for qmk build
@@ -29,14 +29,12 @@ jobs:
           ln -s $(pwd)/elite_c/ferris_sweep qmk_firmware/keyboards/ferris/sweep/keymaps/karl
       - name: Build ferris firmware
         working-directory: ./qmk_firmware
-        run: |
-          make ferris/sweep:karl
-          mv ferris_sweep_karl.hex ferris_sweep.hex
+        run: make ferris/sweep:karl
       - name: Archive (Ferris Sweep)
         uses: actions/upload-artifact@v2
         with:
           name: elite_c_ferris_sweep
-          path: ./qmk_firmware/ferris_sweep.hex 
+          path: ./qmk_firmware/ferris_sweep_karl.hex 
 
 
   a_dux:
