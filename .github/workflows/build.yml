@@ -83,7 +83,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Kyria Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src/config"
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src"
       - name: Kyria DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
@@ -97,7 +97,7 @@ jobs:
           name: kyria_nice_nano_v2
           path: kyria_left_nice_nano_v2.uf2
       - name: West Build (Kyria Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src/config"
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/zmk_src"
 
       - name: Kyria Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
