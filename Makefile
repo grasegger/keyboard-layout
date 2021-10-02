@@ -23,4 +23,4 @@ prepare-qmk:
 	git submodule update --init --recursive
 	cd qmk_firmware; git clean -df	
 	mkdir -p qmk_firmware/keyboards/ferris/sweep/keymaps
-	ln -s $(shell pwd)/src_qmk qmk_firmware/keyboards/ferris/sweep/keymaps/karl
+	ln -s $(shell pwd)/elite_c/ferris_sweep qmk_firmware/keyboards/ferris/sweep/keymaps/karl
