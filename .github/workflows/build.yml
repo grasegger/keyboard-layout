@@ -25,8 +25,8 @@ jobs:
       - name: Prepare qmk_firmware folder
         working-directory: ./qmk_firmware
         run: |
-          mkdir -p qmk_firmware/keyboards/ferris/sweep/keymaps
-          ln -s ../elite_c/ferris_sweep qmk_firmware/keyboards/ferris/sweep/keymaps/karl
+          mkdir -p keyboards/ferris/sweep/keymaps
+          ln -s ../elite_c/ferris_sweep keyboards/ferris/sweep/keymaps/karl
       - name: Build ferris firmware
         working-directory: ./qmk_firmware
         run: |
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: elite_c_ferris_sweep
-          path: ./qmk_firmware/ferris_sweep_karl.hex 
+          path: qmk_firmware/ferris_sweep_karl.hex 
 
 
   a_dux:
