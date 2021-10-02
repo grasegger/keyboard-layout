@@ -33,11 +33,12 @@ jobs:
       - name: Install dependencies for qmk build
         uses: mstksg/get-package@v1
         with:
-          apt-get: git python3-pip dfu-util dfu-programmer avrdude avr-gcc arm-none-eabi-gcc
+          apt-get: git python3-pip dfu-util dfu-programmer avrdude 
       - name: Install qmk using pip
+        working-directory: ./qmk_firmware
         run: |
           python3 -m pip install --user qmk
-          qmk setup --yes
+          qmk setup --yes --home .
       - name: Prepare qmk_firmware folder
         working-directory: ./qmk_firmware
         run: |
