@@ -31,6 +31,8 @@ jobs:
         working-directory: ./qmk_firmware
         run: |
           pwd
+          ls keyboards/ferris/sweep/keymaps
+          ls -lah keyboards/ferris/sweep/keymaps/karl
           make ferris/sweep:karl
       - name: Archive (Ferris Sweep)
         uses: actions/upload-artifact@v2
