@@ -2,10 +2,6 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
-defaults:
-  run:
-    working-directory: ./src_zmk
-
 jobs:
   ferris_sweep_elite_c:
     runs-on: ubuntu-latest
