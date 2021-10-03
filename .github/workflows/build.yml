@@ -56,22 +56,24 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
-    name: Kyria nice!nano V2
+    name: Kyria nice!nano
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: prepare build env
+        run: ln -s nice_nano_v2/kyria config
       - name: Cache west modules
         uses: actions/cache@v2
         env:
           cache-name: cache-zephyr-modules
         with:
           path: |
-            zmk_src/modules/
-            zmk_src/tools/
-            zmk_src/zephyr/
-            zmk_src/bootloader/
-            zmk_src/zmk/
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('src_zmk/manifest-dir/west.yml') }}
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
