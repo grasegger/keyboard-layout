@@ -227,6 +227,7 @@
 #define FUN     3
 
 #define NONE 0
+#define HOME 0
 
 / {
 
