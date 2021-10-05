@@ -266,7 +266,7 @@
             bindings = <
             &none &kp ESCAPE &kp DE_L &kp DE_U   &kp DE_A &kp ENTER                                                &kp TAB    &kp DE_B  &kp DE_D &kp DE_G &kp BACKSPACE &none
             &none &kp DE_C   &kp DE_R &kp DE_I   &kp DE_E &kp DE_O                                                 &kp DE_M   &kp DE_N  &kp DE_T &kp DE_S &kp DE_H      &none
-            &none &kp DE_V   &kp DE_X &kp DE_Q   &kp DE_Y &kp DE_J &kp K_PREV &kp K_NEXT &none    &kp K_PLAY_PAUSE &kp DE_W   &kp DE_F  &kp DE_P &kp DE_Z &kp DE_K      &none
+            &none &kp DE_V   &kp DE_X &kp DE_Q   &kp DE_Y &kp DE_J &kp C_PREV &kp C_NEXT &none    &kp C_PLAY_PAUSE &kp DE_W   &kp DE_F  &kp DE_P &kp DE_Z &kp DE_K      &none
                                       &kp K_MUTE &sk LALT &sk LGUI &kp SPACE  &sl SYM    &sk LGUI &kp DE_COMM      &sk LSHIFT &sk LCTRL &kp LG(SPACE)
             >;
 
