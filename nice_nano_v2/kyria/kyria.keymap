@@ -273,7 +273,7 @@
         default_layer {
             bindings = <
             &none &kp DE_Z      &kp DE_L      &kp DE_U      &kp DE_A        &sk DE_J                                               &kp DE_W &kp DE_B        &kp DE_D      &kp DE_G      &kp DE_Y       &none
-            &none &hm LCTL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &kp DE_O                                               &kp DE_M &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTL DE_H  &none
+            &none &hm LCTRL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &kp DE_O                                               &kp DE_M &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTRL DE_H  &none
             &none &kp DE_V      &kp DE_X      &kp DE_ADIA   &kp DE_ODIA     &kp DE_Q  &kp C_PREV &kp C_NEXT &none &kp C_PLAY_PAUSE &kp DE_P &kp DE_F        &kp DE_UDIA   &kp DE_SS     &kp DE_K       &none
                                               &kp K_MUTE    &sl NUM         &kp SPACE &sl SYM    &none      &none &sk LSHFT        &kp DE_COMM              &kp BACKSPACE &kp LG(SPACE)
             >;
@@ -284,7 +284,7 @@
         symbols {
             bindings =< 
             &none &kp DE_EURO      &kp DE_UNDS      &kp DE_LBRC      &kp DE_RBRC        &kp DE_ACUT                           &kp DE_EXLM &kp DE_LABK        &kp DE_RABK      &kp DE_EQL       &kp DE_AT        &none
-            &none &hm LCTL DE_BSLS &hm LALT DE_SLSH &hm LGUI DE_LCBR &hm LSHIFT DE_RCBR &kp DE_ASTR                           &kp DE_QUES &hm LSHIFT DE_LPRN &hm LGUI DE_RPRN &hm LALT DE_MINS &hm LCTL DE_COLN &none
+            &none &hm LCTRL DE_BSLS &hm LALT DE_SLSH &hm LGUI DE_LCBR &hm LSHIFT DE_RCBR &kp DE_ASTR                           &kp DE_QUES &hm LSHIFT DE_LPRN &hm LGUI DE_RPRN &hm LALT DE_MINS &hm LCTRL DE_COLN &none
             &none &kp DE_HASH      &kp DE_DLR       &kp DE_PIPE      &kp DE_TILD        &kp DE_GRV  &none   &none &none &none &kp DE_PLUS &kp DE_PERC        &kp DE_DQUO      &kp DE_QUOT      &kp DE_SCLN      &none
                                                     &none            &none              &to NONE    &sl FUN &none &none &none &kp DE_DOT  &none              &none            &none
             >;
@@ -295,7 +295,7 @@
         numpad {
             bindings =< 
             &none &kp PG_DN     &kp DELETE    &kp UP        &kp BACKSPACE    &kp PG_UP                         &kp KP_EQUAL &kp KP_N7        &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
-            &none &hm LCTL HOME &hm LALT LEFT &hm LGUI DOWN &hm LSHIFT RIGHT &kp END                           &kp KP_PLUS  &hm LSHIFT KP_N4 &hm LGUI KP_N5 &hm LALT KP_N6 &hm LCTRL KP_N0 &none
+            &none &hm LCTRL HOME &hm LALT LEFT &hm LGUI DOWN &hm LSHIFT RIGHT &kp END                           &kp KP_PLUS  &hm LSHIFT KP_N4 &hm LGUI KP_N5 &hm LALT KP_N6 &hm LCTRL KP_N0 &none
             &none &kp ESCAPE    &kp TAB       &none         &kp ENTER        &none     &none &none &non  &none &kp KP_MINUS &kp KP_N1        &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
                                               &none         &to NUM          &to NONE  &none &none &none &none &kp KP_DOT   &none            &none
             >;
@@ -305,9 +305,9 @@
 
         functions {
             bindings =< 
-            &none &none            &none           &kp C_PLAY_PAUSE  &kp C_MUTE          &none                            &none &kp F7 &kp F8 &kp F9 &kp F12 &none
-            &none &hm LCTLR C_PREV &hm LATL C_NEXT &hm LGUI C_VOL_DN &hm LSHIFT C_VOL_UP &none                            &none &kp F4 &kp F5 &kp F6 &kp F10 &none
-            &none &none            &none           &none             &none               &none    &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
+            &none &none           &none           &kp C_PLAY_PAUSE  &kp C_MUTE          &none                            &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+            &none &hm LCTRL C_PREV &hm LATL C_NEXT &hm LGUI C_VOL_DN &hm LSHIFT C_VOL_UP &none                            &none &kp F4 &kp F5 &kp F6 &kp F10 &none
+            &none &none           &none           &none             &none               &none    &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
                                                    &none             &none               &to NONE &none &none &none &none &none &none  &none
             >;
 
