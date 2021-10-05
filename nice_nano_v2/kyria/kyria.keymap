@@ -227,7 +227,6 @@
 #define FUN     3
 
 #define NONE 0
-#define HOME 0
 
 / {
     hm: homerow_mods {
@@ -287,7 +286,7 @@
             &none &kp DE_EURO      &kp DE_UNDS      &kp DE_LBRC      &kp DE_RBRC        &kp DE_ACUT                           &kp DE_EXLM &kp DE_LABK        &kp DE_RABK      &kp DE_EQL       &kp DE_AT        &none
             &none &hm LCTL DE_BSLS &hm LALT DE_SLSH &hm LGUI DE_LCBR &hm LSHIFT DE_RCBR &kp DE_ASTR                           &kp DE_QUES &hm LSHIFT DE_LPRN &hm LGUI DE_RPRN &hm LALT DE_MINS &hm LCTL DE_COLN &none
             &none &kp DE_HASH      &kp DE_DLR       &kp DE_PIPE      &kp DE_TILD        &kp DE_GRV  &none   &none &none &none &kp DE_PLUS &kp DE_PERC        &kp DE_DQUO      &kp DE_QUOT      &kp DE_SCLN      &none
-                                                    &none            &none              &to HOME    &sl FUN &none &none &none &kp DE_DOT  &none              &none            &none
+                                                    &none            &none              &to NONE    &sl FUN &none &none &none &kp DE_DOT  &none              &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -298,7 +297,7 @@
             &none &kp PG_DN     &kp DELETE    &kp UP        &kp BACKSPACE    &kp PG_UP                                                &kp KP_EQUAL &kp KP_N7 &kp KP_N8 &kp KP_N9 &none     &none
             &none &hm LCTL HOME &hm LALT LEFT &kp LGUI DOWN &kp LSHIFT RIGHT &kp END                                        &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
             &none &kp ESCAPE    &kp TAB       &none         &kp ENTER        &none     &none      &none    &none &none        &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &none     &none
-                                          &none       &sk LALT    &sk LGUI      &kp KP_DOT &to HOME &to HOME &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
+                                          &none       &sk LALT    &sk LGUI      &kp KP_DOT &to NONE &to NONE &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -309,7 +308,7 @@
             &none &none &none &none &none &none                                  &none &kp F7     &kp F8    &kp F9       &kp F12 &none
             &none &none &none &none &none &none                                  &none &kp F4     &kp F5    &kp F6       &kp F10 &none
             &none &none &none &none &none &none    &none    &none &none    &none &none &kp F1     &kp F2    &kp F3       &kp F11 &none
-                                    &none &sk LALT &sk LGUI &none &to HOME &none &none &sk LSHIFT &sk LCTRL &none
+                                    &none &sk LALT &sk LGUI &none &to NONE &none &none &sk LSHIFT &sk LCTRL &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
