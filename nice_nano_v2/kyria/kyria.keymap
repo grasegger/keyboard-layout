@@ -230,6 +230,15 @@
 #define HOME 0
 
 / {
+    hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -264,10 +273,10 @@
 
         default_layer {
             bindings = <
-            &none &kp ESCAPE &kp DE_L &kp DE_U   &kp DE_A &kp ENTER                                                &kp TAB    &kp DE_B  &kp DE_D &kp DE_G &kp BACKSPACE &none
-            &none &kp DE_C   &kp DE_R &kp DE_I   &kp DE_E &kp DE_O                                                 &kp DE_M   &kp DE_N  &kp DE_T &kp DE_S &kp DE_H      &none
-            &none &kp DE_V   &kp DE_X &kp DE_Q   &kp DE_Y &kp DE_J &kp C_PREV &kp C_NEXT &none    &kp C_PLAY_PAUSE &kp DE_W   &kp DE_F  &kp DE_P &kp DE_Z &kp DE_K      &none
-                                      &kp K_MUTE &sk LALT &sk LGUI &kp SPACE  &sl SYM    &sk LGUI &kp DE_COMM      &sk LSHIFT &sk LCTRL &kp LG(SPACE)
+            &none &kp DE_Z      &kp DE_L      &kp DE_U      &kp DE_A        &sk DE_J                                               &kp DE_W &kp DE_B        &kp DE_D      &kp DE_G      &kp DE_Y       &none
+            &none &hm LCTL DE_C &hm LALT DE_R &hm LGUI DE_I &hm LSHIFT DE_E &kp DE_O                                               &kp DE_M &hm LSHIFT DE_N &hm LGUI DE_T &hm LALT DE_S &hm LCTL DE_H  &none
+            &none &kp DE_V      &kp DE_X      &kp DE_ADIA   &kp DE_ODIA     &kp DE_Q  &kp C_PREV &kp C_NEXT &none &kp C_PLAY_PAUSE &kp DE_P &kp DE_F        &kp DE_UDIA   &kp DE_SS     &kp DE_K       &none
+                                              &kp K_MUTE    &to NUM         &kp SPACE  &sl SYM    &none      &none &sk LSHFT        &kp DE_COMM              &kp BACKSPACE &kp LG(SPACE)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -289,7 +298,7 @@
             &none &none     &none         &none       &none       &none                                                &kp KP_EQUAL &kp KP_N7 &kp KP_N8 &kp KP_N9 &none     &none
             &none &kp LEFT  &kp DOWN      &kp UP      &kp RIGHT   &kp BACKSPACE                                        &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
             &none &kp HOME  &kp PAGE_DOWN &kp PAGE_UP &kp END     &kp ENTER     &none      &none    &none &none        &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &none     &none
-                                          &none       &sk LALT    &sk LGUI      &kp KP_DOT &to HOME &none &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
+                                          &none       &sk LALT    &sk LGUI      &kp KP_DOT &to HOME &to HOME &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
