@@ -294,10 +294,10 @@
 
         numpad {
             bindings =< 
-            &none &kp PG_DN     &kp DELETE    &kp UP        &kp BACKSPACE    &kp PG_UP                                                &kp KP_EQUAL &kp KP_N7 &kp KP_N8 &kp KP_N9 &none     &none
-            &none &hm LCTL HOME &hm LALT LEFT &hm LGUI DOWN &hm LSHIFT RIGHT &kp END                                        &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
-            &none &kp ESCAPE    &kp TAB       &none         &kp ENTER        &none     &none      &none    &none &none        &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &none     &none
-                                          &none       &sk LALT    &sk LGUI      &kp KP_DOT &to NONE &to NONE &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
+            &none &kp PG_DN     &kp DELETE    &kp UP        &kp BACKSPACE    &kp PG_UP                         &kp KP_EQUAL &kp KP_N7        &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
+            &none &hm LCTL HOME &hm LALT LEFT &hm LGUI DOWN &kp LSHIFT RIGHT &kp END                           &kp KP_PLUS  &hm LSHIFT KP_N4 &hm LGUI KP_N5 &hm LALT KP_N6 &hm LCTRL KP_N0 &none
+            &none &kp ESCAPE    &kp TAB       &none         &kp ENTER        &none     &none &none &non  &none &kp KP_MINUS &kp KP_N1        &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
+                                              &none         &to NUM          &to NONE  &none &none &none &none &kp KP_DOT   &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -305,10 +305,10 @@
 
         functions {
             bindings =< 
-            &none &none &none &none &none &none                                  &none &kp F7     &kp F8    &kp F9       &kp F12 &none
-            &none &none &none &none &none &none                                  &none &kp F4     &kp F5    &kp F6       &kp F10 &none
-            &none &none &none &none &none &none    &none    &none &none    &none &none &kp F1     &kp F2    &kp F3       &kp F11 &none
-                                    &none &sk LALT &sk LGUI &none &to NONE &none &none &sk LSHIFT &sk LCTRL &none
+            &none &none            &none           &kp C_PLAY_PAUSE  &kp C_MUTE          &none                            &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+            &none &hm LCTLR C_PREV &hm LATL C_NEXT &hm LGUI C_VOL_DN &hm LSHIFT C_VOL_UP &none                            &none &kp F4 &kp F5 &kp F6 &kp F10 &none
+            &none &none            &none           &none             &none               &none    &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
+                                                   &none             &none               &to NONE &none &none &none &none &none &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
