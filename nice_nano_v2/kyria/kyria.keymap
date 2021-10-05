@@ -295,7 +295,7 @@
         numpad {
             bindings =< 
             &none &kp PG_DN     &kp DELETE    &kp UP        &kp BACKSPACE    &kp PG_UP                                                &kp KP_EQUAL &kp KP_N7 &kp KP_N8 &kp KP_N9 &none     &none
-            &none &hm LCTL HOME &hm LALT LEFT &kp LGUI DOWN &kp LSHIFT RIGHT &kp END                                        &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
+            &none &hm LCTL HOME &hm LALT LEFT &hm LGUI DOWN &hm LSHIFT RIGHT &kp END                                        &kp KP_PLUS  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0 &none
             &none &kp ESCAPE    &kp TAB       &none         &kp ENTER        &none     &none      &none    &none &none        &kp KP_MINUS &kp KP_N1 &kp KP_N2 &kp KP_N3 &none     &none
                                           &none       &sk LALT    &sk LGUI      &kp KP_DOT &to NONE &to NONE &kp KP_COMMA &sk LSHIFT   &sk LCTRL &none
             >;
