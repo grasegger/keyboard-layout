@@ -5,7 +5,7 @@ name: Build
 jobs:
   kyria_elite_c:
     runs-on: ubuntu-latest
-    name: Elite-C for Kyria
+    name: Kyria Elite-C
 
     steps:
       - name: Checkout
@@ -38,13 +38,13 @@ jobs:
         run: |
           mkdir -p keyboards/splitkb/kyria/keymaps
           ln -s $(pwd)/../elite_c/kyria keyboards/splitkb/kyria/keymaps/karl
-      - name: Build ferris firmware
+      - name: Build kyria firmware
         working-directory: ./qmk_firmware
         run: qmk compile -km karl -kb splitkb/kyria
-      - name: Archive (Ferris Sweep)
+      - name: Archive
         uses: actions/upload-artifact@v2
         with:
-          name: elite_c_ferris_sweep
+          name: elite_c_kyria 
           path: qmk_firmware/splitkb_kyria_rev1_karl.hex
 
   kyria_nice_nano:

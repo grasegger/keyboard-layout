@@ -28,8 +28,6 @@ enum layers {
     _FUN
 };
 
-#include "keycodes.h"
-
 // clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
