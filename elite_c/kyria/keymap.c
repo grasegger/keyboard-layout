@@ -31,7 +31,7 @@ enum layers {
 // clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_MIN] = LAYOUT(
+    [_MINE] = LAYOUT(
        _______,        DE_Z,        DE_L,    DE_U,            DE_A,     DE_J,                                                DE_W,        DE_B,        DE_D,       DE_G,         DE_Y, _______,
        _______, CTL_T(DE_C), ALT_T(DE_R), GUI_T(DE_I), SFT_T(DE_E),     DE_O,                                                DE_M, SFT_T(DE_N), GUI_T(DE_T), ALT_T(DE_S), CTL_T(DE_H), _______,
        _______,        DE_V,        DE_X,   OSL(_NUM),      KC_DOT,     DE_Q, _______, _______, _______,   _______,          DE_W,        DE_F,   OSL(_NUM),     KC_COMM,        DE_K, _______,
