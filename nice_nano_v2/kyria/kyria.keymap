@@ -239,34 +239,6 @@
         bindings = <&kp>, <&kp>;
     };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_udia {
-            timeout-ms = <50>;
-            key-positions = <3 46>;
-            bindings = <&kp DE_UDIA>;
-            layers = <0>;
-        };
-        combo_adia {
-            timeout-ms = <50>;
-            key-positions = <4 46>;
-            bindings = <&kp DE_ADIA>;
-            layers = <0>;
-        };
-        combo_ss {
-            timeout-ms = <50>;
-            key-positions = <5 46>;
-            bindings = <&kp DE_SS>;
-            layers = <0>;
-        };
-        combo_odia {
-            timeout-ms = <50>;
-            key-positions = <17 46>;
-            bindings = <&kp DE_ODIA>;
-            layers = <0>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 

@@ -3,6 +3,50 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 jobs:
+    kyria_elite_c:
+    runs-on: ubuntu-latest
+    name: Elite-C for Kyria
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Cache qmk toolchain
+        uses: actions/cache@v2
+        env:
+          cache-name: qmk-toolchain
+        with:
+          path: |
+            /home/runner/.cache/pip
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install dependencies for qmk build
+        uses: mstksg/get-package@v1
+        with:
+          apt-get: git python3-pip dfu-util dfu-programmer avrdude 
+      - name: Install qmk using pip
+        working-directory: ./qmk_firmware
+        run: |
+          python3 -m pip install --user qmk
+          qmk setup --yes --home .
+      - name: Prepare qmk_firmware folder
+        working-directory: ./qmk_firmware
+        run: |
+          mkdir -p keyboards/splitkb/kyria/keymaps
+          ln -s $(pwd)/../elite_c/kyria keyboards/splitkb/kyria/keymaps/karl
+      - name: Build ferris firmware
+        working-directory: ./qmk_firmware
+        run: qmk compile -km karl -kb splitkb/kyria
+      - name: Archive (Ferris Sweep)
+        uses: actions/upload-artifact@v2
+        with:
+          name: elite_c_ferris_sweep
+          path: qmk_firmware/splitkb_kyria_rev1_karl.hex 
+
   kyria_nice_nano:
     runs-on: ubuntu-latest
     container:
