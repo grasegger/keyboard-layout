@@ -88,5 +88,5 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
       tap_code(KC_WH_U);
     }
   }
-  return true;
+  return false;
 }
