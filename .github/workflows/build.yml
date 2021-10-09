@@ -3,7 +3,7 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 jobs:
-    kyria_elite_c:
+  kyria_elite_c:
     runs-on: ubuntu-latest
     name: Elite-C for Kyria
 
@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: elite_c_ferris_sweep
-          path: qmk_firmware/splitkb_kyria_rev1_karl.hex 
+          path: qmk_firmware/splitkb_kyria_rev1_karl.hex
 
   kyria_nice_nano:
     runs-on: ubuntu-latest
