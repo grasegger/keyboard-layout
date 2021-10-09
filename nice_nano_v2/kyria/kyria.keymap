@@ -284,7 +284,7 @@
             &none &kp DE_EURO       &kp DE_UNDS      &kp DE_LBRC      &kp DE_RBRC        &kp DE_ACUT                           &kp DE_EXLM &kp DE_LABK        &kp DE_RABK      &kp DE_EQL       &kp DE_AT        &none
             &none &hm LCTRL DE_BSLS &hm LALT DE_SLSH &hm LGUI DE_LCBR &hm LSHIFT DE_RCBR &kp DE_ASTR                           &kp DE_QUES &hm LSHIFT DE_LPRN &hm LGUI DE_RPRN &hm LALT DE_MINS &hm LCTRL DE_COLN &none
             &none &kp DE_HASH       &kp DE_DLR       &kp DE_PIPE      &kp DE_TILD        &kp DE_GRV  &none &none &none &none   &kp DE_PLUS &kp DE_PERC        &kp DE_DQUO      &kp DE_QUOT      &kp DE_SCLN      &none
-e                                                    &none            &none              &none       &none &none &none &sl FUN &to NONE   &none              &none            &none
+                                                     &none            &none              &none       &none &none &none &sl FUN &to NONE    &none              &none            &none
             >;
         };
 
@@ -299,10 +299,10 @@ e                                                    &none            &none     
 
         functions {
             bindings =< 
-            &none &none           &none            &kp C_PLAY_PAUSE  &kp C_MUTE          &none                            &none &kp F7 &kp F8 &kp F9 &kp F12 &none
-            &none &hm LCTRL C_PREV &hm LALT C_NEXT &hm LGUI C_VOL_DN &hm LSHIFT C_VOL_UP &none                            &none &kp F4 &kp F5 &kp F6 &kp F10 &none
-            &none &none           &none            &none             &none               &none    &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
-                                                   &none             &none               &to NONE &none &none &none &none &none &none  &none
+            &none &none           &none            &kp C_PLAY_PAUSE  &kp C_MUTE          &none                         &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+            &none &hm LCTRL C_PREV &hm LALT C_NEXT &hm LGUI C_VOL_DN &hm LSHIFT C_VOL_UP &none                         &none &kp F4 &kp F5 &kp F6 &kp F10 &none
+            &none &none           &none            &none             &none               &none &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
+                                                   &none             &none               &none &none &none &none &none &none &none  &none
             >;
         };
     };
