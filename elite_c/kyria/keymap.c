@@ -32,10 +32,10 @@ enum layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MINE] = LAYOUT(
-       _______, DE_Z, DE_L,      DE_U,          DE_A,   DE_J,                                                      DE_W,          DE_B,      DE_D,    DE_G, DE_Y, _______,
-       _______, DE_C, DE_R,      DE_I,          DE_E,   DE_O,                                                      DE_M,          DE_N,      DE_T,    DE_S, DE_H, _______,
-       _______, DE_V, DE_X, OSL(_NUM),        KC_DOT,   DE_Q,       _______, _______, _______,   _______,          DE_P,          DE_F, OSL(_SYM), KC_COMM, DE_K, _______,
-                              _______, OSM(MOD_LALT), KC_SPC, OSM(MOD_LGUI), _______, _______, OSL(_SYM), OSM(MOD_LSFT), OSM(MOD_LCTL), _______
+       _______, DE_Z, DE_L,      DE_U,          DE_A,   DE_J,                                                    DE_W,          DE_B,      DE_D,    DE_G, DE_Y, _______,
+       _______, DE_C, DE_R,      DE_I,          DE_E,   DE_O,                                                    DE_M,          DE_N,      DE_T,    DE_S, DE_H, _______,
+       _______, DE_V, DE_X, OSL(_NUM),        KC_DOT,   DE_Q,       _______, _______, _______, _______,          DE_P,          DE_F, OSL(_SYM), KC_COMM, DE_K, _______,
+                              _______, OSM(MOD_LALT), KC_SPC, OSM(MOD_LGUI), _______, _______, KC_BSPC, OSM(MOD_LSFT), OSM(MOD_LCTL), _______
     ),
 
     [_SYM] = LAYOUT(
