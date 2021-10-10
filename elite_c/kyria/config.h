@@ -16,10 +16,6 @@
 
 #pragma once
 
-#define TAPPING_TERM 100
-#define IGNORE_MOD_TAP_INTERRUPT
-#define TAPPING_FORCE_HOLD_PER_KEY
-
 // comment the next line to build a firmware that works on linux and windows german qwertz layouts
 #define OSX
 
