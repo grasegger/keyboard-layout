@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NUM] = LAYOUT(
-       _______, KC_PGDN , KC_DEL,    KC_UP,       KC_BSPC,   KC_PGUP,                                                 KC_PEQL,         KC_P7,   KC_P8, KC_P9, KC_PSLS, _______,
-       _______, KC_HOME, KC_LEFT,  KC_DOWN,      KC_RIGHT,    KC_END,                                                 KC_PPLS,         KC_P4,   KC_P5, KC_P6,   KC_P0, _______,
-       _______,  KC_ESC , KC_TAB, TO(_NUM),        KC_ENT, TO(_MINE),       _______, _______, _______, _______,       KC_PMNS,         KC_P1,   KC_P2, KC_P3, KC_PAST, _______,
+       _______, KC_PGDN , KC_DEL,    KC_UP,       KC_BSPC,   KC_PGUP,                                                 KC_PEQL,         KC_7,   KC_8, KC_9, KC_PSLS, _______,
+       _______, KC_HOME, KC_LEFT,  KC_DOWN,      KC_RIGHT,    KC_END,                                                 KC_PPLS,         KC_4,   KC_5, KC_6,   KC_0, _______,
+       _______,  KC_ESC , KC_TAB, TO(_NUM),        KC_ENT, TO(_MINE),       _______, _______, _______, _______,       KC_PMNS,         KC_1,   KC_2, KC_3, KC_PAST, _______,
                                    _______, OSM(MOD_LALT), KC_KP_DOT, OSM(MOD_LGUI), _______, _______, _______, OSM(MOD_LSFT), OSM(MOD_LCTL), _______
     ),
 
