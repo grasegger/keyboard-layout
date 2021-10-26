@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        _______, DE_EURO, DE_UNDS, DE_LBRC,       DE_RBRC, DE_ACUT,                                                 DE_EXLM,       DE_LABK,   DE_RABK,  DE_EQL, DE_PERC, _______,
        _______, DE_BSLS, DE_SLSH, DE_LCBR,       DE_RCBR, DE_ASTR,                                                 DE_QUES,       DE_LPRN,   DE_RPRN, DE_MINS, DE_COLN, _______,
        _______, DE_HASH,  DE_DLR, DE_PIPE,       DE_TILD,  DE_GRV,       _______, _______, _______, _______,       DE_PLUS,       DE_DQUO, OSL(_FUN), DE_QUOT, DE_SCLN, _______,
-                                  _______, OSM(MOD_LALT),   DE_AT, OSM(MOD_LGUI), _______, _______, _______, OSM(MOD_LSFT), OSM(MOD_LCTL), _______
+                                  _______, OSM(MOD_LALT),   DE_AT, OSM(MOD_LGUI), _______, _______, DE_AMPR, OSM(MOD_LSFT), OSM(MOD_LCTL), _______
     ),
 
     [_NUM] = LAYOUT(
