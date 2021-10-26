@@ -236,7 +236,7 @@
             bindings = <
             &none &kp DE_Z &kp DE_L &kp DE_U &kp DE_A   &sk DE_J                                             &kp DE_W  &kp DE_B  &kp DE_D &kp DE_G    &kp DE_Y &none
             &none &kp DE_C &kp DE_R &kp DE_I &kp DE_E   &kp DE_O                                             &kp DE_M  &kp DE_N  &kp DE_T &kp DE_S    &kp DE_H &none
-            &none &kp DE_V &kp DE_X &sl NUM  &kp DE_DOT &kp DE_Q  &sk LCTRL &none      &none   &sk FUN       &kp DE_P  &kp DE_F  &sl SYM  &kp DE_COMM &kp DE_K &none
+            &none &kp DE_V &kp DE_X &sl NUM  &kp DE_DOT &kp DE_Q  &sk LCTRL &none      &none   &sl FUN       &kp DE_P  &kp DE_F  &sl SYM  &kp DE_COMM &kp DE_K &none
                                     &none    &sk LALT   &kp SPACE &sk LGUI  &sk LSHIFT &to NUM &kp BACKSPACE &sk LSHFT &sk LCTRL &none
             >;
         };
