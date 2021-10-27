@@ -234,27 +234,52 @@
         compatible = "zmk,combos";
         combo_adia {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             bindings = <&kp DE_ADIA>;
             layers = <0>;
         };
         comb_odia {
             timeout-ms = <50>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
             bindings = <&kp DE_ODIA>;
             layers = <0>;
         };
         comb_udia {
             timeout-ms = <50>;
-            key-positions = <34 35>;
+            key-positions = <35 36>;
             bindings = <&kp DE_UDIA>;
             layers = <0>;
         };        
         comb_ss {
             timeout-ms = <50>;
-            key-positions = <35 36>;
+            key-positions = <36 37>;
             bindings = <&kp DE_SS>;
             layers = <0>;
+        };
+        comb_slnum {
+            timeout-ms = <300>;
+            key-positions = <17 18>;
+            bindings = <&sl NUM>;
+        };
+        comb_slsym {
+            timeout-ms = <300>;
+            key-positions = <21 22>;
+            bindings = <&sl SYM>;
+        };
+        comb_slfun {
+            timeout-ms = <300>;
+            key-positions = <22 23>;
+            bindings = <&sl FUN>;
+        };
+        comb_toalpha {
+            timeout-ms = <300>;
+            key-positions = <21 22 23>;
+            bindings = <&to NUM>;
+        };
+        comb_tonum {
+            timeout-ms = <300>;
+            key-positions = <16 17 18>;
+            bindings = <&to NUM>;
         };
     };
 };
