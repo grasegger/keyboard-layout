@@ -256,34 +256,37 @@
             bindings = <&kp DE_SS>;
             layers = <0>;
         };
-        comb_slnum {
-            timeout-ms = <300>;
-            key-positions = <17 18>;
-            bindings = <&sl NUM>;
-        };
-        comb_slsym {
-            timeout-ms = <300>;
+        comb_backspace {
+            timeout-ms = <50>;
             key-positions = <21 22>;
-            bindings = <&sl SYM>;
+            bindings = <&kp BACKSPACE>;
         };
-        comb_slfun {
-            timeout-ms = <300>;
+        comb_escape {
+            timeout-ms = <50>;
             key-positions = <22 23>;
-            bindings = <&sl FUN>;
+            bindings = <&kp BACKSPACE>;
         };
-        comb_toalpha {
-            timeout-ms = <300>;
-            key-positions = <21 22 23>;
-            bindings = <&to NUM>;
+        comb_left {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LEFT>;
         };
-        comb_tonum {
-            timeout-ms = <300>;
-            key-positions = <16 17 18>;
-            bindings = <&to NUM>;
+        comb_up {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp UP>;
+        };
+        comb_down {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp DOWN>;
+        };
+        comb_right {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp RIGHT>;
         };
     };
-
-    // backspace combo, escape combo, enter, tab,
 };
 
 / {
@@ -312,7 +315,7 @@
             bindings =< 
             &none &kp PG_DN       &kp DELETE      &kp UP        &kp BACKSPACE   &kp PG_UP                          &kp KP_EQUAL &kp KP_N7       &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
             &none &mt LCTRL HOME  &mt LALT LEFT   &mt LGUI DOWN &mt LSHFT RIGHT &kp END                            &kp KP_PLUS  &mt LSHFT KP_N4 &mt LGUI KP_N5 &mt LALT KP_N6 &mt LCTRL KP_N0 &none
-            &none &none           &kp TAB         &to NUM       &kp ENTER       &to NONE   &none &none &none &none &kp KP_MINUS &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
+            &none &kp ESCAPE      &kp TAB         &to NUM       &kp ENTER       &to NONE   &none &none &none &none &kp KP_MINUS &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
                                                   &none         &none           &kp DE_DOT &none &none &none &none &kp DE_COMM &none &none
             >;
         };
