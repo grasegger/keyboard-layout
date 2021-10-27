@@ -230,6 +230,36 @@
 #define NONE 0
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_adia {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp DE_ADIA>;
+            layers = <0>;
+        };
+        comb_odia {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp DE_ODIA>;
+            layers = <0>;
+        };
+        comb_udia {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            bindings = <&kp DE_UDIA>;
+            layers = <0>;
+        };        
+        comb_ss {
+            timeout-ms = <50>;
+            key-positions = <35 36>;
+            bindings = <&kp DE_SS>;
+            layers = <0>;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -244,7 +274,7 @@
 
         symbols {
             bindings =< 
-            &none &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_ACUT                                                &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR &none
+            &none &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC                                                &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR &none
             &none &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR                                                &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN &none
             &none &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_UDIA &none       &none       &kp DE_SS  &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &none
                                           &none       &sk LALT    &kp DE_AT   &sk LGUI    &kp DE_ADIA &kp DE_ODIA &kp ESCAPE &sk LSHFT &sk LCTRL &none
