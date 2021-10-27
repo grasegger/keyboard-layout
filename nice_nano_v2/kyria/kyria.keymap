@@ -258,32 +258,32 @@
         };
         comb_backspace {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <19 20>;
             bindings = <&kp BACKSPACE>;
         };
         comb_escape {
             timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp BACKSPACE>;
+            key-positions = <20 21>;
+            bindings = <&kp ESCAPE>;
         };
         comb_left {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <2 3>;
             bindings = <&kp LEFT>;
         };
         comb_up {
             timeout-ms = <50>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             bindings = <&kp UP>;
         };
         comb_down {
             timeout-ms = <50>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             bindings = <&kp DOWN>;
         };
         comb_right {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <8 9>;
             bindings = <&kp RIGHT>;
         };
     };
