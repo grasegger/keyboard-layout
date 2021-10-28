@@ -294,12 +294,13 @@
         comb_to_num {
             timeout-ms = <100>;
             key-positions = <19 20 21>;
-            bindings = <&sl NUM>;
+            bindings = <&to NUM>;
         };
         comb_to_alpha {
             timeout-ms = <100>;
             key-positions = <14 15 16>;
-            bindings = <&sl NUM>;
+            bindings = <&to DEFAULT>;
+            layers = <1 2 3>;
         };
         comb_sl_fun {
             timeout-ms = <100>;
