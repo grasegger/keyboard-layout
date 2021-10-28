@@ -238,38 +238,73 @@
     combos {
         compatible = "zmk,combos";
         combo_adia {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <27 28>;
             bindings = <&kp DE_ADIA>;
             layers = <0>;
         };
         comb_odia {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <26 27>;
             bindings = <&kp DE_ODIA>;
             layers = <0>;
         };
         comb_udia {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <35 36>;
             bindings = <&kp DE_UDIA>;
             layers = <0>;
         };        
         comb_ss {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <36 37>;
             bindings = <&kp DE_SS>;
             layers = <0>;
         };
         comb_backspace {
-            timeout-ms = <50>;
-            key-positions = <19 20>;
+            timeout-ms = <100>;
+            key-positions = <20 21>;
             bindings = <&kp BACKSPACE>;
         };
         comb_escape {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
+            timeout-ms = <100>;
+            key-positions = <8 9>;
             bindings = <&kp ESCAPE>;
+        };
+        comb_sl_sym {
+             timeout-ms = <100>;
+            key-positions = <19 20>;
+            bindings = <&sl SYM>;
+        };
+        comb_enter {
+            timeout-ms = <100>;
+            key-positions = <14 15>;
+            bindings = <&kp ENTER>;
+        };
+        comb_tab {
+            timeout-ms = <100>;
+            key-positions = <2 3>;
+            bindings = <&kp TAB>;
+        };
+        comb_sl_num {
+            timeout-ms = <100>;
+            key-positions = <15 16>;
+            bindings = <&sl NUM>;
+        };
+        comb_to_num {
+            timeout-ms = <100>;
+            key-positions = <19 20 21>;
+            bindings = <&sl NUM>;
+        };
+        comb_to_alpha {
+            timeout-ms = <100>;
+            key-positions = <14 15 16>;
+            bindings = <&sl NUM>;
+        };
+        comb_sl_fun {
+            timeout-ms = <100>;
+            key-positions = <7 8>;
+            bindings = <&sl FUN>;
         };
     };
 };
@@ -282,10 +317,11 @@
             bindings = <
             &none &kp DE_Z       &kp DE_L      &kp DE_U      &kp DE_A         &sk DE_J                          &kp DE_W  &kp DE_B       &kp DE_D      &kp DE_G      &kp DE_Y       &none
             &none &mt LCTRL DE_C &mt LALT DE_R &mt LGUI DE_I &mt LSHFT DE_E   &kp DE_O                          &kp DE_M  &mt LSHFT DE_N &mt LGUI DE_T &mt LALT DE_S &mt LCTRL DE_H &none
-            &none &kp DE_V       &kp DE_X      &sl NUM       &kp DE_DOT       &kp DE_Q  &none &none &none &none &kp DE_P  &kp DE_F       &sl SYM       &kp DE_COMM   &kp DE_K       &none
-                                               &none         &none            &kp SPACE &none &none &none &none &sk LSHFT &none          &none
+            &none &kp DE_V       &kp DE_X      &kp DE_P      &kp DE_Q         &kp SPACE &none &none &none &none &sk LSHFT &kp DE_F       &kp DE_DOT    &kp DE_COMM   &kp DE_K       &none
+                                               &none         &none            &none     &none &none &none &none &none     &none          &none
             >;
         };
+        // dot, comma
 
         symbols {
             bindings =< 
@@ -298,9 +334,9 @@
 
         numpad {
             bindings =< 
-            &none &kp PG_DN       &kp DELETE      &kp UP        &kp BACKSPACE   &kp PG_UP                          &kp KP_EQUAL &kp KP_N7       &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
+            &none &kp PG_DN       &kp DELETE      &kp UP        &none           &kp PG_UP                          &kp KP_EQUAL &kp KP_N7       &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
             &none &mt LCTRL HOME  &mt LALT LEFT   &mt LGUI DOWN &mt LSHFT RIGHT &kp END                            &kp KP_PLUS  &mt LSHFT KP_N4 &mt LGUI KP_N5 &mt LALT KP_N6 &mt LCTRL KP_N0 &none
-            &none &kp ESCAPE      &kp TAB         &to NUM       &kp ENTER       &to NONE   &none &none &none &none &kp KP_MINUS &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
+            &none &none           &kp TAB         &to NUM       &kp ENTER       &to NONE   &none &none &none &none &kp KP_MINUS &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
                                                   &none         &none           &kp DE_DOT &none &none &none &none &kp DE_COMM &none &none
             >;
         };
