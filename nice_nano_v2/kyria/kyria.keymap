@@ -265,11 +265,13 @@
             timeout-ms = <100>;
             key-positions = <20 21>;
             bindings = <&kp BACKSPACE>;
+            layers = <0>;
         };
         comb_escape {
             timeout-ms = <100>;
             key-positions = <8 9>;
             bindings = <&kp ESCAPE>;
+            layers = <0>;
         };
         comb_sl_sym {
              timeout-ms = <100>;
@@ -280,11 +282,13 @@
             timeout-ms = <100>;
             key-positions = <14 15>;
             bindings = <&kp ENTER>;
+            layers = <0>;
         };
         comb_tab {
             timeout-ms = <100>;
             key-positions = <2 3>;
             bindings = <&kp TAB>;
+            layers = <0>;
         };
         comb_sl_num {
             timeout-ms = <100>;
@@ -307,6 +311,12 @@
             key-positions = <7 8>;
             bindings = <&sl FUN>;
         };
+        comb_at {
+            timeout-ms = <100>;
+            bindings = <&kp DE_AT>;
+            key-positions = <14 15>;
+            layers = <1>;
+        };
     };
 };
 
@@ -316,38 +326,38 @@
 
         default_layer {
             bindings = <
-            &none &kp DE_Z       &kp DE_L      &kp DE_U      &kp DE_A         &sk DE_J                          &kp DE_W  &kp DE_B       &kp DE_D      &kp DE_G      &kp DE_Y       &none
-            &none &mt LCTRL DE_C &mt LALT DE_R &mt LGUI DE_I &mt LSHFT DE_E   &kp DE_O                          &kp DE_M  &mt LSHFT DE_N &mt LGUI DE_T &mt LALT DE_S &mt LCTRL DE_H &none
-            &none &kp DE_V       &kp DE_X      &kp DE_P      &kp DE_Q         &kp SPACE &none &none &none &none &sk LSHFT &kp DE_F       &kp DE_DOT    &kp DE_COMM   &kp DE_K       &none
-                                               &none         &none            &none     &none &none &none &none &none     &none          &none
+            &none &kp DE_Z      &kp DE_L       &kp DE_U       &kp DE_A      &sk DE_J                         &kp DE_W &kp DE_B      &kp DE_D       &kp DE_G       &kp DE_Y      &none
+            &none &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &kp DE_O                         &kp DE_M &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H &none
+            &none &kp DE_V      &kp DE_X       &kp DE_P       &kp SPACE     &kp DE_Q &none &none &none &none &kp DE_F &sk LSHFT     &kp DE_DOT     &kp DE_COMM    &kp DE_K      &none
+                                               &none         &none          &none    &none &none &none &none &none     &none        &none
             >;
         };
         // dot, comma
 
         symbols {
             bindings =< 
-            &none &kp DE_EURO       &kp DE_UNDS      &kp DE_LBRC      &kp DE_RBRC       &kp DE_CIRC                         &kp DE_EXLM &kp DE_LABK       &kp DE_RABK      &kp DE_EQL       &kp DE_AMPR       &none
-            &none &mt LCTRL DE_BSLS &mt LALT DE_SLSH &mt LGUI DE_LCBR &mt LSHFT DE_RCBR &kp DE_ASTR                         &kp DE_QUES &mt LSHFT DE_LPRN &mt LGUI DE_RPRN &mt LALT DE_MINS &mt LCTRL DE_COLN &none
-            &none &kp DE_HASH       &kp DE_DLR       &kp DE_PIPE      &kp DE_TILD       &kp DE_GRV  &none &none &none &none &kp DE_PLUS &kp DE_PERC       &kp DE_DQUO      &kp DE_QUOT      &kp DE_SCLN       &none
-                                                     &none            &none             &kp DE_AT   &none &none &none &none &sl FUN     &none             &none
+            &none &kp DE_EURO      &kp DE_UNDS       &kp DE_LBRC       &kp DE_RBRC      &kp DE_CIRC                         &kp DE_EXLM &kp DE_LABK      &kp DE_RABK       &kp DE_EQL        &kp DE_AMPR      &none
+            &none &mt LALT DE_BSLS &mt LSHFT DE_SLSH &mt LCTRL DE_LCBR &mt LGUI DE_RCBR &kp DE_ASTR                         &kp DE_QUES &mt LGUI DE_LPRN &mt LCTRL DE_RPRN &mt LSHFT DE_MINS &mt LALT DE_COLN &none
+            &none &kp DE_HASH      &kp DE_DLR        &kp DE_PIPE       &kp DE_TILD      &kp DE_GRV  &none &none &none &none &kp DE_PLUS &kp DE_PERC      &kp DE_DQUO       &kp DE_QUOT       &kp DE_SCLN      &none
+                                                     &none             &none            &none       &none &none &none &none &none        &none             &none
             >;
         };
 
         numpad {
             bindings =< 
-            &none &kp PG_DN       &kp DELETE      &kp UP        &none           &kp PG_UP                          &kp KP_EQUAL &kp KP_N7       &kp KP_N8      &kp KP_N9      &kp KP_SLASH    &none
-            &none &mt LCTRL HOME  &mt LALT LEFT   &mt LGUI DOWN &mt LSHFT RIGHT &kp END                            &kp KP_PLUS  &mt LSHFT KP_N4 &mt LGUI KP_N5 &mt LALT KP_N6 &mt LCTRL KP_N0 &none
-            &none &none           &kp TAB         &to NUM       &kp ENTER       &to NONE   &none &none &none &none &kp KP_MINUS &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_MULTIPLY &none
-                                                  &none         &none           &kp DE_DOT &none &none &none &none &kp DE_COMM &none &none
+            &none &kp PG_DN     &kp DELETE     &kp UP         &none          &kp PG_UP                          &kp KP_EQUAL &kp KP_N7      &kp KP_N8       &kp KP_N9       &kp KP_SLASH    &none
+            &none &mt LALT HOME &mt LSHFT LEFT &mt LCTRL DOWN &mt LGUI RIGHT &kp END                            &kp KP_PLUS  &mt LGUI KP_N4 &mt LCTRL KP_N5 &mt LSHFT KP_N6 &mt LALT KP_N0  &none
+            &none &none         &none          &kp ENTER      &kp DE_COMM    &kp DE_DOT &none &none &none &none &kp KP_MINUS &kp KP_N1      &kp KP_N2       &kp KP_N3       &kp KP_MULTIPLY &none
+                                               &none          &none          &none      &none &none &none &none &none        &none          &none
             >;
         };
 
         functions {
             bindings =< 
-            &none &bt BT_CLR       &bt BT_PRV      &bt BT_NXT        &bt BT_SEL 0 &bt BT_SEL 1                             &none      &kp F7 &kp F8 &kp F9 &kp F12 &none
-            &none &mt LCTRL C_PREV &mt LALT C_NEXT &mt LGUI C_VOL_DN &kp C_VOL_UP &none                                    &none      &kp F4 &kp F5 &kp F6 &kp F10 &none
-            &none &none            &none           &none             &none        &none            &none &none &none &none &none      &kp F1 &kp F2 &kp F3 &kp F11 &none
-                                                   &none             &none        &kp C_PLAY_PAUSE &none &none &none &none &kp C_MUTE &none  &none
+            &none &bt BT_CLR      &bt BT_PRV       &bt BT_NXT         &bt BT_SEL 0      &bt BT_SEL 1                         &none &kp F7 &kp F8 &kp F9 &kp F12 &none
+            &none &mt LALT C_PREV &mt LSHFT C_NEXT &mt LCTRL C_VOL_DN &mt LGUI C_VOL_UP &none                                &none &kp F4 &kp F5 &kp F6 &kp F10 &none
+            &none &none           &none            &kp C_PLAY_PAUSE   &kp C_MUTE        &none        &none &none &none &none &none &kp F1 &kp F2 &kp F3 &kp F11 &none
+                                                   &none              &none             &none        &none &none &none &none &none &none  &none
             >;
         };
     };
