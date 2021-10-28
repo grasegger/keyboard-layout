@@ -271,26 +271,6 @@
             key-positions = <20 21>;
             bindings = <&kp ESCAPE>;
         };
-        comb_left {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&kp LEFT>;
-        };
-        comb_up {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp UP>;
-        };
-        comb_down {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp DOWN>;
-        };
-        comb_right {
-            timeout-ms = <50>;
-            key-positions = <8 9>;
-            bindings = <&kp RIGHT>;
-        };
     };
 };
 
