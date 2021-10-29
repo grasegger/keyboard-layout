@@ -242,7 +242,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "comma_dot";
         #binding-cells = <0>;
-        tapping_term_ms = <50>;
+        tapping_term_ms = <100>;
         bindings = <&kp DE_COMM>, <&kp DE_DOT>;
         };
     };
