@@ -245,7 +245,7 @@
             tapping_term_ms = <100>;
             bindings = <&kp DE_COMM>, <&kp DE_DOT>;
         };
-/*
+
         sym_num: sym_num {
             compatible = "zmk,behavior-tap-dance";
             label = "sym_num";
@@ -301,7 +301,7 @@
             tapping_term_ms = <100>;
             bindings = <&kp DE_PLUS>, <&kp DE_MINS>;
         };
-        */
+        
     };
 
     combos {
@@ -348,7 +348,7 @@
 
         symbols {
             bindings =< 
-            &none &kp DE_RT        &kp DE_UNDS       &kp DE_LBRC       &kp DE_RBRC      &kp DE_CIRC                         &kp DE_PERC &kp DE_LABK      &kp DE_RABK       &kp DE_EQL        &kp DE_AMPR      &none
+            &none &kp DE_AT        &kp DE_UNDS       &kp DE_LBRC       &kp DE_RBRC      &kp DE_CIRC                         &kp DE_PERC &kp DE_LABK      &kp DE_RABK       &kp DE_EQL        &kp DE_AMPR      &none
             &none &mt LALT DE_BSLS &mt LSHFT DE_SLSH &mt LCTRL DE_LCBR &mt LGUI DE_RCBR &kp DE_ASTR                         &ques_exlm  &mt LGUI DE_LPRN &mt LCTRL DE_RPRN &mt LSHFT DE_MINS &mt LALT DE_COLN &none
             &none &kp DE_HASH      &dollar_euro      &kp DE_PIPE       &kp DE_TILD      &kp DE_GRV  &none &none &none &none &kp DE_PLUS &quotes          &none             &to DEFAULT       &kp DE_SCLN      &none
                                                      &none             &none            &none       &none &none &none &none &none       &none            &none
