@@ -242,7 +242,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "comma_dot";
         #binding-cells = <0>;
-        tapping_term_ms = <250>;
+        tapping_term_ms = <50>;
         bindings = <&kp DE_COMM>, <&kp DE_DOT>;
         };
     };
@@ -341,10 +341,9 @@
             &none &kp DE_Z      &kp DE_L       &kp DE_U       &kp DE_A      &sk DE_J                         &kp DE_W &kp DE_B      &kp DE_D       &kp DE_G       &kp DE_Y      &none
             &none &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &kp DE_O                         &kp DE_M &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H &none
             &none &kp DE_V      &kp DE_X       &kp DE_P       &kp SPACE     &kp DE_Q &none &none &none &none &kp DE_F &sk LSHFT     &none          &comma_dot     &kp DE_K      &none
-                                               &none         &none          &none    &none &none &none &none &none     &none        &none
+                                               &none          &none         &none    &none &none &none &none &none    &none        &none
             >;
         };
-        // dot, comma
 
         symbols {
             bindings =< 
