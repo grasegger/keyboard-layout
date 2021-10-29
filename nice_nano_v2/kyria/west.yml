@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: kurtis-lew
+      url-base: https://github.com/kurtis-lew
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: kurtis-lew
+      revision: pr_tap_dance_june
       import: app/west.yml
   self:
     path: config
