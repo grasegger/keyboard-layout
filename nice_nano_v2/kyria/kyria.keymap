@@ -251,7 +251,7 @@
             label = "sym_num";
             #binding-cells = <0>;
             tapping_term_ms = <100>;
-            bindings = <&to SYM>, <&to NUM>, <&to FUN>;
+            bindings = <&to SYM>, <&to NUM>;
         };
 
         dollar_euro: dollar_euro {
