@@ -333,7 +333,7 @@
             bindings = <
             &none &kp DE_Z      &kp DE_L       &kp DE_U       &kp DE_A      &sk DE_J                         &kp DE_W &kp DE_B         &kp DE_D       &kp DE_G       &kp DE_Y      &none
             &none &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &kp DE_O                         &kp DE_M &mt LGUI DE_N    &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H &none
-            &none &kp DE_V      &kp DE_X       &kp DE_P       &space_enter  &kp DE_Q &none &none &none &none &kp DE_F &shift_backspace &sl SYM        &comma_dot     &kp DE_K      &none
+            &none &kp DE_V      &kp DE_X       &kp DE_P       &kp DE_Q  &space_enter &none &none &none &none &shift_backspace &kp DE_F &sl SYM        &comma_dot     &kp DE_K      &none
                                                &none          &none         &none    &none &none &none &none &none    &none            &none
             >;
         };
