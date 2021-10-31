@@ -311,6 +311,13 @@
             bindings = <&kp DE_LPRN>, <&kp DE_RPRN>;
         };
     
+        cbr: cbr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "cbr";
+            #binding-cells = <0>;
+            tapping_term_ms = <250>;
+            bindings = <&kp DE_LCBR>, <&kp DE_RCBR>;
+        };
     };
 
     combos {
