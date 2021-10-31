@@ -350,7 +350,7 @@
             bindings = <
             &none &kp DE_Z      &kp DE_L       &kp DE_U       &kp DE_A      &none                             &none          &kp DE_B      &kp DE_D       &kp DE_G       &y_q          &none
             &none &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &none                             &none          &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H &none
-            &none &v_j          &kp DE_X       &kp DE_P       &kp DE_O      &kp SPACE &none &none &none &none &sk LEFT_SHIFT &kp DE_F      &sl SYM        &kp DE_M       &k_w          &none
+            &none &v_j          &kp DE_X       &kp DE_P       &kp DE_O      &kp SPACE &none &none &none &none &sk LEFT_SHIFT &kp DE_F      &sl LAYER_ONE  &kp DE_M       &k_w          &none
                                                &none          &none         &none     &none &none &none &none &none          &none         &none
             >;
         };
