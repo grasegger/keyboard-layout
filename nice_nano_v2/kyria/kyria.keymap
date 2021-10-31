@@ -371,7 +371,7 @@
             &none &kp DE_PIPE      &kp DE_UNDS       &kp DE_TILD       &kp DE_EURO      &to DEFAULT &none &none &none &none &kp KP_N0 &kp KP_N1 &to LAYER_THREE &kp KP_N2 &kp KP_N3 &none
                                                      &none             &none            &none       &none &none &none &none &none     &none     &none
             >;
-        }
+        };
 
         layer_three {
             bindings =< 
