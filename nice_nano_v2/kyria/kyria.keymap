@@ -359,16 +359,16 @@
             bindings = <
             &none &kp DE_AMPR &kp DE_AMPR &quotes    &kp DE_AT   &none                               &none         &cbr          &prn           &brc         &abk           &none
             &none &kp DE_SCLN &kp DE_COLN &ques_exlm &kp DE_COMM &none                               &none         &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RIGHT &none
-            &none &kp DE_HASH &kp DE_DLR  &kp DE_DOT &kp DE_BSLS &to DEFAULT &none &none &none &none &kp BACKSPACE &kp TAB       &sl LAYER_TWO  &kp ENTER    &kp ESCAPE     &none
+            &none &kp DE_HASH &kp DE_DLR  &kp DE_DOT &kp DE_BSLS &to DEFAULT &none &none &none &none &kp BACKSPACE &kp TAB       &to LAYER_TWO  &kp ENTER    &kp ESCAPE     &none
                                           &none      &none       &none       &none &none &none &none &none         &none         &none
             >;
         };
 
         layer_two {
             bindings = <
-            &none &kp DE_CIRC      &kp DE_CIRC       &kp DE_DEG        &kp DE_PERC      &none                               &none     &kp KP_N7 &kp DE_BACKSPACE &kp KP_N8 &kp KP_N9 &none
-            &none &mt LALT DE_ASTR &mt LSHFT DE_SLSH &mt LCTRL DE_PLUS &mt LGUI DE_MINS &none                               &none     &kp KP_N4 &kp DE_EQL       &kp KP_N5 &kp KP_N6 &none
-            &none &kp DE_PIPE      &kp DE_UNDS       &kp DE_TILD       &kp DE_EURO      &to DEFAULT &none &none &none &none &kp KP_N0 &kp KP_N1 &sl LAYER_THREE  &kp KP_N2 &kp KP_N3 &none
+            &none &kp DE_CIRC      &kp DE_CIRC       &kp DE_DEG        &kp DE_PERC      &none                               &none     &kp KP_N7 &kp BACKSPACE   &kp KP_N8 &kp KP_N9 &none
+            &none &mt LALT DE_ASTR &mt LSHFT DE_SLSH &mt LCTRL DE_PLUS &mt LGUI DE_MINS &none                               &none     &kp KP_N4 &kp DE_EQL      &kp KP_N5 &kp KP_N6 &none
+            &none &kp DE_PIPE      &kp DE_UNDS       &kp DE_TILD       &kp DE_EURO      &to DEFAULT &none &none &none &none &kp KP_N0 &kp KP_N1 &to LAYER_THREE &kp KP_N2 &kp KP_N3 &none
                                                      &none             &none            &none       &none &none &none &none &none     &none     &none
             >;
         }
