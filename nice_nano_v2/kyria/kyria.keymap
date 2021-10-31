@@ -357,9 +357,9 @@
 
         layer_one {
             bindings = <
-            &none &kp DE_AMPR &kp DE_AMPR &quotes    &kp DE_AT   &none                               &none         &cbr          &prn          &brc         &abk           &none
-            &none &kp DE_SCLN &kp DE_COLN &ques_exlm &kp DE_COMM &none                               &none         &mt LGUI LEFT &mt LCTR DOWN &mt LSHFT UP &mt LALT RIGHT &none
-            &none &kp DE_HASH &kp DE_DLR  &kp DE_DOT &kp DE_BSLS &to DEFAULT &none &none &none &none &kp BACKSPACE &kp TAB       &sl LAYER_TWO &kp ENTER    &kp ESCAPE     &none
+            &none &kp DE_AMPR &kp DE_AMPR &quotes    &kp DE_AT   &none                               &none         &cbr          &prn           &brc         &abk           &none
+            &none &kp DE_SCLN &kp DE_COLN &ques_exlm &kp DE_COMM &none                               &none         &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RIGHT &none
+            &none &kp DE_HASH &kp DE_DLR  &kp DE_DOT &kp DE_BSLS &to DEFAULT &none &none &none &none &kp BACKSPACE &kp TAB       &sl LAYER_TWO  &kp ENTER    &kp ESCAPE     &none
                                           &none      &none       &none       &none &none &none &none &none         &none         &none
             >;
         };
