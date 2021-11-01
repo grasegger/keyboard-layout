@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "a_dux.dtsi"
+#include "anna.dtsi"
