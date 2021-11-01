@@ -4,16 +4,14 @@ name: Build
 
 jobs:
 
-  kyria_nice_nano:
+  anna_nice_nano:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
-    name: Kyria nice!nano
+    name: Anna nice!nano
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Prepare build env for west
-        run: mv nice_nano_v2/kyria config
       - name: Cache west modules
         uses: actions/cache@v2
         env:
@@ -36,29 +34,29 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Kyria Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Kyria DTS File
+      - name: West Build (Anna Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=anna_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Anna DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: Kyria Left Kconfig file
+      - name: Anna Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 kyria_left_nice_nano_v2.uf2
-      - name: Archive (Kyria Left)
+        run: cp build/zephyr/zmk.uf2 anna_left_nice_nano_v2.uf2
+      - name: Archive (Anna Left)
         uses: actions/upload-artifact@v2
         with:
-          name: kyria_nice_nano_v2
-          path: kyria_left_nice_nano_v2.uf2
-      - name: West Build (Kyria Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=kyria_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          name: anna_nice_nano_v2
+          path: anna_left_nice_nano_v2.uf2
+      - name: West Build (Anna Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=anna_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
-      - name: Kyria Right Kconfig file
+      - name: Anna Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 kyria_right_nice_nano_v2.uf2
-      - name: Archive (Kyria Right)
+        run: cp build/zephyr/zmk.uf2 anna_right_nice_nano_v2.uf2
+      - name: Archive (Anna Right)
         uses: actions/upload-artifact@v2
         with:
-          name: kyria_nice_nano_v2
-          path: kyria_right_nice_nano_v2.uf2
+          name: anna_nice_nano_v2
+          path: anna_right_nice_nano_v2.uf2

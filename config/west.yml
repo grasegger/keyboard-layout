@@ -1,0 +1,13 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: grasegger
+      url-base: https://github.com/grasegger
+  projects:
+    - name: zmk
+      remote: grasegger
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
