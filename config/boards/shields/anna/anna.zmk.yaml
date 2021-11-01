@@ -1,0 +1,12 @@
+file_format: "1"
+id: anna
+name: Anna
+type: shield
+url: github.com/grasegger/keyboards
+requires: [pro_micro]
+features:
+  - keys
+  - trackball
+siblings:
+  - anna_left
+  - anna_right
