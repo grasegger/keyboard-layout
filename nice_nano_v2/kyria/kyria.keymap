@@ -412,31 +412,31 @@
 
         layer_one {
             timeout-ms = <150>;
-            key-positions = <28 29 >;
+            key-positions = <16 36>;
             bindings = <&to LAYER_ONE>;
         };
 
         layer_two {
             timeout-ms = <150>;
-            key-positions = <16 29 >;
+            key-positions = <15 34>;
             bindings = <&to LAYER_TWO>;
         };
 
         layer_three {
             timeout-ms = <150>;
-            key-positions = <15 29 >;
+            key-positions = <14 34>;
             bindings = <&to LAYER_THREE>;
         };
 
         layer_four {
             timeout-ms = <150>;
-            key-positions = <14 29 >;
+            key-positions = <13 34>;
             bindings = <&to LAYER_FOUR>;
         };
 
         layer_five {
             timeout-ms = <150>;
-            key-positions = < 29 31 >;
+            key-positions = < 34 36>;
             bindings = <&to LAYER_FIVE>;
         };
     };
@@ -460,7 +460,7 @@
         layer_one {
             bindings = <
             &none &none       &brc        &udia_ss    &adia_odia  &none                               &none         &mins_unds       &plus_astr       &kp DE_QUES &none       &none
-            &none &kp DE_LCBR &kp DE_RCBR &kp DE_LPRN &kp DE_LPRN &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &kp DE_EXLM &kp DE_BSLS &none
+            &none &kp DE_LCBR &kp DE_RCBR &kp DE_LPRN &kp DE_RPRN &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &kp DE_EXLM &kp DE_BSLS &none
             &none &none       &abk        &hash_tild  &amp_perc   &to DEFAULT &none &none &none &none &to LAYER_TWO &at_pipe         &coln_scoln      &quotes     &none       &none
                                           &none       &none       &none       &none &none &none &none &none         &none            &none
             >;
