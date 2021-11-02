@@ -125,7 +125,8 @@
 #define DE_PIPE LA(NUMBER_7)    // |
 #define DE_LCBR LA(NUMBER_8)    // {
 #define DE_RCBR LA(NUMBER_9)    // }
-#define DE_AT LA(DE_L)    // }
+#define DE_AT LA(DE_L)    // @
+#define DE_EURO LA(DE_E)    // @
 
 /* Shift+Alted symbols
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
