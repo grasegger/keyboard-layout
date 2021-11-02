@@ -453,7 +453,7 @@
             bindings = <
             &none &none &kp DE_AT &udia_ss   &adia_odia &none                               &none         &mins_unds       &plus_astr       &grv_girc_deg &none       &none
             &none &abk  &brc      &cbr       &prn       &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &ques_exlm    &coln_scoln &none
-            &none &none &dlr_euro &hash_tild &amp_perc  &to DEFAULT &none &none &none &none &to LAYER_TWO &DE_PIPE         &slashes         &quotes       &none       &none
+            &none &none &dlr_euro &hash_tild &amp_perc  &to DEFAULT &none &none &none &none &to LAYER_TWO &kp DE_PIPE      &slashes         &quotes       &none       &none
                                   &none      &none      &none       &none &none &none &none &none         &none            &none
             >;
         };
