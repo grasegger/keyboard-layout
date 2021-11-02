@@ -470,7 +470,7 @@
         layer_one {
             bindings = <
             &none &none       &brc        &udia_ss    &adia_odia  &none                               &none         &mins_unds       &plus_astr       &kp DE_QUES &none       &none
-            &none &kp DE_LCBR &kp DE_RCBR &kp DE_LPRN &kp DE_RPRN &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &kp DE_EXLM &kp DE_BSLS &none
+            &none &mt LALT DE_LCBR &mt LSHFT DE_RCBR &mt LCTRL DE_LPRN &mt LGUI DE_RPRN &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &kp DE_EXLM &kp DE_BSLS &none
             &none &none       &abk        &hash_tild  &amp_perc   &to DEFAULT &none &none &none &none &to LAYER_TWO &at_pipe         &coln_scoln      &quotes     &none       &none
                                           &none       &none       &none       &none &none &none &none &none         &none            &none
             >;
