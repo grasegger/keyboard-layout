@@ -403,31 +403,31 @@
         compatible = "zmk,combos";
 
         layer_one {
-            timeout = <150>;
+            timeout-ms = <150>;
             key-positions = <28 29 >;
             bindings = <&to LAYER_ONE>;
         };
 
         layer_two {
-            timeout = <150>;
+            timeout-ms = <150>;
             key-positions = <16 29 >;
             bindings = <&to LAYER_TWO>;
         };
 
         layer_three {
-            timeout = <150>;
+            timeout-ms = <150>;
             key-positions = <15 29 >;
             bindings = <&to LAYER_THREE>;
         };
 
         layer_four {
-            timeout = <150>;
+            timeout-ms = <150>;
             key-positions = <14 29 >;
             bindings = <&to LAYER_FOUR>;
         };
 
         layer_five {
-            timeout = <150>;
+            timeout-ms = <150>;
             key-positions = <13 29 >;
             bindings = <&to LAYER_FIVE>;
         };
