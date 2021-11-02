@@ -167,7 +167,7 @@
 			compatible = "zmk,modified-key-press";
 			label = "hyper";
 			#binding-cells = <1>;
-			modifiers = <(MOD_GUI | MOD_LSFT | MOD_LCTL)>;
+			modifiers = <(MOD_LGUI | MOD_LSFT | MOD_LCTL)>;
 		}; 
 
         comma_dot: comma_dot {
