@@ -423,7 +423,7 @@
         layer_four {
             timeout = <150>;
             key-positions = <14 29 >;
-            bindings = <&to LAYER_four>;
+            bindings = <&to LAYER_FOUR>;
         };
 
         layer_five {
