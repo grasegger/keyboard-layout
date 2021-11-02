@@ -436,7 +436,7 @@
 
         layer_five {
             timeout-ms = <150>;
-            key-positions = <13 29 >;
+            key-positions = < 29 31 >;
             bindings = <&to LAYER_FIVE>;
         };
     };
