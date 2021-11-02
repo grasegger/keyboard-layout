@@ -163,13 +163,6 @@
 
     behaviors {
 
-        hyper: hyper {
-			compatible = "zmk,modified-key-press";
-			label = "hyper";
-			#binding-cells = <1>;
-			modifiers = <(MOD_LGUI | MOD_LSFT | MOD_LCTL)>;
-		}; 
-
         comma_dot: comma_dot {
             compatible = "zmk,behavior-tap-dance";
             label = "comma_dot";
@@ -248,7 +241,7 @@
             label = "b_q";
             #binding-cells = <0>;
             tapping_term_ms = <250>;
-            bindings = <&mt hyper DE_B>, <&kp DE_Q>;
+            bindings = <&kp DE_B>, <&kp DE_Q>;
         };
 
         d_w: d_w {
@@ -448,10 +441,10 @@
         // alpha
         default_layer {
             bindings = <
-            &none &none &l_z           &kp DE_U       &mt hyper DE_A &none                               &none         &b_q          &d_w           &g_y           &none &none
-            &none &c_v  &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E  &none                               &none         &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &h_k  &none
-            &none &none &x_j           &kp DE_P       &kp DE_O       &space_back &none &none &none &none &to LAYER_ONE &kp DE_F      &sk LEFT_SHIFT &kp DE_M       &none &none
-                                       &none          &none          &none      &none &none &none &none  &none         &none         &none
+            &none &none &l_z           &kp DE_U       &kp DE_A      &none                               &none         &b_q          &d_w           &g_y           &none &none
+            &none &c_v  &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &none                               &none         &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &h_k  &none
+            &none &none &x_j           &kp DE_P       &kp DE_O      &space_back &none &none &none &none &to LAYER_ONE &kp DE_F      &sk LEFT_SHIFT &kp DE_M       &none &none
+                                       &none          &none         &none      &none &none &none &none  &none         &none         &none
             >;
         };
 
