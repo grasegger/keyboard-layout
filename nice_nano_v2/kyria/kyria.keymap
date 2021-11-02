@@ -353,7 +353,7 @@
             label = "amp_perc";
             #binding-cells = <0>;
             tapping_term_ms = <250>;
-            bindings = <&kp DE_AMP>, <&kp DE_PERC>;
+            bindings = <&kp DE_AMPR>, <&kp DE_PERC>;
         };
 
         f1_11: f1_11 {
