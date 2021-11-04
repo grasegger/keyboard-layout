@@ -146,13 +146,11 @@
 #define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
 
 #define DEFAULT 0
-#define LAYER_ONE 1
-#define LAYER_TWO 2
-#define LAYER_THREE 3
-#define LAYER_FOUR 4
-#define LAYER_FIVE 5
-
-#define NONE 0
+#define SYM_ONE 1
+#define SYM_TWO 2
+#define NUM     3
+#define FUN_ONE 4
+#define FUN_TWO 5
 
 &mt {
     tapping-term-ms = <300>;
@@ -172,241 +170,7 @@
 / {
 
     behaviors {
-
-        comma_dot: comma_dot {
-            compatible = "zmk,behavior-tap-dance";
-            label = "comma_dot";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LGUI DE_COMM>, <&kp DE_DOT>;
-        };
-
-        quotes: quotes {
-            compatible = "zmk,behavior-tap-dance";
-            label = "quotes";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_QUOT>, <&kp DE_DQUO>;
-        };
-
-        slashes: slashes {
-            compatible = "zmk,behavior-tap-dance";
-            label = "slashes";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_SLSH>, <&kp DE_BSLS>;
-        };
-
-        ques_exlm: ques_exlm{
-            compatible = "zmk,behavior-tap-dance";
-            label = "ques_exlm";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LSHIFT DE_QUES>, <&kp DE_EXLM>;
-        };
-
-        ampr_at: ampr_at{
-            compatible = "zmk,behavior-tap-dance";
-            label = "ampr_at";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_AMPR>, <&kp DE_AT>;
-        };
-        
-        x_j: x_j {
-            compatible = "zmk,behavior-tap-dance";
-            label = "x_j";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_X>, <&kp DE_J>;
-        };
-
-        o_v: o_v {
-            compatible = "zmk,behavior-tap-dance";
-            label = "o_v";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_O>, <&kp DE_V>;
-        };
-
-
-        m_k: m_k {
-            compatible = "zmk,behavior-tap-dance";
-            label = "m_k";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_M>, <&kp DE_K>;
-        };
-
-        l_z: l_z {
-            compatible = "zmk,behavior-tap-dance";
-            label = "v_j";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_L>, <&kp DE_Z>;
-        };
-
-        b_q: b_q {
-            compatible = "zmk,behavior-tap-dance";
-            label = "b_q";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_B>, <&kp DE_Q>;
-        };
-
-        d_w: d_w {
-            compatible = "zmk,behavior-tap-dance";
-            label = "d_w";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_D>, <&kp DE_W>;
-        };
-
-        g_y: g_y {
-            compatible = "zmk,behavior-tap-dance";
-            label = "g_y";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_G>, <&kp DE_Y>;
-        };
-
-
-        abk: abk {
-            compatible = "zmk,behavior-tap-dance";
-            label = "abk";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LALT DE_LABK>, <&kp DE_RABK>;
-        };
-
-        brc: brc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "brc";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LSHIFT DE_LBRC>, <&kp DE_RBRC>;
-        };
-
-        prn: prn {
-            compatible = "zmk,behavior-tap-dance";
-            label = "prn";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LGUI DE_LPRN>, <&kp DE_RPRN>;
-        };
-    
-        cbr: cbr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "cbr";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LCTRL DE_LCBR>, <&kp DE_RCBR>;
-        };
-
-        coln_scoln: coln_scoln {
-            compatible = "zmk,behavior-tap-dance";
-            label = "coln_scoln";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&mt LALT DE_COLN>, <&kp DE_SCLN>;
-        };
-
-        slsh_bsls: slsh_bsls {
-            compatible = "zmk,behavior-tap-dance";
-            label = "slsh_bsls";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_SLSH>, <&kp DE_BSLS>;
-        };
-
-        mins_unds: mins_unds {
-            compatible = "zmk,behavior-tap-dance";
-            label = "mins_unds";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_MINS>, <&kp DE_UNDS>;
-        };
-
-        dlr_euro: dlr_euro {
-            compatible = "zmk,behavior-tap-dance";
-            label = "dlr_euro";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_DLR>, <&kp DE_EURO>;
-        };
-
-        plus_astr: plus_astr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "plus_astr";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_PLUS>, <&kp DE_ASTR>;
-        };
-
-        grv_girc_deg: grv_girc_deg {
-            compatible = "zmk,behavior-tap-dance";
-            label = "grv_girc_deg";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_GRV>, <&kp DE_CIRC>, <&kp DE_DEG>;
-        };
-
-        hash_tild: hash_tild {
-            compatible = "zmk,behavior-tap-dance";
-            label = "hash_tild";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_HASH>, <&kp DE_TILD>;
-        };
-
-        amp_perc: amp_perc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "amp_perc";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_AMPR>, <&kp DE_PERC>;
-        };
-
-        f1_11: f1_11 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "f1_11";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp F1>, <&kp F11>;
-        };        
-        
-        f2_12: f2_12 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "f2_12";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp F2>, <&kp F12>;
-        };
-
-        adia_odia: adia_odia {
-            compatible = "zmk,behavior-tap-dance";
-            label = "f2_12";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_ADIA>, <&kp DE_ODIA>;
-        };
-
-        udia_ss: udia_ss {
-            compatible = "zmk,behavior-tap-dance";
-            label = "udia_ss";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_UDIA>, <&kp DE_SS>;
-        };
-
-        at_pipe: at_pipe {
-            compatible = "zmk,behavior-tap-dance";
-            label = "at_pipe";
-            #binding-cells = <0>;
-            tapping_term_ms = <250>;
-            bindings = <&kp DE_AT>, <&kp DE_PIPE>;
-        };
-
+        // START MOD MORPH
         space_back: space_back {
             compatible = "zmk,behavior-mod-morph";
             label = "space_back";
@@ -415,105 +179,133 @@
             mods = <(MOD_LSFT)>;
         };
 
+        one_tab: one_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "one_tab";
+            #binding-cells = <0>;
+            bindings = <&to DEFAULT>, <&kp TAB>;
+            mods = <(MOD_LSFT)>;
+        };
+        // END MOD MORPH
+
     };
 
     combos {
         compatible = "zmk,combos";
 
-        layer_one {
+        sym {
             timeout-ms = <150>;
             key-positions = <16 36>;
-            bindings = <&to LAYER_ONE>;
+            bindings = <&to SYM_ONE>;
         };
 
-        layer_two {
+        num {
             timeout-ms = <150>;
             key-positions = <15 34>;
-            bindings = <&to LAYER_TWO>;
+            bindings = <&to NUM_ONE>;
         };
 
-        layer_three {
+        nav {
             timeout-ms = <150>;
             key-positions = <14 34>;
-            bindings = <&to LAYER_THREE>;
+            bindings = <&to NAV_ONE>;
         };
 
-        layer_four {
+        fun {
             timeout-ms = <150>;
-            key-positions = <13 34>;
-            bindings = <&to LAYER_FOUR>;
-        };
-
-        layer_five {
-            timeout-ms = <150>;
-            key-positions = < 34 36>;
-            bindings = <&to LAYER_FIVE>;
+            key-positions = < 13 36>;
+            bindings = <&to FUN_ONE>;
         };
     };
 };
+
+#define _____ &none
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        // alpha
-        default_layer {
+        alpha_one {
             bindings = <
-            &none &none          &l_z           &kp DE_U       &kp DE_A      &none                               &none         &b_q          &d_w           &g_y           &none          &none
-            &none &mt LALT DE_C  &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &none                               &none         &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H  &none
-            &none &none          &x_j           &kp DE_P       &o_v          &space_back &none &none &none &none &to LAYER_ONE &kp DE_F      &sk LEFT_SHIFT &m_k           &none          &none
-                                                &none          &none         &none      &none &none &none &none  &none         &none         &none
+            _____ _____          &kp DE_L       &kp DE_U       &kp DE_A      _____                               _____     &kp DE_B      &kp DE_D       &kp DE_G       _____         _____
+            _____ &mt LALT DE_C  &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E _____                               _____     &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H _____
+            _____ _____          _____          &kp DE_O       &sl ALPHA_2   &space_back _____ _____ _____ _____ &sk LSHFT &sl ALPHA_2   &kp DE_M       _____          _____         _____
+                                                _____          _____         _____       _____ _____ _____ _____ _____     _____         _____
             >;
         };
 
-        // symbols
-        layer_one {
+
+        alpha_two {
             bindings = <
-            &none &none       &brc        &udia_ss    &adia_odia  &none                               &none         &mins_unds       &plus_astr       &kp DE_QUES &none       &none
-            &none &mt LALT DE_LCBR &mt LSHFT DE_RCBR &mt LCTRL DE_LPRN &mt LGUI DE_RPRN &none                               &none         &mt LGUI DE_COMM &mt LCTRL DE_DOT &kp DE_EXLM &kp DE_BSLS &none
-            &none &none       &abk        &hash_tild  &amp_perc   &to DEFAULT &none &none &none &none &to LAYER_TWO &at_pipe         &coln_scoln      &quotes     &none       &none
-                                          &none       &none       &none       &none &none &none &none &none         &none            &none
+            _____ _____          &kp DE_ODIA    &kp DE_UDIA    &kp DE_ADIA   _____                            _____     &kp DE_W      &kp DE_Y       &kp DE_Q       _____          _____
+            _____ &mt LALT DE_V  &mt LSHFT DE_X &mt LCTRL DE_Z &mt LGUI DE_J _____                            _____     &mt LGUI DE_P &mt LCTRL DE_F &mt LSHFT DE_K &mt LALT DE_SS _____
+            _____ _____          _____          &kp ENTER      &kp DE_DOT    &one_tab _____ _____ _____ _____ &sk LSHFT &kp DE_COMM   &kp ESCAPE     _____          _____          _____
+                                                _____          _____         _____    _____ _____ _____ _____ _____     _____         _____
             >;
         };
 
-        // numpad
-        layer_two {
+       sym_one {
             bindings = <
-            &none &none            &kp DE_PERC       &grv_girc_deg     &dlr_euro        &none                               &none           &kp N7 &kp N8 &kp N9 &none  &none
-            &none &mt LALT DE_ASTR &mt LSHFT DE_SLSH &mt LCTRL DE_PLUS &mt LGUI DE_MINS &none                               &none           &kp N4 &kp N5 &kp N6 &kp N0 &none
-            &none &none            &kp DE_HASH       &kp BACKSPACE     &kp SPACE        &to DEFAULT &none &none &none &none &to LAYER_THREE &kp N1 &kp N2 &kp N3 &none  &none
-                                                     &none             &none            &none       &none &none &none &none &none           &none  &none
+            _____ _____             &kp DE_SCLN       &kp DE_DQUO       &kp DE_QUOT      _____                               _____       &kp DE_EXLM      &kp DE_QUES       &kp DE_COLN       _____            _____
+            _____ &mt LALT DE_LABK  &mt LSHFT DE_LBRC &mt LCTRL DE_LCBR &mt LGUI DE_LPRN _____                               _____       &mt LGUI DE_RPRN &mt LCTRL DE_RCBR &mt LSHFT DE_RBRC &mt LALT DE_RABK _____
+            _____ _____             _____             &kp DE_DLR        &to SYM_2        &to DEFAULT _____ _____ _____ _____ &kp DE_MINS &to SYM_2        &kp DE_UNDS       _____             _____            _____
+                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
-        // keyboard nav
-        layer_three {
-            bindings =< 
-            &none &none        &none           &none               &kp ESCAPE     &none                               &none          &none           &kp END        &kp HOME     &none          &none 
-            &none &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE &none                               &none          &mt LGUI LEFT   &mt LCTRL DOWN &mt LSHFT UP &mt LALT RIGHT &none
-            &none &none        &none           &none               &none          &to DEFAULT &none &none &none &none &to LAYER_FOUR &none           &kp PG_DN      &kp PG_UP    &none          &none
-                                               &none               &none          &none       &none &none &none &none &none          &none           &none
+       sym_two {
+            bindings = <
+            _____ _____             &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                               _____       &KP DE_ACUT      &kp DE_DEG        &kp DE_CIRC      _____            _____
+            _____ &mt LALT DE_EURO  &mt LSHFT DE_BSLS &mt LCTRL DE_SLSH &mt LGUI DE_ASTR _____                               _____       &mt LGUI DE_PERC &mt LCTRL DE_AMPR &mt LSHFT DE_EQL &mt LALT DE_GRV _____
+            _____ _____             _____             &none             &to SYM_1        &to DEFAULT _____ _____ _____ _____ &kp DE_PLUS &to SYM_1        &kp DE_UNDS       _____            _____            _____
+                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
-        // mouse nav
-        layer_four {
-            bindings =< 
-            &none &none            &none            &none          &mkp LCLK         &none                               &none          &none           &kp LGUI      &kp LCTRL    &none           &none 
-            &none &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT &none                               &none          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-            &none &none            &none            &none          &mkp RCLK         &to DEFAULT &none &none &none &none &to LAYER_FIVE &none          &kp LSHIFT     &kp LALT     &none           &none      
-                                                    &none          &none             &none       &none &none &none &none &none          &none          &none
+       num_one {
+            bindings = <
+            _____ _____       &kp DE_EQL   &kp DE_PLUS  &kp DE_MINS _____                               _____        &KP DE_ASTR      &kp DE_SLSH  &kp BACSPACE _____       _____
+            _____ &mt LALT N1 &mt LSHFT N2 &mt LCTRL N3 &mt LGUI N4 _____                               _____        &mt LGUI N7      &mt LCTRL N8 &mt LSHFT N9 &mt LALT N0 _____
+            _____ _____       _____        _____        &kp N5      &to DEFAULT _____ _____ _____ _____ &kp DE_COMM  &kp N6 &kp ENTER &kp DE_DOT   _____       _____
+                                           _____        _____       _____       _____ _____ _____ _____ _____        _____            _____
             >;
         };
 
-        // functions
-        layer_five {
-            bindings =< 
-            &none &none           &bt BT_CLR       &bt BT_SEL 1       &bt BT_SEL 0      &none                               &none &kp F7 &kp F8 &kp F9 &kp F12 &none
-            &none &mt LALT C_PREV &mt LSHFT C_NEXT &mt LCTRL C_VOL_DN &mt LGUI C_VOL_UP &none                               &none &kp F4 &kp F5 &kp F6 &kp F10 &none
-            &none &none           &none            &kp C_PLAY_PAUSE   &kp C_MUTE        &to DEFAULT &none &none &none &none &none &f1_11 &f2_12 &kp F3 &kp F10 &none
-                                                   &none              &none             &none       &none &none &none &none &none &none  &none
+        nav_one {
+            bindings = <
+            _____ _____       _____            _____               _____          _____                               _____     _____         &kp END        &kp HOME     _____          _____
+            _____ &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE _____                               _____     &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RGIHT _____
+            _____ _____       _____            _____               &kp ESCAPE     &to DEFAULT _____ _____ _____ _____ &to NAV_2 _____         &kp PG_DN      &kp PG_UP    _____          _____
+                                               _____               _____          _____       _____ _____ _____ _____ _____     _____            _____
             >;
         };
+
+        nav_two {
+            bindings = <
+            _____ _____             _____            _____          &kp LCLK          _____                               _____ _____          &kp LGUI       &kp LCTRL    _____           _____
+            _____  &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT _____                               _____ &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT _____
+            _____ _____             _____            _____          &kp RCLK          &to DEFAULT _____ _____ _____ _____ _____ _____          &kp LALT       &kp LSHFT    _____           _____
+                                                     _____          _____             _____       _____ _____ _____ _____ _____ _____          _____
+            >;
+        };
+
+        fun_one {
+            bindings = <
+            _____ _____      _____      _____        &kp C_PLAY_PAUSE _____                               _____       _____      _____        _____        _____ _____
+            _____ &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP     _____                               _____       &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 _____ _____
+            _____ _____      _____      _____        &kp C_MUTE       &to DEFAULT _____ _____ _____ _____ &to FUN_TWO _____      _____        _____        _____ _____
+                                        _____          _____             _____    _____ _____ _____ _____ _____       _____      _____
+            >;
+        };
+
+        fun_two {
+            bindings = <
+            _____ _____       _____         _____        _____       _____                               _____ _____       _____        _____        _____        _____
+            _____ &mt LALT F1 &mt F2 C_NEXT &mt LCTRL F3 &mt LGUI F4 _____                               _____ &mt LGUI F7 &mt LCTRL F8 &mt LSHFT F9 &mt LALT F10 _____
+            _____ _____       _____         _____        &kp F5      &to DEFAULT _____ _____ _____ _____ _____ &kp F6      &kp F11      &kp F12      _____        _____
+                                            _____        _____       _____       _____ _____ _____ _____ _____ _____      _____
+            >;
+        };
+
     };
 };
