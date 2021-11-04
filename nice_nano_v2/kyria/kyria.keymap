@@ -149,8 +149,10 @@
 #define SYM_ONE 1
 #define SYM_TWO 2
 #define NUM_ONE 3
-#define FUN_ONE 4
-#define FUN_TWO 5
+#define NAV_ONE 4
+#define NAV_TWO 5
+#define FUN_ONE 6
+#define FUN_TWO 7
 
 &mt {
     tapping-term-ms = <300>;
