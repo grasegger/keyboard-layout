@@ -148,7 +148,7 @@
 #define DEFAULT 0
 #define SYM_ONE 1
 #define SYM_TWO 2
-#define NUM     3
+#define NUM_ONE 3
 #define FUN_ONE 4
 #define FUN_TWO 5
 
