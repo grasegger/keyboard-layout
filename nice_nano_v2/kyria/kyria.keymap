@@ -198,7 +198,7 @@
 
         sym {
             timeout-ms = <150>;
-            key-positions = <16 36>;
+            key-positions = <16 34>;
             bindings = <&to SYM_ONE>;
         };
 
