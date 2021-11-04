@@ -277,7 +277,7 @@
         nav_one {
             bindings = <
             _____ _____       _____            _____               _____          _____                               _____       _____         &kp END        &kp HOME     _____          _____
-            _____ &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE _____                               _____       &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RGIHT _____
+            _____ &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE _____                               _____       &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RIGHT _____
             _____ _____       _____            _____               &kp ESCAPE     &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         &kp PG_DN      &kp PG_UP    _____          _____
                                                _____               _____          _____       _____ _____ _____ _____ _____       _____            _____
             >;
