@@ -251,7 +251,7 @@
             bindings = <
             _____ _____             &kp DE_SCLN       &kp DE_DQUO       &kp DE_QUOT      _____                               _____       &kp DE_EXLM      &kp DE_QUES       &kp DE_COLN       _____            _____
             _____ &mt LALT DE_LABK  &mt LSHFT DE_LBRC &mt LCTRL DE_LCBR &mt LGUI DE_LPRN _____                               _____       &mt LGUI DE_RPRN &mt LCTRL DE_RCBR &mt LSHFT DE_RBRC &mt LALT DE_RABK _____
-            _____ _____             _____             &kp DE_DLR        &to SYM_2        &to DEFAULT _____ _____ _____ _____ &kp DE_MINS &to SYM_2        &kp DE_UNDS       _____             _____            _____
+            _____ _____             _____             &kp DE_DLR        &to SYM_TWO        &to DEFAULT _____ _____ _____ _____ &kp DE_MINS &to SYM_TWO      &kp DE_UNDS       _____             _____            _____
                                                       _____             _____            _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
@@ -259,9 +259,10 @@
        sym_two {
             bindings = <
             _____ _____             &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                               _____       &KP DE_ACUT      &kp DE_DEG        &kp DE_CIRC      _____            _____
-            _____ &mt LALT DE_EURO  &mt LSHFT DE_BSLS &mt LCTRL DE_SLSH &mt LGUI DE_ASTR _____                               _____       &mt LGUI DE_PERC &mt LCTRL DE_AMPR &mt LSHFT DE_EQL &mt LALT DE_GRV _____
-            _____ _____             _____             &none             &to SYM_1        &to DEFAULT _____ _____ _____ _____ &kp DE_PLUS &to SYM_1        &kp DE_UNDS       _____            _____            _____
-                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____         _____
+            _____ _____             &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                              _____       &KP DE_ACUT      &kp DE_DEG        &kp DE_CIRC      _____            _____
+            _____ &mt LALT DE_EURO  &mt LSHFT DE_BSLS &mt LCTRL DE_SLSH &mt LGUI DE_ASTR _____                              _____       &mt LGUI DE_PERC &mt LCTRL DE_AMPR &mt LSHFT DE_EQL &mt LALT DE_GRV _____
+            _____ _____             _____             &none             &to SYM_ONE     &to DEFAULT _____ _____ _____ _____ &kp DE_PLUS &to SYM_ONE      &kp DE_UNDS       _____            _____            _____
+                                                      _____             _____           _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
@@ -276,10 +277,10 @@
 
         nav_one {
             bindings = <
-            _____ _____       _____            _____               _____          _____                               _____     _____         &kp END        &kp HOME     _____          _____
-            _____ &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE _____                               _____     &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RGIHT _____
-            _____ _____       _____            _____               &kp ESCAPE     &to DEFAULT _____ _____ _____ _____ &to NAV_2 _____         &kp PG_DN      &kp PG_UP    _____          _____
-                                               _____               _____          _____       _____ _____ _____ _____ _____     _____            _____
+            _____ _____       _____            _____               _____          _____                               _____       _____         &kp END        &kp HOME     _____          _____
+            _____ &mt LALT TAB &mt LSHFT ENTER &mt LCTRL BACKSPACE &mt LGUI SPACE _____                               _____       &mt LGUI LEFT &mt LCTRL DOWN &mt LSHFT UP &mt LALT RGIHT _____
+            _____ _____       _____            _____               &kp ESCAPE     &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         &kp PG_DN      &kp PG_UP    _____          _____
+                                               _____               _____          _____       _____ _____ _____ _____ _____       _____            _____
             >;
         };
 
