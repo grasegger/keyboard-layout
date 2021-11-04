@@ -146,13 +146,14 @@
 #define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
 
 #define DEFAULT 0
-#define SYM_ONE 1
-#define SYM_TWO 2
-#define NUM_ONE 3
-#define NAV_ONE 4
-#define NAV_TWO 5
-#define FUN_ONE 6
-#define FUN_TWO 7
+#define ALPHA_2 1
+#define SYM_ONE 2
+#define SYM_TWO 3
+#define NUM_ONE 4
+#define NAV_ONE 5
+#define NAV_TWO 7
+#define FUN_ONE 8
+#define FUN_TWO 9
 
 &mt {
     tapping-term-ms = <300>;
