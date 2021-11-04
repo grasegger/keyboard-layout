@@ -258,7 +258,6 @@
 
        sym_two {
             bindings = <
-            _____ _____             &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                               _____       &KP DE_ACUT      &kp DE_DEG        &kp DE_CIRC      _____            _____
             _____ _____             &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                              _____       &KP DE_ACUT      &kp DE_DEG        &kp DE_CIRC      _____            _____
             _____ &mt LALT DE_EURO  &mt LSHFT DE_BSLS &mt LCTRL DE_SLSH &mt LGUI DE_ASTR _____                              _____       &mt LGUI DE_PERC &mt LCTRL DE_AMPR &mt LSHFT DE_EQL &mt LALT DE_GRV _____
             _____ _____             _____             &none             &to SYM_ONE     &to DEFAULT _____ _____ _____ _____ &kp DE_PLUS &to SYM_ONE      &kp DE_UNDS       _____            _____            _____
@@ -268,9 +267,9 @@
 
        num_one {
             bindings = <
-            _____ _____       &kp DE_EQL   &kp DE_PLUS  &kp DE_MINS _____                               _____        &KP DE_ASTR      &kp DE_SLSH  &kp BACSPACE _____       _____
-            _____ &mt LALT N1 &mt LSHFT N2 &mt LCTRL N3 &mt LGUI N4 _____                               _____        &mt LGUI N7      &mt LCTRL N8 &mt LSHFT N9 &mt LALT N0 _____
-            _____ _____       _____        _____        &kp N5      &to DEFAULT _____ _____ _____ _____ &kp DE_COMM  &kp N6 &kp ENTER &kp DE_DOT   _____       _____
+            _____ _____       &kp DE_EQL   &kp DE_PLUS  &kp DE_MINS _____                               _____        &KP DE_ASTR      &kp DE_SLSH  &kp BACKSPACE _____       _____
+            _____ &mt LALT N1 &mt LSHFT N2 &mt LCTRL N3 &mt LGUI N4 _____                               _____        &mt LGUI N7      &mt LCTRL N8 &mt LSHFT N9  &mt LALT N0 _____
+            _____ _____       _____        _____        &kp N5      &to DEFAULT _____ _____ _____ _____ &kp DE_COMM  &kp N6 &kp ENTER &kp DE_DOT   _____         _____
                                            _____        _____       _____       _____ _____ _____ _____ _____        _____            _____
             >;
         };
