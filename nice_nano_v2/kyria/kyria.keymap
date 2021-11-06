@@ -211,42 +211,59 @@
 
 #define _____ &none
 
+// CLEAR for none
+
+#define none CLEAR
+#define space &kp SPACE
+#define sl_al2 &sl ALPHA_2
+
+#define LAYER(\
+     K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
+     K9, K10, K11, K12, K13, K15, K16, K17, \
+                   K18, K19  \
+    ) \
+    _____ &hk LALT K1    &hk LCTRL K2    &hk LSHFT K3    &hk LGUI K4     _____                         _____ &hk LGUI K5     &hk LSHFT K6    &hk LCTRL K7    &hk LALT K8     _____ \
+    _____ &hl FUN_ONE K9 &hl NAV_ONE K10 &hl NUM_ONE K11 &hl SYM_ONE K12 _____                         _____ &hl SYM_TWO K13 &hl NUM_ONE K14 &hl NAV_TWO K15 &hl FUN_TWO K16 _____ \
+    _____ _____          _____           _____           _____           K17   _____ _____ _____ _____ K18   _____           _____           _____           _____           _____ \
+                                         _____           _____           _____ _____ _____ _____ _____ _____ _____           _____ 
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         alpha_one {
             bindings = <
-            _____ &hk LALT DE_C    &hk LCTRL DE_R   &hk LSHFT DE_I   &hk LGUI DE_E    _____                               _____       &hk LGUI DE_N    &hk LSHFT DE_T   &hk LCTRL DE_S   &hk LALT DE_H    _____
-            _____ &hl FUN_ONE DE_O &hl NAV_ONE DE_L &hl NUM_ONE DE_U &hl SYM_ONE DE_A _____                               _____       &hl SYM_ONE DE_B &hl NUM_ONE DE_D &hl NAV_ONE DE_G &hl FUN_ONE DE_M _____
-            _____ _____            _____            _____            _____            &space_back _____ _____ _____ _____ &sl ALPHA_2 _____            _____            _____            _____            _____
-                                                    _____            _____            _____       _____ _____ _____ _____ _____       _____            _____
+            LAYER( 
+                DE_C, DE_R, DE_I,  DE_E,   DE_N, DE_T, DE_S, DE_H,
+                DE_O, DE_L, DE_U,  DE_A,   DE_B, DE_D, DE_G, DE_M,
+                                  space, sl_al2      
+            )
             >;
         };
 
 
         alpha_two {
             bindings = <
-            _____ &hk LALT DE_V  &hk LCTRL DE_X &hk LSHFT DE_Z &hk LGUI DE_J _____                               _____       &hk LGUI DE_P &hk LSHFT DE_F &hk LCTRL DE_K &hk LALT DE_SS _____
-            _____ &kp ENTER      &kp DE_ODIA    &kp DE_UDIA    &kp DE_ADIA   _____                               _____       &kp DE_W      &kp DE_Y       &kp DE_Q       &kp DE_DOT     _____
-            _____ _____          _____          _____          _____         &one_escape _____ _____ _____ _____ &kp DE_COMM _____         _____          _____          _____          _____
-                                                _____          _____         _____       _____ _____ _____ _____ _____       _____         _____
+            _____ &hk LALT DE_V       &hk LCTRL DE_X       &hk LSHFT DE_Z      &hk LGUI DE_J       _____                               _____       &hk LGUI DE_P &hk LSHFT DE_F &hk LCTRL DE_K &hk LALT DE_SS _____
+            _____ &hl FUN_ONE DE_COMM &hl NAV_ONE  DE_ODIA &hl NUM_ONE DE_UDIA &hl SYM_ONE DE_ADIA _____                               _____       &kp DE_W      &kp DE_Y       &kp DE_Q       &kp DE_DOT     _____
+            _____ _____               _____                _____               _____               &to DEFAULT _____ _____ _____ _____ &to ALPHA_2 _____         _____          _____          _____          _____
+                                                           _____               _____               _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
        sym_one {
             bindings = <
-            _____ &hk LALT DE_LABK  &hk LCTRL DE_LBRC &hk LSHFT DE_LCBR &hk LGUI DE_LPRN _____                               _____       &hk LGUI DE_RPRN &hk LSHFT DE_RCBR &hk LCTRL DE_RBRC &hk LALT DE_RABK _____
-            _____ &kp DE_DLR        &kp DE_SCLN       &kp DE_DQUO       &kp DE_QUOT      _____                               _____       &kp DE_EXLM      &kp DE_QUES       &kp DE_COLN       &kp DE_MINS      _____
-            _____ _____             _____             _____             _____            &to DEFAULT _____ _____ _____ _____ &sl SYM_TWO _____            _____             _____             _____            _____
-                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____            _____
+            _____ &hk LALT DE_LABK   &hk LCTRL DE_LBRC   &hk LSHFT DE_LCBR   &hk LGUI DE_LPRN    _____                               _____       &hk LGUI DE_RPRN &hk LSHFT DE_RCBR &hk LCTRL DE_RBRC &hk LALT DE_RABK _____
+            _____ &hl FUN_ONE DE_DLR &hl NAV_ONE DE_SCLN &hl NUM_ONE DE_DQUO &hl SYM_ONE DE_QUOT _____                               _____       &kp DE_EXLM      &kp DE_QUES       &kp DE_COLN       &kp DE_MINS      _____
+            _____ _____              _____               _____               _____               &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____            _____             _____             _____            _____
+                                                         _____               _____               _____       _____ _____ _____ _____ _____       _____            _____
             >;
         };
 
        sym_two {
             bindings = <
-            _____ &hk LALT DE_EURO  &hk LCTRL DE_BSLS &hk LSHFT DE_SLSH &hk LGUI DE_ASTR _____                              _____        &hk LGUI DE_PERC &hk LSHFT DE_AMPR &hk LCTRL DE_EQL &hk LALT DE_GRV _____
-            _____ &kp DE_UNDS       &kp DE_TILD       &kp DE_PIPE       &kp DE_HASH      _____                              _____        &kp DE_ACUT      &kp DE_DEG        &kp DE_CIRC      &kp DE_PLUS     _____
+            _____ &hk LALT DE_EURO    &hk LCTRL DE_BSLS &hk LSHFT DE_SLSH &hk LGUI DE_ASTR _____                              _____        &hk LGUI DE_PERC &hk LSHFT DE_AMPR &hk LCTRL DE_EQL &hk LALT DE_GRV _____
+            _____ &hl FUN_ONE DE_UNDS &hl NAV_ONE  DE_TILD       &hl NUM_ONE DE_PIPE       &hl SYM_ONE DE_HASH      _____                              _____        &kp DE_ACUT      &kp DE_DEG        &kp DE_CIRC      &kp DE_PLUS     _____
             _____ _____             _____             _____             _____            &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____              _____           _____            _____           _____
                                                       _____             _____            _____       _____ _____ _____ _____ _____       _____              _____
             >;
@@ -255,7 +272,7 @@
        num_one {
             bindings = <
             _____ &hk LALT N1 &hk LCTRL N2 &hk LSHFT N3 &hk LGUI N4 _____                               _____       &hk LGUI N7  &hk LSHFT N8 &hk LCTRL N9  &hk LALT N0   _____
-            _____ &kp DE_EQL  &kp DE_PLUS  &kp DE_MINS  &kp N5      _____                               _____       &kp N6       &kp DE_ASTR  &kp DE_SLSH   &kp BACKSPACE _____
+            _____ &hl FUN_ONE DE_EQL  &hl NAV_ONE  DE_PLUS  &hl NUM_ONE DE_MINS  &hl SYM_ONE N5      _____                               _____       &kp N6       &kp DE_ASTR  &kp DE_SLSH   &kp BACKSPACE _____
             _____ _____       _____        _____        _____       &to DEFAULT _____ _____ _____ _____ &kp DE_DOT  _____        _____        _____         _____         _____
                                            _____        _____       _____       _____ _____ _____ _____ _____       _____        _____
             >;
@@ -264,7 +281,7 @@
         nav_one {
             bindings = <
             _____ &hk LALT TAB &hk LCTRL ENTER &hk LSHFT BACKSPACE &hk LGUI SPACE _____                               _____       &hk LGUI LEFT &hk LSHFT DOWN &hk LCTRL UP &hk LALT RIGHT _____
-            _____ _____       _____            _____               &kp ESCAPE     _____                               _____       &kp HOME      &kp PG_DN      &kp PG_UP    &kp END        _____
+            _____ &sl FUN_ONE   &sl NAV_ONE &sl NUM_ONE               &hl SYM_ONE ESCAPE     _____                               _____       &kp HOME      &kp PG_DN      &kp PG_UP    &kp END        _____
             _____ _____       _____            _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         _____          _____        _____          _____
                                                _____               _____          _____       _____ _____ _____ _____ _____       _____         _____
             >;
@@ -273,7 +290,7 @@
         nav_two {
             bindings = <
             _____  &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT _____                               _____       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT _____
-            _____ _____             _____            &kp RCLK       &kp LCLK          _____                               _____       &kp LGUI       &kp LSHFT      &kp LCTRL    &kp LALT        _____
+            _____ &sl FUN_ONE &sl NAV_ONE &hl NUM_ONE RCLK &hl SYM_ONE LCLK          _____                               _____       &kp LGUI       &kp LSHFT      &kp LCTRL    &kp LALT        _____
             _____ _____             _____            _____          _____             &to DEFAULT _____ _____ _____ _____ &to NAV_ONE _____          _____          _____        _____           _____
                                                      _____          _____             _____       _____ _____ _____ _____ _____       _____          _____
             >;
@@ -282,7 +299,7 @@
         fun_one {
             bindings = <
             _____ &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP     _____                               _____       &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 _____ _____
-            _____ _____      _____      &kp C_MUTE   &kp C_PLAY_PAUSE _____                               _____       _____      _____        _____        _____ _____
+            _____ &sl FUN_ONE &sl NAV_ONE &hl NUM_ONE C_MUTE   &hl SYM_ONE C_PLAY_PAUSE _____                               _____       _____      _____        _____        _____ _____
             _____ _____      _____      _____        _____            &to DEFAULT _____ _____ _____ _____ &to FUN_TWO _____      _____        _____        _____ _____
                                         _____        _____            _____       _____ _____ _____ _____ _____       _____      _____
             >;
@@ -291,7 +308,7 @@
         fun_two {
             bindings = <
             _____ &hk LALT F1 &hk F2 C_NEXT &hk LSHFT F3 &hk LGUI F4 _____                               _____       &hk LGUI F7 &hk LSHFT F8 &hk LCTRL F9 &hk LALT F10 _____
-            _____ _____       _____         _____        &kp F5      _____                               _____       &kp F6      &kp F11      &kp F12         _____     _____
+            _____ &sl FUN_ONE &sl NAV_ONE &sl NUM_ONE &hl SYM_ONE  F5      _____                               _____       &kp F6      &kp F11      &kp F12         _____     _____
             _____ _____       _____         _____        _____       &to DEFAULT _____ _____ _____ _____ &to FUN_ONE _____       _____        _____           _____     _____
                                             _____        _____       _____       _____ _____ _____ _____ _____       _____      _____
             >;
