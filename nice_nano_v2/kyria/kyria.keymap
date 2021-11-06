@@ -217,12 +217,15 @@
 #define space &kp SPACE
 #define sl_al2 &sl ALPHA_2
 
+#define TO(somewhere) &to somewhere
+#define SL(somewhere) &to somewhere
+
 #define LAYER(\
      K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
      K9, K10, K11, K12, K13, K15, K16, K17, \
                    K18, K19  \
     ) \
-    _____ &hk LALT K1    &hk LCTRL K2    &hk LSHFT K3    &hk LGUI K4     _____                         _____ &hk LGUI K5     &hk LSHFT K6    &hk LCTRL K7    &hk LALT K8     _____ \
+    _____ &mt LALT K1    &hk LCTRL K2    &hk LSHFT K3    &hk LGUI K4     _____                         _____ &hk LGUI K5     &hk LSHFT K6    &hk LCTRL K7    &hk LALT K8     _____ \
     _____ &hl FUN_ONE K9 &hl NAV_ONE K10 &hl NUM_ONE K11 &hl SYM_ONE K12 _____                         _____ &hl SYM_TWO K13 &hl NUM_ONE K14 &hl NAV_TWO K15 &hl FUN_TWO K16 _____ \
     _____ _____          _____           _____           _____           K17   _____ _____ _____ _____ K18   _____           _____           _____           _____           _____ \
                                          _____           _____           _____ _____ _____ _____ _____ _____ _____           _____ 
@@ -232,13 +235,11 @@
         compatible = "zmk,keymap";
 
         alpha_one {
-            bindings = <
-            LAYER( 
+            bindings = < LAYER( 
                 DE_C, DE_R, DE_I,  DE_E,   DE_N, DE_T, DE_S, DE_H,
                 DE_O, DE_L, DE_U,  DE_A,   DE_B, DE_D, DE_G, DE_M,
                                   space, sl_al2      
-            )
-            >;
+            ) >;
         };
 
 
