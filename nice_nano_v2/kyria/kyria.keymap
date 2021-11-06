@@ -196,6 +196,16 @@
         };
         // END MOD MORPH
 
+        bl: bl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BOTTOM_ROW_LAYERS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&sk>, <&kp>;
+        };
+
     };
 };
 
@@ -207,10 +217,10 @@
 
         alpha_one {
             bindings = <
-            _____ &mt LALT DE_C    &mt LCTRL DE_R   &mt LSHFT DE_I   &mt LGUI DE_E    _____                               _____       &mt LGUI DE_N &mt LSHFT DE_T &mt LCTRL DE_S &mt LALT DE_H _____
-            _____ &lt FUN_ONE DE_O &lt NAV_ONE DE_L &lt NUM_ONE DE_U &lt SYM_ONE DE_A _____                               _____       &kp DE_B      &kp DE_D       &kp DE_G       &kp DE_M      _____
-            _____ _____            _____            _____            _____            &space_back _____ _____ _____ _____ &sl ALPHA_2 _____         _____        _____            _____         _____
-                                                    _____            _____            _____       _____ _____ _____ _____ _____       _____         _____
+            _____ &mt LALT DE_C    &mt LCTRL DE_R   &mt LSHFT DE_I   &mt LGUI DE_E    _____                               _____       &mt LGUI DE_N    &mt LSHFT DE_T   &mt LCTRL DE_S   &mt LALT DE_H    _____
+            _____ &bl FUN_ONE DE_O &bl NAV_ONE DE_L &bl NUM_ONE DE_U &bl SYM_ONE DE_A _____                               _____       &bl SYM_ONE DE_B &bl NUM_ONE DE_D &bl NAV_ONE DE_G &bl FUN_ONE DE_M _____
+            _____ _____            _____            _____            _____            &space_back _____ _____ _____ _____ &sl ALPHA_2 _____            _____            _____            _____            _____
+                                                    _____            _____            _____       _____ _____ _____ _____ _____       _____            _____
             >;
         };
 
