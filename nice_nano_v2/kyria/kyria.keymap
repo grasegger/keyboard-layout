@@ -196,45 +196,16 @@
         };
         // END MOD MORPH
 
-        bl_fun_one: bl_fun_one {
+        hl: hl {
             compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOM_ROW_LAYERS";
-            #binding-cells = <1>;
+            label = "Hold Layer";
+            #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&sk FUN_ONE>, <&kp>;
+            bindings = <&sl>, <&kp>;
         };
 
-        bl_nav_one: bl_nav_one {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOM_ROW_LAYERS";
-            #binding-cells = <1>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk NAV_ONE>, <&kp>;
-        };
-
-        bl_num_one: bl_num_one {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOM_ROW_LAYERS";
-            #binding-cells = <1>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk NUM_ONE>, <&kp>;
-        };
-
-        bl_sym_one: bl_sym_one {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOM_ROW_LAYERS";
-            #binding-cells = <1>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk SYM_ONE>, <&kp>;
-        };
     };
 };
 
@@ -247,7 +218,7 @@
         alpha_one {
             bindings = <
             _____ &mt LALT DE_C    &mt LCTRL DE_R   &mt LSHFT DE_I   &mt LGUI DE_E    _____                               _____       &mt LGUI DE_N    &mt LSHFT DE_T   &mt LCTRL DE_S   &mt LALT DE_H    _____
-            _____ &bl_fun_one DE_O &bl_nav_one DE_L &bl_num_one DE_U &bl_sym_one DE_A _____                               _____       &bl_sym_one DE_B &bl_num_one DE_D &bl_nav_one DE_G &bl_fun_one DE_M _____
+            _____ &hl FUN_ONE DE_O &hl NAV_ONE DE_L &hl NUM_ONE DE_U &hl SYM_ONE DE_A _____                               _____       &hl SYM_ONE DE_B &hl NUM_ONE DE_D &hl NAV_ONE DE_G &hl FUN_ONE DE_M _____
             _____ _____            _____            _____            _____            &space_back _____ _____ _____ _____ &sl ALPHA_2 _____            _____            _____            _____            _____
                                                     _____            _____            _____       _____ _____ _____ _____ _____       _____            _____
             >;
