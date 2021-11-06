@@ -155,16 +155,6 @@
 #define FUN_ONE 7
 #define FUN_TWO 8
 
-&hk {
-    tapping-term-ms = <200>;
-    flavor = "tap-preferred";
-};
-
-&lt {
-    tapping-term-ms = <300>;
-    flavor = "tap-preferred";
-};
-
 &mmv {   
     time-to-max-speed-ms = <500>;
     acceleration-exponent=<2>;
