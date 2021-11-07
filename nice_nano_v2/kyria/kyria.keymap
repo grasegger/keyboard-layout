@@ -151,9 +151,8 @@
 #define SYM_TWO 3
 #define NUM_ONE 4
 #define NAV_ONE 5
-#define NAV_TWO 6
-#define FUN_ONE 7
-#define FUN_TWO 8
+#define FUN_ONE 6
+#define FUN_TWO 7
 
 &mmv {   
     time-to-max-speed-ms = <500>;
@@ -168,24 +167,6 @@
 / {
 
     behaviors {
-        // START MOD MORPH
-        space_back: space_back {
-            compatible = "zmk,behavior-mod-morph";
-            label = "space_back";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp BACKSPACE>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        one_escape: one_escape {
-            compatible = "zmk,behavior-mod-morph";
-            label = "one_escape";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&kp ESCAPE>;
-            mods = <(MOD_LSFT)>;
-        };
-        // END MOD MORPH
-
         hl: hl {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Sticky Layer";
@@ -211,109 +192,99 @@
 
 #define _____ &none
 
-// CLEAR for none
+#define lpnky_h(code) &hk LALT code
+#define lring_h(code) &hk LCTRL code
+#define lmidd_h(code) &hk LSHFT code
+#define lindx_h(code) &hk LGUI code
 
-#define none CLEAR
-#define space &kp SPACE
-#define sl_al2 &sl ALPHA_2
+#define rmidd_h(code) &hk LSHFT code
+#define rindx_h(code) &hk LGUI code
+#define rring_h(code) &hk LCTRL code
+#define rpnky_h(code) &hk LALT code
 
-#define TO(somewhere) &to somewhere
-#define SL(somewhere) &to somewhere
+#define lring_b(code) &hl FUN_ONE code
+#define lmidd_b(code) &hl NUM_ONE code
+#define lindx_b(code) &hl SYM_ONE code
 
-#define LAYER(\
-     K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
-     K9, K10, K11, K12, K13, K15, K16, K17, \
-                   K18, K19  \
-    ) \
-    _____ &hk LALT K1    &hk LCTRL K2    &hk LSHFT K3    &hk LGUI K4     _____                         _____ &hk LGUI K5     &hk LSHFT K6    &hk LCTRL K7    &hk LALT K8     _____ \n\
-    _____ &hl FUN_ONE K9 &hl NAV_ONE K10 &hl NUM_ONE K11 &hl SYM_ONE K12 _____                         _____ &hl SYM_TWO K13 &hl NUM_ONE K14 &hl NAV_TWO K15 &hl FUN_TWO K16 _____ \n\
-    _____ _____          _____           _____           _____           K17   _____ _____ _____ _____ K18   _____           _____           _____           _____           _____ \n\
-                                         _____           _____           _____ _____ _____ _____ _____ _____ _____           _____ 
+#define rmidd_b(code) &hl SYM_TWO code
+#define rindx_b(code) &hl NAV_ONE code
+#define rring_b(code) &hl FUN_TWO code
+
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         alpha_one {
-            bindings = < 
-            LAYER( 
-                DE_C, DE_R, DE_I,  DE_E,   DE_N, DE_T, DE_S, DE_H,
-                DE_O, DE_L, DE_U,  DE_A,   DE_B, DE_D, DE_G, DE_M,
-                                  space, sl_al2      
-            ) 
+            bindings = <
+            _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) lmidd_h(DE_T) rring_h(DE_S) lpnky_h(DE_H) _____
+            _____ &kp DE_O      lring_b(DE_L) lmidd_b(DE_U) lindx_B(DE_A) _____                             _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &kp DE_M      _____
+            _____ _____         _____         _____         _____         &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 _____         _____         _____         _____         _____
+                                              _____         _____         _____     _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
 
         alpha_two {
             bindings = <
-            _____ &hk LALT DE_V       &hk LCTRL DE_X       &hk LSHFT DE_Z      &hk LGUI DE_J       _____                               _____       &hk LGUI DE_P &hk LSHFT DE_F &hk LCTRL DE_K &hk LALT DE_SS _____
-            _____ &hl FUN_ONE DE_COMM &hl NAV_ONE  DE_ODIA &hl NUM_ONE DE_UDIA &hl SYM_ONE DE_ADIA _____                               _____       &kp DE_W      &kp DE_Y       &kp DE_Q       &kp DE_DOT     _____
-            _____ _____               _____                _____               _____               &to DEFAULT _____ _____ _____ _____ &to ALPHA_2 _____         _____          _____          _____          _____
-                                                           _____               _____               _____       _____ _____ _____ _____ _____       _____         _____
+            _____ lpnky_h(DE_V) lring_h(DE_X)    lmidd_h(DE_Z)      lindx_h(DE_J)        _____                               _____       rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpinky_h( DE_SS) _____
+            _____ &kp DE_COMM   lring_b(DE_ODIA) &hl NUM_ONE DE_UDIA &hl SYM_ONE DE_ADIA _____                               _____       rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &kp DE_DOT       _____
+            _____ _____         _____            _____               _____               &to DEFAULT _____ _____ _____ _____ &to ALPHA_2 _____         _____         _____         _____            _____
+                                                 _____               _____               _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
        sym_one {
             bindings = <
-            _____ &hk LALT DE_LABK   &hk LCTRL DE_LBRC   &hk LSHFT DE_LCBR   &hk LGUI DE_LPRN    _____                               _____       &hk LGUI DE_RPRN &hk LSHFT DE_RCBR &hk LCTRL DE_RBRC &hk LALT DE_RABK _____
-            _____ &hl FUN_ONE DE_DLR &hl NAV_ONE DE_SCLN &hl NUM_ONE DE_DQUO &hl SYM_ONE DE_QUOT _____                               _____       &kp DE_EXLM      &kp DE_QUES       &kp DE_COLN       &kp DE_MINS      _____
-            _____ _____              _____               _____               _____               &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____            _____             _____             _____            _____
-                                                         _____               _____               _____       _____ _____ _____ _____ _____       _____            _____
+            _____ lpnky_h(DE_LABK) lring_h(DE_LBRC) lmidd_h(DE_LCBR)  lindx_h(DE_LPRN)  _____                               _____       rindx_h(DE_RPRN) rmidd_h(DE_RCBR) rring_h(DE_RBRC) rpinky_h(DE_RABK) _____
+            _____ &kp DE_DLR       lring_b(DE_SCLN) lmidd_b( DE_DQUO) lindx_b( DE_QUOT) _____                               _____       rindx_b(DE_EXLM) rmidd_b(DE_QUES) rring_b(DE_COLN) &kp DE_MINS       _____
+            _____ _____            _____            _____             _____             &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____            _____            _____            _____             _____
+                                                    _____             _____             _____       _____ _____ _____ _____ _____       _____            _____
             >;
         };
 
        sym_two {
             bindings = <
-            _____ &hk LALT DE_EURO    &hk LCTRL DE_BSLS &hk LSHFT DE_SLSH &hk LGUI DE_ASTR _____                              _____        &hk LGUI DE_PERC &hk LSHFT DE_AMPR &hk LCTRL DE_EQL &hk LALT DE_GRV _____
-            _____ &hl FUN_ONE DE_UNDS &hl NAV_ONE  DE_TILD       &hl NUM_ONE DE_PIPE       &hl SYM_ONE DE_HASH      _____                              _____        &kp DE_ACUT      &kp DE_DEG        &kp DE_CIRC      &kp DE_PLUS     _____
-            _____ _____             _____             _____             _____            &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____              _____           _____            _____           _____
-                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____              _____
+            _____ lpnky_h(DE_EURO) lring_h(DE_BSLS)  lmidd_h(DE_SLSH)  lindx_h(DE_ASTR)  _____                              _____        rindx_h(DE_PERC) rmidd_h(DE_AMPR) rring_h(DE_EQL)  rpinky_h( DE_GRV) _____
+            _____ &kp DE_UNDS      lring_b( DE_TILD) lmidd_b( DE_PIPE) lindx_b( DE_HASH) _____                              _____        rindx_b(DE_ACUT) rmidd_b(DE_DEG)  rring_b(DE_CIRC) &kp DE_PLUS       _____
+            _____ _____             _____             _____             _____            &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____            _____            _____            _____             _____
+                                                      _____             _____            _____       _____ _____ _____ _____ _____       _____            _____
             >;
         };
 
        num_one {
             bindings = <
-            _____ &hk LALT N1 &hk LCTRL N2 &hk LSHFT N3 &hk LGUI N4 _____                               _____       &hk LGUI N7  &hk LSHFT N8 &hk LCTRL N9  &hk LALT N0   _____
-            _____ &hl FUN_ONE DE_EQL  &hl NAV_ONE  DE_PLUS  &hl NUM_ONE DE_MINS  &hl SYM_ONE N5      _____                               _____       &kp N6       &kp DE_ASTR  &kp DE_SLSH   &kp BACKSPACE _____
-            _____ _____       _____        _____        _____       &to DEFAULT _____ _____ _____ _____ &kp DE_DOT  _____        _____        _____         _____         _____
-                                           _____        _____       _____       _____ _____ _____ _____ _____       _____        _____
+            _____ lpnky_h(N1) lring_h(N2)      lmidd_h(N3)      lindx_h(N4) _____                               _____       rindx_h(N7) rmidd_h(N8)      rring_h(N9)      rpinky_h( N0) _____
+            _____ &kp DE_EQL  lring_b(DE_PLUS) lmidd_b(DE_MINS) lindx_b(N5) _____                               _____       rindx_b(N6) rmidd_b(DE_ASTR) rring_b(DE_SLSH) &kp BACKSPACE _____
+            _____ _____       _____            _____            _____       &to DEFAULT _____ _____ _____ _____ &kp DE_DOT  _____        _____           _____            _____         _____
+                                               _____            _____       _____       _____ _____ _____ _____ _____       _____        _____
             >;
         };
 
         nav_one {
             bindings = <
-            _____ &hk LALT TAB &hk LCTRL ENTER &hk LSHFT BACKSPACE &hk LGUI SPACE _____                               _____       &hk LGUI LEFT &hk LSHFT DOWN &hk LCTRL UP &hk LALT RIGHT _____
-            _____ &sl FUN_ONE   &sl NAV_ONE &sl NUM_ONE               &hl SYM_ONE ESCAPE     _____                               _____       &kp HOME      &kp PG_DN      &kp PG_UP    &kp END        _____
-            _____ _____       _____            _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         _____          _____        _____          _____
-                                               _____               _____          _____       _____ _____ _____ _____ _____       _____         _____
-            >;
-        };
-
-        nav_two {
-            bindings = <
-            _____  &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT _____                               _____       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT _____
-            _____ &sl FUN_ONE &sl NAV_ONE &hl NUM_ONE RCLK &hl SYM_ONE LCLK          _____                               _____       &kp LGUI       &kp LSHFT      &kp LCTRL    &kp LALT        _____
-            _____ _____             _____            _____          _____             &to DEFAULT _____ _____ _____ _____ &to NAV_ONE _____          _____          _____        _____           _____
-                                                     _____          _____             _____       _____ _____ _____ _____ _____       _____          _____
+            _____ lpnky_h(TAB) lring_h(ENTER) lmidd_h(BACKSPACE) lindx_h(SPACE)  _____                               _____       rindx_h(LEFT) rmidd_h(DOWN)  rring_h(UP)    rpinky_h( RIGHT) _____
+            _____ _____        &sl FUN_ONE    &sl NUM_ONE        lindx_b(ESCAPE) _____                               _____       rindx_b(HOME) rmidd_b(PG_DN) rring_h(PG_UP) &kp END          _____
+            _____ _____        _____          _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         _____          _____          _____            _____
+                                              _____               _____          _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
 
         fun_one {
             bindings = <
-            _____ &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP     _____                               _____       &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 _____ _____
-            _____ &sl FUN_ONE &sl NAV_ONE &hl NUM_ONE C_MUTE   &hl SYM_ONE C_PLAY_PAUSE _____                               _____       _____      _____        _____        _____ _____
-            _____ _____      _____      _____        _____            &to DEFAULT _____ _____ _____ _____ &to FUN_TWO _____      _____        _____        _____ _____
-                                        _____        _____            _____       _____ _____ _____ _____ _____       _____      _____
+            _____ &kp C_PREV &kp C_NEXT  &kp C_VOL_DN    &kp C_VOL_UP          _____                               _____       &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 _____ _____
+            _____ _____      &sl FUN_ONE lmidd_b(C_MUTE) lindx_h(C_PLAY_PAUSE) _____                               _____       &sl SYM_TWO &sl NAV_ONE  &sl FUN_TWO  _____ _____
+            _____ _____      _____       _____           _____                 &to DEFAULT _____ _____ _____ _____ &to FUN_TWO _____       _____        _____        _____ _____
+                                         _____           _____                 _____       _____ _____ _____ _____ _____       _____       _____
             >;
         };
 
         fun_two {
             bindings = <
-            _____ &hk LALT F1 &hk F2 C_NEXT &hk LSHFT F3 &hk LGUI F4 _____                               _____       &hk LGUI F7 &hk LSHFT F8 &hk LCTRL F9 &hk LALT F10 _____
-            _____ &sl FUN_ONE &sl NAV_ONE &sl NUM_ONE &hl SYM_ONE  F5      _____                               _____       &kp F6      &kp F11      &kp F12         _____     _____
-            _____ _____       _____         _____        _____       &to DEFAULT _____ _____ _____ _____ &to FUN_ONE _____       _____        _____           _____     _____
-                                            _____        _____       _____       _____ _____ _____ _____ _____       _____      _____
+            _____ lpnky_h(F1) lring_h(F2) lmidd_h(F3) lindx_h(F4) _____                               _____       rindx_h(F7) rmidd_h(F8)  rring_h(F9)  rpinky_h( F10) _____
+            _____ _____       &sl FUN_ONE &sl NUM_ONE lindx_b(F5) _____                               _____       rindx_h(F6) rmidd_h(F11) rring_h(F12) _____          _____
+            _____ _____       _____         _____        _____    &to DEFAULT _____ _____ _____ _____ &to FUN_ONE _____       _____        _____        _____          _____
+                                            _____        _____    _____       _____ _____ _____ _____ _____       _____      _____
             >;
         };
 
