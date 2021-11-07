@@ -265,7 +265,7 @@
             bindings = <
             _____ lpnky_h(TAB) lring_h(ENTER) lmidd_h(BACKSPACE) lindx_h(SPACE)  _____                               _____       rindx_h(LEFT) rmidd_h(DOWN)  rring_h(UP)    rpnky_h( RIGHT) _____
             _____ _____        &sl FUN_ONE    &sl NUM_ONE        lindx_b(ESCAPE) _____                               _____       rindx_b(HOME) rmidd_b(PG_DN) rring_h(PG_UP) &kp END          _____
-            _____ _____        _____          _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_TWO _____         _____          _____          _____            _____
+            _____ _____        _____          _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_ONE _____         _____          _____          _____            _____
                                               _____               _____          _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
