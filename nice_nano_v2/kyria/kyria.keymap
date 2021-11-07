@@ -218,7 +218,7 @@
         alpha_one {
             bindings = <
             _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) lmidd_h(DE_T) rring_h(DE_S) lpnky_h(DE_H) _____
-            _____ &kp DE_O      lring_b(DE_L) lmidd_b(DE_U) lindx_B(DE_A) _____                             _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &kp DE_M      _____
+            _____ &kp DE_O      lring_b(DE_L) lmidd_b(DE_U) lindx_b(DE_A) _____                             _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &kp DE_M      _____
             _____ _____         _____         _____         _____         &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 _____         _____         _____         _____         _____
                                               _____         _____         _____     _____ _____ _____ _____ _____       _____         _____
             >;
