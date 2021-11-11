@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
 /*
@@ -145,25 +144,6 @@
 // Row 1
 #define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
 
-#define DEFAULT 0
-#define SYM     1
-#define SYM_ONE 2
-#define SYM_TWO 3
-#define NUM_ONE 4
-#define NAV_ONE 5
-#define FUN_ONE 6
-#define FUN_TWO 7
-
-&mmv {   
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent=<2>;
-};
-
-&mwh {
-    acceleration-exponent=<2>;
-    time-to-max-speed-ms = <500>;
-};
-
 / {
 
     behaviors {
@@ -211,9 +191,9 @@
 
         alpha {
             bindings = <
-            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                          &kp DE_W  &kp DE_P      &kp DE_F       &kp DE_COMM     &kp DE_K     _____
-            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &kp DE_O                          &kp DE_M  &sk LGUI DE_N &sk LCTRL DE_T &sk LSHFT DE_S &sk LALT DE_H _____
-            _____ &kp DE_Z      &sl 6 DE_L     &sl 4 DE_U     &sl 2 DE_A    _____     _____ _____ _____ _____ _____     &sl 1 DE_B    &sl 2 DE_D     &sl 3 DE_G      &kp DE_Y     _____
+            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                          &kp DE_W  &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
+            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &kp DE_O                          &kp DE_M  &hk LGUI DE_N &hk LCTRL DE_T &hk LSHFT DE_S &hk LALT DE_H _____
+            _____ &kp DE_Z      &hl 6 DE_L     &hl 4 DE_U     &hl 2 DE_A    _____     _____ _____ _____ _____ _____     &hl 1 DE_B    &hl 2 DE_D     &hl 3 DE_G     &kp DE_Y      _____
                                                _____          _____         &kp SPACE _____ _____ _____ _____ &sk LSHFT _____         _____
             >;
         };
