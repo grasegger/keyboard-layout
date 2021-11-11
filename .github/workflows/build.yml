@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Prepare build env for west
-        run: mv nice_nano_v2/kyria config
+        run: mv nice_nano_v2/kyria_30 config
       - name: Cache west modules
         uses: actions/cache@v2
         env:
