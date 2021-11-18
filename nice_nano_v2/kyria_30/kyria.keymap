@@ -198,7 +198,7 @@
              mods = <(MOD_LCTL)>;
         };
 
-        shift_symbols_num_fun: shift_symbols_num_fun {
+        multithumb: shift_symbols_num_fun {
             compatible = "zmk,behavior-mod-morph";  
              label = "shift_symbols_num_fun";            
              #binding-cells = <0>;            
@@ -229,10 +229,10 @@
 
         alpha {
             bindings = <
-            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                          &kp DE_W  &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
-            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &kp DE_O                          &kp DE_M  &hk LGUI DE_N &hk LCTRL DE_T &hk LSHFT DE_S &hk LALT DE_H _____
-            _____ &kp DE_Z      &hl 6 DE_L     &hl 4 DE_U     &hl 2 DE_A    _____     _____ _____ _____ _____ _____     &hl 1 DE_B    &hl 3 DE_D     &hl 5 DE_G     &kp DE_Y      _____
-                                               _____          _____         &kp SPACE _____ _____ _____ _____ &sk LSHFT _____         _____
+            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                          &kp DE_W    &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
+            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &kp DE_O                          &kp DE_M    &hk LGUI DE_N &hk LCTRL DE_T &hk LSHFT DE_S &hk LALT DE_H _____
+            _____ &kp DE_Z      &hl 6 DE_L     &hl 4 DE_U     &hl 2 DE_A    _____     _____ _____ _____ _____ _____       &hl 1 DE_B    &hl 3 DE_D     &hl 5 DE_G     &kp DE_Y      _____
+                                               _____          _____         &kp SPACE _____ _____ _____ _____ &multithumb _____         _____
             >;
         };
 
