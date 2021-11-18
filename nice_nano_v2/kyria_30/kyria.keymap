@@ -162,14 +162,6 @@
             bindings = <&sl>, <&kp>;
         };
 
-        sft_sym: shift_symbols {
-            compatible = "zmk,behavior-mod-morph";  
-             label = "shift_symbols";            
-             #binding-cells = <0>;            
-             bindings = <&sk LSHFT>, <&to SYMBOLS>;            
-             mods = <(MOD_LSFT)>;
-        };
-
     };
 };
 
@@ -203,7 +195,7 @@
             _____ &kp DE_Z &hl 6 DE_L &hl 4 DE_U    &hl 2 DE_A     _____     _____ _____ _____ _____ _____     &hl 1 DE_B    &hl 3 DE_D     &hl 5 DE_G  &kp DE_Y _____
                                       _____         _____          &kp SPACE _____ _____ _____ _____ &sk LSHFT _____         _____
             >;
-        };‚
+        };
 
         sym_right {
             bindings = <
