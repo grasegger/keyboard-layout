@@ -162,13 +162,31 @@
             bindings = <&sl>, <&kp>;
         };
 
+        tl: tl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "To Layer";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&to>, <&kp>;
+        };
+
+        spack: spack {
+            compatible = "zmk,behavior-mod-morph";
+            label = "spack";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp BACKSPACE>;
+            mods = <(MOD_LSFT)>;
+        };
+  
+};
     };
 };
 
 #define _____ &none
 
 &mt {
-    retro-tap;
     tapping-term-ms = <200>;
 };
 
@@ -190,10 +208,10 @@
 
         alpha {
             bindings = <
-            _____ &kp DE_V &kp DE_X   &kp DE_DOT    &kp DE_Q       &kp DE_J                          &kp DE_W  &kp DE_P      &kp DE_F       &kp DE_COMM &kp DE_K _____
-            _____ &kp DE_C &kp DE_R   &mt LALT DE_I &mt LSHFT DE_E &kp DE_O                          &kp DE_M  &mt LGUI DE_N &mt LCTRL DE_T &kp DE_S    &kp DE_H _____
-            _____ &kp DE_Z &hl 6 DE_L &hl 4 DE_U    &hl 2 DE_A     _____     _____ _____ _____ _____ _____     &hl 1 DE_B    &hl 3 DE_D     &hl 5 DE_G  &kp DE_Y _____
-                                      _____         _____          &kp SPACE _____ _____ _____ _____ &sk LSHFT _____         _____
+            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                          &kp DE_W  &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
+            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &kp DE_O                          &kp DE_M  &hk LGUI DE_N &hk LCTRL DE_T &hk LSHFT DE_S &hk LALT DE_H _____
+            _____ &kp DE_Z      &hl 6 DE_L     &tl 4 DE_U     &hl 2 DE_A    _____     _____ _____ _____ _____ _____     &hl 1 DE_B    &tl 3 DE_D     &hl 5 DE_G     &kp DE_Y      _____
+                                               _____          _____         &kp SPACE _____ _____ _____ _____ &sk LSHFT _____         _____
             >;
         };
 
@@ -202,7 +220,7 @@
             _____ &kp DE_QUOT &kp DE_DQUO &kp DE_UDIA &kp DE_ADIA &kp DE_SS                           _____    _____ _____       _____       _____     _____
             _____ &kp DE_UNDS &kp DE_MINS &kp DE_QUES &kp DE_EXLM &kp DE_ODIA                         _____    _____ &kp LCTRL   &kp LSHFT   &kp LALT  _____
             _____ &kp DE_EQL  &kp DE_PLUS &kp DE_LPRN &kp DE_RPRN _____       _____ _____ _____ _____ _____    _____ &kp DE_COLN &kp DE_HASH &kp DE_AT _____
-                                          _____       _____       _____       &to 0 _____ _____ _____ &kp LGUI _____ _____
+                                          _____       _____       _____       _____ _____ _____ _____ &kp LGUI _____ _____
             >;
         };
 
@@ -219,7 +237,7 @@
             bindings = <
             _____ &kp PGUP   &kp DELETE &kp UP   &kp BACKSPACE &kp PG_DN                         _____     _____    _____ _____     _____    _____
             _____ &kp HOME   &kp LEFT   &kp DOWN &kp RIGHT     &kp END                           _____     &kp LGUI _____ &kp LSHFT &kp LALT _____
-            _____ &kp ESCAPE &kp TAB    &kp INS  &kp ENTER     _____     _____ _____ _____ _____ _____     &to 3    _____ &to 0     _____    _____
+            _____ &kp ESCAPE &kp TAB    &kp INS  &kp ENTER     _____     _____ _____ _____ _____ _____     _____    &to 0 _____     _____    _____
                                         _____    _____         _____     _____ _____ _____ _____ &kp LCTRL _____    _____
             >;
         };
@@ -229,7 +247,7 @@
             bindings = <
             _____ _____    _____     _____ _____    _____                             &kp DE_MINS &kp N7 &kp N8 &kp N9 &kp DE_ASTR _____
             _____ &kp LALT &kp LSHFT _____ &kp LGUI _____                             &kp DE_PLUS &kp N4 &kp N5 &kp N6 &kp N0      _____
-            _____ _____    &to 0     _____ &to 4    _____     _____ _____ _____ _____ _____       &kp N1 &kp N2 &kp N3 &kp DE_SLSH _____
+            _____ _____    _____     &to 0 _____    _____     _____ _____ _____ _____ _____       &kp N1 &kp N2 &kp N3 &kp DE_SLSH _____
                                      _____ _____    &kp LCTRL _____ _____ _____ _____ &kp DE_EQL  _____ _____
             >;
         };
