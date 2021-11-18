@@ -168,7 +168,7 @@
 #define _____ &none
 
 &mt {
-    retro_tap;
+    retro-tap;
     tapping-term-ms = <200>;
 };
 
