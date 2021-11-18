@@ -144,6 +144,11 @@
 // Row 1
 #define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
 
+#define DEFAULT 0
+#define SYMBOLS 1
+#define NUM 2
+#define FUN 3
+
 / {
 
     behaviors {
@@ -167,6 +172,39 @@
             bindings = <&sk>, <&kp>;
         };
 
+        shift_or_default: shift_or_default{
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold Sticky Key";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&to>, <&sk>;
+        };
+
+        shift_symbols: shift_symbols {
+            compatible = "zmk,behavior-mod-morph";  
+             label = "shift_symbols";            
+             #binding-cells = <0>;            
+             bindings = <&shift_or_default DEFAULT LSHFT>, <&to SYMBOLS>;            
+             mods = <(MOD_LGUI)>;
+        };
+
+        shift_symbols_num: shift_symbols_num {
+            compatible = "zmk,behavior-mod-morph";  
+             label = "shift_symbols_num";            
+             #binding-cells = <0>;            
+             bindings = <&shift_symbols>, <&to NUM>;            
+             mods = <(MOD_LCTL)>;
+        };
+
+        shift_symbols_num_fun: shift_symbols_num_fun {
+            compatible = "zmk,behavior-mod-morph";  
+             label = "shift_symbols_num_fun";            
+             #binding-cells = <0>;            
+             bindings = <&shift_symbols_num>, <&to FUN>;            
+             mods = <(MOD_LCTL)>;
+        };
     };
 };
 
