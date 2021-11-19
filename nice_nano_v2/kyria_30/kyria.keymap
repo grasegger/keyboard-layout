@@ -179,6 +179,7 @@
 
 &mt {
     tapping-term-ms = <300>;
+    flavor = "tap-preferred";
 };
 
 / {
