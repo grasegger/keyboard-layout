@@ -164,6 +164,12 @@
     time-to-max-speed-ms = <500>;
 };
 
+
+&mt {
+    tapping-term-ms = <300>;
+    flavor = "tap-preferred";
+};
+
 / {
 
     behaviors {
@@ -177,30 +183,20 @@
             bindings = <&sl>, <&kp>;
         };
 
-        hk: hk {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold Sticky Key";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sk>, <&kp>;
-        };
-
     };
 };
 
 #define _____ &none
 
-#define lpnky_h(code) &hk LALT code
-#define lring_h(code) &hk LCTRL code
-#define lmidd_h(code) &hk LSHFT code
-#define lindx_h(code) &hk LGUI code
+#define lpnky_h(code) &mt LALT code
+#define lring_h(code) &mt LCTRL code
+#define lmidd_h(code) &mt LSHFT code
+#define lindx_h(code) &mt LGUI code
 
-#define rmidd_h(code) &hk LSHFT code
-#define rindx_h(code) &hk LGUI code
-#define rring_h(code) &hk LCTRL code
-#define rpnky_h(code) &hk LALT code
+#define rmidd_h(code) &mt LSHFT code
+#define rindx_h(code) &mt LGUI code
+#define rring_h(code) &mt LCTRL code
+#define rpnky_h(code) &mt LALT code
 
 #define lring_b(code) &hl FUN_ONE code
 #define lmidd_b(code) &hl NUM_ONE code
