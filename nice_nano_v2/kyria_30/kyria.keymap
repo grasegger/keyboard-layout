@@ -177,7 +177,7 @@
 #define HYPER LC(LG(LS(LALT)))
 
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
 };
 
 / {
