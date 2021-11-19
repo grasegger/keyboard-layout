@@ -180,6 +180,8 @@
 &mt {
     tapping-term-ms = <300>;
     flavor = "tap-preferred";
+    quick_tap_ms = <50>;
+    bindings = <&sk>, <&kp>;
 };
 
 / {
