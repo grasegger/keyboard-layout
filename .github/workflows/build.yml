@@ -64,7 +64,7 @@ jobs:
           path: kyria_right_nice_nano_v2.uf2
 
 
- kyria_nice_nano_18:
+  kyria_nice_nano_18:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
