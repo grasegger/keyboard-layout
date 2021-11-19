@@ -168,6 +168,8 @@
 &mt {
     tapping-term-ms = <300>;
     flavor = "tap-preferred";
+    quick_tap_ms = <50>;
+    bindings = <&sk>, <&kp>;
 };
 
 / {
@@ -193,10 +195,10 @@
 #define lmidd_h(code) &mt LSHFT code
 #define lindx_h(code) &mt LGUI code
 
-#define rmidd_h(code) &mt LSHFT code
-#define rindx_h(code) &mt LGUI code
-#define rring_h(code) &mt LCTRL code
-#define rpnky_h(code) &mt LALT code
+#define rindx_h(code) lindx_h(code)
+#define rmidd_h(code) lmidd_h(code)
+#define rring_h(code) lring_h(code)
+#define rpnky_h(code) lpnky_h(code)
 
 #define lring_b(code) &hl FUN_ONE code
 #define lmidd_b(code) &hl NUM_ONE code
@@ -214,7 +216,7 @@
         alpha_one {
             bindings = <
             _____ _____ _____ _____ _____ _____                         _____ _____ _____ _____ _____ _____
-            _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) lmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H) _____
+            _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) rmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H) _____
             _____ &kp DE_O      lring_b(DE_L) lmidd_b(DE_U) lindx_b(DE_A) _____                             _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &kp DE_M      _____
          _____         _____         &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 _____         _____
             >;
@@ -226,7 +228,7 @@
              _____ _____ _____ _____ _____ _____                         _____ _____ _____ _____ _____ _____
             _____ lpnky_h(DE_V) lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                               _____       rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS) _____
             _____ &kp DE_COMM   lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____                               _____       rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &kp DE_DOT       _____
-            _____               _____          &to DEFAULT _____ _____ _____ _____ &sk LSHFT _____         _____
+            _____               _____          &sk LSHFT _____ _____ _____ _____ _____ _____         _____
             >;
         };
 
