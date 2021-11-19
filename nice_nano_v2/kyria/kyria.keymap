@@ -229,7 +229,7 @@
             bindings = <
             _____ lpnky_h(DE_V) lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                               _____       rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS) _____
             _____ &kp DE_COMM   lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____                               _____       rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &kp DE_DOT       _____
-            _____ _____         _____            _____               _____          &to DEFAULT _____ _____ _____ _____ &to ALPHA_2 _____         _____         _____         _____            _____
+            _____ _____         _____            _____               _____          &to DEFAULT _____ _____ _____ _____ &sk LSHFT _____         _____         _____         _____            _____
                                                  _____               _____          _____       _____ _____ _____ _____ _____       _____         _____
             >;
         };
