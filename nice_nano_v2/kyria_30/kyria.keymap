@@ -179,7 +179,6 @@
 
 &mt {
     tapping-term-ms = <300>;
-    retro-tap;
 };
 
 / {
