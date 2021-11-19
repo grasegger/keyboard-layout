@@ -175,9 +175,11 @@
 
 #define _____ &none
 #define HYPER LC(LG(LS(LALT)))
+#define MEH LC(LS(LALT))
 
 &mt {
     tapping-term-ms = <300>;
+    retro-tap;
 };
 
 / {
@@ -198,10 +200,10 @@
 
         alpha {
             bindings = <
-            _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                               &kp DE_W       &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
-            _____ &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &mt HYPER DE_O                         &mt HYPER DE_M &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H _____
-            _____ &kp DE_Z      &hl 6 DE_L     &tl 4 DE_U     &hl 2 DE_A    _____          _____ _____ _____ _____ _____          &hl 1 DE_B    &tl 3 DE_D     &hl 5 DE_G     &kp DE_Y      _____
-                                               &kp TAB        &kp BACKSPACE &kp SPACE      _____ _____ _____ _____ &sk LSHFT      &kp ENTER     &kp ESCAPE
+            _____ &kp DE_V &kp DE_X   &kp DE_DOT &kp DE_Q    &kp DE_J                                                   &kp DE_W   &kp DE_P       &kp DE_F         &kp DE_COMM &kp DE_K _____
+            _____ &kp DE_C &kp DE_R   &kp DE_I   &kp DE_E    &kp DE_O                                                   &kp DE_M   &kp DE_N       &kp DE_T         &kp DE_S    &kp DE_H _____
+            _____ &kp DE_Z &hl 6 DE_L &tl 4 DE_U &hl 2 DE_A  _____              _____           _____ _____ _____ _____ _____      &hl 1 DE_B     &tl 3 DE_D       &hl 5 DE_G  &kp DE_Y _____
+                                                 &mt MEH TAB &mt LALT BACKSPACE &mt LCTRL SPACE _____ _____ _____ _____ &sk LSHFT  &mt LGUI ENTER &mt HYPER ESCAPE
             >;
         };
 
