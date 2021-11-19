@@ -151,16 +151,6 @@
 
 / {
     behaviors {
-        hk: hk {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold Sticky Layer";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
         hl: hl {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Sticky Layer";
@@ -186,6 +176,10 @@
 #define _____ &none
 #define HYPER LC(LG(LS(LALT)))
 
+&mt {
+    tapping-term-ms = <200>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -205,7 +199,7 @@
         alpha {
             bindings = <
             _____ &kp DE_V      &kp DE_X       &kp DE_DOT     &kp DE_Q      &kp DE_J                               &kp DE_W       &kp DE_P      &kp DE_F       &kp DE_COMM    &kp DE_K      _____
-            _____ &hk LALT DE_C &hk LSHFT DE_R &hk LCTRL DE_I &hk LGUI DE_E &hk HYPER DE_O                         &hk HYPER DE_M &hk LGUI DE_N &hk LCTRL DE_T &hk LSHFT DE_S &hk LALT DE_H _____
+            _____ &mt LALT DE_C &mt LSHFT DE_R &mt LCTRL DE_I &mt LGUI DE_E &mt HYPER DE_O                         &mt HYPER DE_M &mt LGUI DE_N &mt LCTRL DE_T &mt LSHFT DE_S &mt LALT DE_H _____
             _____ &kp DE_Z      &hl 6 DE_L     &tl 4 DE_U     &hl 2 DE_A    _____          _____ _____ _____ _____ _____          &hl 1 DE_B    &tl 3 DE_D     &hl 5 DE_G     &kp DE_Y      _____
                                                &kp TAB        &kp BACKSPACE &kp SPACE      _____ _____ _____ _____ &sk LSHFT      &kp ENTER     &kp ESCAPE
             >;
