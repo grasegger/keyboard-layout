@@ -222,17 +222,17 @@
             _____ _____         _____         _____         _____         _____                             _____       _____         _____         _____         _____          _____
             _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) rmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H)  _____
             _____ &mt MEH DE_O lring_b(DE_L)  lmidd_b(DE_U) lindx_b(DE_A) _____     _____ _____ _____ _____ _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &mt HYPER DE_M _____
-                                              _____         &kp BACKSPACE &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 &sk LSHFT     _____
+                                              _____         &sk LSHFT     &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 &kp BACKSPACE     _____
             >;
         };
 
 
         alpha_two {
             bindings = <
-            _____ _____           _____            _____            _____            _____                         _____ _____         _____         _____         _____            _____
-            _____ lpnky_h(DE_V)   lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                         _____ rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS)  _____
-            _____ &mt MEH DE_COMM lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____ _____ _____ _____ _____ _____ rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &mt HYPER DE_DOT _____
-                                                   _____            _____            _____ _____ _____ _____ _____ _____         _____
+            _____ _____           _____            _____            _____            _____                             _____       _____         _____         _____         _____            _____
+            _____ lpnky_h(DE_V)   lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                             _____       rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS)  _____
+            _____ &mt MEH DE_COMM lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____     _____ _____ _____ _____ _____       rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &mt HYPER DE_DOT _____
+                                                    _____           &sk LSHFT        &kp ENTER _____ _____ _____ _____ &kp ESCCAPE &kp TAB     _____
             >;
         };
 
