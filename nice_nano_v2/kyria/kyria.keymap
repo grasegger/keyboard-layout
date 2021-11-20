@@ -229,10 +229,10 @@
 
         alpha_two {
             bindings = <
-            _____ _____           _____            _____            _____            _____                             _____       _____         _____         _____         _____            _____
-            _____ lpnky_h(DE_V)   lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                             _____       rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS)  _____
-            _____ &mt MEH DE_COMM lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____     _____ _____ _____ _____ _____       rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &mt HYPER DE_DOT _____
-                                                    _____           &sk LSHFT        &kp ENTER _____ _____ _____ _____ &kp ESCCAPE &kp TAB     _____
+            _____ _____           _____            _____            _____            _____                             _____      _____         _____         _____         _____            _____
+            _____ lpnky_h(DE_V)   lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                             _____      rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS)  _____
+            _____ &mt MEH DE_COMM lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____     _____ _____ _____ _____ _____      rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &mt HYPER DE_DOT _____
+                                                    _____           &sk LSHFT        &kp ENTER _____ _____ _____ _____ &kp ESCAPE &kp TAB     _____
             >;
         };
 
