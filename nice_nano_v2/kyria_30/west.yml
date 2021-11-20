@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: grasegger
-      revision: main
+      revision: building
       import: app/west.yml
   self:
     path: config
