@@ -222,7 +222,7 @@
             _____ _____         _____         _____         _____         _____                             _____       _____         _____         _____         _____          _____
             _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) rmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H)  _____
             _____ &mt MEH DE_O lring_b(DE_L)  lmidd_b(DE_U) lindx_b(DE_A) _____     _____ _____ _____ _____ _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &mt HYPER DE_M _____
-                                              _____         _____         &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 _____         _____
+                                              _____         &kp BACKSPACE &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 &sk LSHFT     _____
             >;
         };
 
