@@ -233,9 +233,9 @@
             K17, K18, K19, K20 \
 ) \
             L20 (\
-            &mt LALT K1 &mt LSHFT K2    &mt LCTRL K3    &mt LGUI K4             &mt LGUI K5     &mt LCTRL K6    &mt LSHFT K7    &mt LALT K8   \
-            &mt MEH K9  &hl FUN_ONE K10 &hl NUM_ONE K11 &hl SYM_ONE K12         &hl SYM_TWO K13 &hl NAV_ONE K14 &hl FUN_TWO K15 &mt HYPER K16 \
-                                                        K17             K18 K19 K20 \
+            &mt LALT K1, &mt LSHFT K2,    &mt LCTRL K3,    &mt LGUI K4,               &mt LGUI K5,     &mt LCTRL K6,    &mt LSHFT K7,    &mt LALT K8,   \
+            &mt MEH K9,  &hl FUN_ONE K10, &hl NUM_ONE K11, &hl SYM_ONE K12,           &hl SYM_TWO K13, &hl NAV_ONE K14, &hl FUN_TWO K15, &mt HYPER K16, \
+                                                           K17,             K18, K19, K20 \
             )
 
 / {
