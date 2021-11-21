@@ -244,9 +244,9 @@
         alpha_one {
             bindings = <
                 L20_TAPS(
-                    DE_C DE_R DE_I DE_E                           DE_N          DE_T DE_S DE_H
-                    DE_O DE_L DE_U DE_A                           DE_B          DE_D DE_G DE_M
-                                  &sk LSHFT &kp SPACE &sl ALPHA_2 &kp BACKSPACE
+                    DE_C, DE_R, DE_I, DE_E,                              DE_N,          DE_T, DE_S, DE_H,
+                    DE_O, DE_L, DE_U, DE_A,                              DE_B,          DE_D, DE_G, DE_M,
+                                      &sk LSHFT, &kp SPACE, &sl ALPHA_2, &kp BACKSPACE
                 )
 /*       
             _____ _____         _____         _____         _____         _____                             _____       _____         _____         _____         _____          _____
