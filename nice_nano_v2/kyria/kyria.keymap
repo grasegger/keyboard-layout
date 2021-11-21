@@ -216,6 +216,26 @@
 #define HYPER LC(LG(LS(LALT)))
 #define MEH LC(LS(LALT))
 
+#define L20 ( \
+    K1  K2  K3  K4  K5  K6  K7  K8 \
+    K9  K10 K11 K12 K13 K14 K15 K16 \
+            K17 K18 K19 K20 \
+) \
+            _____ _____ _____ _____ _____ _____                         _____ _____ _____ _____ _____ _____ \
+            _____ K1    K2    K3    K4    _____                         _____ K5    K6    K7    K8    _____ \
+            _____ K9    K10   K11   K12   _____ _____ _____ _____ _____ _____ K13   K14   K15   K16   _____ \
+                              _____ K17   K18   _____ _____ _____ _____ K19   K20   _____
+
+
+#define L20_TAPS ( \
+    K1  K2  K3  K4  K5  K6  K7  K8 \
+    K9  K10 K11 K12 K13 K14 K15 K16 \
+            K17 K18 K19 K20 \
+) \
+            _____ _____       _____           _____           _____           _____                         _____ _____           _____           _____           _____         _____ \
+            _____ &mt LALT K1 &mt LSHFT K2    &mt LCTRL K3    &mt LGUI K4     _____                         _____ &mt LGUI K5     &mt LCTRL K6    &mt LSHFT K7    &mt LALT K8   _____ \
+            _____ &mt MEH K9  &hl FUN_ONE K10 &hl NUM_ONE K11 &hl SYM_ONE K12 _____ _____ _____ _____ _____ _____ &hl SYM_TWO K13 &hl NAV_ONE K14 &hl FUN_TWO K15 &mt HYPER K16 _____ \
+                                              _____           K17             K18   _____ _____ _____ _____ K19   K20             _____
 
 / {
     keymap {
@@ -223,10 +243,17 @@
 
         alpha_one {
             bindings = <
+                L20_TAPS(
+                    DE_C DE_R DE_I DE_E                           DE_N          DE_T DE_S DE_H
+                    DE_O DE_L DE_U DE_A                           DE_B          DE_D DE_G DE_M
+                                  &sk LSHFT &kp SPACE &sl ALPHA_2 &kp BACKSPACE
+                )
+/*       
             _____ _____         _____         _____         _____         _____                             _____       _____         _____         _____         _____          _____
             _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) rmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H)  _____
             _____ &mt MEH DE_O lring_b(DE_L)  lmidd_b(DE_U) lindx_b(DE_A) _____     _____ _____ _____ _____ _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &mt HYPER DE_M _____
                                               _____         &sk LSHFT     &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 &kp BACKSPACE     _____
+                                              */
             >;
         };
 
