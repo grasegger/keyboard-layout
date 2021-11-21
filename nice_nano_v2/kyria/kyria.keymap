@@ -258,7 +258,7 @@
                 L20_TAPS(
                     DE_V,    DE_X,    DE_Z,    DE_J,                           DE_P,          DE_F, DE_K, DE_SS,
                     DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                        DE_W,          DE_Y, DE_Q, DE_DOT,
-                                               &kp TAB, &kp ENTER, &sl ESCAPE, &ksk LSHFT
+                                               &kp TAB, &kp ENTER, &sl ESCAPE, &sk LSHFT
                 )
             >;
         };
