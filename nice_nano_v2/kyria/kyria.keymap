@@ -153,6 +153,7 @@
 #define NAV_ONE 5
 #define FUN_ONE 6
 #define FUN_TWO 7
+#define LEVEL_SELECT 8
 
 &mmv {   
     time-to-max-speed-ms = <500>;
@@ -186,31 +187,23 @@
             tapping-term-ms = <300>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
+            bindings = <&sl>, <&kp>;
         };
 
     };
 };
 
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SYM_ONE SYM_TWO>;
+            then-layer = <LEVEL_SELECT>;
+        };
+    };
+};
+
 #define _____ &none
-
-#define lpnky_h(code) &mt LALT code
-#define lring_h(code) &mt LCTRL code
-#define lmidd_h(code) &mt LSHFT code
-#define lindx_h(code) &mt LGUI code
-
-#define rindx_h(code) lindx_h(code)
-#define rmidd_h(code) lmidd_h(code)
-#define rring_h(code) lring_h(code)
-#define rpnky_h(code) lpnky_h(code)
-
-#define lring_b(code) &hl FUN_ONE code
-#define lmidd_b(code) &hl NUM_ONE code
-#define lindx_b(code) &hl SYM_ONE code
-
-#define rmidd_b(code) &hl SYM_TWO code
-#define rindx_b(code) &hl NAV_ONE code
-#define rring_b(code) &hl FUN_TWO code
 
 
 #define HYPER LC(LG(LS(LALT)))
@@ -233,9 +226,9 @@
             K17, K18, K19, K20 \
 ) \
             L20 (\
-            &mt LALT K1, &mt LSHFT K2,    &mt LCTRL K3,    &mt LGUI K4,               &mt LGUI K5,     &mt LCTRL K6,    &mt LSHFT K7,    &mt LALT K8,   \
-            &mt MEH K9,  &hl FUN_ONE K10, &hl NUM_ONE K11, &hl SYM_ONE K12,           &hl SYM_TWO K13, &hl NAV_ONE K14, &hl FUN_TWO K15, &mt HYPER K16, \
-                                                           K17,             K18, K19, K20 \
+            &mt HYPER K1, &hl SYM_ONE K2,  &mt LALT K3,     &mt LGUI K4,           &mt LSHFT K5,    &mt LCTRL K6,    &hl SYM_TWO K7,  &mt HYPER K8,   \
+            &kp K9,       &kp K10,         &hl NUM_ONE K11, &kp K12,               &kp K13,         &hl NUM_ONE K14, &kp K15,         &kp K16, \
+                                                            K17,         K18, K19, K20 \
             )
 
 / {
@@ -258,7 +251,7 @@
                 L20_TAPS(
                     DE_V,    DE_X,    DE_Z,    DE_J,                           DE_P,          DE_F, DE_K, DE_SS,
                     DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                        DE_W,          DE_Y, DE_Q, DE_DOT,
-                                               &kp TAB, &kp ENTER, &sl ESCAPE, &sk LSHFT
+                                               &kp TAB, &kp ENTER, &kp ESCAPE, &sk LSHFT
                 )
             >;
         };
@@ -266,9 +259,9 @@
        sym_one {
             bindings = <
                 L20_TAPS(
-                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN,                           DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
-                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT,                           DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
-                                                _____,   &to DEFAULT, &to SYM_ONE, _____
+                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN,               DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
+                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT,               DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
+                                                _____,   _____, _____, _____
                 )
             >;
         };
@@ -276,9 +269,9 @@
        sym_two {
             bindings = <
                 L20_TAPS(
-                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR,                           DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
-                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH,                           DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
-                                               _____,   &to DEFAULT, &to SYM_TWO, _____           
+                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR,               DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
+                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH,               DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
+                                               _____,   _____, _____, _____           
                 )
             >;
         };
@@ -295,10 +288,11 @@
 
         nav_one {
             bindings = <
-            _____ _____        _____          _____              _____           _____                               _____       _____         _____          _____          _____           _____
-            _____ lpnky_h(TAB) lring_h(ENTER) lmidd_h(BACKSPACE) lindx_h(SPACE)  _____                               _____       rindx_h(LEFT) rmidd_h(DOWN)  rring_h(UP)    rpnky_h( RIGHT) _____
-            _____ _____        &sl FUN_ONE    &sl NUM_ONE        lindx_b(ESCAPE) _____       _____ _____ _____ _____ _____       rindx_b(HOME) rmidd_b(PG_DN) rring_h(PG_UP) &kp END         _____
-                                              _____               _____          &to DEFAULT _____ _____ _____ _____ &to NAV_ONE _____         _____
+	    L20(
+		&kp LEFT, &kp DOWN,  &kp UP,    &kp RIGHT,                    &kp LGUI,  &kp LCTRL,     &kp LALT,  &kp LSHFT,
+		&kp HOME, &kp PG_DN, &kp PG_UP, &kp END,                      &kp SPACE, &kp BACKSPACE, &kp ENTER, &kp ESCAPE,
+		    	      	     	        _____,    &to DEFAULT, _____, _____
+	    )
             >;
         };
 
@@ -307,20 +301,30 @@
             L20 (
                 &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN, &kp C_VOL_UP,                  &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
                 _____,      _____,      &kp C_MUTE,   &kp C_PLAY_PAUSE,              _____,      _____,        _____,        _____,
-                                                                _____, _____, _____, _____
+                                                                _____,  &to DEFAULT, _____, _____
             )
             >;
         };
 
         fun_two {
             bindings = <
-            L20 (
-                &kp F1, &kp F2, &kp F3, &kp F4,                         &kp F7, &kp F8,  &kp F9,   &kp F10,
-                _____,  _____,  _____,  &kp F5,                         &kp F6,  &kp F11, &kp F12, _____,
-                                        &sk LALT, &sk LSHFT, &sk LCTRL, &sk LGUI
+            L20_TAPS (
+                &kp F1, &kp F2, &kp F3, &kp F4,                   &kp F7, &kp F8,  &kp F9,   &kp F10,
+                _____,  _____,  _____,  &kp F5,                   &kp F6,  &kp F11, &kp F12, _____,
+                                        _____, &to DEFAULT, _____, _____
             )
             >;
         };
+
+	level_select {
+            bindings = <
+	    L20 (
+	    	_____, _____, &to FUN_TWO, &to FUN_ONE,                    &to NAV_ONE, _____, _____, _____,
+		_____, _____, _____,       _____,                          _____,       _____, _____, _____,
+		                           _____,      &to DEFAULT, _____, _____
+	    )
+	    >
+	}
 
     };
 };
