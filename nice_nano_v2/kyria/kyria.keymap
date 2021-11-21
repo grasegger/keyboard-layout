@@ -186,7 +186,7 @@
             tapping-term-ms = <300>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&sl>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
 
     };
@@ -248,49 +248,47 @@
                     DE_O, DE_L, DE_U, DE_A,                              DE_B,          DE_D, DE_G, DE_M,
                                       &sk LSHFT, &kp SPACE, &sl ALPHA_2, &kp BACKSPACE
                 )
-/*       
-            _____ _____         _____         _____         _____         _____                             _____       _____         _____         _____         _____          _____
-            _____ lpnky_h(DE_C) lring_h(DE_R) lmidd_h(DE_I) lindx_h(DE_E) _____                             _____       rindx_h(DE_N) rmidd_h(DE_T) rring_h(DE_S) rpnky_h(DE_H)  _____
-            _____ &mt MEH DE_O lring_b(DE_L)  lmidd_b(DE_U) lindx_b(DE_A) _____     _____ _____ _____ _____ _____       rindx_b(DE_B) lmidd_b(DE_D) rring_b(DE_G) &mt HYPER DE_M _____
-                                              _____         &sk LSHFT     &kp SPACE _____ _____ _____ _____ &sl ALPHA_2 &kp BACKSPACE     _____
-                                              */
             >;
         };
 
 
         alpha_two {
             bindings = <
-            _____ _____           _____            _____            _____            _____                             _____      _____         _____         _____         _____            _____
-            _____ lpnky_h(DE_V)   lring_h(DE_X)    lmidd_h(DE_Z)    lindx_h(DE_J)    _____                             _____      rindx_h(DE_P) rmidd_h(DE_F) rring_h(DE_K) rpnky_h( DE_SS)  _____
-            _____ &mt MEH DE_COMM lring_b(DE_ODIA) lmidd_b(DE_UDIA) lindx_b(DE_ADIA) _____     _____ _____ _____ _____ _____      rindx_b(DE_W) rmidd_b(DE_Y) rring_b(DE_Q) &mt HYPER DE_DOT _____
-                                                    _____           &sk LSHFT        &kp ENTER _____ _____ _____ _____ &kp ESCAPE &kp TAB     _____
+                L20_TAPS(
+                    DE_V,    DE_X,    DE_Z,    DE_J,                             DE_P,          DE_F, DE_K, DE_SS,
+                    DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                          DE_W,          DE_Y, DE_Q, DE_DOT,
+                                               &sk LSHFT, &kp ENTER, &sl ESCAPE, &kp TAB
+                )
             >;
         };
 
        sym_one {
             bindings = <
-            _____ _____            _____            _____             _____             _____                               _____       _____            _____            _____            _____            _____
-            _____ lpnky_h(DE_LABK) lring_h(DE_LBRC) lmidd_h(DE_LCBR)  lindx_h(DE_LPRN)  _____                               _____       rindx_h(DE_RPRN) rmidd_h(DE_RCBR) rring_h(DE_RBRC) rpnky_h(DE_RABK) _____
-            _____ &kp DE_DLR       lring_b(DE_SCLN) lmidd_b( DE_DQUO) lindx_b( DE_QUOT) _____       _____ _____ _____ _____ _____       rindx_b(DE_EXLM) rmidd_b(DE_QUES) rring_b(DE_COLN) &kp DE_MINS      _____
-                                                    _____             _____             &to DEFAULT _____ _____ _____ _____ &to SYM_ONE _____            _____
+                L20_TAPS(
+                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN,                           DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
+                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT,                           DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
+                                                _____,   &to DEFAULT, &to SYM_ONE, _____
+                )
             >;
         };
 
        sym_two {
             bindings = <
-            _____ _____            _____             _____             _____             _____                               _____       _____            _____            _____            _____            _____
-            _____ lpnky_h(DE_EURO) lring_h(DE_BSLS)  lmidd_h(DE_SLSH)  lindx_h(DE_ASTR)  _____                               _____       rindx_h(DE_PERC) rmidd_h(DE_AMPR) rring_h(DE_EQL)  rpnky_h( DE_GRV) _____
-            _____ &kp DE_UNDS      lring_b( DE_TILD) lmidd_b( DE_PIPE) lindx_b( DE_HASH) _____       _____ _____ _____ _____ _____       rindx_b(DE_ACUT) rmidd_b(DE_DEG)  rring_b(DE_CIRC) &kp DE_PLUS      _____
-                                                     _____             _____             &to DEFAULT _____ _____ _____ _____ &to SYM_TWO _____            _____
+                L20_TAPS(
+                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR,                           DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
+                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH,                           DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
+                                               _____,   &to DEFAULT, &to SYM_TWO, _____           
+                )
             >;
         };
 
        num_one {
             bindings = <
-            _____ _____       _____            _____            _____       _____                               _____      _____       _____            _____            _____         _____
-            _____ lpnky_h(N1) lring_h(N2)      lmidd_h(N3)      lindx_h(N4) _____                               _____      rindx_h(N7) rmidd_h(N8)      rring_h(N9)      rpnky_h( N0)  _____
-            _____ &kp DE_EQL  lring_b(DE_PLUS) lmidd_b(DE_MINS) lindx_b(N5) _____       _____ _____ _____ _____ _____      rindx_b(N6) rmidd_b(DE_ASTR) rring_b(DE_SLSH) &kp BACKSPACE _____
-                                               _____            _____       &to DEFAULT _____ _____ _____ _____ &kp DE_DOT _____       _____
+                L20_TAPS(
+                    N1,     N2,      N3,      N4,                             N7, N8,      N9,       N0,
+                    DE_EQL, DE_PLUS, DE_MINS, N5,                             N6, DE_ASTR, DE_SLSH, BACKSPACE,
+                                              _____, &to DEFAULT, &kp DE_DOT, _____
+                )
             >;
         };
 
