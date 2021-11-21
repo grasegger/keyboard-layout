@@ -227,10 +227,10 @@
                               _____ K17   K18   _____ _____ _____ _____ K19   K20   _____
 
 
-#define L20_TAPS ( \
-    K1  K2  K3  K4  K5  K6  K7  K8 \
-    K9  K10 K11 K12 K13 K14 K15 K16 \
-            K17 K18 K19 K20 \
+#define L20_TAPS( \
+    K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
+    K9,  K10, K11, K12, K13, K14, K15, K16, \
+            K17, K18, K19, K20 \
 ) \
             _____ _____       _____           _____           _____           _____                         _____ _____           _____           _____           _____         _____ \
             _____ &mt LALT K1 &mt LSHFT K2    &mt LCTRL K3    &mt LGUI K4     _____                         _____ &mt LGUI K5     &mt LCTRL K6    &mt LSHFT K7    &mt LALT K8   _____ \
