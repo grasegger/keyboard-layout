@@ -314,9 +314,9 @@
         fun_two {
             bindings = <
             L20 (
-                F1,    F2,    F3,    F4,                             F7,      F8,  F9,  F10,
-                _____, _____, _____, F5,                             F6,      F11, F12, ______,
-                                     &sk LALT, &sk LSHFT, &sk LCTRL, &sk LGUI
+                &kp F1, &kp F2, &kp F3, &kp F4,                         &kp F7,  &kp F8,  &kp F9,  F10,
+                _____,  _____,  _____,  &kp F5,                         &kp F6,  &kp F11, &kp F12, ______,
+                                        &sk LALT, &sk LSHFT, &sk LCTRL, &sk LGUI
             )
             >;
         };
