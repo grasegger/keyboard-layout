@@ -245,9 +245,9 @@
         alpha_one {
             bindings = <
                 L20_TAPS(
-                    DE_C, DE_R, DE_I, DE_E,                              DE_N,          DE_T, DE_S, DE_H,
-                    DE_O, DE_L, DE_U, DE_A,                              DE_B,          DE_D, DE_G, DE_M,
-                                      &sk LSHFT, &kp SPACE, &sl ALPHA_2, &kp BACKSPACE
+                    DE_C, DE_R, DE_I, DE_E,                                  DE_N,     DE_T, DE_S, DE_H,
+                    DE_O, DE_L, DE_U, DE_A,                                  DE_B,     DE_D, DE_G, DE_M,
+                                      &kp BACKSPACE, &kp SPACE, &sl ALPHA_2, &sk LSHFT
                 )
             >;
         };
@@ -256,9 +256,9 @@
         alpha_two {
             bindings = <
                 L20_TAPS(
-                    DE_V,    DE_X,    DE_Z,    DE_J,                             DE_P,          DE_F, DE_K, DE_SS,
-                    DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                          DE_W,          DE_Y, DE_Q, DE_DOT,
-                                               &sk LSHFT, &kp ENTER, &sl ESCAPE, &kp TAB
+                    DE_V,    DE_X,    DE_Z,    DE_J,                           DE_P,          DE_F, DE_K, DE_SS,
+                    DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                        DE_W,          DE_Y, DE_Q, DE_DOT,
+                                               &kp TAB, &kp ENTER, &sl ESCAPE, &ksk LSHFT
                 )
             >;
         };
