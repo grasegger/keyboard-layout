@@ -4,10 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: grasegger
       url-base: https://github.com/grasegger
+    - name: cdc
+      url-base: https://github.com/cdc-mkb
   projects:
     - name: zmk
-      remote: grasegger
-      revision: building
+      remote: cdc
+      revision: mouse-pim447
       import: app/west.yml
   self:
     path: config
