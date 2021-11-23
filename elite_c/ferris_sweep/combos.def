@@ -1,7 +1,0 @@
-COMB(j, KY_J, KY_A, KY_U)
-COMB(o, KY_O, KY_E, KY_I)
-COMB(bspc, KY_BSPC, KY_SPC, KY_Q)
-
-COMB(w, KY_W, KY_B, KY_D)
-COMB(m, KY_M, KY_N, KY_T)
-COMB(p, KY_P, KY_F, KY_COMM)
