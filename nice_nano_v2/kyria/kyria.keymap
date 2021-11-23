@@ -154,6 +154,7 @@
 #define FUN_ONE 6
 #define FUN_TWO 7
 #define LEVEL_SELECT 8
+#define MOUSE 9
 
 &mmv {   
     time-to-max-speed-ms = <500>;
@@ -316,15 +317,25 @@
             >;
         };
 
-	level_select {
-            bindings = <
-	    L20 (
-	    	_____, _____, &to FUN_TWO, &to FUN_ONE,                    &to NAV_ONE, _____, _____, _____,
-		_____, _____, _____,       _____,                          _____,       _____, _____, _____,
-		                           _____,      &to DEFAULT, _____, _____
-	    )
-	    >;
-	};
+        level_select {
+                bindings = <
+                    L20 (
+                    _____, _____, &to FUN_TWO, &to FUN_ONE,                    &to NAV_ONE, &to MOUSE, _____, _____,
+                    _____, _____, _____,       _____,                          _____,       _____,     _____, _____,
+                                            _____,      &to DEFAULT, _____, _____
+                    )
+            >;
+        };
+
+        mouse {
+                bindings = <
+                    L20 (
+                    &mmv MOVE_LEFT,   &mmv MOVE_DOWN,   &mmv MOVE_UP,   &mmv MOVE_RIGHT,          &mkp LCLK, &mkp RCLK, &mkp MCLK, _____,
+                    &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT,        _____,     _____,     _____,     _____,
+                                                        _____,          &to DEFAULT,       _____, _____
+                    )
+            >;
+        };
 
     };
 };
