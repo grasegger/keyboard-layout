@@ -18,15 +18,14 @@
 		columns = <1>;
 		rows = <1>;
 		map = <
-		RC(0,0)               
+		RC(0,0)
 		>;
 	};
 
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
-		input-gpios
-		, <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+		input-gpios = <&pro_micro  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 		;
 	};
 };
