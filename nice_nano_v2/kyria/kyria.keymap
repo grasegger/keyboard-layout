@@ -251,9 +251,9 @@
        sym_one {
             bindings = <
                 L16_TAPS(
-                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN, DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
-                              DE_SCLN, DE_DQUO, DE_QUOT, DE_EXLM, DE_QUES, DE_COLN,     
-                                                 DE_DLR, DE_MINS
+                    DE_LABK, DE_LBRC, DE_LCBR,      DE_LPRN,     DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
+                              DE_SCLN, DE_DQUO,     DE_QUOT,     DE_EXLM, DE_QUES, DE_COLN,     
+                                                 &kp DE_DLR, &kp DE_MINS
                 )
             >;
         };
@@ -261,9 +261,9 @@
        sym_two {
             bindings = <
                 L16_TAPS(
-                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR, DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
-                             DE_TILD, DE_PIPE, DE_HASH, DE_ACUT, DE_DEG,  DE_CIRC,
-                                               DE_UNDS, DE_PLUS           
+                    DE_EURO, DE_BSLS, DE_SLSH,     DE_ASTR,     DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
+                             DE_TILD, DE_PIPE,     DE_HASH,     DE_ACUT, DE_DEG,  DE_CIRC,
+                                               &kp DE_UNDS, &kp DE_PLUS           
                 )
             >;
         };
