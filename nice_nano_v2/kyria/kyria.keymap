@@ -155,6 +155,7 @@
 #define FUN_TWO 7
 #define LEVEL_SELECT 8
 #define MOUSE 9
+#define UML 10
 
 &mmv {   
     time-to-max-speed-ms = <500>;
@@ -226,7 +227,7 @@
 ) \
             L18 (\
             &mt HYPER K1, &hl SYM_ONE K2,     &mt LALT K3,     &mt LGUI K4,    &mt LSHFT K5,    &mt LCTRL K6, &hl SYM_TWO K7,  &mt HYPER K8, \
-                  &kp K9,        &kp K10, &hl NUM_ONE K11, &hl NAV_ONE K12, &hl NAV_ONE K13, &hl NUM_ONE K14,        &kp K15,       &kp K16, \
+                  &kp K9,    &hl UML K10, &hl NUM_ONE K11, &hl NAV_ONE K12, &hl NAV_ONE K13, &hl NUM_ONE K14,    &hl UML K15,       &kp K16, \
                                                                        K17,             K18\
             )
 
