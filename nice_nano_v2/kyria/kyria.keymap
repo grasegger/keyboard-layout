@@ -179,7 +179,6 @@
 };
 
 / {
-
     behaviors {
         hl: hl {
             compatible = "zmk,behavior-hold-tap";
@@ -190,7 +189,6 @@
             flavor = "tap-preferred";
             bindings = <&sl>, <&kp>;
         };
-
     };
 };
 
@@ -210,26 +208,26 @@
 #define HYPER LC(LG(LS(LALT)))
 #define MEH LC(LS(LALT))
 
-#define L20( \
+#define L18( \
     K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
     K9,  K10, K11, K12, K13, K14, K15, K16, \
-            K17, K18, K19, K20 \
+                   K17, K18\
 ) \
             _____ _____ _____ _____ _____ _____                         _____ _____ _____ _____ _____ _____ \
             _____ K1    K2    K3    K4    _____                         _____ K5    K6    K7    K8    _____ \
             _____ K9    K10   K11   K12   _____ _____ _____ _____ _____ _____ K13   K14   K15   K16   _____ \
-                              _____ K17   K18   _____ _____ _____ _____ K19   K20   _____
+                              _____ _____ K17   _____ _____ _____ _____ _____ K18   _____
 
 
-#define L20_TAPS( \
+#define L18_TAPS( \
     K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, \
     K9,  K10, K11, K12, K13, K14, K15, K16, \
-            K17, K18, K19, K20 \
+                   K17, K18\
 ) \
-            L20 (\
-            &mt HYPER K1, &hl SYM_ONE K2,  &mt LALT K3,     &mt LGUI K4,           &mt LSHFT K5,    &mt LCTRL K6,    &hl SYM_TWO K7,  &mt HYPER K8,   \
-            &kp K9,       &kp K10,         &hl NUM_ONE K11, &kp K12,               &kp K13,         &hl NUM_ONE K14, &kp K15,         &kp K16, \
-                                                            K17,         K18, K19, K20 \
+            L18 (\
+            &mt HYPER K1, &hl SYM_ONE K2,     &mt LALT K3,     &mt LGUI K4,    &mt LSHFT K5,    &mt LCTRL K6, &hl SYM_TWO K7,  &mt HYPER K8, \
+                  &kp K9,        &kp K10, &hl NUM_ONE K11, &hl NAV_ONE K12, &hl NAV_ONE K13, &hl NUM_ONE K14,        &kp K15,       &kp K16, \
+                                                                       K17,             K18\
             )
 
 / {
@@ -238,10 +236,10 @@
 
         alpha_one {
             bindings = <
-                L20_TAPS(
-                    DE_C, DE_R, DE_I, DE_E,                                  DE_N,     DE_T, DE_S, DE_H,
-                    DE_O, DE_L, DE_U, DE_A,                                  DE_B,     DE_D, DE_G, DE_M,
-                                      &kp BACKSPACE, &kp SPACE, &sl ALPHA_2, &sk LSHFT
+                L18_TAPS(
+                    DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S, DE_H,
+                    DE_O, DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G, DE_M,
+                                      &kp SPACE, &sl ALPHA_2
                 )
             >;
         };
@@ -249,91 +247,91 @@
 
         alpha_two {
             bindings = <
-                L20_TAPS(
-                    DE_V,    DE_X,    DE_Z,    DE_J,                           DE_P,          DE_F, DE_K, DE_SS,
-                    DE_COMM, DE_ODIA, DE_UDIA, DE_ADIA,                        DE_W,          DE_Y, DE_Q, DE_DOT,
-                                               &kp TAB, &kp ENTER, &kp ESCAPE, &sk LSHFT
+                L18_TAPS(
+                       DE_V,    DE_X,    DE_Z,         DE_J,      DE_P, DE_F, DE_K, DE_SS,
+                    DE_COMM, DE_ODIA, DE_UDIA,      DE_ADIA,      DE_W, DE_Y, DE_Q, DE_DOT,
+                                              &kp BACKSPACE, &sk LSHFT
                 )
             >;
         };
 
        sym_one {
             bindings = <
-                L20_TAPS(
-                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN,               DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
-                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT,               DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
-                                                _____,   _____, _____, _____
+                L18_TAPS(
+                    DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN, DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
+                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT, DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
+                                                  _____,   _____
                 )
             >;
         };
 
        sym_two {
             bindings = <
-                L20_TAPS(
-                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR,               DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
-                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH,               DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
-                                               _____,   _____, _____, _____           
+                L18_TAPS(
+                    DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR, DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
+                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH, DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
+                                                 _____,   _____           
                 )
             >;
         };
 
        num_one {
             bindings = <
-                L20_TAPS(
-                    N1,     N2,      N3,      N4,                             N7, N8,      N9,       N0,
-                    DE_EQL, DE_PLUS, DE_MINS, N5,                             N6, DE_ASTR, DE_SLSH, BACKSPACE,
-                                              _____, &to DEFAULT, &kp DE_DOT, _____
+                L18_TAPS(
+                    N1,     N2,      N3,               N4,         N7, N8,      N9,       N0,
+                    DE_EQL, DE_PLUS, DE_MINS,          N5,         N6, DE_ASTR, DE_SLSH, BACKSPACE,
+                                              &to DEFAULT, &kp DE_DOT
                 )
             >;
         };
 
         nav_one {
             bindings = <
-	    L20(
-		&kp LEFT, &kp DOWN,  &kp UP,    &kp RIGHT,                    &kp LGUI,  &kp LCTRL,     &kp LALT,  &kp LSHFT,
-		&kp HOME, &kp PG_DN, &kp PG_UP, &kp END,                      &kp SPACE, &kp BACKSPACE, &kp ENTER, &kp ESCAPE,
-		    	      	     	        _____,    &to DEFAULT, _____, _____
-	    )
+                L18(
+                    &kp LEFT,  &kp DOWN,    &kp UP, &kp RIGHT, &kp BACKSPACE,   &kp TAB, &kp ENTER, &kp ESCAPE,
+                    &kp HOME, &kp PG_DN, &kp PG_UP,   &kp END,      &kp LGUI, &kp LCTRL,  &kp LALT,  &kp LSHFT,
+                                                  &to DEFAULT, _____
+                )
             >;
         };
 
         fun_one {
             bindings = <
-            L20 (
-                &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN, &kp C_VOL_UP,                  &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
-                _____,      _____,      &kp C_MUTE,   &kp C_PLAY_PAUSE,              _____,      _____,        _____,        _____,
-                                                                _____,  &to DEFAULT, _____, _____
-            )
+                L18 (
+                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN,     &kp C_VOL_UP, &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
+                         _____,      _____,   &kp C_MUTE, &kp C_PLAY_PAUSE,      _____,        _____,        _____, _____,
+                                                               &to DEFAULT, _____
+                )
             >;
         };
 
         fun_two {
             bindings = <
-            L20 (
-                &kp F1,   &kp F2,    &kp F3,     &kp F4,                       &kp F5, &kp F6,  &kp F7,  &kp F8,
-                &sk LALT, &sk LSHFT, &sk LCTRL,  &sk LGUI,                     &kp F9, &kp F10, &kp F11, &kp F12,
-                                                 _____,    &to DEFAULT, _____, _____
-            )
+                L18 (
+                      &kp F1,    &kp F2,    &kp F3,      &kp F4, &kp F5,  &kp F6,  &kp F7,  &kp F8,
+                    &sk LALT, &sk LSHFT, &sk LCTRL,    &sk LGUI, &kp F9, &kp F10, &kp F11, &kp F12,
+                                                    &to DEFAULT,  _____
+                )
             >;
         };
 
         level_select {
-                bindings = <
-                    L20 (
-                    _____, _____, &to FUN_TWO, &to FUN_ONE,                    &to NAV_ONE, &to MOUSE, _____, _____,
-                    _____, _____, _____,       _____,                          _____,       _____,     _____, _____,
-                                            _____,      &to DEFAULT, _____, _____
-                    )
+            bindings = <
+                L18 (
+                _____, _____, &to FUN_TWO, &to FUN_ONE, &to NAV_ONE, &to MOUSE, _____, _____,
+                _____, _____,       _____,       _____,       _____,     _____, _____, _____,
+                                           &to DEFAULT,       _____
+                )
             >;
         };
 
         mouse {
-                bindings = <
-                    L20 (
-                    &mmv MOVE_LEFT,   &mmv MOVE_DOWN,   &mmv MOVE_UP,   &mmv MOVE_RIGHT,          &mkp LCLK, &mkp RCLK, &mkp MCLK, _____,
-                    &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT,        _____,     _____,     _____,     _____,
-                                                        _____,          &to DEFAULT,       _____, _____
-                    )
+            bindings = <
+                L18 (
+                      &mmv MOVE_LEFT,   &mmv MOVE_DOWN,   &mmv MOVE_UP,   &mmv MOVE_RIGHT, &mkp LCLK, &mkp RCLK, &mkp MCLK, _____,
+                    &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT,     _____,     _____,     _____, _____,
+                                                                              &to DEFAULT, _____
+                )
             >;
         };
 
