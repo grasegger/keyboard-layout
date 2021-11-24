@@ -237,9 +237,9 @@
         alpha_one {
             bindings = <
                 L18_TAPS(
-                    DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S, DE_H,
-                    DE_O, DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G, DE_M,
-                                      &kp SPACE, &sl ALPHA_2
+                     DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S,  DE_H,
+                    _____, DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G, _____,
+                                       &kp SPACE, &sl ALPHA_2
                 )
             >;
         };
@@ -248,9 +248,9 @@
         alpha_two {
             bindings = <
                 L18_TAPS(
-                       DE_V,    DE_X,    DE_Z,         DE_J,      DE_P, DE_F, DE_K, DE_SS,
-                    DE_COMM, DE_ODIA, DE_UDIA,      DE_ADIA,      DE_W, DE_Y, DE_Q, DE_DOT,
-                                              &kp BACKSPACE, &sk LSHFT
+                     DE_V,   DE_X,    DE_Z,      DE_O,      DE_M, DE_P, DE_F,  DE_K,
+                    _____, DE_DOT, DE_COMM,      DE_J,      DE_W, DE_Y, DE_Q, _____,
+                                        &kp BACKSPACE, &sk LSHFT
                 )
             >;
         };
@@ -259,8 +259,8 @@
             bindings = <
                 L18_TAPS(
                     DE_LABK, DE_LBRC, DE_LCBR,  DE_LPRN, DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
-                    DE_DLR,  DE_SCLN, DE_DQUO,  DE_QUOT, DE_EXLM, DE_QUES, DE_COLN, DE_MINS,      
-                                                  _____,   _____
+                      _____,  DE_SCLN, DE_DQUO, DE_QUOT, DE_EXLM, DE_QUES, DE_COLN,  _____,      
+                                                 DE_DLR, DE_MINS
                 )
             >;
         };
@@ -269,8 +269,8 @@
             bindings = <
                 L18_TAPS(
                     DE_EURO, DE_BSLS, DE_SLSH, DE_ASTR, DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
-                    DE_UNDS, DE_TILD, DE_PIPE, DE_HASH, DE_ACUT, DE_DEG,  DE_CIRC, DE_PLUS,
-                                                 _____,   _____           
+                      _____, DE_TILD, DE_PIPE, DE_HASH, DE_ACUT, DE_DEG,  DE_CIRC,  _____,
+                                               DE_UNDS, DE_PLUS           
                 )
             >;
         };
@@ -278,9 +278,9 @@
        num_one {
             bindings = <
                 L18_TAPS(
-                    N1,     N2,      N3,               N4,         N7, N8,      N9,       N0,
-                    DE_EQL, DE_PLUS, DE_MINS,          N5,         N6, DE_ASTR, DE_SLSH, BACKSPACE,
-                                              &to DEFAULT, &kp DE_DOT
+                       N1,    N2,     N3,          N4,            N7,      N8,      N9,    N0,
+                    _____, SPACE, DE_DOT,          N5,            N6, DE_COMM, DE_SLSH, _____,
+                                          &to DEFAULT, &kp BACKSPACE
                 )
             >;
         };
@@ -288,9 +288,9 @@
         nav_one {
             bindings = <
                 L18(
-                    &kp LEFT,  &kp DOWN,    &kp UP, &kp RIGHT, &kp BACKSPACE,   &kp TAB, &kp ENTER, &kp ESCAPE,
-                    &kp HOME, &kp PG_DN, &kp PG_UP,   &kp END,      &kp LGUI, &kp LCTRL,  &kp LALT,  &kp LSHFT,
-                                                  &to DEFAULT, _____
+                    &kp LEFT,  &kp DOWN,    &kp UP,   &kp RIGHT, &kp LSHFT, &kp LCTRL, &kp ENTER, &kp ESCAPE,
+                       _____, &kp PG_DN, &kp PG_UP,    &kp HOME,  &kp LGUI,  &kp LALT,   &kp END,      _____,
+                                                    &to DEFAULT,   &kp TAB
                 )
             >;
         };
@@ -307,10 +307,10 @@
 
         fun_two {
             bindings = <
-                L18 (
-                      &kp F1,    &kp F2,    &kp F3,      &kp F4, &kp F5,  &kp F6,  &kp F7,  &kp F8,
-                    &sk LALT, &sk LSHFT, &sk LCTRL,    &sk LGUI, &kp F9, &kp F10, &kp F11, &kp F12,
-                                                    &to DEFAULT,  _____
+                L18(
+                  &kp F1, &kp F2,  &kp F3,      &kp F4, &mt LSHFT F7, &mt LCTRL F8, &kp F9,  &kp F10,
+                   _____,  _____, &kp F11,      &kp F5,       &kp F6,      &kp F12,  _____,    _____,
+                                           &to DEFAULT,  _____
                 )
             >;
         };
@@ -328,12 +328,22 @@
         mouse {
             bindings = <
                 L18 (
-                      &mmv MOVE_LEFT,   &mmv MOVE_DOWN,   &mmv MOVE_UP,   &mmv MOVE_RIGHT, &mkp LCLK, &mkp RCLK, &mkp MCLK, _____,
-                    &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT,     _____,     _____,     _____, _____,
-                                                                              &to DEFAULT, _____
+                      &mmv MOVE_LEFT, &mmv MOVE_DOWN, &mmv MOVE_UP, &mmv MOVE_RIGHT, &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT, 
+                               _____,      &mkp LCLK,    &mkp RCLK,       &mkp MCLK,            _____,            _____,          _____,             _____,
+                                                                        &to DEFAULT,            _____
                 )
             >;
         };
+
+        umlauts {
+            bindings = <
+                L18 (
+                _____, _____,       _____,       _____,       _____,     _____, _____, _____,
+                _____, _____, &kp DE_ADIA, &kp DE_ODIA, &kp DE_UDIA, &kp DE_SS, _____, _____,
+                                                 _____,       _____
+                )
+            >;
+        }
 
     };
 };
