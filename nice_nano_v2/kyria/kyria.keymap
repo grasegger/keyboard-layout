@@ -156,6 +156,9 @@
 #define LEVEL_SELECT 8
 #define MOUSE 9
 #define UML 10
+#define SYS 11
+
+#define HOLD_TAP_TIME 200
 
 &mmv {   
     time-to-max-speed-ms = <500>;
@@ -169,7 +172,7 @@
 
 
 &mt {
-    tapping-term-ms = <300>;
+    tapping-term-ms = <HOLD_TAP_TIME>;
     flavor = "tap-preferred";
     quick_tap_ms = <50>;
     bindings = <&sk>, <&kp>;
@@ -185,7 +188,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Sticky Layer";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <HOLD_TAP_TIME>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&sl>, <&kp>;
@@ -312,7 +315,7 @@
             bindings = <
                 L16 (
                 _____, _____, &to FUN_TWO, &to FUN_ONE, &to NAV_ONE, &to MOUSE, _____, _____,
-                       _____,       _____,       _____,       _____,     _____, _____,
+                       _____,       _____,     &to SYS,       _____,     _____, _____,
                                            &to DEFAULT,       _____
                 )
             >;
@@ -337,6 +340,16 @@
                 )
             >;
         };
+
+        sys {
+            bindings = <
+                L16 (
+                    _____, _____, &reset, &bootloader, &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
+                           _____,  _____,       _____,      _____,   &bt BT_NXT,   &bt BT_PRV,
+                                          &to DEFAULT, _____
+                )
+            >;
+        }
 
     };
 };
