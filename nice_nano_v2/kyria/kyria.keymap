@@ -196,16 +196,6 @@
     };
 };
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SYM_ONE SYM_TWO>;
-            then-layer = <LEVEL_SELECT>;
-        };
-    };
-};
-
 #define _____ &none
 
 
@@ -233,9 +223,9 @@
         alpha_one {
             bindings = <
                 L16_TAPS(
-                     DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S,  DE_H,
-                           DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G,
-                                       &kp SPACE, &sl ALPHA_2
+                     DE_C, DE_R, DE_I,      DE_E,                     DE_N, DE_T, DE_S,  DE_H,
+                           DE_L, DE_U,      DE_A,                     DE_B, DE_D, DE_G,
+                                       &hl LEVEL_SELECT SPACE, &sl ALPHA_2
                 )
             >;
         };
@@ -294,9 +284,9 @@
         fun_one {
             bindings = <
                 L16 (
-                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN,     &kp C_VOL_UP, &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
-                               _____,   &kp C_MUTE, &kp C_PLAY_PAUSE,      _____,        _____,        _____,  
-                                                               &to DEFAULT, _____
+                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN,  &kp C_MUTE, &kp C_PLAY_PAUSE, &kp C_BRI_UP, &kp C_BRI_DEC, _____,
+                                     _____,        _____,       _____,            _____,        _____,         _____,  
+                                             &to DEFAULT, &kp C_POWER
                 )
             >;
         };
@@ -314,9 +304,9 @@
         level_select {
             bindings = <
                 L16 (
-                _____, _____, &to FUN_TWO, &to FUN_ONE, &to NAV_ONE, &to MOUSE, _____, _____,
-                       _____,       _____,     &to SYS,       _____,     _____, _____,
-                                           &to DEFAULT,       _____
+                &to SYS, &to FUN_TWO, &to FUN_ONE, &to NUM_ONE, &to NAV_ONE, &to MOUSE, _____, _____,
+                               _____,       _____,       _____,       _____,     _____, _____,
+                                                   &to DEFAULT,       _____
                 )
             >;
         };
