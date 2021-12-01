@@ -226,7 +226,7 @@
 
 / {
     behaviors {
-        space_num {
+        space_num: space_num {
             compatible = "zmk,behavior-mod-morph";
             label = "space_num";
             #binding-cells = <0>;
@@ -234,7 +234,7 @@
             mods = <(MOD_LSFT)>;
         };
 
-        alpha_two_nav {
+        alpha_two_nav: alpha_two_nav {
             compatible = "zmk,behavior-mod-morph";
             label = "alpha_two_nav";
             #binding-cells = <0>;
