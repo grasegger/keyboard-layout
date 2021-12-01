@@ -153,10 +153,8 @@
 #define NAV_ONE 5
 #define FUN_ONE 6
 #define FUN_TWO 7
-#define LEVEL_SELECT 8
-#define MOUSE 9
-#define UML 10
-#define SYS 11
+#define UML 8
+#define SYS 9
 
 #define HOLD_TAP_TIME 200
 
@@ -196,6 +194,16 @@
     };
 };
 
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SYM_ONE SYM_TWO>;
+            then-layer = <FUN_ONE>;
+        };
+    };
+};
+
 #define _____ &none
 
 
@@ -217,15 +225,33 @@
             )
 
 / {
+    behaviors {
+        space_num {
+            compatible = "zmk,behavior-mod-morph";
+            label = "space_num";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&to NUM>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        alpha_two_nav {
+            compatible = "zmk,behavior-mod-morph";
+            label = "alpha_two_nav";
+            #binding-cells = <0>;
+            bindings = <&sl ALPHA_2>, <&to NAV_ONE>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         alpha_one {
             bindings = <
                 L16_TAPS(
-                     DE_C, DE_R, DE_I,      DE_E,                     DE_N, DE_T, DE_S,  DE_H,
-                           DE_L, DE_U,      DE_A,                     DE_B, DE_D, DE_G,
-                                       &hl LEVEL_SELECT SPACE, &sl ALPHA_2
+                     DE_C, DE_R, DE_I,       DE_E,           DE_N, DE_T, DE_S,  DE_H,
+                           DE_L, DE_U,       DE_A,           DE_B, DE_D, DE_G,
+                                       &space_num, &alpha_two_nav
                 )
             >;
         };
@@ -284,9 +310,9 @@
         fun_one {
             bindings = <
                 L16 (
-                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN,  &kp C_MUTE, &kp C_PLAY_PAUSE, &kp C_BRI_UP, &kp C_BRI_DEC, _____,
-                                     _____,        _____,       _____,            _____,        _____,         _____,  
-                                             &to DEFAULT, &kp C_POWER
+                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN, &kp C_VOL_UP,  &kp C_MUTE, &kp C_PLAY_PAUSE, &kp C_BRI_UP, &kp C_BRI_DEC,
+                                     _____,        _____,  &to FUN_TWO,     &to SYS,        _____,         _____,  
+                                                           &to DEFAULT, &to FUN_ONE
                 )
             >;
         };
@@ -297,26 +323,6 @@
                   &kp F1, &kp F2,  &kp F3,      &kp F4, &mt LSHFT F7, &mt LCTRL F8, &kp F9,  &kp F10,
                            _____, &kp F11,      &kp F5,       &kp F6,      &kp F12,  _____,    
                                            &to DEFAULT,  _____
-                )
-            >;
-        };
-
-        level_select {
-            bindings = <
-                L16 (
-                &to SYS, &to FUN_TWO, &to FUN_ONE, &to NUM_ONE,      &kp LEFT,  &kp DOWN,  &kp UP, &kp RIGHT,
-                               _____,   &to MOUSE, &to NAV_ONE, &kp BACKSPACE, &kp ENTER, &kp ESC,
-                                                   &to DEFAULT,       &kp TAB
-                )
-            >;
-        };
-
-        mouse {
-            bindings = <
-                L16 (
-                      &mmv MOVE_LEFT, &mmv MOVE_DOWN, &mmv MOVE_UP, &mmv MOVE_RIGHT, &mwh SCROLL_LEFT, &mwh SCROLL_DOWN, &mwh SCROLL_UP, &mwh SCROLL_RIGHT, 
-                                           &mkp LCLK,    &mkp RCLK,       &mkp MCLK,            _____,            _____,          _____,
-                                                                        &to DEFAULT,            _____
                 )
             >;
         };
@@ -336,7 +342,7 @@
                 L16 (
                     _____, _____, &reset, &bootloader, &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
                            _____,  _____,       _____,      _____,   &bt BT_NXT,   &bt BT_PRV,
-                                          &to DEFAULT, _____
+                                          &to DEFAULT, &kp C_POWER
                 )
             >;
         };
