@@ -230,7 +230,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "space_num";
             #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&to NUM>;
+            bindings = <&kp SPACE>, <&to NUM_ONE>;
             mods = <(MOD_LSFT)>;
         };
 
