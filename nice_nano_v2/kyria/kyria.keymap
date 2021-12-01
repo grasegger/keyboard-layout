@@ -150,24 +150,12 @@
 #define SYM_ONE 2
 #define SYM_TWO 3
 #define NUM_ONE 4
-#define NAV_ONE 5
-#define FUN_ONE 6
-#define FUN_TWO 7
+#define FUN_ONE 5
+#define FUN_TWO 6
 #define UML 8
 #define SYS 9
 
 #define HOLD_TAP_TIME 200
-
-&mmv {   
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent=<2>;
-};
-
-&mwh {
-    acceleration-exponent=<2>;
-    time-to-max-speed-ms = <500>;
-};
-
 
 &mt {
     tapping-term-ms = <HOLD_TAP_TIME>;
@@ -194,54 +182,26 @@
     };
 };
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SYM_ONE SYM_TWO>;
-            then-layer = <FUN_ONE>;
-        };
-    };
-};
-
 #define _____ &none
 
 
 #define HYPER LC(LG(LS(LALT)))
-#define MEH LC(LS(LALT))
 
 #define L16( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            _____ _____ K9    K10   K11   _____                         _____ K12   K13   K14   _____ _____ \
-            _____ K1    K2    K3    K4    _____                         _____ K5    K6    K7    K8    _____ \
-            _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ \
-                              _____ _____ K15   _____ _____ _____ _____ K16   _____ _____
+            _____ _____    K9       K10     K11       _____                         _____ K12                   K13             K14               _____              _____ \
+            _____ K1       K2       K3      K4        _____                         _____ K5                    K6              K7                K8                 _____ \
+            _____ &kp LEFT &kp DOWN &kp UP  &kp RIGHT _____ _____ _____ _____ _____ _____ &hl NUM_ONE BACKSPACE &hl SYM_ONE TAB &hl SYM_TWO ENTER &hl FUN_ONE ESACPE _____ \
+                           _____    _____   K15       _____ _____ _____ _____ K16   _____                       _____
 
 
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             L16 (\
-            &hl SYM_ONE K1, &hl UML K2, &mt LALT K3, &mt LGUI K4, &mt LSHFT K5, &mt LCTRL K6, &hl UML  K7, &hl SYM_TWO K8, \
-                                &kp K9,     &kp K10,     &kp K11,      &kp K12,      &kp K13,    &hl  K14, \
-                                                             K15,          K16\
+            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &kp LCTRL K7, &mt LALT K8, \
+                           &hl UML K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &hl UML K14, \
+                                                            K15,          K16\
             )
 
 / {
-    behaviors {
-        space_num: space_num {
-            compatible = "zmk,behavior-mod-morph";
-            label = "space_num";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&to NUM_ONE>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        alpha_two_nav: alpha_two_nav {
-            compatible = "zmk,behavior-mod-morph";
-            label = "alpha_two_nav";
-            #binding-cells = <0>;
-            bindings = <&sl ALPHA_2>, <&to NAV_ONE>;
-            mods = <(MOD_LSFT)>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -249,9 +209,9 @@
         alpha_one {
             bindings = <
                 L16_TAPS(
-                     DE_C, DE_R, DE_I,       DE_E,           DE_N, DE_T, DE_S,  DE_H,
-                           DE_L, DE_U,       DE_A,           DE_B, DE_D, DE_G,
-                                       &space_num, &alpha_two_nav
+                     DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S,  DE_H,
+                           DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G,
+                                       &kp SPACE, &sl ALPHA_2
                 )
             >;
         };
@@ -290,19 +250,9 @@
        num_one {
             bindings = <
                 L16_TAPS(
-                       N1,    N2,     N3,          N4,            N7,      N8,      N9,    N0,
-                       SPACE, DE_DOT,          N5,            N6, DE_COMM, DE_SLSH, 
-                                          &to DEFAULT, &kp BACKSPACE
-                )
-            >;
-        };
-
-        nav_one {
-            bindings = <
-                L16(
-                    &kp LEFT,  &kp DOWN,    &kp UP,   &kp RIGHT, &kp LSHFT, &kp LCTRL, &kp ENTER, &kp ESCAPE,
-                              &kp PG_DN, &kp PG_UP,    &kp HOME,  &kp LGUI,  &kp LALT,   &kp END,
-                                                    &to DEFAULT,   &kp TAB
+                       N1, N2,       N3,         N4,     N7,     N8,      N9, N0,
+                           SPACE, ENTER,         N5,     N6, DE_COMM, DE_DOT, 
+                                         &to DEFAULT, _____
                 )
             >;
         };
@@ -311,7 +261,7 @@
             bindings = <
                 L16 (
                     &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN, &kp C_VOL_UP,  &kp C_MUTE, &kp C_PLAY_PAUSE, &kp C_BRI_UP, &kp C_BRI_DEC,
-                                     _____,        _____,  &to FUN_TWO,     &to SYS,        _____,         _____,  
+                                  &kp HOME,      &kp END,  &to FUN_TWO,     &to SYS,        &kp PG_UP,         &kp PG_DN,  
                                                            &to DEFAULT, &to FUN_ONE
                 )
             >;
@@ -330,9 +280,9 @@
         umlauts {
             bindings = <
                 L16 (
-                  _____, _____, &kp DE_ADIA, &kp DE_ODIA, &kp DE_UDIA, &kp DE_SS, _____, _____,
-                         _____,       _____,       _____,       _____,     _____, _____, 
-                                                   _____,       _____
+                    _____, _____,       _____,       _____,       _____,     _____, _____, _____, 
+                           _____, &kp DE_ADIA, &kp DE_ODIA, &kp DE_UDIA, &kp DE_SS, _____, 
+                                                     _____,       _____
                 )
             >;
         };
