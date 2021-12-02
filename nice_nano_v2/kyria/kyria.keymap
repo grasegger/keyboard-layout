@@ -152,8 +152,8 @@
 #define NUM_ONE 4
 #define FUN_ONE 5
 #define FUN_TWO 6
-#define UML 8
-#define SYS 9
+#define UML 7
+#define SYS 8
 
 #define HOLD_TAP_TIME 200
 
@@ -182,16 +182,6 @@
     };
 };
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SYM_ONE SYM_TWO>;
-            then-layer = <UML>;
-        };
-    };
-};
-
 #define _____ &none
 
 
@@ -207,7 +197,7 @@
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             L16 (\
             &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
-                           &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &kp K14, \
+                           &hl UML K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &hl UML K14, \
                                                             K15,          K16\
             )
 
@@ -290,8 +280,8 @@
         umlauts {
             bindings = <
                 L16 (
-                      _____,      _____, &kp DE_ADIA, &kp DE_ODIA, &kp DE_UDIA, &kp DE_SS, _____,  _____, 
-                    _____,       _____,       _____,       _____,     _____, _____,
+                    _____, _____,       _____,       _____,       _____,     _____, _____, _____, 
+                           _____, &kp DE_ADIA, &kp DE_ODIA, &kp DE_UDIA, &kp DE_SS, _____, 
                                                      _____,       _____
                 )
             >;
