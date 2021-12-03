@@ -215,7 +215,7 @@
 
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             BASE_LAYER (\
-                            K9,      K10,      K11,      K12,       K13, K14, \
+                        &kp    K9,    &kp  K10,    &kp  K11,    &kp  K12,     &kp  K13,&kp K14, \
             &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
              _____, _____,   _____, _____,   _____,         _____, _____,       _____,  \
                                                             K15,          K16\
