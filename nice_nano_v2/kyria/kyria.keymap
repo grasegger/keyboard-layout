@@ -275,6 +275,7 @@
                         &kp DE_SLSH,   &kp DE_ASTR, &kp DE_MINS,   &kp DE_PLUS, &kp N4, &kp N5, &kp N6, &kp N0,
                         _____      ,    &kp DE_DOT,  &kp DE_DOT, &kp BACKSPACE, &kp N1, &kp N2, &kp N3, _____,
                                                                    &to DEFAULT, _____
+                )
             >;
         };
 
