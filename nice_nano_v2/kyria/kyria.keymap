@@ -179,6 +179,15 @@
             flavor = "tap-preferred";
             bindings = <&sl>, <&kp>;
         };
+        ll: ll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold Sticky Layer";
+            #binding-cells = <2>;
+            tapping-term-ms = <HOLD_TAP_TIME>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sl>;
+        };
     };
 };
 
@@ -223,9 +232,9 @@
         alpha_one {
             bindings = <
                 L16_TAPS(
-                     DE_C, DE_R, DE_I,      DE_E,        DE_N, DE_T, DE_S,  DE_H,
-                           DE_L, DE_U,      DE_A,        DE_B, DE_D, DE_G,
-                                       &kp SPACE, &sl ALPHA_2
+                     DE_C, DE_R, DE_I,      DE_E,             DE_N, DE_T, DE_S,  DE_H,
+                           DE_L, DE_U,      DE_A,             DE_B, DE_D, DE_G,
+                                       &kp SPACE, &ll ALPHA_2 ALPHA_2
                 )
             >;
         };
@@ -234,9 +243,9 @@
         alpha_two {
             bindings = <
                 L16_TAPS_ALT(
-                     DE_V,   DE_X,    DE_Z,      DE_O,          DE_M, DE_P, DE_F,  DE_K,
-                           DE_DOT, DE_COMM,      DE_J,          DE_W, DE_Y, DE_Q,
-                                            &sk LSHFT, _____
+                     DE_V,   DE_X,    DE_Z,  DE_O,   DE_M, DE_P, DE_F,  DE_K,
+                           DE_DOT, DE_COMM,  DE_J,   DE_W, DE_Y, DE_Q,
+                                            _____, _____
                 )
             >;
         };
