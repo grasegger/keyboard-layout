@@ -233,7 +233,7 @@
 
         alpha_two {
             bindings = <
-                L16_TAPS(
+                L16_TAPS_ALT(
                      DE_V,   DE_X,    DE_Z,      DE_O,          DE_M, DE_P, DE_F,  DE_K,
                            DE_DOT, DE_COMM,      DE_J,          DE_W, DE_Y, DE_Q,
                                             &sk LSHFT, _____
