@@ -188,10 +188,10 @@
 #define HYPER LC(LG(LS(LALT)))
 
 #define L16( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            _____ _____            K9               K10            K11               _____                         _____ K12                   K13             K14               _____              _____ \
-            _____ K1               K2               K3             K4                _____                         _____ K5                    K6              K7                K8                 _____ \
-            _____ &hl FUN_ONE LEFT &hl SYM_TWO DOWN &hl SYM_ONE UP &hl NUM_ONE RIGHT _____ _____ _____ _____ _____ _____ &hl NUM_ONE BACKSPACE &hl SYM_ONE TAB &hl SYM_TWO ENTER &hl FUN_ONE ESCAPE _____ \
-                                                    _____          _____             K15   _____ _____ _____ _____ K16   _____                       _____
+            _____ _____            K9               K10            K11               _____                         _____ K12         K13         K14         _____       _____ \
+            _____ K1               K2               K3             K4                _____                         _____ K5          K6          K7          K8          _____ \
+            _____ &hl FUN_ONE LEFT &hl SYM_TWO DOWN &hl SYM_ONE UP &hl NUM_ONE RIGHT _____ _____ _____ _____ _____ _____ &to NUM_ONE &sl SYM_ONE &sl SYM_TWO &sl FUN_ONE _____ \
+                                                    _____          _____             K15   _____ _____ _____ _____ K16   _____       _____
 
 
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
@@ -200,6 +200,20 @@
                            &hl UML K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &hl UML K14, \
                                                             K15,          K16\
             )
+
+#define L16_TAPS_ALT( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
+            L16ALT (\
+            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
+                           &hl UML K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &hl UML K14, \
+                                                            K15,          K16\
+            )
+
+#define L16ALT( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
+            _____ _____      K9        K10     K11              _____                         _____ K12   K13   K14   _____ _____ \
+            _____ K1         K2        K3      K4               _____                         _____ K5    K6    K7    K8    _____ \
+            _____ &kp ESCPAE &kp ENTER &kp TAB &kp ENTER  _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ \
+                                       _____   _____      K15   _____ _____ _____ _____ K16   _____ _____
+
 
 / {
 
