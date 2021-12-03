@@ -151,8 +151,6 @@
 #define SYM_TWO 3
 #define NUM_ONE 4
 #define FUN_ONE 5
-#define FUN_TWO 6
-#define SYS 7
 
 #define HOLD_TAP_TIME 200
 
@@ -169,20 +167,11 @@
 
 / {
     behaviors {
-        hl: hl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold Sticky Layer";
-            #binding-cells = <2>;
-            tapping-term-ms = <HOLD_TAP_TIME>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&sl>, <&kp>;
-        };
         ll: ll {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Sticky Layer";
             #binding-cells = <2>;
-            tapping-term-ms = <HOLD_TAP_TIME>;
+            tapping-term-ms = <50>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>;
@@ -195,32 +184,41 @@
 
 #define HYPER LC(LG(LS(LALT)))
 
-#define L16( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            _____ _____            K9               K10            K11               _____                         _____ K12         K13         K14         _____       _____ \
-            _____ K1               K2               K3             K4                _____                         _____ K5          K6          K7          K8          _____ \
-            _____ &hl FUN_ONE LEFT &hl SYM_TWO DOWN &hl SYM_ONE UP &hl NUM_ONE RIGHT _____ _____ _____ _____ _____ _____ &to NUM_ONE &sl SYM_ONE &sl SYM_TWO &sl FUN_ONE _____ \
-                                                    _____          _____             K15   _____ _____ _____ _____ K16   _____       _____
+#define BASE_LAYER(K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24)\
+            _____ _____ K1  K2    K3          _____                                     _____ K4          K5      K6  _____ _____ \
+            _____ K7    K8  K9    K10         _____                                     _____ K11         K12     K13 K14   _____ \
+            _____ K15   K16 K17   K18         _____ _____       _____ _____ _____       _____ K19         K20     K21 K22   _____ \
+                            _____ &to NUM_ONE K23   &ll SYM_ONE _____ _____ &ll SYM_TWO K24   &ll FUN_ONE _____
 
+#define ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
+                           K9       K10    K11        K12           K13     K14                  \
+                  K1       K2       K3     K4         K5            K6      K7        K8         \
+                  &kp LEFT &kp DOWN &kp UP &kp  RIGHT &kp BACKSPACE &kp TAB &kp ENTER &kp ESCAPE \
+                                           K15        K16
+
+#define L16_ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
+            ALPHA (\
+                           &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &kp K14, \
+            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
+                                                            K15,          K16\
+            )
+
+
+#define TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24) \
+            BASE_LAYER (\
+                           &kp K1,      &kp K2,     &kp K3,      &kp K4,      &kp K5, &kp K6, \
+            &mt LALT K7, &mt LCTRL K8, &mt LSHFT K9, &mt LGUI K10, &mt LGUI K11, &mt LSHFT K12, &mt LCTRL K13, &mt LALT K14, \
+             &kp K15, &kp K16,   &kp K17, &kp K18,   &kp K19,         &kp K20, &kp K21,       &kp K22,  \
+                                                            K23,          K24\
+            )
 
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            L16 (\
-            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
+            BASE_LAYER (\
                            &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &kp K14, \
-                                                            K15,          K16\
-            )
-
-#define L16_TAPS_ALT( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            L16ALT (\
             &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
-                               &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13,     &kp K14, \
+             _____ _____   _____ _____   _____         _____ _____       _____  \
                                                             K15,          K16\
             )
-
-#define L16ALT( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            _____ _____      K9        K10     K11           _____                         _____ K12         K13         K14         _____     _____ \
-            _____ K1         K2        K3      K4            _____                         _____ K5          K6          K7          K8        _____ \
-            _____ &kp ESCAPE &kp ENTER &kp TAB &kp BACKSPACE _____ _____ _____ _____ _____ _____ &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS _____ \
-                                       _____   _____         K15   _____ _____ _____ _____ K16   _____       _____
 
 
 / {
@@ -230,10 +228,10 @@
 
         alpha_one {
             bindings = <
-                L16_TAPS(
-                     DE_C, DE_R, DE_I,      DE_E,             DE_N, DE_T, DE_S,  DE_H,
+                L16_ALPHA(
                            DE_L, DE_U,      DE_A,             DE_B, DE_D, DE_G,
-                                       &kp SPACE, &ll ALPHA_2 ALPHA_2
+                     DE_C, DE_R, DE_I,      DE_E,             DE_N, DE_T, DE_S,  DE_H,
+                                       &mt HYPER SPACE, &ll ALPHA_2 ALPHA_2
                 )
             >;
         };
@@ -241,10 +239,10 @@
 
         alpha_two {
             bindings = <
-                L16_TAPS_ALT(
-                     DE_V,   DE_X,    DE_Z,  DE_O,   DE_M, DE_P, DE_F,  DE_K,
+                L16_ALPHA(
                            DE_DOT, DE_COMM,  DE_J,   DE_W, DE_Y, DE_Q,
-                                            _____, _____
+                     DE_V,   DE_X,    DE_Z,  DE_O,   DE_M, DE_P, DE_F,  DE_K,
+                                            &to DEFAULT, &to ALPHA_2
                 )
             >;
         };
@@ -271,40 +269,21 @@
 
        num_one {
             bindings = <
-                L16_TAPS(
-                       N1, N2,       N3,         N4,     N7,     N8,      N9, N0,
-                           SPACE, ENTER,         N5,     N6, DE_COMM, DE_DOT, 
-                                         &to DEFAULT, _____
-                )
+                TAPS(
+                                     &kp C_AL_CALC,   &kp ENTER,    &kp DE_EQL, &kp N7, &kp N8, &kp N9,
+                        &kp DE_SLSH,   &kp DE_ASTR, &kp DE_MINS,   &kp DE_PLUS, &kp N4, &kp N5, &kp N6, &kp N0,
+                        _____      ,    &kp DE_DOT,  &kp DE_DOT, &kp BACKSPACE, &kp N1, &kp N2, &kp N3, _____,
+                                                                   &to DEFAULT, _____
             >;
         };
 
         fun_one {
             bindings = <
-                L16 (
-                    &kp C_PREV, &kp C_NEXT, &kp C_VOL_DN, &kp C_VOL_UP,  &kp C_MUTE, &kp C_PLAY_PAUSE, &kp C_BRI_UP, &kp C_BRI_DEC,
-                                  &kp HOME,      &kp END,  &to FUN_TWO,     &to SYS,        &kp PG_UP,         &kp PG_DN,  
-                                                           &to DEFAULT, &to FUN_ONE
-                )
-            >;
-        };
-
-        fun_two {
-            bindings = <
-                L16(
-                  &kp F1, &kp F2,  &kp F3,      &kp F4, &mt LSHFT F7, &mt LCTRL F8, &kp F9,  &kp F10,
-                           _____, &kp F11,      &kp F5,       &kp F6,      &kp F12,  _____,    
-                                           &to DEFAULT,  _____
-                )
-            >;
-        };
-
-        sys {
-            bindings = <
-                L16 (
-                    _____, _____, &reset, &bootloader, &bt BT_CLR, &bt BT_SEL 0, &bt BT_SEL 1, _____,
-                           _____,  _____,       _____,      _____,   &bt BT_NXT,   &bt BT_PRV,
-                                          &to DEFAULT, &kp C_POWER
+                TAPS (
+                                      &bt  kp C_POWER,   &kp C_MUTE, &kp C_PLAY_PAUSE,  &kp F7, &kp F8, &kp F9,
+                          &kp C_PREV,      &kp C_NEXT, &kp C_VOL_DN,     &kp C_VOL_UP,  &kp F4, &kp F5, &kp F6, &kp F10,
+                        &bt BT_SEL 0,      &bt BT_CLR, &kp C_BRI_UP,    &kp C_BRI_DEC,  &kp F1, &kp F2, &kp F3, &kp F11,
+                                                                          &to DEFAULT, &kp F12
                 )
             >;
         };
