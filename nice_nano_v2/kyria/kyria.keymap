@@ -207,9 +207,9 @@
 
 #define TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24) \
             BASE_LAYER (\
-                           &kp K1,      &kp K2,     &kp K3,      &kp K4,      &kp K5, &kp K6, \
+                            K1,       K2,      K3,       K4,       K5,  K6, \
             &mt LALT K7, &mt LCTRL K8, &mt LSHFT K9, &mt LGUI K10, &mt LGUI K11, &mt LSHFT K12, &mt LCTRL K13, &mt LALT K14, \
-             &kp K15, &kp K16,   &kp K17, &kp K18,   &kp K19,         &kp K20, &kp K21,       &kp K22,  \
+              K15,  K16,    K17,  K18,    K19,          K20,  K21,        K22,  \
                                                             K23,          K24\
             )
 
