@@ -237,6 +237,7 @@
     keymap {
         compatible = "zmk,keymap";
 
+/*
         test {
             bindings = <
             _____ &kp A &kp B &kp C &kp D _____                            _____  &kp E  &kp F &kp G &kp H _____ \
@@ -245,7 +246,7 @@
                               _____ &kp Y &kp Z  &kp N1 _____ _____ &kp N2 &kp N3 &kp N4 _____
             >;
         };
-/*
+*/
         alpha_one {
             bindings = <
                 L16_ALPHA(
@@ -308,6 +309,6 @@
                 )
             >;
         };
-*/
+
     };
 };
