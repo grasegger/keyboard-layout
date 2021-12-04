@@ -151,26 +151,39 @@
 #define NUM_ONE 4
 #define FUN_ONE 5
 
-#define HOLD_TAP_TIME 200
-
-&mt {
-    tapping-term-ms = <HOLD_TAP_TIME>;
-    flavor = "tap-preferred";
-    quick_tap_ms = <50>;
-    bindings = <&sk>, <&kp>;
-};
-
-&sk {
-    quick-release;
-};
+#define HOLD_TAP_TIME 50
 
 / {
     behaviors {
+
+        mtl: mtl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Mod Tap Left";
+            #binding-cells = <2>;
+            tapping-term-ms = <HOLD_TAP_TIME>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 33 34 35 36 37 38 39 46 47 48 49>;
+        };
+
+        mtr: mtr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Mod Tap Left";
+            #binding-cells = <2>;
+            tapping-term-ms = <HOLD_TAP_TIME>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 32 40 41 42 43 44 45>;
+        };
+
+
         ll: ll {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Sticky Layer";
             #binding-cells = <2>;
-            tapping-term-ms = <50>;
+            tapping-term-ms = <HOLD_TAP_TIME>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>;
@@ -200,7 +213,7 @@
 #define L16_ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             ALPHA (\
                            &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &kp K14, \
-            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
+            &mtl LALT K1, &mtl LCTRL K2, &mtl LSHFT K3, &mtl LGUI K4, &mtr LGUI K5, &mtr LSHFT K6, &mtr LCTRL K7, &mtr LALT K8, \
                                                             K15,          K16\
             )
 
@@ -208,7 +221,7 @@
 #define TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24) \
             BASE_LAYER (\
                             K1,       K2,      K3,       K4,       K5,  K6, \
-            &mt LALT K7, &mt LCTRL K8, &mt LSHFT K9, &mt LGUI K10, &mt LGUI K11, &mt LSHFT K12, &mt LCTRL K13, &mt LALT K14, \
+            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
               K15,  K16,    K17,  K18,    K19,          K20,  K21,        K22,  \
                                                             K23,          K24\
             )
@@ -216,7 +229,7 @@
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             BASE_LAYER (\
                         &kp    K9,    &kp  K10,    &kp  K11,    &kp  K12,     &kp  K13,&kp K14, \
-            &mt LALT K1, &mt LCTRL K2, &mt LSHFT K3, &mt LGUI K4, &mt LGUI K5, &mt LSHFT K6, &mt LCTRL K7, &mt LALT K8, \
+            &mtl LALT K1, &mtl LCTRL K2, &mtl LSHFT K3, &mtl LGUI K4, &mtr LGUI K5, &mtr LSHFT K6, &mtr LCTRL K7, &mtr LALT K8, \
              _____, _____,   _____, _____,   _____,         _____, _____,       _____,  \
                                                             K15,          K16\
             )
