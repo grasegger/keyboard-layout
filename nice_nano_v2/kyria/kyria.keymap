@@ -215,10 +215,10 @@
 */
         alpha_one {
             bindings = <
-                _____ _____          &kp DE_L        &kp DE_U        &kp DE_A        _____                               _____       &kp DE_B       &kp DE_D        &kp DE_G        _____         _____
-                _____ &mtl LALT DE_C &mtl LCTRL DE_R &mtl LSHFT DE_I &mtl LGUI DE_E  _____                               _____       &mtr LGUI DE_N &mtr LSHFT DE_T &mtr LCTRL DE_S &mtr LALT DE_H _____
-                _____ &kp LEFT       &kp DOWN        &kp UP          &kp RIGHT       _____       _____ _____ _____ _____ _____       &kp BACKSPACE  &kp TAB         &kp ENTER       &kp ESCAPE    _____
-                                     _____           &to NUM_ONE     &mt HYPER SPACE &sl SYM_ONE _____ _____ &sl SYM_TWO &sl ALPHA_2 &sl FUN_ONE    _____
+                _____ &ext_power EP_ON &kp DE_L        &kp DE_U        &kp DE_A        _____                               _____       &kp DE_B       &kp DE_D        &kp DE_G        _____         _____
+                _____ &mtl LALT DE_C   &mtl LCTRL DE_R &mtl LSHFT DE_I &mtl LGUI DE_E  _____                               _____       &mtr LGUI DE_N &mtr LSHFT DE_T &mtr LCTRL DE_S &mtr LALT DE_H _____
+                _____ &kp LEFT         &kp DOWN        &kp UP          &kp RIGHT       _____       _____ _____ _____ _____ _____       &kp BACKSPACE  &kp TAB         &kp ENTER       &kp ESCAPE    _____
+                                       _____           &to NUM_ONE     &mt HYPER SPACE &sl SYM_ONE _____ _____ &sl SYM_TWO &sl ALPHA_2 &sl FUN_ONE    _____
             >;
         };
 
