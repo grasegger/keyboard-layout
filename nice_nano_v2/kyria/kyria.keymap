@@ -215,20 +215,20 @@
 */
         alpha_one {
             bindings = <
-                _____ _____    &kp DE_L &kp DE_U    &kp DE_A        _____                               _____       &kp DE_B      &kp DE_D &kp DE_G  _____      _____
-                _____ &kp DE_C &kp DE_R &kp DE_I    &kp DE_E        _____                               _____       &kp DE_N      &kp DE_T &kp DE_S  &kp DE_H   _____
-                _____ &kp LEFT &kp DOWN &kp UP      &kp RIGHT       _____       _____ _____ _____ _____ _____       &kp BACKSPACE &kp TAB  &kp ENTER &kp ESCAPE _____
-                               _____    &to NUM_ONE &mt HYPER SPACE &sl SYM_ONE _____ _____ &sl SYM_TWO &sl ALPHA_2 &sl FUN_ONE   _____
+                _____ _____         &kp DE_L       &kp DE_U       &kp DE_A        _____                               _____       &kp DE_B      &kp DE_D       &kp DE_G       _____         _____
+                _____ &mt LALT DE_C &mt LCTRL DE_R &mt LSHFT DE_I &mt LGUI DE_E   _____                               _____       &mt LGUI DE_N &mt LSHFT DE_T &mt LCTRL DE_S &mt LALT DE_H _____
+                _____ &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT       _____       _____ _____ _____ _____ _____       &kp BACKSPACE &kp TAB        &kp ENTER      &kp ESCAPE    _____
+                                    _____          &to NUM_ONE    &mt HYPER SPACE &sl SYM_ONE _____ _____ &sl SYM_TWO &sl ALPHA_2 &sl FUN_ONE   _____
             >;
         };
 
 
         alpha_two {
             bindings = <
-                _____ _____    &kp DE_DOT &kp DE_COMM &kp DE_J    _____                                           _____       &kp DE_W    &kp DE_Y    &kp DE_Q    _____     _____
-                _____ &kp DE_V &kp DE_X   &kp DE_Z    &kp DE_O    _____                                           _____       &kp DE_M    &kp DE_P    &kp DE_F    &kp DE_K  _____
-                _____ &kp HOME &kp PG_DN  &kp PG_UP   &kp END     _____       _____ _____ _____       _____       _____       &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS _____
-                               _____      &to NUM_ONE &to DEFAULT &sl SYM_ONE _____ _____ &sl SYM_TWO &to ALPHA_2 &sl FUN_ONE _____
+                _____ _____         &kp DE_DOT     &kp DE_COMM    &kp DE_J      _____                                           _____       &kp DE_W      &kp DE_Y       &kp DE_Q       _____         _____
+                _____ &mt LALT DE_V &mt LCTRL DE_X &mt LSHFT DE_Z &mt LGUI DE_O _____                                           _____       &mt LGUI DE_M &mt LSHFT DE_P &mt LCTRL DE_F &mt LALT DE_K _____
+                _____ &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       _____       _____ _____ _____       _____       _____       &kp DE_ADIA   &kp DE_ODIA    &kp DE_UDIA    &kp DE_SS     _____
+                                    _____          &to NUM_ONE    &to DEFAULT   &sl SYM_ONE _____ _____ &sl SYM_TWO &to ALPHA_2 &sl FUN_ONE _____
       
             >;
         };
