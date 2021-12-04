@@ -178,16 +178,6 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 32 40 41 42 43 44 45>;
         };
 
-
-        ll: ll {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold Sticky Layer";
-            #binding-cells = <2>;
-            tapping-term-ms = <HOLD_TAP_TIME>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&sl>;
-        };
     };
 };
 
@@ -195,43 +185,19 @@
 
 #define HYPER LC(LG(LS(LALT)))
 
-#define BASE_LAYER(K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24)\
-            _____ _____ K1  K2    K3          _____                                     _____ K4          K5      K6  _____ _____ \
-            _____ K7    K8  K9    K10         _____                                     _____ K11         K12     K13 K14   _____ \
-            _____ K15   K16 K17   K18         _____ _____       _____ _____ _____       _____ K19         K20     K21 K22   _____ \
-                            _____ &to NUM_ONE K1  &ll SYM_ONE SYM_ONE _____ _____ &ll SYM_TWO SYM_TWO K2   &ll FUN_ONE FUN_ONE _____
-
-#define ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-                           K1       K2    K3        K4           K5     K6                  \
-                  K7       K8       K9     K10         K11            K12      K13        K14         \
-                  &kp LEFT &kp DOWN &kp UP &kp  RIGHT &kp BACKSPACE &kp TAB &kp ENTER &kp ESCAPE \
-                                           K15        K16
-
-#define L16_ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            ALPHA (\
-                           &kp K1,      &kp K2,     &kp K3,      &kp K4,      &kp K5, &kp K6, \
-            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
-                                                            K15,          K16\
-            )
+/*
+            _____ _____ K1  K2    K3          _____                                     _____ K4          K5      K6  _____ _____ 
+            _____ K7    K8  K9    K10         _____                                     _____ K11         K12     K13 K14   _____ 
+            _____ K15   K16 K17   K18         _____ _____       _____ _____ _____       _____ K19         K20     K21 K22   _____ 
+                            _____ &to NUM_ONE K1  &sl SYM_ONE SYM_ONE _____ _____ &sl SYM_TWO SYM_TWO K2   &sl FUN_ONE FUN_ONE _____
 
 
-#define TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24) \
-            BASE_LAYER (\
-                            K1,       K2,      K3,       K4,       K5,  K6, \
-            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
-              K15,  K16,    K17,  K18,    K19,          K20,  K21,        K22,  \
-                                                            K23,          K24\
-            )
+            _____ _____ K1  K2    K3  _____                                     _____ K4 K5 K6  _____ _____ 
+            _____ K7    K8  K9    K10 _____                                     _____ K11 K12 K13 K14 _____ 
+            _____ _____ _____ _____   _____         _____ _____       _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+                            _____ &to NUM_ONE &to DEFAULT  &sl SYM_ONE  _____ _____ &sl SYM_TWO  K2   &sl  FUN_ONE _____
 
-#define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-            BASE_LAYER (\
-                        &kp    K1,    &kp  K2,    &kp  K3,    &kp  K4,     &kp  K5 ,&kp K6, \
-            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
-             _____, _____,   _____, _____,   _____,         _____, _____,       _____,  \
-                                                            K15,          K16\
-            )
-
-
+*/
 / {
 
     keymap {
@@ -249,64 +215,60 @@
 */
         alpha_one {
             bindings = <
-                L16_ALPHA(
-                           DE_L, DE_U,      DE_A,             DE_B, DE_D, DE_G,
-                     DE_C, DE_R, DE_I,      DE_E,             DE_N, DE_T, DE_S,  DE_H,
-                                       &mt HYPER SPACE, &ll ALPHA_2 ALPHA_2
-                )
+                _____ _____    &kp DE_L &kp DE_U    &kp DE_A        _____                               _____       &kp DE_B      &kp DE_D &kp DE_G  _____      _____
+                _____ &kp DE_C &kp DE_R &kp DE_I    &kp DE_E        _____                               _____       &kp DE_N      &kp DE_T &kp DE_S  &kp DE_H   _____
+                _____ &kp LEFT &kp DOWN &kp UP      &kp RIGHT       _____       _____ _____ _____ _____ _____       &kp BACKSPACE &kp TAB  &kp ENTER &kp ESCAPE _____
+                               _____    &to NUM_ONE &mt HYPER SPACE &sl SYM_ONE _____ _____ &sl SYM_TWO &sl ALPHA_2 &sl FUN_ONE   _____
             >;
         };
 
 
         alpha_two {
             bindings = <
-                L16_ALPHA(
-                           DE_DOT, DE_COMM,  DE_J,   DE_W, DE_Y, DE_Q,
-                     DE_V,   DE_X,    DE_Z,  DE_O,   DE_M, DE_P, DE_F,  DE_K,
-                                            &to DEFAULT, &to ALPHA_2
-                )
+                _____ _____    &kp DE_DOT &kp DE_COMM &kp DE_J    _____                                           _____       &kp DE_W    &kp DE_Y    &kp DE_Q    _____     _____
+                _____ &kp DE_V &kp DE_X   &kp DE_Z    &kp DE_O    _____                                           _____       &kp DE_M    &kp DE_P    &kp DE_F    &kp DE_K  _____
+                _____ &kp HOME &kp PG_DN  &kp PG_UP   &kp END     _____       _____ _____ _____       _____       _____       &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS _____
+                               _____      &to NUM_ONE &to DEFAULT &sl SYM_ONE _____ _____ &sl SYM_TWO &to ALPHA_2 &sl FUN_ONE _____
+      
             >;
         };
 
        sym_one {
             bindings = <
-                L16_ALPHA(
-                              DE_SCLN, DE_DQUO,     DE_QUOT,     DE_EXLM, DE_QUES, DE_COLN,     
-                    DE_LABK, DE_LBRC, DE_LCBR,      DE_LPRN,     DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
-                                                 &kp DE_DLR, &kp DE_MINS
-                )
+                _____ _____        &kp DE_SCLN &kp DE_DQUO &kp DE_QUOT _____                                           _____       &kp DE_EXLM &kp DE_QUES &kp DE_COLN _____       _____ 
+                _____  &kp DE_LABK &kp DE_LBRC &kp DE_LCBR &kp DE_LPRN _____                                           _____       &kp DE_RPRN &kp DE_RCBR &kp DE_RBRC &kp DE_RABK _____ 
+                _____ _____        _____       _____       _____       _____       _____ _____ _____       _____       _____       _____       _____       _____       _____       _____ 
+                                   _____       &to NUM_ONE &kp DE_DLR  &sl SYM_ONE _____ _____ &sl SYM_TWO &kp DE_MINS &sl FUN_ONE _____
             >;
         };
 
        sym_two {
             bindings = <
-                L16_ALPHA(
-                             DE_TILD, DE_PIPE,     DE_HASH,     DE_ACUT, DE_DEG,  DE_CIRC,
-                    DE_EURO, DE_BSLS, DE_SLSH,     DE_ASTR,     DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
-                                               &kp DE_UNDS, &kp DE_PLUS           
-                )
+                _____ _____        &kp DE_TILD &kp DE_PIPE &kp DE_HASH _____                                           _____       &kp DE_ACUT &kp DE_DEG  &kp DE_CIRC _____      _____ 
+                _____  &kp DE_EURO &kp DE_BSLS &kp DE_SLSH &kp DE_ASTR _____                                           _____       &kp DE_PERC &kp DE_AMPR &kp DE_EQL  &kp DE_GRV _____ 
+                _____ _____        _____       _____       _____       _____       _____ _____ _____       _____       _____       _____       _____       _____       _____      _____ 
+                                   _____       &to NUM_ONE &kp DE_UNDS &sl SYM_ONE _____ _____ &sl SYM_TWO &kp DE_PLUS &sl FUN_ONE _____
             >;
         };
 
        num_one {
             bindings = <
-                TAPS(
-                                     &kp C_AL_CALC,   &kp ENTER,    &kp DE_EQL, &kp N7, &kp N8, &kp N9,
-                            DE_SLSH,       DE_ASTR,     DE_MINS,       DE_PLUS,     N4,     N5,     N6,    N0,
-                        _____      ,    &kp DE_DOT,  &kp DE_DOT, &kp BACKSPACE, &kp N1, &kp N2, &kp N3, _____,
-                                                                   &to DEFAULT, _____
-                )
+                _____ _____             &kp C_AL_CALC     &kp ENTER         &kp DE_EQL       _____                                     _____       &kp N7 &kp N8 &kp N9 _____  _____ 
+                _____  &mt LALT DE_SLSH &mt LCTRL DE_ASTR &mt LSHFT DE_MINS &mt LGUI DE_PLUS _____                                     _____       &kp N4 &kp N5 &kp N6 &kp N0 _____ 
+                _____ _____             &kp DE_COMMA      &kp DE_DOT        &kp BACKSPACE    _____       _____ _____ _____       _____ _____       &kp N1 &kp N2 &kp N3 _____  _____ 
+                                        _____             &to NUM_ONE       &to DEFAULT      &sl SYM_ONE _____ _____ &sl SYM_TWO _____ &sl FUN_ONE _____
             >;
         };
 
         fun_one {
             bindings = <
-                TAPS (
-                                      &ext_power EP_TOG,   &kp C_MUTE, &kp C_PLAY_PAUSE,  &kp F7, &kp F8, &kp F9,
-                              C_PREV,            C_NEXT,     C_VOL_DN,         C_VOL_UP,      F4,     F5,     F6,     F10,
-                        &bt BT_SEL 0,        &bt BT_CLR, &kp C_BRI_UP,    &kp C_BRI_DEC,  &kp F1, &kp F2, &kp F3, &kp F11,
-                                                                            &to DEFAULT, &kp F12
-                )
+            
+            
+                _____ _____           &ext_power EP_TOG &kp C_MUTE          &kp C_PLAY_PAUSE _____                                       _____       &kp F7 &kp F8 &kp F9 _____   _____ 
+                _____ &mt LALT C_PREV &mt LCTRL C_NEXT  &mt LSHFT C_VOL_DN &mt LGUI C_VOL_UP _____                                       _____       &kp F4 &kp F5 &kp F6 &kp F10 _____ 
+                _____ &bt BT_SEL 0    &bt BT_CLR        &kp C_BRI_UP       &kp C_BRI_DEC     _____       _____ _____ _____       _____   _____       &kp F1 &kp F2 &kp F3 &kp F11 _____ 
+                                      _____             &to NUM_ONE        &to DEFAULT       &sl SYM_ONE _____ _____ &sl SYM_TWO &kp F12 &sl FUN_ONE _____
+            
             >;
         };
 
