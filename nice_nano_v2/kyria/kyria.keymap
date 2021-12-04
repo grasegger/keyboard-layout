@@ -202,15 +202,15 @@
                             _____ &to NUM_ONE K1  &ll SYM_ONE SYM_ONE _____ _____ &ll SYM_TWO SYM_TWO K2   &ll FUN_ONE FUN_ONE _____
 
 #define ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16 ) \
-                           K9       K10    K11        K12           K13     K14                  \
-                  K1       K2       K3     K4         K5            K6      K7        K8         \
+                           K1       K2    K3        K4           K5     K6                  \
+                  K7       K8       K9     K10         K11            K12      K13        K14         \
                   &kp LEFT &kp DOWN &kp UP &kp  RIGHT &kp BACKSPACE &kp TAB &kp ENTER &kp ESCAPE \
                                            K15        K16
 
 #define L16_ALPHA( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             ALPHA (\
-                           &kp K9,      &kp K10,     &kp K11,      &kp K12,      &kp K13, &kp K14, \
-            &mtl LALT K1, &mtl LCTRL K2, &mtl LSHFT K3, &mtl LGUI K4, &mtr LGUI K5, &mtr LSHFT K6, &mtr LCTRL K7, &mtr LALT K8, \
+                           &kp K1,      &kp K2,     &kp K3,      &kp K4,      &kp K5, &kp K6, \
+            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
                                                             K15,          K16\
             )
 
@@ -225,8 +225,8 @@
 
 #define L16_TAPS( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
             BASE_LAYER (\
-                        &kp    K9,    &kp  K10,    &kp  K11,    &kp  K12,     &kp  K13,&kp K14, \
-            &mtl LALT K1, &mtl LCTRL K2, &mtl LSHFT K3, &mtl LGUI K4, &mtr LGUI K5, &mtr LSHFT K6, &mtr LCTRL K7, &mtr LALT K8, \
+                        &kp    K1,    &kp  K2,    &kp  K3,    &kp  K4,     &kp  K5 ,&kp K6, \
+            &mtl LALT K7, &mtl LCTRL K8, &mtl LSHFT K9, &mtl LGUI K10, &mtr LGUI K11, &mtr LSHFT K12, &mtr LCTRL K13, &mtr LALT K14, \
              _____, _____,   _____, _____,   _____,         _____, _____,       _____,  \
                                                             K15,          K16\
             )
@@ -271,8 +271,8 @@
        sym_one {
             bindings = <
                 L16_ALPHA(
-                    DE_LABK, DE_LBRC, DE_LCBR,      DE_LPRN,     DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
                               DE_SCLN, DE_DQUO,     DE_QUOT,     DE_EXLM, DE_QUES, DE_COLN,     
+                    DE_LABK, DE_LBRC, DE_LCBR,      DE_LPRN,     DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
                                                  &kp DE_DLR, &kp DE_MINS
                 )
             >;
@@ -281,8 +281,8 @@
        sym_two {
             bindings = <
                 L16_ALPHA(
-                    DE_EURO, DE_BSLS, DE_SLSH,     DE_ASTR,     DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
                              DE_TILD, DE_PIPE,     DE_HASH,     DE_ACUT, DE_DEG,  DE_CIRC,
+                    DE_EURO, DE_BSLS, DE_SLSH,     DE_ASTR,     DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
                                                &kp DE_UNDS, &kp DE_PLUS           
                 )
             >;
