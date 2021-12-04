@@ -193,10 +193,7 @@
 
 #define _____ &none
 
-
 #define HYPER LC(LG(LS(LALT)))
-
-#define THUMBS(K1, K2) 
 
 #define BASE_LAYER(K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8,  K9,  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K20, K21, K22, K23, K24)\
             _____ _____ K1  K2    K3          _____                                     _____ K4          K5      K6  _____ _____ \
@@ -240,6 +237,15 @@
     keymap {
         compatible = "zmk,keymap";
 
+        test {
+            bindings = <
+            _____ &kp A &kp B &kp C &kp D _____                            _____  &kp E  &kp F &kp G &kp H _____ \
+            _____ &kp I &kp J &kp K &kp L _____                            _____  &kp M  &kp N &kp O &kp P _____ \
+            _____ &kp Q &kp R &kp S &kp T _____ _____   _____ _____ _____  _____  &kp U  &kp V &kp W &kp X _____ \
+                              _____ &kp Y &kp Z  &kp N1 _____ _____ &kp N2 &kp N3 &kp N4 _____
+            >;
+        };
+/*
         alpha_one {
             bindings = <
                 L16_ALPHA(
@@ -302,6 +308,6 @@
                 )
             >;
         };
-
+*/
     };
 };
