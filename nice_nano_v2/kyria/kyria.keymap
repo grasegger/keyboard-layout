@@ -255,7 +255,7 @@
             bindings = <
                 _____ _____             &kp C_AL_CALC     &kp ENTER         &kp DE_EQL       _____                                     _____       &kp N7 &kp N8 &kp N9 _____  _____ 
                 _____  &mt LALT DE_SLSH &mt LCTRL DE_ASTR &mt LSHFT DE_MINS &mt LGUI DE_PLUS _____                                     _____       &kp N4 &kp N5 &kp N6 &kp N0 _____ 
-                _____ _____             &kp DE_COMMA      &kp DE_DOT        &kp BACKSPACE    _____       _____ _____ _____       _____ _____       &kp N1 &kp N2 &kp N3 _____  _____ 
+                _____ _____             &kp DE_COMM       &kp DE_DOT        &kp BACKSPACE    _____       _____ _____ _____       _____ _____       &kp N1 &kp N2 &kp N3 _____  _____ 
                                         _____             &to NUM_ONE       &to DEFAULT      &sl SYM_ONE _____ _____ &sl SYM_TWO _____ &sl FUN_ONE _____
             >;
         };
