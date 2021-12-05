@@ -262,10 +262,10 @@
 
         fun_one {
             bindings = <
-                _____ _____           &ext_power EP_TOG &kp C_MUTE          &kp C_PLAY_PAUSE _____                                       _____       &kp F7 &kp F8 &kp F9 _____   _____ 
-                _____ &mtl LALT C_PREV &mtl LCTRL C_NEXT  &mtl LSHFT C_VOL_DN &mtl LGUI C_VOL_UP _____                                       _____       &kp F4 &kp F5 &kp F6 &kp F10 _____ 
-                _____ &bt BT_SEL 0    &bt BT_CLR        &kp C_BRI_UP       &kp C_BRI_DEC     _____       _____ _____ _____       _____   _____       &kp F1 &kp F2 &kp F3 &kp F11 _____ 
-                                      _____             &to NUM_ONE        &to DEFAULT       &sl SYM_ONE _____ _____ &sl SYM_TWO &kp F12 &sl FUN_ONE _____
+                _____ _____           &ext_power EP_TOG  &kp C_MUTE          &kp C_PLAY_PAUSE _____                                       _____       &kp F7 &kp F8 &kp F9 _____   _____ 
+                _____ &mtl LALT C_PREV &mtl LCTRL C_NEXT &mtl LSHFT C_VOL_DN &mtl LGUI C_VOL_UP _____                                       _____       &kp F4 &kp F5 &kp F6 &kp F10 _____ 
+                _____ &bt BT_NXT       &bt BT_CLR         &kp C_BRI_UP        &kp C_BRI_DEC     _____       _____ _____ _____       _____   _____       &kp F1 &kp F2 &kp F3 &kp F11 _____ 
+                                      _____              &to NUM_ONE         &to DEFAULT       &sl SYM_ONE _____ _____ &sl SYM_TWO &kp F12 &sl FUN_ONE _____
             
             >;
         };
