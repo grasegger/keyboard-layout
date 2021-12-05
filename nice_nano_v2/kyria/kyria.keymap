@@ -151,7 +151,7 @@
 #define NUM_ONE 4
 #define FUN_ONE 5
 
-#define HOLD_TAP_TIME 200
+#define HOLD_TAP_TIME 175
 
 / {
     behaviors {
