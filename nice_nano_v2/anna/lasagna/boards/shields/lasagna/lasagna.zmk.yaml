@@ -1,0 +1,11 @@
+file_format: "1"
+id: anna_lasagna
+name: Lasagna
+type: shield
+url: github.com/grasegger/keyboards
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - lasagna_left
+  - lasagna_right
