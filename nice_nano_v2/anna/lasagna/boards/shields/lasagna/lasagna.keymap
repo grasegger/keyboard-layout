@@ -15,9 +15,9 @@
 		// This is a sample keymap intended to be replaced with your own
 		base_layer {
 			bindings = <
-				&kp 0 &kp 0 &kp 0 &kp 0 &kp 0 &kp 0 
-        &kp 0 &kp 0 &kp 0 &kp 0 &kp 0 &kp 0 &kp 0 &kp 0 
-        &kp 0 &kp 0 
+				&kp N0 &kp n0 &kp N0 &kp N0 &kp N0 &kp N0 
+        &kp N0 &kp n0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 
+        &kp N0 &kp n0 
 			>;
 		};
 
