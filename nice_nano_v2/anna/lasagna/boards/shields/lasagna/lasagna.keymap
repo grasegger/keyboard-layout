@@ -7,19 +7,141 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+
+/* GERMAN KEY CODES */
+#define DE_CIRC GRAVE // ^ (dead)
+#define DE_SS   MINUS // ß
+#define DE_ACUT EQUAL // ´ (dead)
+#define DE_Q    Q            // Q
+#define DE_W    W            // W
+#define DE_E    E            // E
+#define DE_R    R            // R
+#define DE_T    T            // T
+#define DE_Z    Y            // Z
+#define DE_U    U            // U
+#define DE_I    I            // I
+#define DE_O    O            // O
+#define DE_P    P            // P
+#define DE_UDIA LEFT_BRACKET // Ü
+#define DE_PLUS RIGHT_BRACKET // +
+#define DE_A    A            // A
+#define DE_S    S            // S
+#define DE_D    D            // D
+#define DE_F    F            // F
+#define DE_G    G            // G
+#define DE_H    H            // H
+#define DE_J    J            // J
+#define DE_K    K            // K
+#define DE_L    L            // L
+#define DE_ODIA SEMICOLON    // Ö
+#define DE_ADIA SINGLE_QUOTE // Ä
+#define DE_HASH NON_US_HASH  // #
+#define DE_LABK NON_US_BACKSLASH // <
+#define DE_Y    Z                // Y
+#define DE_X    X                // X
+#define DE_C    C                // C
+#define DE_V    V                // V
+#define DE_B    B                // B
+#define DE_N    N                // N
+#define DE_M    M                // M
+#define DE_COMM COMMA            // ,
+#define DE_DOT  PERIOD           // .
+#define DE_MINS SLASH            // -
+#define DE_DEG  LS(DE_CIRC) // °
+#define DE_EXLM LS(NUMBER_1)    // !
+#define DE_DQUO LS(NUMBER_2)    // "
+#define DE_SECT LS(NUMBER_3)    // §
+#define DE_DLR  LS(NUMBER_4)    // $
+#define DE_PERC LS(NUMBER_5)    // %
+#define DE_AMPR LS(NUMBER_6)    // &
+#define DE_SLSH LS(NUMBER_7)    // /
+#define DE_LPRN LS(NUMBER_8)    // (
+#define DE_RPRN LS(NUMBER_9)    // )
+#define DE_EQL  LS(NUMBER_0)    // =
+#define DE_QUES LS(DE_SS)   // ?
+#define DE_GRV  LS(DE_ACUT) // ` (dead)
+#define DE_ASTR LS(DE_PLUS) // *
+#define DE_QUOT LS(DE_HASH) // '
+#define DE_RABK LS(DE_LABK) // >
+#define DE_SCLN LS(DE_COMM) // ;
+#define DE_COLN LS(DE_DOT)  // :
+#define DE_UNDS LS(DE_MINS) // _
+#define DE_LBRC LA(NUMBER_5)    // [
+#define DE_RBRC LA(NUMBER_6)    // ]
+#define DE_PIPE LA(NUMBER_7)    // |
+#define DE_LCBR LA(NUMBER_8)    // {
+#define DE_RCBR LA(NUMBER_9)    // }
+#define DE_AT LA(DE_L)    // @
+#define DE_EURO LA(DE_E)    // €
+#define DE_TILD LA(DE_N)    // ~
+#define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
+
+#define DEFAULT 0
+#define ALPHA_1 DEFAULT
+#define ALPHA_2 1
+#define UML 1
+#define NUM 1
+#define NAV 1
+#define SY1 1
+#define SY2 1
+									 									 
+#define HOLD_TAP_TIME 200
+
+&mt {
+	tapping-term-ms = <HOLD_TAP_TIME>;
+	flavor = "tap-preferred";
+	quick_tap_ms = <50>;
+};
+
+&lt {
+	tapping-term-ms = <HOLD_TAP_TIME>;
+	quick_tap_ms = <0>;
+	flavor = "tap-preferred";
+};
+
+/*
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SYM_ONE SYM_TWO>;
+            then-layer = <LEVEL_SELECT>;
+        };
+    };
+};
+*/
+
+#define DEFAULT_LAYER( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
+               	&hl UML K1	&hl NUM K2 	&hl NAV K3 		&hl NAV K4 		&hl NUM K5		&hl UML K6 \
+	&mt LATL K7 	&hl SY1 K8	&mt LGUI K9	&mt LSHFT K10	&mt LSHFT K11	&mt LCTRL K12	&hl SY2 K13	&mt HYPER K14 \
+                                                                K15	K16\
+            
+
 / {
 
 	keymap {
 		compatible = "zmk,keymap";
 
 		// This is a sample keymap intended to be replaced with your own
-		base_layer {
+		alpha_1 {
 			bindings = <
-				&kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 
-        &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 &kp N0 
-        &kp N0 &kp N0 
+				DEFAULT_LAYER(
+							 	DE_L, DE_U, DE_A, 			DE_B, DE_D, DE_G, 
+        	DE_C,	DE_R, DE_I,	DE_E,				DE_N, DE_T,	DE_S,	DE_H,
+           									&kp SPACE,	&sl ALPHA_2
+				)
 			>;
 		};
+
+		alpha_2 {
+			bindings = <
+				DEFAULT_LAYER(
+							 	DE_DOT, DE_COMM, 	DE_J, 					DE_W, DE_Y, DE_Q, 
+        	DE_V,	DE_X, 	DE_Z,			DE_O,						DE_M, DE_P,	DE_F,	DE_K,
+           												&kp LEFT_SHIFT,	&kp BACKSPACE
+				)
+			>;
+		}
 
 	};
 };
