@@ -124,7 +124,7 @@
         DEFAULT_LAYER(
                 DE_L, DE_U, DE_A,       DE_B, DE_D, DE_G, 
           DE_C, DE_R, DE_I, DE_E,       DE_N, DE_T, DE_S, DE_H,
-                            &kp SPACE,  &sl ALPHA_2
+                            &kp SPACE,  &kp SPACE
         )
       >;
     };
