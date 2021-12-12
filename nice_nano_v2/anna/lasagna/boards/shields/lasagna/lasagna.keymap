@@ -110,7 +110,6 @@
   tapping-term-ms = <HOLD_TAP_TIME>;
   flavor = "tap-preferred";
   quick_tap_ms = <50>;
-  bindings = <&sk>, <&kp>;
 };
 
 &lt {
@@ -121,10 +120,21 @@
 
 #define DEFAULT_LAYER( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
                 &lt UML K1  &lt NUM K2  &lt NAV K3    &lt NAV K4    &lt NUM K5    &lt UML K6 \
-  &mt LALT K7   &lt SY1 K8  &mt LGUI K9 &mt LSHFT K10 &mt LSHFT K11 &mt LCTRL K12 &lt SY2 K13 &mt HYPER K14 \
+  &hk LALT K7   &lt SY1 K8  &hk LGUI K9 &hk LSHFT K10 &hk LSHFT K11 &hk LCTRL K12 &lt SY2 K13 &hk HYPER K14 \
                                                                 K15 K16
 
 / {
+  behaviors {
+    hk: hk {
+      compatible = "zmk,behavior-hold-tap";
+      label = "hk";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOLD_TAP_TIME>;
+      quick-tap-ms = <50>;
+      bindings = <&sk>, <&kp>;
+    };
+  };
 
   keymap {
     compatible = "zmk,keymap";
