@@ -110,6 +110,7 @@
   tapping-term-ms = <HOLD_TAP_TIME>;
   flavor = "tap-preferred";
   quick_tap_ms = <50>;
+  bindings = <&sk>, <&kp>;
 };
 
 &lt {
