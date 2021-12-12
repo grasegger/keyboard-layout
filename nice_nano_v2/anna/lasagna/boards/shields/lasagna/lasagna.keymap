@@ -108,7 +108,7 @@
 
 #define DEFAULT_LAYER( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
                	&hl UML K1	&hl NUM K2 	&hl NAV K3 		&hl NAV K4 		&hl NUM K5		&hl UML K6 \
-	&mt LATL K7 	&hl SY1 K8	&mt LGUI K9	&mt LSHFT K10	&mt LSHFT K11	&mt LCTRL K12	&hl SY2 K13	&mt HYPER K14 \
+	&mt LALT K7 	&hl SY1 K8	&mt LGUI K9	&mt LSHFT K10	&mt LSHFT K11	&mt LCTRL K12	&hl SY2 K13	&mt HYPER K14 \
                                                                 K15	K16\
             
 
