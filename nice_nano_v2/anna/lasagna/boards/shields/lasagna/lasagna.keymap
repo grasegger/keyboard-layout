@@ -91,6 +91,8 @@
 									 									 
 #define HOLD_TAP_TIME 200
 
+#define HYPER LC(LG(LS(LALT)))
+
 &mt {
 	tapping-term-ms = <HOLD_TAP_TIME>;
 	flavor = "tap-preferred";
