@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-
+#include <dt-bindings/zmk/mouse.h>
 
 /* GERMAN KEY CODES */
 #define DE_CIRC GRAVE // ^ (dead)
@@ -90,6 +90,7 @@
 #define UML 8
 #define SYS 9
 #define LVL 10
+#define MOU 11
                                      
 #define HOLD_TAP_TIME 200
 #define _____ &none
@@ -219,12 +220,19 @@
 
     level_select {
       bindings = <
-              _____ _____   _____       _____   _____   _____
+              _____ _____   _____       &to MOU _____   _____
         _____ _____ &to MED &to NUM     &to NAV &to SYS _____ _____
                             &to DEFAULT _____
       >;
     };
 
+    mouse {
+      bindings = <
+                       _____          _____        &mkp LCLK       &mkp RCLK        &mkp MCLK        _____ _____
+        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT
+                                                   &to DEFAULT     _____
+      >;
+    };
 
   };
 };
