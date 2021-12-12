@@ -79,11 +79,15 @@
 #define DEFAULT 0
 #define ALPHA_1 DEFAULT
 #define ALPHA_2 1
-#define UML 1
-#define NUM 1
-#define NAV 1
-#define SY1 1
-#define SY2 1
+#define SY1 2
+#define SY2 3
+#define NUM 4
+#define NAV 5
+#define MED 6
+#define FUN 7
+#define UML 8
+#define SYS 9
+#define LVL 10
 									 									 
 #define HOLD_TAP_TIME 200
 
@@ -99,17 +103,6 @@
 	flavor = "tap-preferred";
 };
 
-/*
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SYM_ONE SYM_TWO>;
-            then-layer = <LEVEL_SELECT>;
-        };
-    };
-};
-*/
 
 #define DEFAULT_LAYER( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
                	&hl UML K1	&hl NUM K2 	&hl NAV K3 		&hl NAV K4 		&hl NUM K5		&hl UML K6 \
@@ -136,12 +129,90 @@
 		alpha_2 {
 			bindings = <
 				DEFAULT_LAYER(
-							 	DE_DOT, DE_COMM, 	DE_J, 					DE_W, DE_Y, DE_Q, 
-        	DE_V,	DE_X, 	DE_Z,			DE_O,						DE_M, DE_P,	DE_F,	DE_K,
-           												&kp LEFT_SHIFT,	&kp BACKSPACE
+							 	DE_DOT, DE_COMM, 	DE_J,			DE_W, DE_Y, DE_Q, 
+        	DE_V,	DE_X, 	DE_Z,			DE_O,			DE_M, DE_P,	DE_F,	DE_K,
+           												&to LVL,	&kp BACKSPACE
 				)
 			>;
-		}
+		};
+
+ 		sym_1 {
+            bindings = <
+                DEFAULT_LAYER(
+                    DE_LABK, DE_LBRC, DE_LCBR,      DE_LPRN,     DE_RPRN, DE_RCBR, DE_RBRC, DE_RABK, 
+                              DE_SCLN, DE_DQUO,     DE_QUOT,     DE_EXLM, DE_QUES, DE_COLN,     
+                                                 &kp DE_DLR, &kp DE_MINS
+                )
+            >;
+        };
+
+		sym_2 {
+			bindings = <
+			     DEFAULT_LAYER(
+                             DE_TILD, DE_PIPE,     DE_HASH,     DE_ACUT, DE_DEG,  DE_CIRC,
+                    DE_EURO, DE_BSLS, DE_SLSH,     DE_ASTR,     DE_PERC, DE_AMPR, DE_EQL,  DE_GRV, 
+                                               &kp DE_UNDS, &kp DE_PLUS           
+                )
+				>;
+		};
+
+		num {
+			bindings = <
+								&kp ENTER	&kp DE_DOT 	&kp N5      &kp N6 				&kp DE_COMM &kp DE_SLSH
+				&kp N1	&kp  N2		&kp N3   		&kp N4      &kp N7				&kp N8  		&kp N9   		&kp N0
+																			&to DEFAULT &kp BACKSPACE
+			>;
+		};
+
+		nav {
+			bindings = <
+									&kp PG_DN &kp PG_UP	&kp HOME  	&kp LGUI  &kp LALT	&kp END
+				&kp LEFT	&kp DOWN	&kp UP		&kp RIGHT 	&kp LSHFT &kp LCTRL &kp ENTER &kp ESCAPE
+																			&to DEFAULT	&kp TAB
+			>;
+		};
+
+		media {
+			bindings = <
+												_____ 			_____   			_____					_____       _____  						_____
+						&kp C_PREV 	&kp C_NEXT 	&kp C_VOL_DN	&kp C_VOL_UP	&kp C_MUTE	&kp C_PLAY_PAUSE 	&kp C_BRIGHTNESS_INC &kp C_BRIGHTNESS_DEC
+																									&to DEFAULT		_____
+			>;
+		};
+
+
+		fun {
+			bindings = <
+										_____ 	&kp F11			&kp F5				&kp F6      	&kp F12 			 _____    
+				&mt LALT F1	&kp F2  &mt LGUI F3	&mt LSHFT F4	&mt LSHFT F7 	&mt LCTRL F8 		&kp F9  &mt HYPER F10
+																				&to DEFAULT 	_____
+			>;
+		};
+
+		umlauts {
+			bindings = <
+							_____ &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA	&kp DE_SS _____ 
+				_____	_____	_____       _____       _____    		_____ 		_____ _____
+																						_____      	_____
+			>;
+		};
+
+		sys {
+				bindings = <
+								_____  _____	_____      	_____   		&bt BT_NXT   &bt BT_PRV
+					_____ _____ &reset 	&bootloader &bt BT_CLR 	&bt BT_SEL 0 &bt BT_SEL 1 _____
+																					&to DEFAULT	_____
+				>;
+		};
+
+		level_select {
+			bindings = <
+							_____	_____    _____      _____		_____ 	_____
+				_____ _____ &to MED &to NUM 		&to NAV &to SYS _____ _____
+														&to DEFAULT	_____
+			>;
+		};
+
 
 	};
 };
