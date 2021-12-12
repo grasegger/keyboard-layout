@@ -229,7 +229,7 @@
 
     mouse {
       bindings = <
-                       _____          _____        &mkp LCLK       &mkp RCLK        &mkp MCLK        _____ _____
+                       _____          _____        &mkp LCLK       &mkp RCLK        &mkp MCLK        _____
         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT
                                                    &to DEFAULT     _____
       >;
