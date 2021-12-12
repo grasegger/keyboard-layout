@@ -95,6 +95,16 @@
 #define _____ &none
 #define HYPER LC(LG(LS(LALT)))
 
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <SY1 SY2>;
+            then-layer = <LVL>;
+        };
+    };
+};
+
 &mt {
   tapping-term-ms = <HOLD_TAP_TIME>;
   flavor = "tap-preferred";
@@ -105,10 +115,6 @@
   tapping-term-ms = <HOLD_TAP_TIME>;
   quick_tap_ms = <0>;
   flavor = "tap-preferred";
-};
-
-&sl {
-	quick-release;
 };
 
 #define DEFAULT_LAYER( K1,  K2,  K3,  K4,  K5,  K6,  K7,  K8, K9,  K10, K11, K12, K13, K14, K15, K16 ) \
@@ -127,7 +133,7 @@
         DEFAULT_LAYER(
                 DE_L, DE_U, DE_A,       DE_B, DE_D, DE_G, 
           DE_C, DE_R, DE_I, DE_E,       DE_N, DE_T, DE_S, DE_H,
-                            &kp SPACE,  &sl ALPHA_2
+                            &kp SPACE,  &mo ALPHA_2
         )
       >;
     };
@@ -135,9 +141,9 @@
     alpha_2 {
       bindings = <
         DEFAULT_LAYER(
-                DE_DOT, DE_COMM,  DE_J,     DE_W, DE_Y, DE_Q, 
-          DE_V, DE_X,   DE_Z,     DE_O,     DE_M, DE_P, DE_F, DE_K,
-                                  &to LVL,  &kp BACKSPACE
+                DE_DOT, DE_COMM,  DE_J,          DE_W, DE_Y, DE_Q, 
+          DE_V, DE_X,   DE_Z,     DE_O,          DE_M, DE_P, DE_F, DE_K,
+                                  &kp BACKSPACE, _____
         )
       >;
     };
