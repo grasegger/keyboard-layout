@@ -90,7 +90,7 @@
 #define LVL 10
 									 									 
 #define HOLD_TAP_TIME 200
-
+#define _____ &none
 #define HYPER LC(LG(LS(LALT)))
 
 &mt {
