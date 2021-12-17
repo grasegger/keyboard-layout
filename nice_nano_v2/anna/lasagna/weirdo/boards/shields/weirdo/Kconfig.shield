@@ -1,0 +1,5 @@
+config SHIELD_WEIRDO_LEFT
+    def_bool $(shields_list_contains,weirdo_left)
+
+config SHIELD_WEIRDO_RIGHT
+    def_bool $(shields_list_contains,weirdo_right)
