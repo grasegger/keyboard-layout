@@ -100,6 +100,8 @@
 #define AL1 0
 #define AL2 1
 #define NUM 2
+#define SY1 0
+#define SY2 0
 
 / {
   behaviors {
