@@ -140,10 +140,10 @@
 
     num {
       bindings = <
-        &kp F7        &kp F8          &kp F9        &kp F11       _____     &kp KP_EQUAL  &kp N7  &kp N8  &kp N9  &kp DE_DOT 
-        &mt LALT F4   &mt LSHFT F5    &mt LCTRL F6  &mt LGUI F10  _____     &kp ENTER     &mt LGUI N4  &mt LCTRL N5  &mt LSHFT N6  &mt LALT N0 
-        &kp F1        &kp F2          &kp F3        &kp F12       _____     &kp BACKSPACE &kp N1  &kp N2  &kp N3  &kp DE_COMM   
-        &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS  &kp KP_PLUS   &kp SPACE &to AL1       _____   _____   _____   _____ 
+        &kp F7        &kp F8          &kp F9        &kp F11       _____     &kp KP_EQUAL  &kp N7      &kp N8        &kp N9        &kp DE_DOT 
+        &mt LALT F4   &mt LSHFT F5    &mt LCTRL F6  &mt LGUI F10  _____     &kp ENTER     &mt LGUI N4 &mt LCTRL N5  &mt LSHFT N6  &mt LALT N0 
+        &kp F1        &kp F2          &kp F3        &kp F12       _____     &kp BACKSPACE &kp N1      &kp N2        &kp N3        &kp DE_COMM   
+        &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS  &kp KP_PLUS   &kp SPACE &to AL1       _____       _____         _____         _____ 
       >;
     };
 
