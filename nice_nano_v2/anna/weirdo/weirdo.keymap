@@ -76,20 +76,6 @@
 #define DE_EURO LA(DE_E)    // €
 #define DE_TILD LA(DE_N)    // ~
 #define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
-
-#define DEFAULT 0
-#define ALPHA_1 DEFAULT
-#define ALPHA_2 1
-#define SY1 2
-#define SY2 3
-#define NUM 4
-#define NAV 5
-#define MED 6
-#define FUN 7
-#define UML 8
-#define SYS 9
-#define LVL 10
-#define MOU 11
                                      
 #define HOLD_TAP_TIME 200
 #define _____ &none
