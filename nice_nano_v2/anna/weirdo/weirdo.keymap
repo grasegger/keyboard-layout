@@ -122,7 +122,7 @@
     // This is a sample keymap intended to be replaced with your own
     alpha_1 {
       bindings = <
-        &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LCTRL(TAB)      &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
+        &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LC(TAB)         &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
         &mt LALT DE_C &hl SY1 DE_R  &mt LCTRL DE_I  &mt LGUI DE_E &mt HYPER LG(DE_T)  &mt HYPER LG(DE_W)  &mt LGUI DE_N &mt LCTRL DE_T  &hl SY2 DE_S  &mt LALT DE_H
         &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT     &kp C_VOL_DN        &kp LS(LC(TAB))     &kp BACKSPACE &kp TAB         &kp ENTER     &kp ESCAPE  
         &to 0         &to 0         &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sk LSHFT     &kp LC(SPACE)  &to 0         &to 0
