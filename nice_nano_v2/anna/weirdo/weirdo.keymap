@@ -117,16 +117,24 @@
   flavor = "tap-preferred";
 };
 
+&sk {
+  quick-release;
+};
+
+#define AL1 0
+#define AL2 1
+#define NUM 2
+
 / {
   behaviors {
-    hk: hk {
+    hl: hl {
       compatible = "zmk,behavior-hold-tap";
-      label = "hk";
+      label = "hl";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <HOLD_TAP_TIME>;
       quick-tap-ms = <50>;
-      bindings = <&sk>, <&kp>;
+      bindings = <&sl>, <&kp>;
     };
   };
 
@@ -136,13 +144,30 @@
     // This is a sample keymap intended to be replaced with your own
     alpha_1 {
       bindings = <
-        &kp DE_UDIA &kp DE_L    &kp DE_U  &kp DE_A  &kp C_VOL_UP    &kp LCTRL(TAB)      &kp DE_B      &kp DE_D  &kp DE_G    &kp DE_SS
-        &kp DE_C    &kp DE_R    &kp DE_I  &kp DE_E  &kp LGUI(DE_T)  &kp LGUI(DE_W)      &kp DE_N      &kp DE_T  &kp DE_S    &kp DE_H
-        &kp LEFT    &kp DOWN    &kp UP    &kp RIGHT &kp C_VOL_DN    &kp LS(LCTRL(TAB))  &kp BACKSPACE &kp TAB   &kp ENTER   &kp ESCAPE  
-        &kp C_PREV  &kp C_NEXT  &to 0     &to 0     &to 0           &to 0               &to 0         &to 0     &kp C_MUTE  &kp C_PLAY_PAUSE
+        &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LCTRL(TAB)      &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
+        &mt LALT DE_C &hl SY1 DE_R  &mt LCTRL DE_I  &mt LGUI DE_E &mt HYPER LG(DE_T)  &mt HYPER LG(DE_W)  &mt LGUI DE_N &mt LCTRL DE_T  &hl SY2 DE_S  &mt LALT DE_H
+        &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT     &kp C_VOL_DN        &kp LS(LCTRL(TAB))  &kp BACKSPACE &kp TAB         &kp ENTER     &kp ESCAPE  
+        &to 0         &to 0         &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sk LSHFT     &kp LC(SPACE)  &to 0         &to 0
       >;
     };
 
+    alpha_2 {
+      bindings = <
+        &kp DE_ADIA   &kp DE_DOT    &kp DE_COMM     &kp DE_J      &kp C_BRI_UP      &kp LG(DE_N)            &kp DE_W      &kp DE_Y        &kp DE_Q      &kp DE_ODIA
+        &mt LALT DE_V &hl SY1 DE_X  &mt LCTRL DE_Z  &mt LGUI DE_O &mt HYPER C_MUTE  &mt HYPER C_PLAY_PAUSE  &mt LGUI DE_M &mt LCTRL DE_P  &hl SY2 DE_F  &mt LALT DE_K
+        &kp HOME      &kp PG_DN     &kp PG_UP       &kp END       &kp C_BRI_DEC     &caps_word              &to NUM       _____           _____         _____   
+        &to 0         &to 0         &kp LC(LEFT)    &sk LSHFT     &kp SPACE         &to AL1                 &sk LSHFT     &kp LC(RIGHT)   &to 0         &to 0
+      >;
+    };
+
+    num {
+      bindings = <
+        _____         _____             _____         _____       _____             _____                   &kp N7         &kp N8             &kp N9         _____ 
+        _____         _____             _____         _____       _____             _____                   &kp N4         &kp N5             &kp N6         &kp N0 
+        _____         _____             _____         _____       _____             _____                   &kp N1         &kp N2             &kp N3         _____   
+        _____         _____             _____         _____       _____             &to AL1                 _____         _____             _____         _____ 
+      >;
+    };
 
   };
 };
