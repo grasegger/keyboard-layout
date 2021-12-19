@@ -134,7 +134,7 @@
         &kp DE_ADIA   &kp DE_DOT    &kp DE_COMM     &kp DE_J      &kp C_BRI_UP      &kp LG(DE_N)            &kp DE_W      &kp DE_Y        &kp DE_Q      &kp DE_ODIA
         &mt LALT DE_V &hl SY1 DE_X  &mt LCTRL DE_Z  &mt LGUI DE_O &mt HYPER C_MUTE  &mt HYPER C_PLAY_PAUSE  &mt LGUI DE_M &mt LCTRL DE_P  &hl SY2 DE_F  &mt LALT DE_K
         _____         _____         _____           _____         &kp C_BRI_DEC     &caps_word              &to NUM       _____           _____         _____   
-        &to 0         &to 0         &kp LC(LEFT)    &sk LSHFT     &kp SPACE         &to AL1                 &sk LSHFT     &kp LC(RIGHT)   &to 0         &to 0
+        _____         _____         &kp LC(LEFT)    &sk LSHFT     &kp SPACE         &to AL1                 &sk LSHFT     &kp LC(RIGHT)   _____         _____
       >;
     };
 
