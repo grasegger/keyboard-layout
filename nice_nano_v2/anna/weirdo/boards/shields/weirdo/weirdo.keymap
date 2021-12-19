@@ -96,50 +96,16 @@
 #define HYPER LC(LG(LS(LALT)))
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SY1 SY2>;
-            then-layer = <LVL>;
-        };
-    };
-};
-
-&mt {
-  tapping-term-ms = <HOLD_TAP_TIME>;
-  flavor = "tap-preferred";
-  quick_tap_ms = <50>;
-};
-
-&lt {
-  tapping-term-ms = <HOLD_TAP_TIME>;
-  quick_tap_ms = <0>;
-  flavor = "tap-preferred";
-};
-
-/ {
-  behaviors {
-    hk: hk {
-      compatible = "zmk,behavior-hold-tap";
-      label = "hk";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <HOLD_TAP_TIME>;
-      quick-tap-ms = <50>;
-      bindings = <&sk>, <&kp>;
-    };
-  };
-
   keymap {
     compatible = "zmk,keymap";
 
     // This is a sample keymap intended to be replaced with your own
     alpha_1 {
       bindings = <
-        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9
-        &kp A &kp B &kp C &kp D &kp E &kp F &kp G &kp H &kp I &kp J
-        &kp K &kp L &kp M &kp N &kp O &kp P &kp Q &kp R &kp S &kp T 
-        &kp U &kp V &kp W &kp X &kp Y &kp Z &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6      &kp N7      &kp N8      &kp N9
+        &kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G       &kp H       &kp I       &kp J
+        &kp K  &kp L  &kp M  &kp N  &kp O  &kp P  &kp Q       &kp R       &kp S       &kp T 
+        &kp U  &kp V  &kp W  &kp X  &kp Y  &kp Z  &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS
       >;
     };
 
