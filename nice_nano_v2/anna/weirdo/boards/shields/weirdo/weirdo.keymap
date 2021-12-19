@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+/* GERMAN KEY CODES */
+#define DE_CIRC GRAVE // ^ (dead)
+#define DE_SS   MINUS // ß
+#define DE_ACUT EQUAL // ´ (dead)
+#define DE_Q    Q            // Q
+#define DE_W    W            // W
+#define DE_E    E            // E
+#define DE_R    R            // R
+#define DE_T    T            // T
+#define DE_Z    Y            // Z
+#define DE_U    U            // U
+#define DE_I    I            // I
+#define DE_O    O            // O
+#define DE_P    P            // P
+#define DE_UDIA LEFT_BRACKET // Ü
+#define DE_PLUS RIGHT_BRACKET // +
+#define DE_A    A            // A
+#define DE_S    S            // S
+#define DE_D    D            // D
+#define DE_F    F            // F
+#define DE_G    G            // G
+#define DE_H    H            // H
+#define DE_J    J            // J
+#define DE_K    K            // K
+#define DE_L    L            // L
+#define DE_ODIA SEMICOLON    // Ö
+#define DE_ADIA SINGLE_QUOTE // Ä
+#define DE_HASH NON_US_HASH  // #
+#define DE_LABK NON_US_BACKSLASH // <
+#define DE_Y    Z                // Y
+#define DE_X    X                // X
+#define DE_C    C                // C
+#define DE_V    V                // V
+#define DE_B    B                // B
+#define DE_N    N                // N
+#define DE_M    M                // M
+#define DE_COMM COMMA            // ,
+#define DE_DOT  PERIOD           // .
+#define DE_MINS SLASH            // -
+#define DE_DEG  LS(DE_CIRC) // °
+#define DE_EXLM LS(NUMBER_1)    // !
+#define DE_DQUO LS(NUMBER_2)    // "
+#define DE_SECT LS(NUMBER_3)    // §
+#define DE_DLR  LS(NUMBER_4)    // $
+#define DE_PERC LS(NUMBER_5)    // %
+#define DE_AMPR LS(NUMBER_6)    // &
+#define DE_SLSH LS(NUMBER_7)    // /
+#define DE_LPRN LS(NUMBER_8)    // (
+#define DE_RPRN LS(NUMBER_9)    // )
+#define DE_EQL  LS(NUMBER_0)    // =
+#define DE_QUES LS(DE_SS)   // ?
+#define DE_GRV  LS(DE_ACUT) // ` (dead)
+#define DE_ASTR LS(DE_PLUS) // *
+#define DE_QUOT LS(DE_HASH) // '
+#define DE_RABK LS(DE_LABK) // >
+#define DE_SCLN LS(DE_COMM) // ;
+#define DE_COLN LS(DE_DOT)  // :
+#define DE_UNDS LS(DE_MINS) // _
+#define DE_LBRC LA(NUMBER_5)    // [
+#define DE_RBRC LA(NUMBER_6)    // ]
+#define DE_PIPE LA(NUMBER_7)    // |
+#define DE_LCBR LA(NUMBER_8)    // {
+#define DE_RCBR LA(NUMBER_9)    // }
+#define DE_AT LA(DE_L)    // @
+#define DE_EURO LA(DE_E)    // €
+#define DE_TILD LA(DE_N)    // ~
+#define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
+
+#define DEFAULT 0
+#define ALPHA_1 DEFAULT
+#define ALPHA_2 1
+#define SY1 2
+#define SY2 3
+#define NUM 4
+#define NAV 5
+#define MED 6
+#define FUN 7
+#define UML 8
+#define SYS 9
+#define LVL 10
+#define MOU 11
+                                     
+#define HOLD_TAP_TIME 200
+#define _____ &none
+#define HYPER LC(LG(LS(LALT)))
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    // This is a sample keymap intended to be replaced with your own
+    alpha_1 {
+      bindings = <
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6      &kp N7      &kp N8      &kp N9
+        &kp A  &kp B  &kp C  &kp D  &kp E  &kp F  &kp G       &kp H       &kp I       &kp J
+        &kp K  &kp L  &kp M  &kp N  &kp O  &kp P  &kp Q       &kp R       &kp S       &kp T 
+        &kp U  &kp V  &kp W  &kp X  &kp Y  &kp Z  &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS
+      >;
+    };
+
+
+  };
+};
