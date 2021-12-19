@@ -147,5 +147,23 @@
       >;
     };
 
+    sym_one {
+      bindings = <
+        _____       &kp DE_SCLN &kp DE_DQUO &kp DE_QUOT _____       _____        &kp DE_EXLM &kp DE_QUES &kp DE_COLN              
+        &kp DE_LABK &kp DE_LBRC &kp DE_LCBR &kp DE_LPRN _____       _____        &kp DE_RPRN &kp DE_RCBR &kp DE_RBRC &kp DE_RABK       
+        _____       _____       _____       _____       _____       _____        _____       _____       _____       _____         
+        _____       _____       _____       _____       &kp DE_DLR  &kp DE_MINS  _____       _____       _____       _____ 
+      >;
+    }
+
+    sym_two {
+      bindings = <
+        _____       &kp DE_TILD &kp DE_PIPE &kp DE_HASH _____       _____         &kp DE_ACUT &kp DE_DEG  &kp DE_CIRC _____
+        &kp DE_EURO &kp DE_BSLS &kp DE_SLSH &kp DE_ASTR _____       _____         &kp DE_PERC &kp DE_AMPR &kp DE_EQL  &kp DE_GRV
+        _____       _____       _____       _____       _____       _____         _____       _____       _____       _____
+        _____       _____       _____       _____       &kp DE_UNDS  &kp DE_PLUS  _____       _____       _____       _____
+      >;
+    }
+
   };
 };
