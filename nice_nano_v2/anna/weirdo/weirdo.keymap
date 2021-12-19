@@ -81,16 +81,6 @@
 #define _____ &none
 #define HYPER LC(LG(LS(LALT)))
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SY1 SY2>;
-            then-layer = <LVL>;
-        };
-    };
-};
-
 &mt {
   tapping-term-ms = <HOLD_TAP_TIME>;
   flavor = "tap-preferred";
