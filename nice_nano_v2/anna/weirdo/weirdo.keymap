@@ -114,13 +114,6 @@
       quick-tap-ms = <50>;
       bindings = <&sl>, <&kp>;
     };
-
-   	shift_al2: shift_al2 {
-			compatible = "zmk,behavior-macro";
-			label = "shift_al2";
-			#binding-cells = <0>;
-			bindings = <&sk LSHFT>, <&sl AL2>;
-		};
   };
 
   keymap {
@@ -132,7 +125,7 @@
         &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LC(TAB)         &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
         &mt LALT DE_C &hl SY1 DE_R  &mt LCTRL DE_I  &mt LGUI DE_E &mt HYPER LG(DE_T)  &mt HYPER LG(DE_W)  &mt LGUI DE_N &mt LCTRL DE_T  &hl SY2 DE_S  &mt LALT DE_H
         &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT     &kp C_VOL_DN        &kp LS(LC(TAB))     &kp BACKSPACE &kp TAB         &kp ENTER     &kp ESCAPE  
-        &kp HOME      &kp END       &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &shift_al2    &kp LC(SPACE)   &kp PG_UP     &kp PG_DN
+        &kp HOME      &kp END       &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sk LSHFT     &kp LC(SPACE)   &kp PG_UP     &kp PG_DN
       >;
     };
 
