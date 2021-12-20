@@ -102,6 +102,7 @@
 #define NUM 2
 #define SY1 3
 #define SY2 4
+#define AL3 4
 
 / {
   behaviors {
@@ -125,7 +126,7 @@
         &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LC(TAB)         &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
         &mt LALT DE_C &hl SY1 DE_R  &mt LCTRL DE_I  &mt LGUI DE_E &mt HYPER LG(DE_T)  &mt HYPER LG(DE_W)  &mt LGUI DE_N &mt LCTRL DE_T  &hl SY2 DE_S  &mt LALT DE_H
         &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT     &kp C_VOL_DN        &kp LS(LC(TAB))     &kp BACKSPACE &kp TAB         &kp ENTER     &kp ESCAPE  
-        &kp HOME      &kp END       &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sk LSHFT     &kp LC(SPACE)   &kp PG_UP     &kp PG_DN
+        &kp HOME      &kp END       &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sl AL3       &kp LC(SPACE)   &kp PG_UP     &kp PG_DN
       >;
     };
 
@@ -165,5 +166,13 @@
       >;
     };
 
+    alpha_2_shift {
+      bindings = <
+        &kp LS(DE_ADIA)   &kp DE_DOT        &kp DE_COMM     &kp LS(DE_J)      &kp C_BRI_UP        &kp LG(DE_N)        &kp LS(DE_W)      &kp LS(DE_Y)        &kp LS(DE_Q)      &kp DE_ODIA
+        &mt LALT LS(DE_V) &hl SY1 LS(DE_X)      &mt LCTRL LS(DE_Z)  &mt LGUI LS(DE_O) &mt HYPER LC(LEFT)  &mt HYPER LC(RIGHT) &mt LGUI LS(DE_M) &mt LCTRL LS(DE_P)  &hl SY2 LS(DE_F)  &mt LALT LS(DE_K)
+        _____         _____             _____           _____         &kp C_BRI_DEC       &caps_word          &to NUM       _____           _____         _____   
+        _____         &kp C_PLAY_PAUSE  &kp C_MUTE      &sk LSHFT     &kp SPACE           &to AL1             &sk LSHFT     &kp C_PREV      &kp C_NEXT    _____
+      >;
+    };
   };
 };
