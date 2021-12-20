@@ -102,7 +102,7 @@
 #define NUM 2
 #define SY1 3
 #define SY2 4
-#define AL3 4
+#define AL3 5
 
 / {
   behaviors {
