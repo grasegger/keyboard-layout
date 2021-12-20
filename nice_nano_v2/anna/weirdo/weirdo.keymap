@@ -131,10 +131,10 @@
 
     alpha_2 {
       bindings = <
-        &kp DE_ADIA   &kp DE_DOT    &kp DE_COMM     &kp DE_J      &kp C_BRI_UP      &kp LG(DE_N)            &kp DE_W      &kp DE_Y        &kp DE_Q      &kp DE_ODIA
-        &mt LALT DE_V &hl SY1 DE_X  &mt LCTRL DE_Z  &mt LGUI DE_O &mt HYPER C_MUTE  &mt HYPER C_PLAY_PAUSE  &mt LGUI DE_M &mt LCTRL DE_P  &hl SY2 DE_F  &mt LALT DE_K
-        _____         _____         _____           _____         &kp C_BRI_DEC     &caps_word              &to NUM       _____           _____         _____   
-        _____         _____         &kp LC(LEFT)    &sk LSHFT     &kp SPACE         &to AL1                 &sk LSHFT     &kp LC(RIGHT)   _____         _____
+        &kp DE_ADIA   &kp DE_DOT        &kp DE_COMM     &kp DE_J      &kp C_BRI_UP        &kp LG(DE_N)        &kp DE_W      &kp DE_Y        &kp DE_Q      &kp DE_ODIA
+        &mt LALT DE_V &hl SY1 DE_X      &mt LCTRL DE_Z  &mt LGUI DE_O &mt HYPER LC(LEFT)  &mt HYPER LC(RIGHT) &mt LGUI DE_M &mt LCTRL DE_P  &hl SY2 DE_F  &mt LALT DE_K
+        _____         _____             _____           _____         &kp C_BRI_DEC       &caps_word          &to NUM       _____           _____         _____   
+        _____         &kp C_PLAY_PAUSE  &kp C_MUTE      &sk LSHFT     &kp SPACE           &to AL1             &sk LSHFT     &kp C_PREV      &kp C_NEXT    _____
       >;
     };
 
