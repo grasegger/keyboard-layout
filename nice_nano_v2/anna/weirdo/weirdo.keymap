@@ -91,6 +91,11 @@
   quick-release;
 };
 
+#define ALP 0
+#define NUM 1
+#define SYM 2
+#define FUN 3
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -100,10 +105,6 @@
         };
     };
 };
-#define ALP 0
-#define NUM 1
-#define SYM 2
-#define FUN 3
 
 #define _mp &mt LALT
 #define _mr &mt LSHFT
