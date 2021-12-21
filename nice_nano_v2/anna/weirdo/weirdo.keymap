@@ -87,92 +87,70 @@
   quick_tap_ms = <50>;
 };
 
-&lt {
-  tapping-term-ms = <HOLD_TAP_TIME>;
-  quick_tap_ms = <0>;
-  flavor = "tap-preferred";
-};
-
 &sk {
   quick-release;
 };
 
-#define AL1 0
-#define AL2 1
-#define NUM 2
-#define SY1 3
-#define SY2 4
-#define AL3 5
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <NUM SYM>;
+            then-layer = <FUN>;
+        };
+    };
+};
+#define ALP 0
+#define NUM 1
+#define SYM 2
+#define FUN 3
+
+#define _mp &mt LALT
+#define _mr &mt LSHFT
+#define _mm &mt LCTRL
+#define _mi &mt LGUI
+#define _me &mt HYPER
 
 / {
-  behaviors {
-    hl: hl {
-      compatible = "zmk,behavior-hold-tap";
-      label = "hl";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <HOLD_TAP_TIME>;
-      quick-tap-ms = <50>;
-      bindings = <&sl>, <&kp>;
-    };
-  };
 
   keymap {
     compatible = "zmk,keymap";
 
-    // This is a sample keymap intended to be replaced with your own
     alpha_1 {
       bindings = <
-        &kp DE_UDIA   &kp DE_L      &kp DE_U        &kp DE_A      &kp C_VOL_UP        &kp LC(TAB)         &kp DE_B      &kp DE_D        &kp DE_G      &kp DE_SS
-        &mt LALT DE_C &hl SY1 DE_R  &mt LCTRL DE_I  &mt LGUI DE_E &mt HYPER LG(DE_T)  &mt HYPER LG(DE_W)  &mt LGUI DE_N &mt LCTRL DE_T  &hl SY2 DE_S  &mt LALT DE_H
-        &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT     &kp C_VOL_DN        &kp LS(LC(TAB))     &kp BACKSPACE &kp TAB         &kp ENTER     &kp ESCAPE  
-        &kp HOME      &kp END       &kp LG(SPACE)   &sk LSHFT     &kp SPACE           &sl AL2             &sl AL3       &kp LC(SPACE)   &kp PG_UP     &kp PG_DN
-      >;
-    };
-
-    alpha_2 {
-      bindings = <
-        &kp DE_ADIA   &kp DE_DOT        &kp DE_COMM     &kp DE_J      &kp C_BRI_UP        &kp LG(DE_N)        &kp DE_W      &kp DE_Y        &kp DE_Q      &kp DE_ODIA
-        &mt LALT DE_V &hl SY1 DE_X      &mt LCTRL DE_Z  &mt LGUI DE_O &mt HYPER LC(LEFT)  &mt HYPER LC(RIGHT) &mt LGUI DE_M &mt LCTRL DE_P  &hl SY2 DE_F  &mt LALT DE_K
-        _____         _____             _____           _____         &kp C_BRI_DEC       &caps_word          &to NUM       _____           _____         _____   
-        _____         &kp C_PLAY_PAUSE  &kp C_MUTE      &sk LSHFT     &kp SPACE           &to AL1             &sk LSHFT     &kp C_PREV      &kp C_NEXT    _____
+        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B      &kp DE_D    &kp DE_G    &kp DE_Y
+        _mp DE_C  _mr DE_R  _mm DE_I  _mi DE_E  _me DE_O  _me DE_M  _mi DE_N      _mm DE_T    _mr DE_S    _mp DE_H
+        &kp DE_V  &kp DE_X  &sl NUM   &sl SYM   &kp DE_Q  &kp DE_P  &kp DE_F      &kp DE_COMM &kp DE_DOT  &kp DE_K  
+        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp SPACE &sk LSHFT &kp BACKSPACE &kp TAB     &kp ENTER   &kp ESCAPE
       >;
     };
 
     num {
       bindings = <
-        &kp F7        &kp F8          &kp F9        &kp F11       _____     &kp KP_EQUAL  &kp N7      &kp N8        &kp N9        &kp DE_DOT 
-        &mt LALT F4   &mt LSHFT F5    &mt LCTRL F6  &mt LGUI F10  _____     &kp ENTER     &mt LGUI N4 &mt LCTRL N5  &mt LSHFT N6  &mt LALT N0 
-        &kp F1        &kp F2          &kp F3        &kp F12       _____     &kp BACKSPACE &kp N1      &kp N2        &kp N3        &kp DE_COMM   
-        &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS  &kp KP_PLUS   &kp SPACE &to AL1       _____       _____         _____         _____ 
+        &kp F7  &kp F8  &kp F9        &kp F11       &kp F12   &kp KP_EQUAL  &kp N7          &kp N8        &kp N9  &kp DE_DOT 
+        _mp F4  _mr F5  _mm F6        _mi F10       _____     &kp ENTER     _mi N4          _mm N5        _mr N6  _mp N0 
+        &kp F1  &kp F2  &kp F3        &sl SYM       &to NUM   &kp BACKSPACE &kp N1          &kp N2        &kp N3  &kp DE_COMM   
+        _____   _____   &kp KP_MINUS  &kp KP_PLUS   &kp SPACE &to ALP       &kp KP_MULTIPLY &kp KP_DIVIDE _____   _____
       >;
     };
 
-    sym_one {
+    sym {
       bindings = <
-        _____       &kp DE_SCLN &kp DE_DQUO &kp DE_QUOT _____       _____        &kp DE_EXLM &kp DE_QUES &kp DE_COLN _____
-        &kp DE_LABK &kp DE_LBRC &kp DE_LCBR &kp DE_LPRN _____       _____        &kp DE_RPRN &kp DE_RCBR &kp DE_RBRC &kp DE_RABK       
-        _____       _____       _____       _____       _____       _____        _____       _____       _____       _____         
-        _____       _____       _____       _____       &kp DE_DLR  &kp DE_MINS  _____       _____       _____       _____ 
+        &kp DE_EURO &kp DE_TILD &kp DE_PIPE &kp DE_HASH &kp DE_ACUT &kp DE_CIRC &kp DE_RPRN &kp DE_RCBR &kp DE_RBRC &kp DE_RABK  
+        _mp DE_EXLM _mr DE_QUES _mm DE_COLN _mi DE_SCLN &kp DE_GRV  &kp DE_DEG  _mi DE_LPRN _mm DE_LCBR _mr DE_LBRC _mp DE_LABK 
+        &kp DE_DQUO &kp DE_QUOT &kp DE_DLR  &kp DE_BSLS &kp DE_SLSH &kp DE_EQL  &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS    
+        _____       _____       &kp DE_PERC &kp DE_UNDS &kp DE_PLUS &kp DE_MINS &kp DE_ASTR &kp DE_AMPR _____       _____
       >;
     };
 
-    sym_two {
+    fun {
       bindings = <
-        _____       &kp DE_TILD &kp DE_PIPE &kp DE_HASH _____       _____         &kp DE_ACUT &kp DE_DEG  &kp DE_CIRC _____
-        &kp DE_EURO &kp DE_BSLS &kp DE_SLSH &kp DE_ASTR _____       _____         &kp DE_PERC &kp DE_AMPR &kp DE_EQL  &kp DE_GRV
-        _____       _____       _____       _____       _____       _____         _____       _____       _____       _____
-        _____       _____       _____       _____       &kp DE_UNDS  &kp DE_PLUS  _____       _____       _____       _____
-      >;
-    };
+      _____         _____         _____         _____         _____         &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_PREV    _____   _____
+      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &kp C_MUTE        &kp C_VOL_UP  &kp C_VOL_DN  _____   _____
+      _____         _____         _____         _____         _____         _____             &kp C_BRI_UP  &kp C_BRI_DEC _____   _____
+      &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    _____         _____         _____             _____         _____         &reset  &bootloader
+      >;        
 
-    alpha_2_shift {
-      bindings = <
-        &kp LS(DE_ADIA)   &kp DE_DOT        &kp DE_COMM     &kp LS(DE_J)      &kp C_BRI_UP        &kp LG(DE_N)        &kp LS(DE_W)      &kp LS(DE_Y)        &kp LS(DE_Q)      &kp DE_ODIA
-        &mt LALT LS(DE_V) &hl SY1 LS(DE_X)      &mt LCTRL LS(DE_Z)  &mt LGUI LS(DE_O) &mt HYPER LC(LEFT)  &mt HYPER LC(RIGHT) &mt LGUI LS(DE_M) &mt LCTRL LS(DE_P)  &hl SY2 LS(DE_F)  &mt LALT LS(DE_K)
-        _____         _____             _____           _____         &kp C_BRI_DEC       &caps_word          &to NUM       _____           _____         _____   
-        _____         &kp C_PLAY_PAUSE  &kp C_MUTE      &sk LSHFT     &kp SPACE           &to AL1             &sk LSHFT     &kp C_PREV      &kp C_NEXT    _____
-      >;
     };
   };
 };
