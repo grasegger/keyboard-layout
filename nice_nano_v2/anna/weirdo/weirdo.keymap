@@ -122,7 +122,7 @@
         &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B      &kp DE_D    &kp DE_G    &kp DE_Y
         _mp DE_C  _mr DE_R  _mm DE_I  _mi DE_E  _me DE_O  _me DE_M  _mi DE_N      _mm DE_T    _mr DE_S    _mp DE_H
         &kp DE_V  &kp DE_X  &sl NUM   &sl SYM   &kp DE_Q  &kp DE_P  &kp DE_F      &kp DE_COMM &kp DE_DOT  &kp DE_K  
-        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp SPACE &sk LSHFT &kp BACKSPACE &kp TAB     &kp ENTER   &kp ESCAPE
+        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp SPACE &sk LSHFT &kp BACKSPACE &kp ENTER   &kp TAB     &kp ESCAPE
       >;
     };
 
