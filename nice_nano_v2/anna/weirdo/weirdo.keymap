@@ -176,7 +176,7 @@
             bindings = <&out OUT_BLE>;
         };
 
-        combo_ble {
+        combo_bl1 {
             timeout-ms = <50>;
             key-positions = <26 27 28 29>;
             bindings = <&out OUT_USB>;
