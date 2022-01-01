@@ -81,12 +81,6 @@
 #define _____ &none
 #define HYPER LC(LG(LS(LALT)))
 
-&mt {
-  tapping-term-ms = <HOLD_TAP_TIME>;
-  flavor = "tap-preferred";
-  quick_tap_ms = <50>;
-};
-
 &sk {
   quick-release;
 };
@@ -94,23 +88,125 @@
 #define ALP 0
 #define NUM 1
 #define SYM 2
-#define FUN 3
+#define MOD 3
+
+#define DE_UE DE_UDIA
+#define DE_AE DE_ADIA
+#define DE_OE DE_ODIA
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <NUM SYM>;
-            then-layer = <FUN>;
+    combos {
+        compatible = "zmk,combos";
+
+        combo_next {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&kp C_NEXT >;
+        };
+
+        combo_play_pause {
+            timeout-ms = <50>;
+            key-positions = <11 12 13>;
+            bindings = <&kp C_PLAY_PAUSE >;
+        };
+
+        combo_prev {
+            timeout-ms = <50>;
+            key-positions = <21 22 23>;
+            bindings = <&kp C_PREV >;
+        };
+
+        combo_volup {
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp C_VOL_UP >;
+        };
+
+        combo_mute {
+            timeout-ms = <50>;
+            key-positions = <16 17 18>;
+            bindings = <&kp C_MUTE >;
+        };
+
+        combo_vol_dn {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&kp C_VOL_DN >;
+        };
+
+        combo_bri_up {
+            timeout-ms = <50>;
+            key-positions = <5 6 7>;
+            bindings = <&kp C_BRI_UP >;
+        };
+
+        combo_bri_dn {
+            timeout-ms = <50>;
+            key-positions = <25 26 27>;
+            bindings = <&kp C_BRI_DN >;
+        };
+
+        combo_bt_clr {
+            timeout-ms = <50>;
+            key-positions = <0 1 2 3>;
+            bindings = <&bt BT_CLR >;
+        };
+
+        combo_bt_0 {
+            timeout-ms = <50>;
+            key-positions = <0 1 2 3>;
+            bindings = <&bt BT_SEL 0 >;
+        };
+
+        combo_bt_nxt {
+            timeout-ms = <50>;
+            key-positions = <0 1 2 3>;
+            bindings = <&bt BT_NXT >;
+        };
+
+        combo_bl {
+            timeout-ms = <50>;
+            key-positions = <6 7 8 9>;
+            bindings = <&bootloader>;
+        };
+
+        combo_ble {
+            timeout-ms = <50>;
+            key-positions = <16 17 18 19>;
+            bindings = <&out OUT_BLE>;
+        };
+
+        combo_ble {
+            timeout-ms = <50>;
+            key-positions = <26 27 28 29>;
+            bindings = <&out OUT_USB>;
+        };
+
+        comb_oe {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp DE_ODIA>;
+        };
+
+        comb_ss {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp DE_SS>;
+        };
+
+        comb_esc {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp ESC>;
+        };
+
+        comb_tab {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp TAB>;
         };
     };
 };
-
-#define _mp &mt LALT
-#define _mr &mt LSHFT
-#define _mm &mt LCTRL
-#define _mi &mt LGUI
-#define _me &mt HYPER
 
 / {
 
@@ -119,39 +215,39 @@
 
     alpha_1 {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B      &kp DE_D    &kp DE_G    &kp DE_Y
-        _mp DE_C  _mr DE_R  _mm DE_I  _mi DE_E  _me DE_O  _me DE_M  _mi DE_N      _mm DE_T    _mr DE_S    _mp DE_H
-        &kp DE_V  &kp DE_X  &sl NUM   &sl SYM   &kp DE_Q  &kp DE_P  &kp DE_F      &kp DE_COMM &kp DE_DOT  &kp DE_K  
-        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp SPACE &sk LSHFT &kp BACKSPACE &kp ENTER   &kp TAB     &kp ESCAPE
+        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
+        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
+        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_Q  &kp DE_P  &kp DE_F  &kp DE_COMM &kp DE_DOT  &kp DE_K  
+        &kp ENTER &kp LEFT  &kp DOWN  &mo MOD   &kp SPACE &sk LSHFT &sl SYM   &kp UP      &kp RIGHT   &kp BACKSPACE
       >;
     };
 
     num {
       bindings = <
-        &kp F7  &kp F8  &kp F9        &kp F11       &kp F12   &kp KP_EQUAL  &kp N7          &kp N8        &kp N9  &kp DE_DOT 
-        _mp F4  _mr F5  _mm F6        _mi F10       _____     &kp ENTER     _mi N4          _mm N5        _mr N6  _mp N0 
-        &kp F1  &kp F2  &kp F3        &sl SYM       &to NUM   &kp BACKSPACE &kp N1          &kp N2        &kp N3  &kp DE_COMM   
-        _____   _____   &kp KP_MINUS  &kp KP_PLUS   &kp SPACE &to ALP       &kp KP_MULTIPLY &kp KP_DIVIDE _____   _____
+        &kp F7  &kp F8  &kp F9  &kp F11 &kp DE_COMM &kp TAB       &kp N7  &kp N8  &kp N9  &kp DE_DOT
+        &kp F4  &kp F5  &kp F6  &kp F10 &kp DE_ASTR &kp BACKSPACE &kp N4  &kp N5  &kp N6  &kp DE_PLUS 
+        &kp F1  &kp F2  &kp F3  &kp F12 &kp DE_SLSH &kp ENTER     &kp N1  &kp N2  &kp N3  &kp DE_MINS
+        _____   _____   _____   &mo MOD &kp N0      &to ALP       &to SYM _____   _____   _____
       >;
     };
 
     sym {
       bindings = <
-        &kp DE_EURO &kp DE_TILD &kp DE_PIPE &kp DE_HASH &kp DE_ACUT &kp DE_CIRC &kp DE_RPRN &kp DE_RCBR &kp DE_RBRC &kp DE_RABK  
-        _mp DE_EXLM _mr DE_QUES _mm DE_COLN _mi DE_SCLN &kp DE_GRV  &kp DE_DEG  _mi DE_LPRN _mm DE_LCBR _mr DE_LBRC _mp DE_LABK 
-        &kp DE_DQUO &kp DE_QUOT &kp DE_DLR  &kp DE_BSLS &kp DE_SLSH &kp DE_EQL  &kp DE_ADIA &kp DE_ODIA &kp DE_UDIA &kp DE_SS    
-        _____       _____       &kp DE_PERC &kp DE_UNDS &kp DE_PLUS &kp DE_MINS &kp DE_ASTR &kp DE_AMPR _____       _____
+        &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR  
+        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
+        _____       _____       _____       &mo MOD     &kp DE_AT   &to ALP     &to NUM     _____       _____       _____
       >;
     };
 
-    fun {
+    mods {
       bindings = <
-      _____         _____         _____         _____         _____         &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_PREV    _____   &out OUT_BLE
-      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &kp C_MUTE        &kp C_VOL_UP  &kp C_VOL_DN  _____   _____
-      _____         _____         _____         _____         _____         _____             &kp C_BRI_UP  &kp C_BRI_DEC _____   &out OUT_USB
-      &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    _____         _____         _____             _____         _____         &reset  &bootloader
-      >;        
-
+        _____     _____     _____     _____     _____     _____     _____     _____     _____     _____
+        &kp LALT  &kp LSHFT &kp LCTRL &kp LGUI  &kp HYPER &kp HYPER &kp LGUI  &kp LCTRL &kp LSHFT &kp LALT
+        _____     _____     _____     _____     _____     _____     _____     _____     _____     _____
+        _____     _____     _____     _____     _____     _____     _____     _____     _____     _____
+      >;
     };
+
   };
 };
