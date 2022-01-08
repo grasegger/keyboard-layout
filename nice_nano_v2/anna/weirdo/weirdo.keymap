@@ -160,7 +160,7 @@
 
         combo_bt_nxt {
             timeout-ms = <50>;
-            key-positions = <0 1 2 3>;
+            key-positions = <10 11 12 13>;
             bindings = <&bt BT_NXT >;
         };
 
