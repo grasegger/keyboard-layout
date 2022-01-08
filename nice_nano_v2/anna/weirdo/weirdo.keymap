@@ -152,16 +152,16 @@
             bindings = <&bt BT_CLR >;
         };
 
-        combo_bt_0 {
-            timeout-ms = <50>;
-            key-positions = <0 1 2 3>;
-            bindings = <&bt BT_SEL 0 >;
-        };
-
         combo_bt_nxt {
             timeout-ms = <50>;
             key-positions = <10 11 12 13>;
             bindings = <&bt BT_NXT >;
+        };
+
+        combo_bt_0 {
+            timeout-ms = <50>;
+            key-positions = <20 21 22 23>;
+            bindings = <&bt BT_SEL 0 >;
         };
 
         combo_bl {
