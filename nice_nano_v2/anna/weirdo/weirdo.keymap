@@ -95,14 +95,14 @@
 
 / {
   keymap {
-    compatible = "zmk,keymap";
+    compatible = "zmk,keynmap";
 
     alpha_1 {
       bindings = <
-        &kp ESCAPE  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D      &kp DE_G    &kp BACKSPACE
-        &kp DE_C    &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T      &kp DE_S    &kp DE_H
-        &kp DE_V    &kp DE_X  &kp DE_Z  &kp DE_Y  &kp DE_Q  &kp DE_P  &kp DE_F  &kp DE_COMM   &kp DE_DOT  &kp DE_K  
-        _____       _____     _____     &sl NUM   &kp SPACE &sk LSHFT &sl SYM   _____         _____       _____
+        &kp ESCAPE  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J        &kp DE_W  &kp DE_B  &kp DE_D      &kp DE_G    &kp BACKSPACE
+        &kp DE_C    &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O        &kp DE_M  &kp DE_N  &kp DE_T      &kp DE_S    &kp DE_H
+        &kp DE_V    &kp DE_X  &kp DE_Z  &kp DE_Y  &kp DE_Q        &kp DE_P  &kp DE_F  &kp DE_COMM   &kp DE_DOT  &kp DE_K  
+        _____       _____     _____     &sl NUM   &mt HYPER SPACE &sk LSHFT &sl SYM   _____         _____       _____
       >;
     };
 
@@ -120,7 +120,7 @@
         &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_COLN &kp DE_AMPR  
         &kp DE_BSLS &kp DE_LPRN &kp DE_LCBR &kp DE_RCBR &kp DE_RPRN &kp DE_QUES &kp LGUI    &kp LCTRL   &kp LSHFT   &kp LALT
         &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
-        _____       _____       _____       _____       &kp HYPER       _____       _____       _____       _____       _____
+        _____       _____       _____       _____       _____       _____       _____       _____       _____       _____
       >;
     };
 
