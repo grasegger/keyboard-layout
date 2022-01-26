@@ -6,7 +6,7 @@ manifest:
       url-base: https://github.com/grasegger
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: grasegger
       revision: main
       import: app/west.yml
   self:
