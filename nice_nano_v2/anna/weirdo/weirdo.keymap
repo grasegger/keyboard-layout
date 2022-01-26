@@ -119,7 +119,7 @@
         &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC           &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_COLN &kp DE_AMPR  
         &kp DE_BSLS &kp DE_LPRN &kp DE_LCBR &kp DE_RCBR &kp DE_RPRN           &kp DE_QUES &sk LGUI    &sk LCTRL   &sk LSHFT   &sk LALT
         &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV            &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
-        _____       _____       _____       _____       &sk LC(LG(LS(LALT)))  _____       _____       _____       _____       _____
+        _____       _____       _____       _____       _____                 _____       _____       _____       _____       _____
       >;
     };
 
