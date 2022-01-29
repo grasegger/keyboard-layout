@@ -3,9 +3,7 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 jobs:
-
-
-  anna_weirdo:
+  anna:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:2.5
@@ -13,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Prepare build env for west
-        run: mv nice_nano_v2/anna/weirdo config
       - name: Cache west modules
         uses: actions/cache@v2
         env:
@@ -37,29 +33,29 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Anna Weirdo Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=weirdo_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Anna Weirdo DTS File
+      - name: West Build (Anna Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=anna_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Anna DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: Anna Weirdo Left Kconfig file
+      - name: Anna Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 weirdo_left_nice_nano_v2.uf2
-      - name: Archive (Anna Weirdo Left)
+        run: cp build/zephyr/zmk.uf2 anna_left_nice_nano_v2.uf2
+      - name: Archive (Anna Left)
         uses: actions/upload-artifact@v2
         with:
-          name: weirdo_keymap
-          path: weirdo_left_nice_nano_v2.uf2
-      - name: West Build (Anna Weirdo Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=weirdo_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          name: anna_keymap
+          path: anna_left_nice_nano_v2.uf2
+      - name: West Build (Anna Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=anna_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
-      - name: Anna Weirdo Right Kconfig file
+      - name: Anna Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 weirdo_right_nice_nano_v2.uf2
-      - name: Archive (Anna Weirdo Right)
+        run: cp build/zephyr/zmk.uf2 anna_right_nice_nano_v2.uf2
+      - name: Archive (Anna Right)
         uses: actions/upload-artifact@v2
         with:
-          name: weirdo_keymap
-          path: weirdo_right_nice_nano_v2.uf2
+          name: anna_keymap
+          path: anna_right_nice_nano_v2.uf2
