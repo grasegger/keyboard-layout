@@ -98,10 +98,10 @@
 
     alpha_1 {
       bindings = <
-        &kp ESCAPE  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J                    &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp BACKSPACE
-        &kp DE_C    &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O                    &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
-        &kp DE_V    &kp DE_X  &kp DE_Z  &kp DE_Y  &kp DE_Q                    &kp DE_P  &kp DE_F  &kp DE_COMM &kp DE_DOT  &kp DE_K  
-        &kp LC(TAB) &kp DE_UE &kp DE_AE &sl NUM   &mt LC(LG(LS(LALT))) SPACE  &sk LSHFT &sl SYM   &kp DE_OE   &kp DE_SS   &kp LC(LS(TAB)) 
+        &kp DE_C             &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O   &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S   &kp DE_H
+        &kp DE_V             &kp DE_X  &kp DE_Z  &kp DE_Y  &kp DE_Q   &kp DE_P  &kp DE_F  &kp DE_COMM &kp DE_DOT &kp DE_K  
+        &kp ESCAPE           &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J   &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G   &kp BACKSPACE
+        &kp LC(LG(LS(LALT))) &kp DE_UE &kp DE_AE &sl NUM   &kp SPACE  &sk LSHFT &sl SYM   &kp DE_OE   &kp DE_SS  &kp LC(LG(LS(LALT)))
       >;
     };
 
@@ -109,17 +109,17 @@
       bindings = <
         &kp N1    &kp N2    &kp N3    &kp N4      &kp N5      &kp N6      &kp N7    &kp N8    &kp N9    &kp N0
         &sk LALT  &sk LSHFT &sk LCTRL &sk LGUI    &kp DE_PLUS &kp DE_MINS &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        _____     &kp ENTER &kp TAB   &kp DE_EQL  &kp DE_ASTR &kp DE_SLSH &kp HOME  &kp PG_DN &kp PG_UP &kp END 
-        _____     _____     _____     _____       _____       &mo MOD     _____     _____     _____     _____
+        &kp BSPC  &kp ENTER &kp TAB   &kp DE_EQL  &kp DE_ASTR &kp DE_SLSH &kp HOME  &kp PG_DN &kp PG_UP &kp END 
+        _____     _____     _____     &to NUM     &to ALP     &kp LG(TAB) &mo MOD   _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC           &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_COLN &kp DE_AMPR  
-        &kp DE_BSLS &kp DE_LPRN &kp DE_LCBR &kp DE_RCBR &kp DE_RPRN           &kp DE_QUES &sk LGUI    &sk LCTRL   &sk LSHFT   &sk LALT
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV            &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
-        _____       _____       _____       _____        _____       _____       _____       _____       _____
+        &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC      &kp DE_CIRC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_COLN &kp DE_AMPR  
+        &kp DE_BSLS &kp DE_LPRN &kp DE_LCBR &kp DE_RCBR      &kp DE_RPRN &kp DE_QUES &sk LGUI    &sk LCTRL   &sk LSHFT   &sk LALT
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD      &kp DE_GRV  &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
+        _____       _____       _____       &kp LG(LS(TAB))  &kp LG(TAB) _____       _____       _____       _____       _____
       >;
     };
 
