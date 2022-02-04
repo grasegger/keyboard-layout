@@ -98,10 +98,10 @@
 
     alpha_1 {
       bindings = <
-        &kp ESCAPE           &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J   &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G   &kp BACKSPACE
-        &kp DE_C             &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O   &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S   &kp DE_H
-        &kp DE_V             &kp DE_X  &kp DE_Z  &kp DE_Y  &kp DE_Q   &kp DE_P  &kp DE_F  &kp DE_COMM &kp DE_DOT &kp DE_K  
-        &kp LC(LG(LS(LALT))) &kp DE_UE &kp DE_AE &sl NUM   &kp SPACE  &sk LSHFT &sl SYM   &kp DE_OE   &kp DE_SS  &kp LC(LG(LS(LALT)))
+        &kp DE_Z             &kp DE_L   &kp DE_U    &kp DE_A  &kp DE_J   &kp DE_W   &kp DE_B  &kp DE_D    &kp DE_G      &kp DE_Y
+        &kp DE_C             &kp DE_R   &kp DE_I    &kp DE_E  &kp DE_O   &kp DE_M   &kp DE_N  &kp DE_T    &kp DE_S      &kp DE_H
+        &kp DE_V             &kp DE_X   &kp DE_UE   &kp DE_AE &kp DE_OE   &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS     &kp DE_Q
+        &sk LC(LG(LS(LALT))) &kp ESCAPE &kp DE_COMM &sl NUM   &kp SPACE  &sk LSHFT  &sl SYM   &kp DE_DOT  &kp BACKSPACE &sk LC(LS(LALT))
       >;
     };
 
