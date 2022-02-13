@@ -107,10 +107,10 @@
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3    &kp N4                &kp N5     &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
+        &kp N1    &kp N2    &kp N3    &kp N4                &kp N5      &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
         &sk LALT  &sk LSHFT &sk LCTRL &sk LGUI              &kp DE_PLUS &kp DE_MINS   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
         &kp ESC   &kp ENTER &kp TAB   &kp DE_EQL            &kp DE_ASTR &kp DE_SLSH   &kp HOME  &kp PG_DN &kp PG_UP &kp END 
-        _____     _____     _____     &kp LC(LG(LS(LALT)))  _____       &kp BACKSPACE &mo MOD   _____     _____     _____
+        _____     _____     _____     &kp LC(LG(LS(LALT)))  &kp DELETE  &kp BACKSPACE &mo MOD   _____     _____     _____
       >;
     };
 
