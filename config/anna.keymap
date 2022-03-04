@@ -101,27 +101,15 @@
 #define AMSWP &kp LC(LS(LA(DE_K)))
 
 / {
-    behaviors {
-        lsk: layer_sticky_key {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_STICKY_KEY";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <200>;
-            bindings = <&mo>, <&sk>;
-        };
-    };
-
   keymap {
     compatible = "zmk,keymap";
 
     alpha_1 {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W        &kp DE_B  &kp DE_D      &kp DE_G    &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M        &kp DE_N  &kp DE_T      &kp DE_S    &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P        &kp DE_F  &kp DE_K      &kp DE_SS   &kp DE_Q
-        _____     _____     _____     &sl NUM   &kp SPACE &lsk MOD LSHFT  &sl SYM   _____         _____       _____ 
+        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D      &kp DE_G    &kp DE_Y
+        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T      &kp DE_S    &kp DE_H
+        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K      &kp DE_SS   &kp DE_Q
+        _____     _____     _____     &sl NUM   &kp SPACE &sl MOD   &sl SYM   _____         _____       _____ 
       >;
     };
 
@@ -157,7 +145,7 @@
         _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
         &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    AMINC         AMNXT         &sk LGUI      &sk LCTRL   &sk LSHFT     &sk LALT 
         _____     _____       AMLAY             &key_repeat AMDEC         AMPRV         &caps_word    AMSWP       _____         _____
-        _____     _____       _____             _____       &mo FUN       &kp HYP       _____         _____       _____         _____
+        _____     _____       _____             _____       &mo FUN       _____         &kp HYP       _____       _____         _____
       >; 
     };
 
