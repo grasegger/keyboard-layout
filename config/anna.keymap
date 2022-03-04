@@ -99,8 +99,8 @@
 #define AMNXT &kp LA(LS(K))
 #define AMPRV &kp LA(LS(J))
 #define AMSWP &kp LC(LS(LA(DE_K)))
-#define AMSNX &kp LC(LS(LA(LEFT))
-#define AMSPR &kp LC(LS(LA(RIGHT))
+#define AMSNX &kp LC(LS(LA(LEFT)))
+#define AMSPR &kp LC(LS(LA(RIGHT)))
 #define AMSPX &kp LC(LEFT)
 #define AMSPP &kp LC(RIGHT)
 
