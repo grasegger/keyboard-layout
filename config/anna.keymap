@@ -92,7 +92,7 @@
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
 #define DE_OE DE_ODIA
-#define HYP   &kp LC(LG(LS(LALT)))
+#define HYP   LC(LG(LS(LALT)))
 
 / {
     behaviors {
