@@ -93,6 +93,16 @@
 #define DE_AE DE_ADIA
 #define DE_OE DE_ODIA
 #define HYP   LC(LG(LS(LALT)))
+#define AMLAY &kp LC(LS(LA(SPACE)))
+#define AMINC &kp LA(LS(DE_H))
+#define AMDEC &kp LA(LS(DE_K))
+#define AMNXT &kp LA(LS(K))
+#define AMPRV &kp LA(LS(J))
+#define AMSWP &kp LC(LS(LA(DE_K)))
+#define AMSNX &kp LC(LS(LA(LEFT))
+#define AMSPR &kp LC(LS(LA(RIGHT))
+#define AMSPX &kp LC(LA(LEFT)
+#define AMSPP &kp LC(LA(RIGHT)
 
 / {
     behaviors {
@@ -121,10 +131,10 @@
 
     num {
       bindings = <
-        &kp N1  &kp N2    &kp N3    &kp N4        &kp N5      &kp N6    &kp N7    &kp N8    &kp N9  &kp N0
-        &kp ESC &kp ENTER &kp TAB   &kp BACKSPACE &kp PG_UP   &kp HOME  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT 
-        _____   _____     _____     &kp DELETE    &kp PG_DN   &kp END   _____     _____     _____   _____
-        _____   _____     _____     _____         _____       _____     &mo SYM   _____     _____   _____
+        &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6        &kp N7    &kp N8    &kp N9  &kp N0
+        &kp ESC &kp ENTER &kp TAB   &kp DELETE  &kp PG_UP   &kp HOME      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT 
+        _____   _____     _____     _____       &kp PG_DN   &kp END       &sl MOD        _____     _____   _____
+        _____   _____     _____     _____       _____       &kp BACKSPACE &mo SYM   _____     _____   _____
       >;
     };
 
@@ -139,21 +149,21 @@
 
     fun {
       bindings = <
-        &kp F1  &kp F2        &kp F3            &kp F4      &kp F5        &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
-        &kp F11 &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        _____   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_NXT  &bt BT_CLR    &out OUT_BLE  &out OUT_USB  _____       _____         _____ 
-        _____   _____         _____             _____       _____         _____         _____         _____       _____         _____
+        &kp F1  &kp F2        &kp F3        &kp F4      &kp F5        &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
+        &kp F11 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_NXT  &bt BT_CLR    &out OUT_BLE  &out OUT_USB  _____       _____         &kp F12
+        _____   _____         _____         _____       _____         _____         _____         _____       _____         _____
+        _____   _____         _____         _____       _____         _____         _____         _____       _____         _____
       >;
     };
 
     mod {
       bindings = <
-        _____     _____     _____     _____       _____   _____ _____       _____     _____     _____
-        &sk LALT  &sk LSHFT &sk LCTRL &sk LGUI    _____   _____ &sk LGUI    &sk LCTRL &sk LSHFT &sk LALT 
-        _____     _____     _____     &key_repeat _____   _____ &caps_word  _____     _____     _____
-        _____     _____     _____     _____       &kp HYP _____ _____       _____     _____     _____
+        _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
+        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    AMINC         AMNXT         &sk LGUI      &sk LCTRL   &sk LSHFT     &sk LALT 
+        AMLAY     AMSPR       AMSPP             &key_repeat AMDEC         AMPRV         &caps_word    AMSPX       AMSNX         AMSWP
+        _____     _____       _____             _____       &mo FUN       &kp HYP       _____         _____       _____         _____
       >; 
     };
 
   };
-}; 
+};
