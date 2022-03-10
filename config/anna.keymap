@@ -106,10 +106,10 @@
 
     alpha_1 {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D      &kp DE_G    &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T      &kp DE_S    &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K      &kp DE_SS   &kp DE_Q
-        _____     _____     _____     &sl NUM   &kp SPACE &sl MOD   &sl SYM   _____         _____       _____ 
+        &kp DE_Z  &kp DE_L  &kp DE_U    &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
+        &kp DE_C  &kp DE_R  &kp DE_I    &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
+        &kp DE_V  &kp DE_X  &kp DE_UE   &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
+        _____     _____     &key_repeat &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  _____       _____ 
       >;
     };
 
@@ -127,7 +127,7 @@
         &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR  
         &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
         &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
-        _____       _____       _____       &kp DE_DOT  _____       _____       &kp DE_COMM _____       _____       _____
+        _____       _____       _____       &kp DE_DOT  &kp DE_PLUS _____       &kp DE_COMM _____       _____       _____
       >;
     };
 
@@ -139,12 +139,11 @@
         _____   _____         _____         _____       _____         _____         _____         _____       _____         _____
       >;
     };
-
     mod {
       bindings = <
         _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
         &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    AMINC         AMNXT         &sk LGUI      &sk LCTRL   &sk LSHFT     &sk LALT 
-        _____     _____       AMLAY             &key_repeat AMDEC         AMPRV         &caps_word    AMSWP       _____         _____
+        _____     _____       _____             AMLAY        AMDEC         AMPRV         AMSWP         _____       _____         _____
         _____     _____       _____             _____       &mo FUN       _____         &kp HYP       _____       _____         _____
       >; 
     };
