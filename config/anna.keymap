@@ -88,6 +88,7 @@
 #define SYM 2
 #define FUN 3
 #define MOD 4
+#define LFT 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -106,10 +107,10 @@
 
     alpha_1 {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U    &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I    &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_UE   &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
-        _____     _____     &key_repeat &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  _____       &kp LC(LG(LS(LA(DE_T)))) 
+        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
+        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
+        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
+        &to LFT   _____     _____     &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  _____       &kp LC(LG(LS(LA(DE_T)))) 
       >;
     };
 
@@ -117,7 +118,7 @@
       bindings = <
         &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6        &kp N7    &kp N8    &kp N9  &kp N0
         &kp ESC &kp ENTER &kp TAB   &kp DELETE  &kp PG_UP   &kp HOME      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT 
-        _____   _____     _____     _____       &kp PG_DN   &kp END       &sl MOD        _____     _____   _____
+        _____   _____     _____     _____       &kp PG_DN   &kp END       &sl MOD   _____     _____   _____
         _____   _____     _____     _____       _____       &kp BACKSPACE &mo SYM   _____     _____   _____
       >;
     };
@@ -146,6 +147,15 @@
         _____     _____       _____             AMLAY       AMDEC         AMPRV         AMSWP         _____       _____         _____
         _____     _____       _____             _____       &mo FUN       _____         &kp HYP       _____       _____         _____
       >; 
+    };
+
+    lefty {
+      bindings = <
+      _____     _____     _____   _____     _____     _____ _____ _____ _____ _____
+      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT _____     _____ _____ _____ _____ _____
+      _____     _____     _____   _____     _____     _____ _____ _____ _____ _____
+      _____     &to ALP   _____   _____     &kp SPACE _____ _____ _____ _____ _____
+      >;
     };
 
   };
