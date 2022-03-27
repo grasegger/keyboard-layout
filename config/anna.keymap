@@ -107,10 +107,10 @@
 
     alpha_1 {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
-        &to LFT   _____     _____     &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  _____       &kp LC(LG(LS(LA(DE_T)))) 
+        &kp DE_Z          &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
+        &kp DE_C          &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
+        &kp DE_V          &kp DE_X  &kp DE_UE &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
+        &kp LG(LA(SPACE)) &to LFT   _____     &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  _____       &kp LG(SPACE) 
       >;
     };
 
@@ -154,7 +154,7 @@
       _____     _____     _____   _____     _____     _____ _____ _____ _____ _____
       &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT _____     _____ _____ _____ _____ _____
       _____     _____     _____   _____     _____     _____ _____ _____ _____ _____
-      _____     &to ALP   _____   _____     &kp SPACE _____ _____ _____ _____ _____
+      &to ALP   _____     _____   _____     &kp SPACE _____ _____ _____ _____ _____
       >;
     };
 
