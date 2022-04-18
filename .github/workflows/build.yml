@@ -6,7 +6,7 @@ jobs:
   anna:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:3.0
+      image: zmkfirmware/zmk-build-x86_64:3.0
     name: Anna Weirdo
     steps:
       - name: Checkout
