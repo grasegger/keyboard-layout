@@ -79,15 +79,12 @@
                                      
 #define _____ &none
 
-&sk {
-  quick-release;
-};
-
 #define ALP 0
-#define NUM 1
-#define SYM 2
-#define FUN 3
-#define MOD 4
+#define QWZ 1
+#define NUM 2
+#define SYM 3
+#define FUN 4
+#define MOD 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -100,24 +97,34 @@
 / {
 
   behaviors {
-      cppst: copy_paste {
-          compatible = "zmk,behavior-tap-dance";
-          label = "COPY_PASTE";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp LG(DE_C)>, <&kp LG(DE_V)>;
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        label = "STICKY_KEY_QUICK_RELEASE";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <200>;
+        quick-release;
       };
   };
 
   keymap {
     compatible = "zmk,keymap";
 
-    alpha_1 {
+    alpha {
       bindings = <
-        &kp DE_Z          &kp DE_L  &kp DE_U    &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G    &kp DE_Y
-        &kp DE_C          &kp DE_R  &kp DE_I    &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S    &kp DE_H
-        &kp DE_V          &kp DE_X  &kp DE_UE   &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS   &kp DE_Q
-        &kp LG(LA(SPACE)) &sl FUN   &key_repeat &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  &cppst      &kp LG(SPACE) 
+        &kp DE_Z          &kp DE_L  &kp DE_U    &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D    &kp DE_G  &kp DE_Y
+        &kp DE_C          &kp DE_R  &kp DE_I    &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T    &kp DE_S  &kp DE_H
+        &kp DE_V          &kp DE_X  &kp DE_UE   &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K    &kp DE_SS &kp DE_Q
+        &kp LG(LA(SPACE)) &sl FUN   &key_repeat &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  &to QWZ   &kp LG(SPACE) 
+      >;
+    };
+
+    qwertz {
+      bindings = <
+        &kp DE_Q          &kp DE_W  &kp DE_E    &kp DE_R  &kp DE_T  &kp DE_Z  &kp DE_U  &kp DE_I    &kp DE_O  &kp DE_P
+        &kp DE_A          &kp DE_S  &kp DE_D    &kp DE_F  &kp DE_G  &kp DE_H  &kp DE_J  &kp DE_K    &kp DE_L  &kp DE_OE
+        &kp DE_Y          &kp DE_X  &kp DE_C    &kp DE_V  &kp DE_B  &kp DE_N  &kp DE_M  &kp DE_UE   &kp DE_SS &kp DE_AE
+        &kp LG(LA(SPACE)) &sl FUN   &key_repeat &sl NUM   &kp SPACE &sl MOD   &sl SYM   &caps_word  &to ALP   &kp LG(SPACE) 
       >;
     };
 
@@ -151,11 +158,13 @@
     mod {
       bindings = <
         _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
-        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    AMLAY         AMNXT         &sk LGUI      &sk LCTRL   &sk LSHFT     &sk LALT 
+        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    AMLAY         AMNXT         &sk LGUI      &sk LCTRL   &skq LSHFT    &sk LALT 
         _____     _____       _____             _____       _____         AMPRV         _____         _____       _____         _____
-        _____     _____       _____             _____       &mo FUN       _____         _____         _____       _____         _____
+        _____     _____       _____             _____       _____         _____         _____         _____       _____         _____
       >; 
     };
+
+
 
   };
 };
