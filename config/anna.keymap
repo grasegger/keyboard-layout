@@ -93,6 +93,10 @@
 #define AMNXT &kp LA(LS(DE_K))
 #define AMPRV &kp LA(LS(DE_J))
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
 
   behaviors {
@@ -111,6 +115,14 @@
           tapping-term-ms = <70>;
           bindings = <&sl MOD>, <&caps_word>;
       };
+
+      td1: weird_symbols {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_1";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_CIRC>, <&kp DE_GRV>, <&kp DE_DEG>;
+      }
   };
 
   keymap {
@@ -118,28 +130,28 @@
 
     alpha {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U    &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D  &kp DE_G  &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I    &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T  &kp DE_S  &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_UE   &kp DE_AE &kp DE_OE &kp DE_P  &kp DE_F  &kp DE_K  &kp DE_SS &kp DE_Q
-        _____     _____     _____       &sl NUM   &kp SPACE &sl MOD   &sl SYM   _____     _____     _____
+        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D  &kp DE_G  &kp DE_Y
+        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T  &kp DE_S  &kp DE_H
+        &kp DE_V  &kp DE_X  &kp DE_F  &sl NUM   &kp SPACE &td0      &sl SYM   &kp DE_K  &kp DE_P  &kp DE_Q
+        _____     _____       _____   _____     _____     _____     _____     _____     _____     _____
       >;
     };
 
     num {
       bindings = <
-        &kp N1  &kp N2    &kp N3      &kp N4      &kp N5      &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
-        &kp ESC &kp ENTER &kp TAB     &kp DELETE  &kp DE_PLUS &kp DE_EQL    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        _____   _____     &kp DE_SLSH &kp DE_ASTR &kp DE_MINS _____         &kp HOME  &kp END   &kp PG_UP &kp PG_DN
-        _____   _____     _____       _____       _____       &kp BACKSPACE _____     _____     _____     _____
+        &kp N1    &kp N2    &kp N3    &kp N4      &kp N5  &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
+        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  _____   &kp DE_SS     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        &kp DE_UE &kp DE_OE &kp DE_AE _____       &sl FUN &kp BACKSPACE &kp HOME  &kp END   &kp PG_UP &kp PG_DN
+        _____     _____     _____     _____       _____   _____         _____     _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &kp DE_EURO &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR  
+        &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PERC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR  
         &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_AT   &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
-        _____       _____       _____       &kp DE_DOT  &kp DE_PLUS _____       &kp DE_COMM _____       _____       _____
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_PLUS &kp DE_DOT  &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
+        _____       _____       _____       _____       _____       _____       _____       _____       _____       _____
       >;
     };
 
@@ -154,10 +166,10 @@
 
     mod {
       bindings = <
-        _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT        &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
-        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI          AMLAY         AMNXT         &sk LGUI      &sk LCTRL   &skq LSHFT    &sk LALT 
-        _____     _____       _____             &kp LG(LA(SPACE)) &key_repeat   AMPRV         &kp LG(SPACE) _____       _____         _____
-        _____     _____       _____             _____             _____         _____         _____         _____       _____         _____
+        _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
+        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    _____         LG(SPACE)     &sk LGUI      &sk LCTRL   &skq LSHFT    &sk LALT 
+        _____     _____       _____             _____       _____         _____         AMNXT         AMPRV       AMLAY         LA(LG(SPACE))
+        _____     _____       _____             _____       _____         _____         _____         _____       _____         _____
       >; 
     };
 
