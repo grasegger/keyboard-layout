@@ -122,7 +122,7 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_CIRC>, <&kp DE_GRV>, <&kp DE_DEG>;
-      }
+      };
   };
 
   keymap {
