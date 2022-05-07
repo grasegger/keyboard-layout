@@ -83,7 +83,6 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
-#define MOD 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -113,7 +112,7 @@
           label = "TAP_DANCE_0";
           #binding-cells = <0>;
           tapping-term-ms = <70>;
-          bindings = <&sl MOD>, <&caps_word>;
+          bindings = <&sl FUN>, <&caps_word>;
       };
 
       td1: weird_symbols {
@@ -121,7 +120,18 @@
           label = "TAP_DANCE_1";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_CIRC>, <&kp DE_GRV>, <&kp DE_DEG>;
+          bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_GRV>, <&kp DE_CIRC>, <&kp DE_DEG>;
+      };
+
+      qt: global-quick-tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "GLOBAL_QUICK_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <125>;
+        global-quick-tap;
+        bindings = <&kp>, <&kp>;
       };
   };
 
@@ -130,10 +140,10 @@
 
     alpha {
       bindings = <
-        &kp DE_Z  &kp DE_L  &kp DE_U  &kp DE_A  &kp DE_J  &kp DE_W  &kp DE_B  &kp DE_D  &kp DE_G  &kp DE_Y
-        &kp DE_C  &kp DE_R  &kp DE_I  &kp DE_E  &kp DE_O  &kp DE_M  &kp DE_N  &kp DE_T  &kp DE_S  &kp DE_H
-        &kp DE_V  &kp DE_X  &kp DE_F  &sl NUM   &kp SPACE &td0      &sl SYM   &kp DE_K  &kp DE_P  &kp DE_Q
-        _____     _____       _____   _____     _____     _____     _____     _____     _____     _____
+        &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B          &kp DE_D        &kp DE_G        &kp DE_Y
+        &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &kp DE_O  &kp DE_M  &qt qt LGUI DE_N  &qt LCTRL DE_T  &qt LSHFT DE_S  &qt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &kp SPACE &td0      &sl SYM           &kp DE_K        &kp DE_P        &kp DE_Q
+        _____         _____           _____           _____         _____     _____     _____             _____           _____           _____
       >;
     };
 
@@ -141,7 +151,7 @@
       bindings = <
         &kp N1    &kp N2    &kp N3    &kp N4      &kp N5  &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
         &kp ESC   &kp ENTER &kp TAB   &kp DELETE  _____   &kp DE_SS     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE _____       &sl FUN &kp BACKSPACE &kp HOME  &kp END   &kp PG_UP &kp PG_DN
+        &kp DE_UE &kp DE_OE &kp DE_AE _____       _____   &kp BACKSPACE &kp HOME  &kp END   &kp PG_UP &kp PG_DN
         _____     _____     _____     _____       _____   _____         _____     _____     _____     _____
       >;
     };
@@ -157,23 +167,11 @@
 
     fun {
       bindings = <
-        &kp F1  &kp F2      &kp F3        &kp F4      &kp F5        &kp F6        &kp F7        &kp F8        &kp F9      &kp F10
-        &kp F11 &bootloader &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_NXT  &bt BT_CLR    &out OUT_BLE  &out OUT_USB  &bootloader &kp F12
-        _____   _____       _____         _____       _____         _____         _____         _____         _____       _____
-        _____   _____       _____         _____       _____         _____         _____         _____         _____       _____
+        &kp F1      &kp F2      &kp F3            &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9      &kp F10
+        &kp F11     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
+        &bt BT_CLR  &bootloader &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_NXT    _____         &out OUT_BLE  &out OUT_USB  &bootloader _____
+        _____       _____       _____             _____         _____         _____         _____         _____         _____       _____
       >;
     };
-
-    mod {
-      bindings = <
-        _____     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
-        &sk LALT  &sk LSHFT   &sk LCTRL         &sk LGUI    _____         &kp LG(SPACE) &sk LGUI      &sk LCTRL   &skq LSHFT    &sk LALT 
-        _____     _____       _____             _____       _____         _____         AMNXT         AMPRV       AMLAY         &kp LA(LG(SPACE))
-        _____     _____       _____             _____       _____         _____         _____         _____       _____         _____
-      >; 
-    };
-
-
-
   };
 };
