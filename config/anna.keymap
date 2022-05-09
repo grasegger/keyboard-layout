@@ -113,7 +113,7 @@
           label = "TAP_DANCE_0";
           #binding-cells = <0>;
           tapping-term-ms = <70>;
-          bindings = <&sl FUN>, <&caps_word>;
+          bindings = <&sl SYM>, <&mo FUN>;
       };
 
       td1: weird_symbols {
@@ -143,7 +143,7 @@
       bindings = <
         &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B          &kp DE_D        &kp DE_G        &kp DE_Y
         &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &kp DE_O  &kp DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt LSHIFT DE_S &qt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &kp SPACE &mo FUN   &sl SYM           &kp DE_K        &kp DE_P        &kp DE_Q
+        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &kp SPACE &td0  _____          &kp DE_K        &kp DE_P        &kp DE_Q
         _____         _____           _____           _____         _____     _____     _____             _____           _____           _____
       >;
     };
