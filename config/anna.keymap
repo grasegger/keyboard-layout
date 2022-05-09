@@ -130,7 +130,7 @@
           #binding-cells = <0>;
           tapping-term-ms = <70>;
           bindings = <&kp>, <&kp>;
-      }
+      };
 
       qt: global-quick-tap {
         compatible = "zmk,behavior-hold-tap";
