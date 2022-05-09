@@ -161,7 +161,7 @@
       bindings = <
         &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PERC &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR  
         &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_PLUS &kp DE_DOT  &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_DOT  &kp DE_PLUS &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN   
         _____       _____       _____       _____       _____       _____       _____       _____       _____       _____
       >;
     };
