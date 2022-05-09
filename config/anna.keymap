@@ -124,7 +124,7 @@
           bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_GRV>, <&kp DE_CIRC>, <&kp DE_DEG>;
       };
 
-      ws2: ws2 {
+      td2: td2 {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_2";
           #binding-cells = <0>;
