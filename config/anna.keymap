@@ -108,12 +108,14 @@
         release-after-ms = <200>;
         quick-release;
       };
-      td0: tap_dance_0 {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_0";
+
+
+      bspc: space_backspace {
+          compatible = "zmk,behavior-mod-morph";
+          label = "space_backspace";
           #binding-cells = <0>;
-          tapping-term-ms = <70>;
-          bindings = <&sl SYM>, <&mo FUN>;
+          bindings = <&kp SPACE>, <&kp BACKSPACE>;
+          mods = <(MOD_RSFT)>;
       };
 
       td1: weird_symbols {
@@ -150,18 +152,18 @@
     alpha {
       bindings = <
         &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B          &kp DE_D        &kp DE_G        &kp DE_Y
-        &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &kp DE_O  &kp DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt LSHIFT DE_S &qt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &kp SPACE &td0      _____          &kp DE_K        &kp DE_P        &kp DE_Q
+        &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &kp DE_O  &kp DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt RSHIFT DE_S &qt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_Q
         _____         _____           _____           _____         _____     _____     _____             _____           _____           _____
       >;
     };
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3    &kp N4      &kp N5    &kp N6        &kp N7    &kp N8    &kp N9    &kp N0
-        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp HOME  &kp DE_SS     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE _____       &kp END   &kp BACKSPACE _____     &kp PG_UP &kp PG_DN _____
-        _____     _____     _____     _____       _____     _____         _____     _____     _____     _____
+        &kp N1    &kp N2    &kp N3    &kp N4      &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp HOME  &kp DE_SS &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        &kp DE_UE &kp DE_OE &kp DE_AE _____       &kp END   &mo FUN   _____     &kp PG_UP &kp PG_DN _____
+        _____     _____     _____     _____       _____     _____     _____     _____     _____     _____
       >;
     };
 
