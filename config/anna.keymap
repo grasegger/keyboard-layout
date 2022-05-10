@@ -98,6 +98,17 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&to NUM>;
+        };
+    };
+};
+
+/ {
 
   behaviors {
       skq: sticky_key_quick_release {
@@ -153,7 +164,7 @@
       bindings = <
         &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B          &kp DE_D        &kp DE_G        &kp DE_Y
         &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &kp DE_O  &kp DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt RSHIFT DE_S &qt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_F        &sl NUM       &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_Q
+        &kp DE_V      &kp DE_X        &kp DE_F        _____         &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_Q
         _____         _____           _____           _____         _____     _____     _____             _____           _____           _____
       >;
     };
@@ -161,8 +172,8 @@
     num {
       bindings = <
         &kp N1    &kp N2    &kp N3    &kp N4      &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp HOME  &kp DE_SS &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE _____       &kp END   &mo FUN   _____     &kp PG_UP &kp PG_DN _____
+        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp DE_SS &kp HOME  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        &kp DE_UE &kp DE_OE &kp DE_AE _____       &to ALP   &mo FUN   _____     &kp PG_UP &kp PG_DN &kp END
         _____     _____     _____     _____       _____     _____     _____     _____     _____     _____
       >;
     };
