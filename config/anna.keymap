@@ -100,11 +100,15 @@
 &mt {
   quick-tap-ms = <100>;
   global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <200>;
 };
 
 &lt {
   quick-tap-ms = <100>;
   global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <200>;
 };
 
 / {
