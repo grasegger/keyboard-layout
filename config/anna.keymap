@@ -83,7 +83,6 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
-#define EXT 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -112,6 +111,14 @@
 };
 
 / {
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 
   behaviors {
       skq: sticky_key_quick_release {
@@ -165,37 +172,27 @@
       bindings = <
         &kp N1    &kp N2    &kp N3    &kp N4      &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
         &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp DE_SS &kp HOME  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE _____       &to ALP   &mo FUN   _____     &kp PG_UP &kp PG_DN &kp END
+        &kp DE_UE &kp DE_OE &kp DE_AE _____       _____     &sl SYM   _____     &kp PG_UP &kp PG_DN &kp END
         _____     _____     _____     _____       _____     _____     _____     _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &td2  &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR           &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_DOT            &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
-        _____       _____       _____       _____       _____                 _____       _____       _____       _____       _____
+        &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &td2            &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR     &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &lt SYM DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        _____       _____       _____       _____       _____           _____       _____       _____       _____       _____
       >;
     };
 
     fun {
       bindings = <
-        &kp F1      &kp F2      &kp F3            &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-        &kp F11     &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE    &kp C_VOL_DN  &kp F12
-        &mo EXT     _____       _____             _____         _____         _____         AMNXT         AMPRV         AMLAY         _____
-        _____       _____       _____             _____         _____         _____         _____         _____         _____         _____
+        &kp F1        &kp F2        &kp F3            &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
+        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE    &kp C_VOL_DN  &kp F12
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____         _____         _____         _____         _____         _____         &bt BT_CLR
+        _____         _____         _____             _____         _____         _____         _____         _____         _____         _____
       >;
-    };
-
-    extra {
-      bindings = <
-        _____       _____       _____             _____         _____         _____         _____         _____         _____         _____
-        &bt BT_CLR  &bootloader &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_NXT    _____         &out OUT_BLE  &out OUT_USB  &bootloader   _____
-        _____       _____       _____             _____         _____         _____         _____         _____         _____         _____
-        _____       _____       _____             _____         _____         _____         _____         _____         _____         _____
-      >;
-
     };
   };
 };
