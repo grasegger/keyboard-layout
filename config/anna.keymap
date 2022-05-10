@@ -145,7 +145,7 @@
         bindings = <&kp>, <&kp>;
       };
 
-      qlt: global-quick-tap {
+      qlt: global-quick-tap2 {
         compatible = "zmk,behavior-hold-tap";
         label = "GLOBAL_QUICK_TAPl";
         #binding-cells = <2>;
@@ -163,7 +163,7 @@
     alpha {
       bindings = <
         &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J      &kp DE_W      &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
-        &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &lt NUM DE_O  &lt NUM DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt RSHIFT DE_S &qt LALT DE_H
+        &qt LALT DE_C &qt LSHIFT DE_R &qt LCTRL DE_I  &qt LGUI DE_E &qlt NUM DE_O &qlt NUM DE_M  &qt LGUI DE_N  &qt LCTRL DE_T  &qt RSHIFT DE_S &qt LALT DE_H
         &kp DE_V      &kp DE_X        &kp DE_F        _____         &bspc         &sl SYM       _____          &kp DE_K        &kp DE_P        &kp DE_Q
         _____         _____           _____           _____         _____         _____         _____          _____           _____           _____
       >;
