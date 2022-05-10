@@ -152,7 +152,7 @@
           label = "TAP_DANCE_2";
           #binding-cells = <0>;
           tapping-term-ms = <70>;
-          bindings = <&kp DE_PLUS>, <&kp DE_PERC>;
+          bindings = <&kp DE_PLUS>, <&kp DE_PERC>, <&kp DE_TILD>;
       };
   };
 
@@ -181,7 +181,7 @@
       bindings = <
         &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &td2            &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR     &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &lt SYM DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE _____       &lt SYM DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
         _____       _____       _____       _____       _____           _____       _____       _____       _____       _____
       >;
     };
