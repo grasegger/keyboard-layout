@@ -163,7 +163,7 @@
     alpha {
       bindings = <
         &lt MED DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt RSHIFT DE_S &mt LALT DE_H
+        &mt LALT DE_C &mt RSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
         &kp DE_V      &kp DE_X        &kp DE_Y        _____         &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_F
         _____         _____           _____           _____         _____     _____     _____          _____           _____           _____
       >;
