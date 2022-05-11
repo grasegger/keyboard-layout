@@ -83,6 +83,7 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
+#define MED 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -161,7 +162,7 @@
 
     alpha {
       bindings = <
-        &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Q
+        &lt MED DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt RSHIFT DE_S &mt LALT DE_H
         &kp DE_V      &kp DE_X        &kp DE_Y        _____         &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_F
         _____         _____           _____           _____         _____     _____     _____          _____           _____           _____
@@ -189,10 +190,18 @@
     fun {
       bindings = <
         &kp F1        &kp F2        &kp F3            &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE    &kp C_VOL_DN  &kp F12
+        &kp F11       _____         _____             _____         _____         _____         _____         _____         _____         &kp F12
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____         _____         _____         _____         _____         _____         &bt BT_CLR
         _____         _____         _____             _____         _____         _____         _____         _____         _____         _____
       >;
+    };
+
+    media {
+        _____ &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
+        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
+        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
+        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
+
     };
   };
 };
