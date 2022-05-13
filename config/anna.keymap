@@ -112,48 +112,13 @@
 };
 
 / {
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-
   behaviors {
-      skq: sticky_key_quick_release {
-        compatible = "zmk,behavior-sticky-key";
-        label = "STICKY_KEY_QUICK_RELEASE";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <200>;
-        quick-release;
-      };
-
-
-      bspc: space_backspace {
-          compatible = "zmk,behavior-mod-morph";
-          label = "space_backspace";
-          #binding-cells = <0>;
-          bindings = <&lt NUM SPACE>, <&kp BACKSPACE>;
-          mods = <(MOD_RSFT)>;
-      };
-
       td1: weird_symbols {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_1";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_AT>, <&kp DE_EURO>, <&kp DE_GRV>, <&kp DE_CIRC>, <&kp DE_DEG>;
-      };
-
-      td2: td2 {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_2";
-          #binding-cells = <0>;
-          tapping-term-ms = <70>;
-          bindings = <&kp DE_PLUS>, <&kp DE_PERC>, <&kp DE_TILD>;
       };
   };
 
@@ -162,27 +127,27 @@
 
     alpha {
       bindings = <
-        &lt MED DE_Z      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
-        &mt LALT DE_C &mt RSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_Y        _____         &bspc     &sl SYM   _____          &kp DE_K        &kp DE_P        &kp DE_F
-        _____         _____           _____           _____         _____     _____     _____          _____           _____           _____
+        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A          &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E     &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_Y        &lt FUN BACKSPACE &kp SPACE &sl NUM   &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
+        _____         _____           _____           _____             _____     _____     _____          _____           _____           _____
       >;
     };
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3    &kp N4      &kp N5    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-        &kp ESC   &kp ENTER &kp TAB   &kp DELETE  &kp DE_SS &kp HOME  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE _____       _____     &sl SYM   _____     &kp PG_UP &kp PG_DN &kp END
+        &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp BACKSPACE &kp N1  &kp N2    &kp N3    &kp N4  &kp N5
+        &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _____         &kp N6  &kp N7    &kp N8    &kp N9  &kp N0 
+        &kp DE_UE &kp DE_OE &kp DE_AE &kp DE_SS _____         _____   &kp ESC   &kp ENTER &kp TAB &kp DELETE
         _____     _____     _____     _____       _____     _____     _____     _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &td2            &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR     &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE _____       &lt SYM DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        &td1        &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_DOT  &kp DE_COMM &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
         _____       _____       _____       _____       _____           _____       _____       _____       _____       _____
       >;
     };
