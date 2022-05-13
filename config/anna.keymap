@@ -127,10 +127,10 @@
 
     alpha {
       bindings = <
-        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A          &kp DE_J  &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E     &kp DE_O  &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_Y        &lt FUN BACKSPACE &kp SPACE &sl NUM   &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
-        _____         _____           _____           _____             _____     _____     _____          _____           _____           _____
+        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A          &kp DE_J      &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E     &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_Y        &lt FUN BACKSPACE &kp SPACE     &sl NUM   &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
+        _____         _____           _____           _____             _____         _____     _____          _____           _____           _____
       >;
     };
 
