@@ -122,6 +122,15 @@
       };
   };
 
+  combos {
+		compatible = "zmk,combos";
+		combo_caps-word {
+			timeout-ms = <20>;
+			key-positions = <13 16>;
+			bindings = <&caps_word>;
+		};
+	};
+
   keymap {
     compatible = "zmk,keymap";
 
