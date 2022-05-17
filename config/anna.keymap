@@ -139,19 +139,19 @@
     combo_esc {
       timeout-ms = <20>;
       key-positions = <21 22>;
-      binding = <&kp ESC>;      
+      bindings = <&kp ESC>;      
     };
 
     combo_ent {
       timeout-ms = <20>;
       key-positions = <27 28>;
-      binding = <&kp ENTER>;
+      bindings = <&kp ENTER>;
     };
 
     combo_tab {
       timeout-ms = <20>;
       key-positions = <24 25>;
-      binding = <&kp TAB>;
+      bindings = <&kp TAB>;
     };
 
 	};
