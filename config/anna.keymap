@@ -98,17 +98,17 @@
 };
 
 &mt {
-  quick-tap-ms = <100>;
+  quick-tap-ms = <80>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <200>;
+  tapping-term-ms = <150>;
 };
 
 &lt {
-  quick-tap-ms = <100>;
+  quick-tap-ms = <80>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <200>;
+  tapping-term-ms = <150>;
 };
 
 / {
