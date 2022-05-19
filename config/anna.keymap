@@ -207,7 +207,7 @@
     arrow {
       bindings = <
         &kp DELETE &kp HOME  &kp UP    &kp END       &kp PG_UP &kp PG_UP &kp END       &kp UP   &kp HOME  &kp DELETE
-        &kp ESC    &kp LEFT  &kp DOWN  &kp RIGHT     &kp PG_DN &kp PG_DN &kp RIGHT     &kp DOWN &kp LEFT  &kp ESC
+        &kp ESC    &kp LEFT  &kp DOWN  &kp RIGHT     &kp PG_DN &kp PG_DN &kp LEFT      &kp DOWN &kp RIGHT &kp ESC
         _____      &kp ENTER &kp TAB   &kp BACKSPACE _____     _____     &kp BACKSPACE &kp TAB  &kp ENTER _____
         _____      _____     _____     _____         _____     _____     _____         _____    _____     _____
       >;
