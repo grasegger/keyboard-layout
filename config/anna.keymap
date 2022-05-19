@@ -83,7 +83,6 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
-#define MED 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -112,30 +111,6 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_CIRC>, <&kp DE_DEG>;
-      };
-
-      slashes: slashes {
-          compatible = "zmk,behavior-tap-dance";
-          label = "SLASHES";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_SLSH>, <&kp DE_BSLS>;
-      };
-
-      currency: currency {
-          compatible = "zmk,behavior-tap-dance";
-          label = "CURRENCY";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_DLR>, <&kp DE_EURO>;
-      };
-
-      escape_chars: escape_chars {
-          compatible = "zmk,behavior-tap-dance";
-          label = "ESCAPE_CHARS";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_TILD>, <&kp >;
       };
   };
 
@@ -173,8 +148,8 @@
       bindings = <
         &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
-        _____           _____       _____       &kp DE_DOT  _____          _____       &kp DE_COMM _____       _____       _____
+        &kp DE_HASH     &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        _____           &kp DE_EURO _____       &kp DE_DOT  _____          _____       &kp DE_COMM _____       _____       _____
       >;
     };
 
