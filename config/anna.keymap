@@ -84,7 +84,6 @@
 #define SYM 2
 #define FUN 3
 #define MED 4
-#define ARR 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -99,13 +98,6 @@
 };
 
 &mt {
-  quick-tap-ms = <125>;
-  global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <250>;
-};
-
-&lt {
   quick-tap-ms = <125>;
   global-quick-tap;
   flavor = "tap-preferred";
@@ -143,7 +135,7 @@
           label = "ESCAPE_CHARS";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&kp DE_TILD>, <&kp DE_GRV>;
+          bindings = <&kp DE_TILD>, <&kp >;
       };
   };
 
@@ -161,55 +153,37 @@
 
     alpha {
       bindings = <
-        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A       &kp DE_J      &kp DE_W      &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
+        &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A       &kp DE_J      &kp DE_W      &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E  &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_Y        &sl ARR        &kp SPACE     &sl NUM       &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
-        _____         _____           _____           _____          _____         _____         _____          _____           _____           _____
+        &kp DE_V      &kp DE_X        &kp DE_OE       &kp DE_AE      &kp DE_UE     &kp DE_P      &kp DE_F       &kp DE_K        &kp DE_SS       &kp DE_Q
+        _____         &sl FUN  _____  &kp SPACE       _____          _____         &sl NUM       _____          &sl SYM         _____           _____
       >;
     };
 
     num {
       bindings = <
-        _____     _____     _____     _____     _____    _____  _____   _____   _____   _____ 
-        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5   &kp N6 &kp N7  &kp N8  &kp N9  &kp N0 
-        &kp DE_UE &kp DE_OE &kp DE_AE &kp DE_SS &mo FUN  _____  _____   _____   _____   _____
-        _____     _____     _____     _____     _____    _____  _____   _____   _____   _____
+         &kp DE_MINS  &kp N1    &kp N2  &kp N3 &kp DE_PLUS    &kp DELETE  &kp HOME      &kp PG_DN &kp PG_UP &kp END 
+         &kp DE_SLSH  &kp N4    &kp N5  &kp N6 &kp DE_ASTR    &kp ESC     &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT 
+         _____        &kp N7    &kp N8  &kp N9 &kp BACKSPACE  _____       &kp BACKSPACE &kp TAB   &kp ENTER _____
+         _____        &kp ENTER _____   &kp N0 _____          _____       _____         _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS    &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_AT       &slashes    &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR    &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_DOT  &escape_chars  &kp DE_PERC &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
-        _____           _____       _____       _____       _____          _____       _____       _____       _____       _____
+        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        _____           _____       _____       &kp DE_DOT  _____          _____       &kp DE_COMM _____       _____       _____
       >;
     };
 
     fun {
       bindings = <
-        &kp F1        &kp F2        &kp F3            &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-        &kp F11       _____         _____             _____         _____         _____         _____         _____         _____         &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____         _____         _____         _____         _____         _____         &bt BT_CLR
-        _____         _____         _____             _____         _____         _____         _____         _____         _____         _____
-      >;
-    };
-
-    media {
-      bindings = <
-        _____ &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  _____
-        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
-        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
-        _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
-      >;
-    };
-
-    arrow {
-      bindings = <
-        &kp DELETE &kp HOME  &kp UP    &kp END       &kp PG_UP &kp PG_UP &kp END       &kp UP   &kp HOME  &kp DELETE
-        &kp ESC    &kp LEFT  &kp DOWN  &kp RIGHT     &kp PG_DN &kp PG_DN &kp LEFT      &kp DOWN &kp RIGHT &kp ESC
-        _____      &kp ENTER &kp TAB   &kp BACKSPACE _____     _____     &kp BACKSPACE &kp TAB  &kp ENTER _____
-        _____      _____     _____     _____         _____     _____     _____         _____    _____     _____
+        &kp F1        &kp F2        &kp F3            &kp F4     &kp F5       &kp F6        &kp F7        &kp F8        &kp F9      &kp F10
+        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT &kp C_BRI_UP &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____      _____        _____         _____         _____         _____       &bt BT_CLR
+        _____         _____         _____             _____      _____        _____         _____         _____         _____       _____
       >;
     };
   };
