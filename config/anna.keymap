@@ -84,6 +84,7 @@
 #define SYM 2
 #define FUN 3
 #define MED 4
+#define ARR 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -98,14 +99,14 @@
 };
 
 &mt {
-  quick-tap-ms = <80>;
+  quick-tap-ms = <125>;
   global-quick-tap;
   flavor = "tap-preferred";
   tapping-term-ms = <150>;
 };
 
 &lt {
-  quick-tap-ms = <80>;
+  quick-tap-ms = <125>;
   global-quick-tap;
   flavor = "tap-preferred";
   tapping-term-ms = <150>;
@@ -153,31 +154,6 @@
 			key-positions = <11 18>;
 			bindings = <&caps_word>;
 		};
-
-    combo_fun {
-      timeout-ms = <20>;
-      key-positions = <10 19>;
-      bindings = <&sl FUN>;
-    };
-
-    combo_esc {
-      timeout-ms = <20>;
-      key-positions = <21 22>;
-      bindings = <&kp ESC>;      
-    };
-
-    combo_ent {
-      timeout-ms = <20>;
-      key-positions = <27 28>;
-      bindings = <&kp ENTER>;
-    };
-
-    combo_tab {
-      timeout-ms = <20>;
-      key-positions = <24 25>;
-      bindings = <&kp TAB>;
-    };
-
 	};
 
   keymap {
@@ -185,28 +161,28 @@
 
     alpha {
       bindings = <
-        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_J      &kp DE_W  &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_Y        &kp BACKSPACE &kp SPACE     &sl NUM   &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
-        _____         _____           _____           _____         _____         _____     _____          _____           _____           _____
+        &lt MED DE_Z  &kp DE_L        &kp DE_U        &kp DE_A       &kp DE_J      &kp DE_W      &kp DE_B       &kp DE_D        &kp DE_G        &lt MED DE_Q
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E  &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_Y        &sl ARR        &kp SPACE     &to NUM       &sl SYM        &kp DE_K        &kp DE_P        &kp DE_F
+        _____         _____           _____           _____          _____         _____         _____          _____           _____           _____
       >;
     };
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5  &kp N6  &kp N7    &kp N8    &kp N9  &kp N0 
-        &kp DE_UE &kp DE_OE &kp DE_AE &kp DE_SS _____   _____   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
-        _____     _____     _____     _____     _____   _____   &kp HOME  &kp PG_UP &kp PG_DN &kp END   
-        _____     _____     _____     _____     _____   _____   _____     _____     _____     _____
+        _____     _____     _____     _____     _____    _____  _____   _____   _____   _____ 
+        &kp N1    &kp N2    &kp N3    &kp N4    &kp N5   &kp N6 &kp N7  &kp N8  &kp N9  &kp N0 
+        &kp DE_UE &kp DE_OE &kp DE_AE &kp DE_SS &mo FUN  _____  _____   _____   _____   _____
+        _____     _____     _____     _____     _____    _____  _____   _____   _____   _____
       >;
     };
 
     sym {
       bindings = <
-        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_AT       &slashes    &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_DOT  &kp DE_PERC &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
-        _____           _____       _____       _____       _____           _____       _____       _____       _____       _____
+        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS    &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_AT       &slashes    &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR    &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_DOT  &escape_chars  &kp DE_PERC &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        _____           _____       _____       _____       _____          _____       _____       _____       _____       _____
       >;
     };
 
@@ -225,6 +201,15 @@
         _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
         _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
         _____ _____       _____             _____       _____         _____         _____         _____       _____         _____
+      >;
+    };
+
+    arrow {
+      bindings = <
+        &kp DELETE &kp HOME  &kp UP    &kp END       &kp PG_UP &kp PG_UP &kp END       &kp UP   &kp HOME  &kp DELETE
+        &kp ESC    &kp LEFT  &kp DOWN  &kp RIGHT     &kp PG_DN &kp PG_DN &kp RIGHT     &kp DOWN &kp LEFT  &kp ESC
+        _____      &kp ENTER &kp TAB   &kp BACKSPACE _____     _____     &kp BACKSPACE &kp TAB  &kp ENTER _____
+        _____      _____     _____     _____         _____     _____     _____         _____    _____     _____
       >;
     };
   };
