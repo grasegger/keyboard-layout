@@ -97,7 +97,7 @@
 };
 
 &sl {
-    release-after-ms = <125>;
+    release-after-ms = <75>;
 };
 
 &mt {
