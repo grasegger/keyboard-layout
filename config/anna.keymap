@@ -132,9 +132,9 @@
 
     num {
       bindings = <
-         &kp DE_MINS  &kp N1    &kp N2  &kp N3 &kp DE_PLUS    &kp DELETE  &kp HOME      &kp PG_DN &kp PG_UP &kp END 
+         &kp DE_MINS  &kp N7    &kp N8  &kp N9 &kp DE_PLUS    &kp DELETE  &kp HOME      &kp PG_DN &kp PG_UP &kp END 
          &kp DE_SLSH  &kp N4    &kp N5  &kp N6 &kp DE_ASTR    &kp ESC     &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT 
-         &kp N0       &kp N7    &kp N8  &kp N9 &kp BACKSPACE  _____       &kp BACKSPACE &kp TAB   &kp ENTER _____
+         &kp N0       &kp N1    &kp N2  &kp N3 &kp BACKSPACE  _____       &kp BACKSPACE &kp TAB   &kp ENTER _____
          _____        &kp ENTER _____   _____  _____          _____       _____         _____     _____     _____
       >;
     };
