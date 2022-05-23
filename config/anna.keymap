@@ -88,7 +88,6 @@
 #define DE_AE DE_ADIA
 #define DE_OE DE_ODIA
 #define HYP   LC(LG(LS(LALT)))
-#define AMLAY &kp LC(LS(LA(SPACE)))
 #define AMNXT &kp LA(LS(DE_K))
 #define AMPRV &kp LA(LS(DE_J))
 
@@ -122,7 +121,6 @@
               ;
       };
 
-
       spotlight: spotlight {
           label = "spotlight";
           compatible = "zmk,behavior-macro";
@@ -131,6 +129,39 @@
               = <&macro_press &kp LGUI>
               , <&macro_tap &kp SPACE>
               , <&macro_release &kp LGUI>
+              ;
+      };
+
+      wm_layout: wm_layout {
+          label = "wm_layout";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LSHFT &kp LALT &kp LCTRL>
+              , <&macro_tap &kp SPACE>
+              , <&macro_release &kp LSHFT &kp LALT &kp LCTRL>
+              ;
+      };
+
+      wm_next: wm_next {
+          label = "wm_next";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LSHFT &kp LALT>
+              , <&macro_tap &kp DE_K>
+              , <&macro_release &kp LSHFT &kp LALT>
+              ;
+      };
+
+      wm_prev: wm_prev {
+          label = "wm_prev";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LSHFT &kp LALT>
+              , <&macro_tap &kp DE_J>
+              , <&macro_release &kp LSHFT &kp LALT>
               ;
       };
   };
@@ -167,10 +198,10 @@
 
     fun {
       bindings = <
-        &kp F1        &kp F2        &kp F3            &kp F4     &kp F5       &kp F6        &kp F7        &kp F8        &kp F9      &kp F10
+        &kp F1        &kp F2        &kp F3            &kp F4     &kp F5       &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT &kp C_BRI_UP &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____      _____        _____         _____         _____         _____       &bt BT_CLR
-        _____         _____         _____             &caps_word _____        _____         _____         _____         _____       _____
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____      _____        _____         &wm_next      &wm_layout  &wm_prev      &bt BT_CLR
+        _____         _____         _____             _____      _____        _____         _____         _____       _____         _____
       >;
     };
   };
