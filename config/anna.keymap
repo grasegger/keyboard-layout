@@ -143,7 +143,7 @@
         &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A       &kp DE_Q   &kp DE_W   &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E  &kp DE_O   &kp DE_M   &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
         &kp DE_V      &kp DE_X        &kp DE_OE       &kp DE_AE      &kp DE_UE  &kp DE_P   &kp DE_F       &kp DE_Z        &kp DE_SS       &kp DE_K
-        &guake        &key_repeat     &sl FUN         &sl NUM        &kp SPACE  &sk LSHIFT &sl SYM        &sl FUN         &caps_word      &kspotlight          
+        &guake        &key_repeat     &sl FUN         &sl NUM        &kp SPACE  &sk LSHIFT &sl SYM        &sl FUN         &caps_word      &spotlight          
       >;
     };
 
