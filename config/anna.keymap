@@ -164,6 +164,28 @@
               , <&macro_release &kp LSHFT &kp LALT>
               ;
       };
+
+      tab_next: tab_next {
+          label = "tab_next";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LCTRL>
+              , <&macro_tap &kp TAB>
+              , <&macro_release &kp LCTRL>
+              ;
+      };
+
+      tab_prev: tab_prev {
+          label = "tab_prev";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_press &kp LCTRL &kp LSHFT>
+              , <&macro_tap &kp TAB>
+              , <&macro_release &kp LCTRL &kp LSHFT>
+              ;
+      };
   };
   
   keymap {
