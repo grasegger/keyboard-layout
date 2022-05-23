@@ -96,10 +96,6 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
-&sl {
-    release-after-ms = <75>;
-};
-
 &mt {
   quick-tap-ms = <125>;
   global-quick-tap;
@@ -108,16 +104,6 @@
 };
 
 / {
-  behaviors {
-      weird_symbols: weird_symbols {
-          compatible = "zmk,behavior-tap-dance";
-          label = "WEIRD_SYMBOLS";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_CIRC>, <&kp DE_DEG>;
-      };
-  };
-
   keymap {
     compatible = "zmk,keymap";
 
@@ -126,7 +112,7 @@
         &kp DE_Z      &kp DE_L        &kp DE_U        &kp DE_A       &kp DE_J   &kp DE_W      &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E  &kp DE_O   &kp DE_M  &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
         &kp DE_V      &kp DE_X        &kp DE_OE       &kp DE_AE      &kp DE_UE  &kp DE_P      &kp DE_F       &kp DE_K        &kp DE_SS       &kp DE_Q
-        _____         &sl FUN  _____  &kp SPACE       _____          _____      &sl SYM       _____          &caps_word      _____           _____
+        _____         &sl FUN  _____  &lt NUM SPACE   _____          _____      &sl SYM       _____          &caps_word      _____           _____
       >;
     };
 
@@ -141,10 +127,10 @@
 
     sym {
       bindings = <
-        &weird_symbols &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_BSLS    &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH    &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
-        _____          &kp DE_EURO _____       &sl NUM     _____       _____       &kp DE_COMM _____       &kp DE_DOT  _____       
+        &DE_CIRC    &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
+        &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN 
+        _____       &kp DE_EURO _____       &kp DE_DOT  _____       _____       &kp DE_COMM _____       &kp DE_DEG  _____       
       >;
     };
 
