@@ -83,6 +83,7 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
+#define UML 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -184,10 +185,9 @@
     alpha {
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-        &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B      &kp DE_D        &kp DE_G        &kp DE_Y
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O      &mt HYP DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_COMM     &lt NUM SPACE &kp BACKSPACE &kp DE_P      &lt SYM DE_F  &kp DE_DOT        &kp DE_Z         &kp DE_K
-                                                                           
+        &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B        &kp DE_D        &kp DE_G        &kp DE_Y
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O      &mt HYP DE_M  &mt LGUI DE_N   &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &sk UML         &lt NUM SPACE &lt FUN DE_F  &lt FUN DE_P  &lt SYM DE_COMM &kp DE_DOT      &kp DE_Z        &kp DE_K
       >;
     };
 
@@ -205,7 +205,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_PERC &kp DE_AT   _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
+        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_PERC &kp DE_AT   &kp DE_COMM &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
       >;
     };
 
@@ -217,5 +217,14 @@
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &tab_prev   &tab_next     _____         &wm_layout    &wm_prev    &wm_next      &bt BT_CLR
       >;
     };
+
+
+    uml {
+      bindings = <
+        _____ _____ _____ _____ _____ _____ ______    _____     _____     _____
+        _____ _____ _____ _____ _____ _____ ______    _____     _____     _____
+        _____ _____ _____ _____ _____ _____ &kp DE_AE &kp DE_OE &kp DE_UE &kp DE_SS
+        _____ _____ _____ _____ _____ _____ ______    _____     _____     _____
+      >;
   };
 };
