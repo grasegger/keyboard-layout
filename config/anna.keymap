@@ -184,9 +184,9 @@
     alpha {
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-        &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q       &kp DE_W          &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O       &mt HYP DE_M      &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_COMM     &kp DE_DOT    &lt NUM SPACE  &lt SYM BACKSPACE &kp DE_F       &kp DE_P        &kp DE_Z         &kp DE_K
+        &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q    &kp DE_W      &kp DE_B          &kp DE_D        &kp DE_G        &kp DE_Y
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_DOT  &mt HYP DE_M  &mt LGUI DE_F     &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_COMM     &lt NUM SPACE &kp DE_O    &kp DE_N      &lt SYM BACKSPACE &kp DE_P        &kp DE_Z         &kp DE_K
                                                                            
       >;
     };
@@ -194,9 +194,9 @@
     num {
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-        &kp N1      &kp N2      &kp N3        &kp N4      &kp N5      &kp N6      &kp N7    &kp N8    &kp N9    &kp N0  
-        &kp ESC     &kp TAB     &kp BACKSPACE &kp ENTER   &kp DELETE  &kp DE_DOT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_SLSH &kp DE_ASTR &kp DE_MINS   &kp DE_PLUS _____       &mo FUN     &kp HOME  &kp PG_DN &kp PG_UP &kp END
+        &kp N1    &kp N2    &kp N3        &kp N4      &kp N5      &kp N6      &kp N7    &kp N8    &kp N9    &kp N0  
+        &kp ESC   &kp TAB   &kp BACKSPACE &kp ENTER   &kp DELETE  &kp DE_DOT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        &kp DE_UE &kp DE_OE &kp DE_AE     _____       &kp DE_SS   &mo FUN     &kp HOME  &kp PG_DN &kp PG_UP &kp END
       >;
     };
 
@@ -205,7 +205,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_PERC _____       &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
+        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_PERC &kp DE_AT   _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
       >;
     };
 
@@ -214,7 +214,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp F1        &kp F2        &kp F3            &kp F4      &kp F5        &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &tab_prev   &tab_next     _____         &wm_next      &wm_layout  &wm_prev      &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &tab_prev   &tab_next     _____         &wm_layout    &wm_prev    &wm_next      &bt BT_CLR
       >;
     };
   };
