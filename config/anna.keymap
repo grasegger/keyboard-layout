@@ -186,7 +186,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q       &kp DE_W          &kp DE_B       &kp DE_D        &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O       &mt HYP DE_M      &mt LGUI DE_N  &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp COMM        &kp DE_DOT    &lt NUM SPACE  &lt SYM BACKSPACE &kp DE_F       &kp DE_P        &kp DE_Z         &kp DE_K
+        &kp DE_V      &kp DE_X        &kp DE_COMM     &kp DE_DOT    &lt NUM SPACE  &lt SYM BACKSPACE &kp DE_F       &kp DE_P        &kp DE_Z         &kp DE_K
                                                                            
       >;
     };
