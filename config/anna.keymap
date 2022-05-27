@@ -125,17 +125,6 @@
           tapping-term-ms = <200>;
           bindings = <&kp DE_CIRC>, <&kp DE_DEG>, <&kp DE_GRV>;
       };
-
-      caps_hold: caps_hold {
-        compatible = "zmk,behavior-hold-tap";
-        label = "CAPS_HOLD";
-        #binding-cells = <1>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <100>;
-        global-quick-tap;
-        retro-tap;
-        bindings = <&kp>, <&caps_word>;
-    };
   };
 
 
@@ -188,8 +177,8 @@
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp DE_J      &kp DE_L        &kp DE_U        &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B        &kp DE_D        &kp DE_G        &kp DE_Y
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O      &mt HYP DE_M  &mt LGUI DE_N   &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &caps_hold UML  &lt NUM SPACE &lt FUN DE_F  &lt FUN DE_P  &lt SYM DE_COMM &kp DE_DOT      &kp DE_Z        &kp DE_K
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N   &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &sl UML         &lt NUM SPACE &lt FUN DE_F  &lt FUN DE_P  &lt SYM DE_COMM &kp DE_DOT      &kp DE_Z        &kp DE_K
       >;
     };
 
