@@ -169,7 +169,7 @@
               = <&macro_tap &kp LS(LC(TAB))>;
       };
   };
-  
+  /*
     combos {
         compatible = "zmk,combos";
 
@@ -214,7 +214,7 @@
           key-positions = <26 27 28>;
           bindings = <&kp C_MUTE>;
         };
-/*
+
         combo_wm_next {
           timeout-ms = <20>;
           key-positions = <16 17>;
@@ -244,8 +244,8 @@
           key-positions = <12 13>;
           bindings = <&tab_prev>;
         };
-        */
     };
+    */
   
   keymap {
     compatible = "zmk,keymap";
