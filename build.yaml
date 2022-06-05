@@ -17,8 +17,4 @@ include:
   - board: nice_nano_v2
     shield: anna_left
   - board: nice_nano_v2
-    shield: anna_right 
-  - board: seeeduino_xiao_ble
-    shield: anna_horizon_left
-  - board: seeeduino_xiao_ble
-    shield: anna_horizon_right 
+    shield: anna_right
