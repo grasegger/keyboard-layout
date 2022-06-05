@@ -83,7 +83,6 @@
 #define NUM 1
 #define SYM 2
 #define FUN 3
-#define UML 4
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
