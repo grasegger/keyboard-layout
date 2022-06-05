@@ -2,11 +2,9 @@ manifest:
   remotes:
     - name: zmk
       url-base: https://github.com/zmkfirmware
-    - name: grasegger
-      url-base: https://github.com/grasegger
   projects:
     - name: zmk
-      remote: grasegger
+      remote: zmk
       revision: main
       import: app/west.yml
   self:
