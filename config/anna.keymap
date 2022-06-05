@@ -208,7 +208,6 @@
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &tab_prev   &tab_next     _____         &wm_layout    &wm_prev    &wm_next      &bt BT_CLR
       >;
     };
-  };
 
    combos {
         compatible = "zmk,combos";
@@ -285,4 +284,5 @@
           bindings = <&tab_prev>;
         };
     };
+  };
 };
