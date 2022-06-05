@@ -186,12 +186,30 @@
         timeout-ms = <20>;
         key-positions = <26 27>;
         bindings = <&kp BACKSPACE>;
+      };            
+      
+      combo_del {
+        timeout-ms = <20>;
+        key-positions = <25 26>;
+        bindings = <&kp DEL>;
+      };      
+      
+      combo_esc {
+        timeout-ms = <20>;
+        key-positions = <27 28>;
+        bindings = <&kp ESC>;
       };
 
       combo_ent {
         timeout-ms = <20>;
-        key-positions = <23 24>;
+        key-positions = <22 23>;
         bindings = <&kp ENTER>;
+      };
+
+      combo_tab {
+        timeout-ms = <20>;
+        key-positions = <21 22>;
+        bindings = <&kp TAB>;
       };
   };
 
@@ -229,7 +247,7 @@
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp N1    &kp N2    &kp N3        &kp N4      &kp N5      &kp N6      &kp N7    &kp N8    &kp N9    &kp N0  
-        &kp ESC   &kp TAB   _____         &kp ENTER   &kp DELETE  &kp DE_DOT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        _____     _____     _____         _____       &kp DELETE  &kp DE_DOT  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
         &kp DE_UE &kp DE_OE &kp DE_AE     &kp DE_SS   _____       &sl FUN     &kp HOME  &kp PG_DN &kp PG_UP &kp END
       >;
     };
