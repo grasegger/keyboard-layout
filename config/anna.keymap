@@ -156,36 +156,33 @@
       combo_wm_next {
         timeout-ms = <20>;
         key-positions = <16 17>;
-        bindings = <&wm_next>;
+        bindings = <&kp LA(LS(DE_K))>;
       };     
       
       combo_wm_prev {
         timeout-ms = <20>;
         key-positions = <17 18>;
-        bindings = <&wm_next>;
+        bindings = <&kp LA(LS(DE_J))>;
       };
 
       combo_wm_lay {
         timeout-ms = <20>;
         key-positions = <15 16>;
-        bindings = <&wm_layout>;
+        bindings = <&kp LA(LS(LC(SPACE)))>;
       };
 
       combo_tab_next {
         timeout-ms = <20>;
         key-positions = <13 14>;
-        bindings = <&tab_next>;
+        bindings = <&kp LC(TAB)>;
       };
       
       combo_tab_prev {
         timeout-ms = <20>;
         key-positions = <12 13>;
-        bindings = <&tab_prev>;
+        bindings = <&kp LS(LC(TAB))>;
       };
   };
-};
-
-/ {
 
   behaviors {
       currency: currency {
@@ -202,48 +199,6 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_CIRC>, <&kp DE_DEG>, <&kp DE_GRV>;
-      };
-  };
-
-  macros {
-      wm_layout: wm_layout {
-          label = "wm_layout";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-              = <&macro_tap &kp LA(LS(LC(SPACE)))>;
-      };
-
-      wm_next: wm_next {
-          label = "wm_next";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-              = <&macro_tap &kp LA(LS(DE_K))>;
-      };
-
-      wm_prev: wm_prev {
-          label = "wm_prev";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-              = <&macro_tap &kp LA(LS(DE_J))>;
-      };
-
-      tab_next: tab_next {
-          label = "tab_next";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-              = <&macro_tap &kp LC(TAB)>;
-      };
-
-      tab_prev: tab_prev {
-          label = "tab_prev";
-          compatible = "zmk,behavior-macro";
-          #binding-cells = <0>;
-          bindings
-              = <&macro_tap &kp LS(LC(TAB))>;
       };
   };
   
@@ -282,7 +237,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp F1        &kp F2        &kp F3            &kp F4      &kp F5        &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       _____         _____             _____       &kp C_BRI_UP  &kp C_BRI_DN  &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &tab_prev   &tab_next     _____         &wm_layout    &wm_prev    &wm_next      &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       _____         _____         _____         _____       _____         &bt BT_CLR
       >;
     };
   };
