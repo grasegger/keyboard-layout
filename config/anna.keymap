@@ -92,7 +92,7 @@
 #define AMPRV &kp LA(LS(DE_J))
 
 &caps_word {
-    continue-list = <DE_UNDS DE_MINS>;
+    continue-list = <DE_UNDS DE_MINS BACKSPACE DELETE>;
 };
 
 &mt {
