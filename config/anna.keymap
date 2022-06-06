@@ -91,11 +91,11 @@
 #define AMNXT &kp LA(LS(DE_K))
 #define AMPRV &kp LA(LS(DE_J))
 
-#define wm_next  <&kp LA(LS(DE_K))>
-#define wm_prev  <&kp LA(LS(DE_J))>
-#define wm_lay   <&kp LA(LS(LC(SPACE)))>
-#define tab_next <&kp LC(TAB)>
-#define tab_prev <&kp LS(LC(TAB))>
+#define wm_next  &kp LA(LS(DE_K))
+#define wm_prev  &kp LA(LS(DE_J))
+#define wm_lay   &kp LA(LS(LC(SPACE)))
+#define tab_next &kp LC(TAB)
+#define tab_prev &kp LS(LC(TAB))
 
 &caps_word {
     continue-list = <DE_UNDS DE_MINS BACKSPACE DELETE>;
