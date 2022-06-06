@@ -4,7 +4,7 @@
  */
 
 /dts-v1/;
-#include <nordic/nrf52820_qiaa.dtsi>
+#include <nordic/nrf52820_qdaa.dtsi>
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
