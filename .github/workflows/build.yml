@@ -86,6 +86,8 @@ jobs:
           then
             cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
           fi
+          cp build/ram.json "build/artifacts/${{ steps.variables.outputs.artifact-name }}_ram.json"
+          cp build/rom.json "build/artifacts/${{ steps.variables.outputs.artifact-name }}_rom.json"
       - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
