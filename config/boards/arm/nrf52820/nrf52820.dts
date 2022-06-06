@@ -37,10 +37,10 @@ RC(0,0)
 
 		diode-direction = "col2row";
 		row-gpios
-			= <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			= <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
 		col-gpios
-			= <&gpio1 35 GPIO_ACTIVE_HIGH>
+			= <&gpio0 35 GPIO_ACTIVE_HIGH>
 			;
 	};
 
