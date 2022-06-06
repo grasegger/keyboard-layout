@@ -57,6 +57,11 @@ RC(0,0)
 		label = "EXT_POWER";
 		control-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
 	};
+
+	vbatt: vbatt {
+		compatible = "zmk,battery-nrf-vddh";
+		label = "VBATT";
+	};
 };
 
 &gpiote {
