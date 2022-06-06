@@ -3,4 +3,4 @@
 
 config BOARD_NRF52820
 	bool "NRF52820"
-	depends on SOC_NRF52820_QIAA
+	depends on SOC_NRF52820_QDAA
