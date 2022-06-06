@@ -172,8 +172,7 @@
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         //        &lt FUN DE_C  &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt ALT DE_O  &mt ALT DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &lt FUN DE_H
 
-        _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-        // &kp DE_V      &kp DE_X        &kp DE_P        _____         &lt NUM SPACE &mo SYM       _____         &kp DE_F        &kp DE_Z        &kp DE_K
+        &kp DE_V      &kp DE_X        &kp DE_P        _____         &lt NUM SPACE &mo SYM       _____         &kp DE_F        &kp DE_Z        &kp DE_K
       >;
     };
 
