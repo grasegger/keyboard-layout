@@ -1,5 +1,5 @@
-identifier: nrf52833
-name: nrf52833
+identifier: nrf52820
+name: nrf52820
 type: mcu
 arch: arm
 toolchain:

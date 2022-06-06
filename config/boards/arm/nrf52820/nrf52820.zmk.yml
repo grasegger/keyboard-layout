@@ -1,0 +1,11 @@
+file_format: "1"
+id: nrf52820
+name: nrf52833
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+url: https://github.com/grasegger/keyboards
