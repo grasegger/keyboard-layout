@@ -99,6 +99,13 @@
   tapping-term-ms = <250>;
 };
 
+&lt {
+  quick-tap-ms = <125>;
+  global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <250>;
+};
+
 &sk {
     quick-release;
 };
@@ -185,7 +192,7 @@
         &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
         &hash_at        &currency   &kp DE_PIPE _____       &kp DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
       >;
-    }; //  
+    }; 
 
     fun {
       bindings = <
