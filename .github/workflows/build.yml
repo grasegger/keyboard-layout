@@ -73,7 +73,6 @@ jobs:
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
           west build -t ram_report
           west build -t rom_report
-          ls -la build
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts
