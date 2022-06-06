@@ -18,3 +18,4 @@ include:
     shield: anna_left
   - board: nice_nano_v2
     shield: anna_right
+  - board: nrf52833
