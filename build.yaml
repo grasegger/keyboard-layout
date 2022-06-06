@@ -19,3 +19,4 @@ include:
   - board: nice_nano_v2
     shield: anna_right
   - board: nrf52833
+  - board: nice60
