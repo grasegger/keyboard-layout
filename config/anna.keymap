@@ -154,7 +154,7 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_HASH>, <&kp DE_AT>;
-      }
+      };
 
       amperc: amperc {
           compatible = "zmk,behavior-tap-dance";
@@ -162,7 +162,7 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_AMPR>, <&kp DE_PERC>;
-      }
+      };
 
   };
   
