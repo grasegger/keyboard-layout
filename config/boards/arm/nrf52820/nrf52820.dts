@@ -57,18 +57,6 @@ RC(0,0)
 		label = "EXT_POWER";
 		control-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
 	};
-
-	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		label = "BATTERY";
-		io-channels = <&adc 2>;
-		output-ohms = <2000000>;
-		full-ohms = <(2000000 + 806000)>;
-	};
-};
-
-&adc {
-	status = "okay";
 };
 
 &gpiote {
