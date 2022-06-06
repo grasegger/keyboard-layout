@@ -172,13 +172,13 @@
 
       combo_tab_next {
         timeout-ms = <20>;
-        key-positions = <13 14>;
+        key-positions = <12 13>;
         bindings = <&kp LC(TAB)>;
       };
       
       combo_tab_prev {
         timeout-ms = <20>;
-        key-positions = <12 13>;
+        key-positions = <11 12>;
         bindings = <&kp LS(LC(TAB))>;
       };
 
