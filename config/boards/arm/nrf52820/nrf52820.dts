@@ -72,10 +72,6 @@ RC(0,0)
 	status = "okay";
 };
 
-&gpio1 {
-	status = "okay";
-};
-
 &usbd {
 	status = "okay";
 	cdc_acm_uart: cdc_acm_uart {
