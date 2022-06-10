@@ -167,9 +167,9 @@
     alpha {
       bindings = <
         _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-        &kp DE_J      &kp DE_L        &lt FUN DE_U    &kp DE_A      &kp DE_Q      &kp DE_W  &kp DE_B      &lt FUN DE_D    &kp DE_G        &kp DE_Y
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &kp DE_O      &kp DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_P        _____         &lt NUM SPACE &sl SYM   _____         &kp DE_F        &kp DE_Z        &kp DE_K
+        &kp DE_J      &kp DE_L        &lt FUN DE_U    &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B      &lt FUN DE_D    &kp DE_G        &kp DE_Y
+        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
+        &kp DE_V      &kp DE_X        &kp DE_P        _____         &lt NUM SPACE &sl SYM       _____         &kp DE_F        &kp DE_Z        &kp DE_K
       >;
     };
 
