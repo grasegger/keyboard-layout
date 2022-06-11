@@ -168,37 +168,37 @@
 
     alpha {
       bindings = <
-        _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp DE_J      &kp DE_L        &lt FUN DE_U    &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B      &lt FUN DE_D    &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_P        _____         &lt NUM SPACE &sl SYM       _____         &kp DE_F        &kp DE_Z        &kp DE_K
+        &kp DE_V      &kp DE_X        &kp DE_P        _____         _____         _____         _____         &kp DE_F        &kp DE_Z        &kp DE_K
+        _____         _____           _____           &lt NUM SPACE &lt NUM SPACE &sl SYM       &sl SYM       _____           _____           _____ 
       >;
     };
 
     num {
       bindings = <
-        _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp N1    &kp N2    &kp N3        &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  
         &kp ESC   &kp TAB   &kp BACKSPACE &kp ENTER &kp DELETE  &kp DE_SS &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE     _____     _____       &kp HOME  _____     &kp PG_DN &kp PG_UP &kp END
+        &kp DE_UE &kp DE_OE &kp DE_AE     _____     _____       _____     _____     &kp PG_DN &kp PG_UP &kp END
+        _____     _____     _____         _____     _____       &kp HOME  &kp HOME  _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &amperc 
-        &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN 
-        &hash_at        &currency   &kp DE_PIPE _____       &kp DE_DOT  &kp DE_COMM _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN    
+        &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &hash_at        &currency   &kp DE_PIPE _____       _____       _____       _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        _____           _____       _____       &kp DE_DOT  &kp DE_DOT  &kp DE_COMM &kp DE_COMM _____       _____       _____ 
       >;
     }; 
 
     fun {
       bindings = <
-        _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
         &kp F1        &kp F2        &kp F3            &kp F4      &kp F5          &kp F6            &kp F7        &kp F8                &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(TAB)) &kp LA(LS(DE_J))  &kp C_VOL_UP  &kp C_MUTE            &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       &kp LC(TAB)     &kp LA(LS(DE_K))  _____         &kp LA(LS(LC(SPACE))) &brightness   &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       _____           _____             _____         &kp LA(LS(LC(SPACE))) &brightness   &bt BT_CLR
+        _____         _____         _____             &kp LC(TAB) &kp LC(TAB)     &kp LA(LS(DE_K))  &kp LA(LS(DE_K)) _____ _____ _____
       >;
     };
   };
