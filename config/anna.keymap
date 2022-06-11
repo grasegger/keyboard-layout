@@ -134,33 +134,8 @@
           label = "WEIRD_SYMBOLS";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&kp DE_CIRC>, <&kp DE_TILD>, <&kp DE_DEG>, <&kp DE_GRV>;
+          bindings = <&kp DE_CIRC>, <&kp DE_DEG>;
       };
-
-      brightness: brightness {
-          compatible = "zmk,behavior-tap-dance";
-          label = "brightness";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp C_BRI_DN>, <&kp C_BRI_UP>;
-      };
-
-      hash_at: hash_at {
-          compatible = "zmk,behavior-tap-dance";
-          label = "hash_at";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_HASH>, <&kp DE_AT>;
-      };
-
-      amperc: amperc {
-          compatible = "zmk,behavior-tap-dance";
-          label = "amperc";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp DE_AMPR>, <&kp DE_PERC>;
-      };
-
   };
   
   keymap {
@@ -170,25 +145,25 @@
       bindings = <
         &kp DE_J      &kp DE_L        &lt FUN DE_U    &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B      &lt FUN DE_D    &kp DE_G        &kp DE_Y
         &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_P        _____         _____         _____         _____         &kp DE_F        &kp DE_Z        &kp DE_K
+        &kp DE_V      &kp DE_X        &kp DE_UE       &kp DE_AE     &kp DE_OE     &kp DE_P      &kp DE_F      &kp DE_Z        &kp DE_SS        &kp DE_K
         _____         _____           _____           &lt NUM SPACE &lt NUM SPACE &sl SYM       &sl SYM       _____           _____           _____ 
       >;
     };
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3        &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  
-        &kp ESC   &kp TAB   &kp BACKSPACE &kp ENTER &kp DELETE  &kp DE_SS &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
-        &kp DE_UE &kp DE_OE &kp DE_AE     _____     _____       _____     _____     &kp PG_DN &kp PG_UP &kp END
-        _____     _____     _____         _____     _____       &kp HOME  &kp HOME  _____     _____     _____
+        &kp N1    &kp N2    &kp N3        &kp N4      &kp N5  &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  
+        &kp ESC   &kp TAB   &kp BACKSPACE &kp DELETE  _____   _____     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT 
+        _____     _____     _____         _____       _____   _____     &kp HOME  &kp PG_DN &kp PG_UP &kp END
+        _____     _____     _____         _____       _____   _____     &kp ENTER   _____     _____     _____
       >;
     };
 
     sym {
       bindings = <
-        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &amperc 
+        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &hash_at        &currency   &kp DE_PIPE _____       _____       _____       _____       &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
         _____           _____       _____       &kp DE_DOT  &kp DE_DOT  &kp DE_COMM &kp DE_COMM _____       _____       _____ 
       >;
     }; 
@@ -197,7 +172,7 @@
       bindings = <
         &kp F1        &kp F2        &kp F3            &kp F4      &kp F5          &kp F6            &kp F7        &kp F8                &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(TAB)) &kp LA(LS(DE_J))  &kp C_VOL_UP  &kp C_MUTE            &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       _____           _____             _____         &kp LA(LS(LC(SPACE))) &brightness   &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       &kp C_BRI_DN    &kp C_BRI_UP      _____         &kp LA(LS(LC(SPACE))) _____         &bt BT_CLR
         _____         _____         _____             &kp LC(TAB) &kp LC(TAB)     &kp LA(LS(DE_K))  &kp LA(LS(DE_K)) _____ _____ _____
       >;
     };
