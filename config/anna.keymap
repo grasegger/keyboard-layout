@@ -244,7 +244,7 @@
 
     mac_qwertz {
       bindings = <
-        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp DE_P
+        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp P
         &mt LALT A  &mt LSHIFT S  &mt LCTRL D &mt LGUI F    &mt HYP G &mt HYP H &mt LGUI J  &mt LCTRL K &mt LSHIFT L  &mt LALT DE_OE
         &kp DE_Y    &kp X         &kp C       &kp V         &kp B     &kp N     &kp M       &kp DE_SS   &kp DE_AE     &kp DE_UE
         _____       _____         _____       &lt NUM SPACE _____     _____     &sl SYM     _____       _____         _____ 
@@ -253,7 +253,7 @@
 
     pc_qwertz {
       bindings = <
-        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp DE_P
+        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp P
         &mt LALT A  &mt LSHIFT S  &mt LCTRL D &mt LGUI F    &mt HYP G &mt HYP H &mt LGUI J  &mt LCTRL K &mt LSHIFT L  &mt LALT DE_OE
         &kp DE_Y    &kp X         &kp C       &kp V         &kp B     &kp N     &kp M       &kp DE_SS   &kp DE_AE     &kp DE_UE
         _____       _____         _____       &lt NUM SPACE _____     _____     &sl DSM     _____       _____         _____ 
