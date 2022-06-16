@@ -76,6 +76,8 @@
 #define PC  4
 #define DSM 5
 #define GAM 6
+#define QWM 7
+#define QWP 8
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -133,6 +135,18 @@
           timeout-ms = <20>;
           key-positions = <20 21 22 23>;
           bindings = <&to GAM>;
+      };
+      
+      combo_mac_q {
+          timeout-ms = <20>;
+          key-positions = <6 7 8 9>;
+          bindings = <&to QWM>;
+      };
+      
+      combo_pc_q {
+          timeout-ms = <20>;
+          key-positions = <16 17 18 19>;
+          bindings = <&to QWP>;
       };
   };
 
@@ -225,6 +239,24 @@
         &kp CAPS    &kp A &kp S &kp D         &kp F     &kp I   _____       _____       _____   _____
         &kp LSHIFT  &kp Z &kp X & kp C        &kp LCTRL &kp M   &kp ESC     _____       _____   _____
         _____       _____ _____ &lt NUM SPACE _____     _____   &kp ENTER   _____       _____   _____
+      >;
+    };
+
+    mac_qwertz {
+      bindings = <
+        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp DE_P
+        &mt LALT A  &mt LSHIFT S  &mt LCTRL D &mt LGUI F    &mt HYP G &mt HYP H &mt LGUI J  &mt LCTRL K &mt LSHIFT L  &mt LALT DE_OE
+        &kp DE_Y    &kp X         &kp C       &kp V         &kp B     &kp N     &kp M       &kp DE_SS   &kp DE_AE     &kp DE_UE
+        _____       _____         _____       &lt NUM SPACE _____     _____     &sl SYM     _____       _____         _____ 
+      >;
+    };
+
+    pc_qwertz {
+      bindings = <
+        &kp Q       &kp W         &lt FUN E   &kp R         &kp T     &kp DE_Z  &kp U       &lt FUN I   &kp O         &kp DE_P
+        &mt LALT A  &mt LSHIFT S  &mt LCTRL D &mt LGUI F    &mt HYP G &mt HYP H &mt LGUI J  &mt LCTRL K &mt LSHIFT L  &mt LALT DE_OE
+        &kp DE_Y    &kp X         &kp C       &kp V         &kp B     &kp N     &kp M       &kp DE_SS   &kp DE_AE     &kp DE_UE
+        _____       _____         _____       &lt NUM SPACE _____     _____     &sl DSM     _____       _____         _____ 
       >;
     };
   };
