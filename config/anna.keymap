@@ -16,9 +16,9 @@
 
 
 /* MAC GERMAN KEYBOARD CODES */
-#define MAC_AT LA(DE_L)           // @
-#define MAC_EURO LA(DE_E)         // €
-#define MAC_TILD LA(DE_N)         // ~
+#define MAC_AT LA(L)           // @
+#define MAC_EURO LA(E)         // €
+#define MAC_TILD LA(N)         // ~
 #define MAC_BSLS LS(LA(NUMBER_7)) // (backslash)
 #define MAC_LBRC LA(NUMBER_5)     // [
 #define MAC_RBRC LA(NUMBER_6)     // ]
@@ -53,8 +53,8 @@
 #define DE_ASTR LS(DE_PLUS) // *
 #define DE_QUOT LS(DE_HASH) // '
 #define DE_RABK LS(DE_LABK) // >
-#define DE_SCLN LS(DE_COMM) // ;
-#define DE_COLN LS(DE_DOT)  // :
+#define DE_SCLN LS(COMMA) // ;
+#define DE_COLN LS(PERIOD)  // :
 
 #define DE_AT RA(Q)           // @
 #define DE_EURO RA(E)         // €
