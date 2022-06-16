@@ -78,6 +78,8 @@
 #define GAM 6
 #define QWM 7
 #define QWP 8
+#define CLI 9
+#define YSM 10
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -147,6 +149,12 @@
           timeout-ms = <20>;
           key-positions = <16 17 18 19>;
           bindings = <&to QWP>;
+      };
+      
+      combo_qwerty{
+          timeout-ms = <20>;
+          key-positions = <26 27 28 29>;
+          bindings = <&to CLI>;
       };
   };
 
@@ -257,6 +265,24 @@
         &mt LALT A  &mt LSHIFT S  &mt LCTRL D &mt LGUI F    &mt HYP G &mt HYP H &mt LGUI J  &mt LCTRL K &mt LSHIFT L  &mt LALT DE_OE
         &kp DE_Y    &kp X         &kp C       &kp V         &kp B     &kp N     &kp M       &kp DE_SS   &kp DE_AE     &kp DE_UE
         _____       _____         _____       &lt NUM SPACE _____     _____     &sl DSM     _____       _____         _____ 
+      >;
+    };
+
+    qwerty_based_base {
+      bindings = <
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W     &kp B       &lt FUN D   &kp G         &kp Z
+        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M &mt LGUI N  &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   _____         _____     &kp P     &kp F       &kp Y       _____         &kp K
+        _____       _____         _____       &lt NUM SPACE _____     _____     &sl YSM     _____       _____         _____ 
+      >;
+    };
+
+    qwerty_based_syms {
+      bindings = <  
+        _____         &kp UNDS    &kp LBKT  &kp RBKT    &kp PLUS  &kp EXCL  &kp LT    &kp GT    &kp EQUAL &kp AMPS 
+        &kp BACKSLASH &kp SLASH   &kp LBRC  &kp RBRC    &kp ASTRK &kp QMARK &kp LPAR  &kp RPAR  &kp MINUS &kp COLON
+        &kp HASH      &kp DOLLAR  &kp PIPE  &kp TILDE   _____     &kp PRCNT &kp AT    &kp SQT   &kp DQT   &kp SEMI
+        _____         _____       _____     &kp PERIOD  _____     _____     &kp COMMA _____     _____     _____ 
       >;
     };
   };
