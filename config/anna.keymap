@@ -279,7 +279,7 @@
 
     qwerty_based_syms {
       bindings = <  
-        _____         &kp UNDS    &kp LBKT  &kp RBKT    &kp PLUS  &kp EXCL  &kp LT    &kp GT    &kp EQUAL &kp AMPS 
+        _____         &kp UNDER   &kp LBKT  &kp RBKT    &kp PLUS  &kp EXCL  &kp LT    &kp GT    &kp EQUAL &kp AMPS 
         &kp BACKSLASH &kp SLASH   &kp LBRC  &kp RBRC    &kp ASTRK &kp QMARK &kp LPAR  &kp RPAR  &kp MINUS &kp COLON
         &kp HASH      &kp DOLLAR  &kp PIPE  &kp TILDE   _____     &kp PRCNT &kp AT    &kp SQT   &kp DQT   &kp SEMI
         _____         _____       _____     &kp PERIOD  _____     _____     &kp COMMA _____     _____     _____ 
