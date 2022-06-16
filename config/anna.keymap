@@ -9,46 +9,33 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-/* GERMAN KEY CODES */
+/* UNIVERSAL GERMAN KEY CODES */
+#define DE_Z    Y             // Z
+#define DE_Y    Z             // Y
+#define DE_SS   MINUS         // ß
+
+
+/* MAC GERMAN KEYBOARD CODES */
+#define MAC_AT LA(DE_L)           // @
+#define MAC_EURO LA(DE_E)         // €
+#define MAC_TILD LA(DE_N)         // ~
+#define MAC_BSLS LS(LA(NUMBER_7)) // (backslash)
+#define MAC_LBRC LA(NUMBER_5)     // [
+#define MAC_RBRC LA(NUMBER_6)     // ]
+#define MAC_PIPE LA(NUMBER_7)     // |
+#define MAC_LCBR LA(NUMBER_8)     // {
+#define MAC_RCBR LA(NUMBER_9)     // }
+
+/* DIN GERMAN KEYBOARD CODES */
 #define DE_CIRC GRAVE // ^ (dead)
-#define DE_SS   MINUS // ß
 #define DE_ACUT EQUAL // ´ (dead)
-#define DE_Q    Q            // Q
-#define DE_W    W            // W
-#define DE_E    E            // E
-#define DE_R    R            // R
-#define DE_T    T            // T
-#define DE_Z    Y            // Z
-#define DE_U    U            // U
-#define DE_I    I            // I
-#define DE_O    O            // O
-#define DE_P    P            // P
+#define DE_UNDS LS(DE_MINS) // _
 #define DE_UDIA LEFT_BRACKET // Ü
 #define DE_PLUS RIGHT_BRACKET // +
-#define DE_A    A            // A
-#define DE_S    S            // S
-#define DE_D    D            // D
-#define DE_F    F            // F
-#define DE_G    G            // G
-#define DE_H    H            // H
-#define DE_J    J            // J
-#define DE_K    K            // K
-#define DE_L    L            // L
 #define DE_ODIA SEMICOLON    // Ö
 #define DE_ADIA SINGLE_QUOTE // Ä
 #define DE_HASH NON_US_HASH  // #
 #define DE_LABK NON_US_BACKSLASH // <
-#define DE_Y    Z                // Y
-#define DE_X    X                // X
-#define DE_C    C                // C
-#define DE_V    V                // V
-#define DE_B    B                // B
-#define DE_N    N                // N
-#define DE_M    M                // M
-#define DE_COMM COMMA            // ,
-#define DE_DOT  PERIOD           // .
-#define DE_MINS SLASH            // -
-#define DE_DEG  LS(DE_CIRC) // °
 #define DE_EXLM LS(NUMBER_1)    // !
 #define DE_DQUO LS(NUMBER_2)    // "
 #define DE_SECT LS(NUMBER_3)    // §
@@ -59,6 +46,8 @@
 #define DE_LPRN LS(NUMBER_8)    // (
 #define DE_RPRN LS(NUMBER_9)    // )
 #define DE_EQL  LS(NUMBER_0)    // =
+#define DE_MINS SLASH            // -
+#define DE_DEG  LS(DE_CIRC) // °
 #define DE_QUES LS(DE_SS)   // ?
 #define DE_GRV  LS(DE_ACUT) // ` (dead)
 #define DE_ASTR LS(DE_PLUS) // *
@@ -66,23 +55,27 @@
 #define DE_RABK LS(DE_LABK) // >
 #define DE_SCLN LS(DE_COMM) // ;
 #define DE_COLN LS(DE_DOT)  // :
-#define DE_UNDS LS(DE_MINS) // _
-#define DE_LBRC LA(NUMBER_5)    // [
-#define DE_RBRC LA(NUMBER_6)    // ]
-#define DE_PIPE LA(NUMBER_7)    // |
-#define DE_LCBR LA(NUMBER_8)    // {
-#define DE_RCBR LA(NUMBER_9)    // }
-#define DE_AT LA(DE_L)    // @
-#define DE_EURO LA(DE_E)    // €
-#define DE_TILD LA(DE_N)    // ~
-#define DE_BSLS LS(LA(NUMBER_7))    // (backslash)
-                                     
+
+#define DE_AT RA(Q)           // @
+#define DE_EURO RA(E)         // €
+#define DE_TILD RA(DE_PLUS)         // ~
+#define DE_BSLS RA(DE_SS) // (backslash)
+#define DE_LBRC LA(NUMBER_8)     // [
+#define DE_RBRC LA(NUMBER_9)     // ]
+#define DE_PIPE LA(DE_LABK)     // |
+#define DE_LCBR LA(NUMBER_7)     // {
+#define DE_RCBR LA(NUMBER_0)     // }
+
+
 #define _____ &none
 
 #define ALP 0
 #define NUM 1
 #define SYM 2
 #define FUN 3
+#define PC  4
+#define DSM 5
+#define GAM 6
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -110,21 +103,51 @@
     quick-release;
 };
 
+&sl {
+    quick-release;
+};
+
 /{
   combos {
       compatible = "zmk,combos";
 
       combo_caps {
           timeout-ms = <20>;
-          key-positions = <21 28>;
+          key-positions = <11 18>;
           bindings = <&caps_word>;
-      }; 
+      };
+
+      combo_mac {
+          timeout-ms = <20>;
+          key-positions = <0 1 2 3>;
+          bindings = <&to ALP>;
+      };
+
+      combo_pc {
+          timeout-ms = <20>;
+          key-positions = <10 11 12 13>;
+          bindings = <&to PC>;
+      };
+      
+      combo_gaming {
+          timeout-ms = <20>;
+          key-positions = <20 21 22 23>;
+          bindings = <&to GAM>;
+      };
   };
 
   behaviors {
       currency: currency {
           compatible = "zmk,behavior-tap-dance";
           label = "currency";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp DE_DLR>, <&kp MAC_EURO>;
+      };
+
+      currency_din: currency_din {
+          compatible = "zmk,behavior-tap-dance";
+          label = "currency_din";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
           bindings = <&kp DE_DLR>, <&kp DE_EURO>;
@@ -142,39 +165,66 @@
   keymap {
     compatible = "zmk,keymap";
 
-    alpha {
+    mac_base {
       bindings = <
-        &kp DE_J      &kp DE_L        &lt FUN DE_U    &kp DE_A      &kp DE_Q      &kp DE_W      &kp DE_B      &lt FUN DE_D    &kp DE_G        &kp DE_Y
-        &mt LALT DE_C &mt LSHIFT DE_R &mt LCTRL DE_I  &mt LGUI DE_E &mt HYP DE_O  &mt HYP DE_M  &mt LGUI DE_N &mt LCTRL DE_T  &mt LSHIFT DE_S &mt LALT DE_H
-        &kp DE_V      &kp DE_X        &kp DE_UE       &kp DE_AE     &kp DE_OE     &kp DE_P      &kp DE_F      &kp DE_Z        &kp DE_SS        &kp DE_K
-        _____         _____           _____           &lt NUM SPACE &lt NUM SPACE &sl SYM       &sl SYM       _____           _____           _____ 
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W     &kp B       &lt FUN D   &kp G         &kp DE_Y
+        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M &mt LGUI N  &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P     &kp F       &kp DE_Z    &kp DE_SS     &kp K
+        _____       _____         _____       &lt NUM SPACE _____     _____     &sl SYM     _____       _____         _____ 
       >;
     };
 
     num {
       bindings = <
-        &kp N1    &kp N2    &kp N3    &kp N4        &kp N5    &kp N6    &kp N7          &kp N8    &kp N9    &kp N0  
-        &kp ESC   &kp TAB   &kp ENTER &kp DELETE    _____     _____     &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT 
-        _____     _____     _____     &kp BACKSPACE &kp SPACE _____     &kp HOME        &kp PG_DN &kp PG_UP &kp END
-        _____     _____     _____     _____         _____     _____     &kp BACKSPACE   _____     _____     _____
+        &kp N1      &kp N2    &kp N3        &kp N4      &kp N5  &kp N6  &kp N7          &kp N8    &kp N9    &kp N0  
+        &kp ESC     &kp TAB   &kp ENTER     &kp DELETE  _____   _____   &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT 
+        &kp PERIOD  &kp COMMA &kp BACKSPACE &kp SPACE   _____   _____   &kp HOME        &kp PG_DN &kp PG_UP &kp END
+        _____       _____     _____         _____       _____   _____   &kp BACKSPACE   _____     _____     _____
       >;
     };
 
-    sym {
+    mac_sym {
       bindings = <
-        &weird_symbols  &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
-        &kp DE_BSLS     &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH     &currency   &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        _____           _____       _____       &kp DE_DOT  &kp DE_DOT  &kp DE_COMM &kp DE_COMM _____       _____       _____ 
+        &weird_symbols  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &currency   &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp MAC_AT  &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        _____           _____       _____         &kp PERIOD    _____       _____       &kp COMMA   _____       _____       _____ 
       >;
-    }; 
+    };
 
     fun {
       bindings = <
-        &kp F1        &kp F2        &kp F3            &kp F4      &kp F5          &kp F6            &kp F7        &kp F8                &kp F9        &kp F10
-        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(TAB)) &kp LA(LS(DE_J))  &kp C_VOL_UP  &kp C_MUTE            &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      _____       &kp C_BRI_DN    &kp C_BRI_UP      _____         &kp LA(LS(LC(SPACE))) _____         &bt BT_CLR
-        _____         _____         _____             &kp LC(TAB) &kp LC(TAB)     &kp LA(LS(DE_K))  &kp LA(LS(DE_K)) _____ _____ _____
+        &kp F1        &kp F2        &kp F3            &kp F4      &kp F5          &kp F6            &kp F7            &kp F8      &kp F9        &kp F10
+        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(TAB)) &kp LA(LS(DE_J))  &kp C_VOL_UP      &kp C_MUTE  &kp C_VOL_DN  &kp F12
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt OUT_USB &kp C_BRI_DN    &kp C_BRI_UP      &bt OUT_BLE       _____       _____         &bt BT_CLR
+        _____         _____         _____             &kp LC(TAB) _____           _____             &kp LA(LS(DE_K))  _____       _____         _____
+      >;
+    };   
+    
+    pc_base {
+      bindings = <
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W     &kp B       &lt FUN D   &kp G         &kp DE_Y
+        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M &mt LGUI N  &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P     &kp F       &kp DE_Z    &kp DE_SS     &kp K
+        _____       _____         _____       &lt NUM SPACE _____     _____     &sl DSM     _____       _____         _____ 
+      >;
+    };
+
+    pc_sym {
+      bindings = <
+        &weird_symbols  &kp DE_UNDS   &kp DE_LBRC &kp DE_RBRC   &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS     &kp DE_SLSH   &kp DE_LCBR &kp DE_RCBR   &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &currency_din &kp DE_PIPE &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp DE_AT   &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        _____           _____         _____       &kp PERIOD    _____       _____       &kp COMMA   _____       _____       _____ 
+      >;
+    };
+
+    gaming {
+      bindings = <
+        &kp TAB     &kp Q &kp W &kp E         &kp R     &kp N1  &kp N2      &lt FUN N3  &kp N4  &kp N5
+        &kp CAPS    &kp A &kp S &kp D         &kp F     &kp I   _____       _____       _____   _____
+        &kp LSHIFT  &kp Z &kp X & kp C        &kp LCTRL &kp M   &kp ESC     _____       _____   _____
+        _____       _____ _____ &lt NUM SPACE _____     _____   &kp ENTER   _____       _____   _____
       >;
     };
   };
