@@ -81,8 +81,6 @@
 #define DE_AE DE_ADIA
 #define DE_OE DE_ODIA
 
-#define WORK 
-
 #define HYP LG(LC(LS(LALT)))
 
 &caps_word {
