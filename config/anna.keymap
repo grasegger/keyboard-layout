@@ -113,8 +113,6 @@
             label = "work";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
             bindings
                 = <&macro_tap &out OUT_BLE>
                 , <&macro_tap &to ALP>
@@ -126,8 +124,6 @@
             label = "phone";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
             bindings
                 = <&macro_tap &out OUT_BLE>
                 , <&macro_tap &to PC>
@@ -139,8 +135,6 @@
             label = "private";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
             bindings
                 = <&macro_tap &out OUT_BLE>
                 , <&macro_tap &to PC>
@@ -152,8 +146,6 @@
             label = "gaming";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
             bindings
                 = <&macro_tap &out OUT_BLE>
                 , <&macro_tap &to GAM>
