@@ -74,8 +74,8 @@
 #define PC  2
 #define DSM 3
 #define GAM 4
-#define NUM 6
-#define FUN 7
+#define NUM 5
+#define FUN 6
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -140,7 +140,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "shift";
         #binding-cells = <2>;
-        flavor = "hold-preferred";
+        flavor = "tap-preferred";
         tapping-term-ms = <200>;
         bindings = <&mo>, <&skq>;
     };
