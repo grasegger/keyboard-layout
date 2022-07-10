@@ -107,58 +107,6 @@
     quick-release;
 };
 
-/ {
-    macros {
-        work: work {
-            label = "work";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                , <&macro_tap &bt BT_SEL 0>
-                , <&macro_tap &to ALP>
-                ;
-        };
-
-        phone: phone {
-            label = "phone";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                , <&macro_tap &bt BT_SEL 1>
-                , <&macro_tap &to PC>
-                ;
-        };
-
-        private: private {
-            label = "private";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                , <&macro_tap &bt BT_SEL 2>
-                , <&macro_tap &to PC>
-                ;
-        };
-
-        gaming: gaming {
-            label = "private";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = 
-                , <&macro_tap &bt BT_SEL 2>
-                , <&macro &to GAM>
-                ;
-        };
-    };
-};
-
 /{
   combos {
       compatible = "zmk,combos";
@@ -260,7 +208,7 @@
       bindings = <
         &kp F1        &kp F2        &kp F3            &kp F4        &kp F5          &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LS(LC(TAB)) &kp LA(LS(J)) &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &work         &bt BT_SEL 1  &bt BT_SEL 2      _____         &kp C_BRI_DN    &kp C_BRI_UP  &out OUT_USB  _____       _____         &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_USB  &kp C_BRI_DN    &kp C_BRI_UP  &to ALP       &to PC      &to GAM       &bt BT_CLR
         _____         _____         _____             &kp LC(TAB)   _____           _____         &kp LA(LS(K)) _____       _____         _____
       >;
     };
