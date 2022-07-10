@@ -119,7 +119,7 @@
             tap-ms = <0>;
             bindings = 
                 , <&macro_tap &bt BT_SEL 0>
-                , <&macro &to ALP>
+                , <&macro_tap &to ALP>
                 ;
         };
 
@@ -131,7 +131,7 @@
             tap-ms = <0>;
             bindings = 
                 , <&macro_tap &bt BT_SEL 1>
-                , <&macro &to PC>
+                , <&macro_tap &to PC>
                 ;
         };
 
@@ -143,7 +143,7 @@
             tap-ms = <0>;
             bindings = 
                 , <&macro_tap &bt BT_SEL 2>
-                , <&macro &to PC>
+                , <&macro_tap &to PC>
                 ;
         };
 
