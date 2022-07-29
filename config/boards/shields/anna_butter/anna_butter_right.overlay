@@ -7,7 +7,7 @@
  #include "anna_butter.dtsi"
 
 &default_transform {
-	col-offset = <5>;
+	col-offset = <16>;
 };
 
 &kscan0 { 
