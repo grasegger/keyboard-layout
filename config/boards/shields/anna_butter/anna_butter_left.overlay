@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
- #include "anna.dtsi"
+ #include "anna_butter.dtsi"
 
 
 &kscan0 { 
