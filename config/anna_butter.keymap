@@ -1,0 +1,236 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/* UNIVERSAL GERMAN KEY CODES */
+#define DE_Z    Y             // Z
+#define DE_Y    Z             // Y
+#define DE_SS   MINUS         // ß
+
+
+/* MAC GERMAN KEYBOARD CODES */
+#define MAC_AT LA(L)           // @
+#define MAC_EURO LA(E)         // €
+#define MAC_TILD LA(N)         // ~
+#define MAC_BSLS LS(LA(NUMBER_7)) // (backslash)
+#define MAC_LBRC LA(NUMBER_5)     // [
+#define MAC_RBRC LA(NUMBER_6)     // ]
+#define MAC_PIPE LA(NUMBER_7)     // |
+#define MAC_LCBR LA(NUMBER_8)     // {
+#define MAC_RCBR LA(NUMBER_9)     // }
+
+/* DIN GERMAN KEYBOARD CODES */
+#define DE_CIRC GRAVE // ^ (dead)
+#define DE_ACUT EQUAL // ´ (dead)
+#define DE_UNDS LS(DE_MINS) // _
+#define DE_UDIA LEFT_BRACKET // Ü
+#define DE_PLUS RIGHT_BRACKET // +
+#define DE_ODIA SEMICOLON    // Ö
+#define DE_ADIA SINGLE_QUOTE // Ä
+#define DE_HASH NON_US_HASH  // #
+#define DE_LABK NON_US_BACKSLASH // <
+#define DE_EXLM LS(NUMBER_1)    // !
+#define DE_DQUO LS(NUMBER_2)    // "
+#define DE_SECT LS(NUMBER_3)    // §
+#define DE_DLR  LS(NUMBER_4)    // $
+#define DE_PERC LS(NUMBER_5)    // %
+#define DE_AMPR LS(NUMBER_6)    // &
+#define DE_SLSH LS(NUMBER_7)    // /
+#define DE_LPRN LS(NUMBER_8)    // (
+#define DE_RPRN LS(NUMBER_9)    // )
+#define DE_EQL  LS(NUMBER_0)    // =
+#define DE_MINS SLASH            // -
+#define DE_DEG  LS(DE_CIRC) // °
+#define DE_QUES LS(DE_SS)   // ?
+#define DE_GRV  LS(DE_ACUT) // ` (dead)
+#define DE_ASTR LS(DE_PLUS) // *
+#define DE_QUOT LS(DE_HASH) // '
+#define DE_RABK LS(DE_LABK) // >
+#define DE_SCLN LS(COMMA) // ;
+#define DE_COLN LS(PERIOD)  // :
+
+#define DE_AT RA(Q)           // @
+#define DE_EURO RA(E)         // €
+#define DE_TILD RA(DE_PLUS)         // ~
+#define DE_BSLS RA(DE_SS) // (backslash)
+#define DE_LBRC RA(NUMBER_8)     // [
+#define DE_RBRC RA(NUMBER_9)     // ]
+#define DE_PIPE RA(DE_LABK)     // |
+#define DE_LCBR RA(NUMBER_7)     // {
+#define DE_RCBR RA(NUMBER_0)     // }
+
+
+#define _____ &none
+
+#define ALP 0
+#define SYM 1
+#define PC  2
+#define DSM 3
+#define GAM 4
+#define NUM 5
+#define FUN 6
+
+#define DE_UE DE_UDIA
+#define DE_AE DE_ADIA
+#define DE_OE DE_ODIA
+
+#define HYP LG(LC(LS(LALT)))
+
+&caps_word {
+    continue-list = <DE_UNDS DE_MINS BACKSPACE DELETE>;
+};
+
+&mt {
+  quick-tap-ms = <125>;
+  global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <250>;
+};
+
+&lt {
+  quick-tap-ms = <125>;
+  global-quick-tap;
+};
+
+&sk {
+    quick-release;
+};
+
+&sl {
+    quick-release;
+};
+
+/ {
+    macros {
+        work: work {
+            label = "work";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings
+                = <&macro_tap &out OUT_BLE>
+                , <&macro_tap &to ALP>
+                , <&macro_tap &bt BT_SEL 0>
+                ;
+        };
+    };
+};
+
+
+
+/{
+  combos {
+      compatible = "zmk,combos";
+
+      combo_caps {
+          timeout-ms = <20>;
+          key-positions = <11 18>;
+          bindings = <&caps_word>;
+      };
+  };
+
+  behaviors {
+      weird_symbols: weird_symbols {
+          compatible = "zmk,behavior-tap-dance";
+          label = "WEIRD_SYMBOLS";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp DE_CIRC>, <&kp DE_DEG>;
+      };
+
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        label = "STICKY_KEY_QUICK_RELEASE";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+      };
+
+      sf: sf {
+        compatible = "zmk,behavior-hold-tap";
+        label = "shift";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&skq>;
+    };
+  };
+  
+  keymap {
+    compatible = "zmk,keymap";
+
+    mac_base {
+      bindings = <
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_Y
+        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp DE_SS     &kp K
+                                                            &lt NUM SPACE &sf SYM LSHIFT
+      >;
+    };
+
+
+    mac_sym {
+      bindings = <
+        &weird_symbols  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+                                                                &kp MAC_AT  _____                                                       
+      >;
+    };
+
+    pc_base {
+      bindings = <
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q         &kp W          &kp B           &lt FUN D   &kp G         &kp DE_Y
+        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &mt HYP O     &mt HYP M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE     &kp P          &kp F           &kp DE_Z    &kp DE_SS     &kp K
+                                                            &lt NUM SPACE &sf DSM LSHIFT                                  
+      >;
+    };
+
+    pc_sym {
+      bindings = <
+        &weird_symbols  &kp DE_UNDS   &kp DE_LBRC &kp DE_RBRC   &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
+        &kp DE_BSLS     &kp DE_SLSH   &kp DE_LCBR &kp DE_RCBR   &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &kp DE_DLR    &kp DE_PIPE &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+                                                                &kp DE_AT   _____ 
+      >;
+    };
+
+    gaming {
+      bindings = <
+        &kp TAB     &kp Q &kp W &kp E         &kp R         &kp N1  &kp N2      &lt FUN N3  &kp N4  &kp N5
+        &kp CAPS    &kp A &kp S &kp D         &kp F         &kp N6  &kp N7      &kp N8      &kp N9  &kp N0
+        &kp LSHIFT  &kp Z &kp X &kp C         &kp LCTRL     &kp M   &kp ESC     &kp I       _____   _____
+                                              &lt NUM SPACE &kp ENTER                            
+      >;
+    };
+    
+    num {
+      bindings = <
+        &kp N1      &kp N2    &kp N3        &kp N4      &kp N5      &kp N6    &kp N7          &kp N8    &kp N9    &kp N0  
+        &kp ESC     &kp TAB   &kp ENTER     &kp DELETE  &kp PERIOD  &kp COMMA &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT 
+        _____       _____     &kp BACKSPACE &kp SPACE   _____       _____     &kp HOME        &kp PG_DN &kp PG_UP &kp END
+                                                        _____       &kp BACKSPACE                            
+      >;
+    };
+
+    fun {
+      bindings = <
+        &kp F1        &kp F2        &kp F3            &kp F4        &kp F5          &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
+        &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LS(LC(TAB)) &kp LA(LS(J)) &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_TOG  &kp C_BRI_DN    &kp C_BRI_UP  &to ALP       &to PC      &to GAM       &bt BT_CLR
+                                                                    &kp LC(TAB)     &kp LA(LS(K))                                
+      >;
+    };
+
+  };
+};
