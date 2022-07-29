@@ -1,0 +1,11 @@
+file_format: "1"
+id: anna_butter
+name: Anna Butter
+type: shield
+url: github.com/grasegger/keyboards
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - anna_butter_left
+  - anna_butter_right
