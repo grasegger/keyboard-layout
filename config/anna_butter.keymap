@@ -143,7 +143,7 @@
           label = "WEIRD_SYMBOLS";
           #binding-cells = <0>;
           tapping-term-ms = <200>;
-          bindings = <&kp DE_CIRC>, <&kp DE_DEG>;
+          bindings = <&kp DOT>, <&kp DE_CIRC>, <&kp DE_DEG>;
       };
 
       skq: sticky_key_quick_release {
@@ -173,7 +173,7 @@
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_Y
         &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
         &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp DE_SS     &kp K
-        &lt NUM SPACE &sf SYM LSHIFT
+        &lt NUM SPACE &sl SYM
       >;
     };
 
@@ -183,7 +183,7 @@
         &weird_symbols  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
         &kp DE_HASH     &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp MAC_AT  _____
+        &kp MAC_AT  &kp COMMA
       >;
     };
 
@@ -192,7 +192,7 @@
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q         &kp W          &kp B           &lt FUN D   &kp G         &kp DE_Y
         &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &mt HYP O     &mt HYP M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
         &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE     &kp P          &kp F           &kp DE_Z    &kp DE_SS     &kp K
-        &lt NUM SPACE &sf DSM LSHIFT
+        &lt NUM SPACE &sl DSM
       >;
     };
 
@@ -200,8 +200,8 @@
       bindings = <
         &weird_symbols  &kp DE_UNDS   &kp DE_LBRC &kp DE_RBRC   &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR 
         &kp DE_BSLS     &kp DE_SLSH   &kp DE_LCBR &kp DE_RCBR   &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH     &kp DE_DLR    &kp DE_PIPE &kp MAC_TILD  &kp DE_GRV  &kp DE_PERC &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp DE_AT   _____
+        &kp DE_HASH     &kp DE_DLR    &kp DE_PIPE &kp DE_TILD  &kp DE_GRV  &kp DE_PERC &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp DE_AT   &kp COMMA
       >;
     };
 
