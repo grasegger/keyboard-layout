@@ -172,7 +172,7 @@
       bindings = <
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp DE_Y      &kp K
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp K         &kp DE_Y
         &lt NUM SPACE &sl SYM
       >;
     };
@@ -189,9 +189,9 @@
 
     pc_base {
       bindings = <
-        &kp J       &kp L         &lt FUN U   &kp A         &kp Q         &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &mt HYP O     &mt HYP M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE     &kp P          &kp F           &kp DE_Z    &kp DE_Y      &kp K
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
+        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &mt HYP O &mt HYP M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp K         &kp DE_Y
         &lt NUM SPACE &sl DSM
       >;
     };
