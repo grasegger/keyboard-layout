@@ -71,8 +71,6 @@ jobs:
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
-          west build -t ram_report
-          west build -t rom_report
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts
@@ -85,8 +83,6 @@ jobs:
           then
             cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
           fi
-          cp build/ram.json "build/artifacts/${{ steps.variables.outputs.artifact-name }}_ram.json"
-          cp build/rom.json "build/artifacts/${{ steps.variables.outputs.artifact-name }}_rom.json"
       - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
