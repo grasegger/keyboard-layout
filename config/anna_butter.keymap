@@ -97,6 +97,8 @@
 &lt {
   quick-tap-ms = <125>;
   global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <250>;
 };
 
 &sk {
@@ -172,7 +174,7 @@
       bindings = <
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &mt HYP O &mt HYP M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp K         &kp DE_Y
+        &kp V       &kp X         &kp DE_UE   &lt SYM DE_AE &kp DE_OE &kp P              &lt SYM F       &kp DE_Z    &kp K         &kp DE_Y
         &lt NUM SPACE &sl SYM
       >;
     };
@@ -191,7 +193,7 @@
       bindings = <
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &mt HYP O &mt HYP M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &kp DE_AE     &kp DE_OE &kp P              &kp F           &kp DE_Z    &kp K         &kp DE_Y
+        &kp V       &kp X         &kp DE_UE   &lt DSM DE_AE &kp DE_OE &kp P              &lt DSM F       &kp DE_Z    &kp K         &kp DE_Y
         &lt NUM SPACE &sl DSM
       >;
     };
