@@ -174,10 +174,10 @@
 
     mac_sym {
       bindings = <
-        &weird_symbols  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
-        &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH     &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp MAC_AT      &kp DE_PERC
+        &kp DE_CIRC  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp MAC_BSLS &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH  &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp MAC_AT   &kp DE_PERC
       >;
     };
 
