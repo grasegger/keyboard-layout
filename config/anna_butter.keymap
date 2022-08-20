@@ -83,22 +83,28 @@
 
 #define HYP LG(LC(LS(LALT)))
 
+#define SYM_LAYER (PREFIX) \
+        &kp DE_CIRC     &kp DE_UNDS &kp PREFIX_LBRC  &kp PREFIX_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK     &kp DE_RABK &kp DE_EQL  &kp DE_DEG  \
+        &kp PREFIX_BSLS &kp DE_SLSH &kp PREFIX_LCBR  &kp PREFIX_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN     &kp DE_RPRN &kp DE_MINS &kp DE_COLN \
+        &kp DE_HASH     &kp DE_DLR  &kp PREFIX_PIPE  &kp PREFIX_TILD  &kp DE_GRV  &kp DE_AMPR &kp PREFIX_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN \
+        &kp PREFIX_AT   &kp DE_PERC
+
 &caps_word {
     continue-list = <DE_UNDS DE_MINS BACKSPACE DELETE>;
 };
 
 &mt {
-  quick-tap-ms = <125>;
+  quick-tap-ms = <100>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <250>;
+  tapping-term-ms = <100>;
 };
 
 &lt {
-  quick-tap-ms = <125>;
+  quick-tap-ms = <100>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <250>;
+  tapping-term-ms = <100>;
 };
 
 &sk {
@@ -174,10 +180,7 @@
 
     mac_sym {
       bindings = <
-        &kp DE_CIRC  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
-        &kp MAC_BSLS &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH  &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp MAC_AT   &kp DE_PERC
+        SYM_LAYER(MAC)
       >;
     };
 
@@ -192,10 +195,7 @@
 
     pc_sym {
       bindings = <
-        &kp DE_CIRC  &kp DE_UNDS   &kp DE_LBRC &kp DE_RBRC &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_DEG
-        &kp DE_BSLS  &kp DE_SLSH   &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH  &kp DE_DLR    &kp DE_PIPE &kp DE_TILD &kp DE_GRV  &kp DE_AMPR &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp DE_AT    &kp DE_PERC
+        SYM_LAYER(DE)
       >;
     };
 
