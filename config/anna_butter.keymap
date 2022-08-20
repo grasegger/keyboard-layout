@@ -81,13 +81,7 @@
 #define DE_AE DE_ADIA
 #define DE_OE DE_ODIA
 
-#define HYP LG(LC(LS(LALT)))
-
-#define SYM_LAYER (PREFIX) \
-        &kp DE_CIRC     &kp DE_UNDS &kp PREFIX_LBRC  &kp PREFIX_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK     &kp DE_RABK &kp DE_EQL  &kp DE_DEG  \
-        &kp PREFIX_BSLS &kp DE_SLSH &kp PREFIX_LCBR  &kp PREFIX_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN     &kp DE_RPRN &kp DE_MINS &kp DE_COLN \
-        &kp DE_HASH     &kp DE_DLR  &kp PREFIX_PIPE  &kp PREFIX_TILD  &kp DE_GRV  &kp DE_AMPR &kp PREFIX_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN \
-        &kp PREFIX_AT   &kp DE_PERC
+#define HYP LG(LC(LS(LALT))) 
 
 &caps_word {
     continue-list = <DE_UNDS DE_MINS BACKSPACE DELETE>;
@@ -179,8 +173,11 @@
 
 
     mac_sym {
-      bindings = <
-        SYM_LAYER(MAC)
+      bindings = < 
+        &kp DE_CIRC     &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp MAC_AT      &kp DE_PERC
       >;
     };
 
@@ -195,7 +192,10 @@
 
     pc_sym {
       bindings = <
-        SYM_LAYER(DE)
+        &kp DE_CIRC     &kp DE_UNDS &kp  DE_LBRC  &kp  DE_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp  DE_BSLS    &kp DE_SLSH &kp  DE_LCBR  &kp  DE_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH     &kp DE_DLR  &kp  DE_PIPE  &kp  DE_TILD  &kp DE_GRV  &kp DE_AMPR &kp  DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp  DE_AT      &kp DE_PERC
       >;
     };
 
