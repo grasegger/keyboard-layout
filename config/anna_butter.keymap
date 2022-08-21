@@ -198,15 +198,7 @@
         &kp  DE_AT      &kp DE_PERC
       >;
     };
-  
-    new_sym {
-    bindings = <
-        &kp N1      &kp N2    &kp N3        &kp N4      &kp N5      &kp N6    &kp N7          &kp N8    &kp N9    &kp N0  
-  _____ _____ _____ _____ _____ &kp COMMA &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT 
-  _____ _____ _____ _____ _____ &kp PERIOD &kp ESC     &kp TAB   &kp ENTER     &kp DELETE  
-  _____ _____ 
-  >;
-  };
+    
 
     gaming {
       bindings = <
