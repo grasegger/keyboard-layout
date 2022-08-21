@@ -129,33 +129,21 @@
 
 
 /{
-  combos {
-      compatible = "zmk,combos";
-
-      combo_caps {
-          timeout-ms = <20>;
-          key-positions = <11 18>;
-          bindings = <&caps_word>;
-      };
-  };
-
   behaviors {
-      skq: sticky_key_quick_release {
-        compatible = "zmk,behavior-sticky-key";
-        label = "STICKY_KEY_QUICK_RELEASE";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <1000>;
-        quick-release;
-      };
-
-      sf: sf {
-        compatible = "zmk,behavior-hold-tap";
-        label = "shift";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
+    td_sym: tap_dance_sym {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_DSM";
+        #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&skq>;
+        bindings = <&mo NUM>, <&sl SYM>;
+    };
+    
+    td_dsm: tap_dance_dsm {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_DSM";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&mo NUM>, <&sl DSM>;
     };
   };
   
@@ -167,7 +155,7 @@
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &kp O &kp M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
         &kp V       &kp X         &kp DE_UE   &lt SYM DE_AE &kp DE_OE &kp P              &lt SYM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &sl NUM
+        &mt HYP SPACE &td_sym
       >;
     };
 
@@ -186,7 +174,7 @@
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &kp O &kp M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
         &kp V       &kp X         &kp DE_UE   &lt DSM DE_AE &kp DE_OE &kp P              &lt DSM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &sl NUM
+        &mt HYP SPACE &td_sym
       >;
     };
 
@@ -222,7 +210,7 @@
       bindings = <
         &kp F1        &kp F2        &kp F3            &kp F4        &kp F5          &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LS(LC(TAB)) &kp LC(TAB)   &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_TOG  &kp C_BRI_DN    &kp C_BRI_UP  &to ALP       &to PC      &to GAM       &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_TOG  &reset          _____         &to ALP       &to PC      &to GAM       &bt BT_CLR
         &bootloader  &bootloader
       >;
     };
