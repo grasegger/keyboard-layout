@@ -91,14 +91,14 @@
   quick-tap-ms = <125>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <150>;
+  tapping-term-ms = <250>;
 };
 
 &lt {
   quick-tap-ms = <125>;
   global-quick-tap;
   flavor = "tap-preferred";
-  tapping-term-ms = <150>;
+  tapping-term-ms = <250>;
 };
 
 &sk {
@@ -109,53 +109,16 @@
     quick-release;
 };
 
-/ {
-    macros {
-        work: work {
-            label = "work";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
-            bindings
-                = <&macro_tap &out OUT_BLE>
-                , <&macro_tap &to ALP>
-                , <&macro_tap &bt BT_SEL 0>
-                ;
-        };
-    };
-};
-
-
-
 /{
-  behaviors {
-    td_sym: tap_dance_sym {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_DSM";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&mo NUM>, <&sl SYM>;
-    };
-    
-    td_dsm: tap_dance_dsm {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_DSM";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&mo NUM>, <&sl DSM>;
-    };
-  };
-  
   keymap {
     compatible = "zmk,keymap";
 
     mac_base {
       bindings = <
-        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W              &kp B           &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &kp O &kp M          &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &lt SYM DE_AE &kp DE_OE &kp P              &lt SYM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &td_sym
+        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W   &kp B           &lt FUN D   &kp G         &kp DE_SS
+        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &kp O     &kp M   &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &lt SYM DE_AE &kp DE_OE &kp P   &lt SYM F       &kp DE_Z    &kp K         &kp DE_Y
+        &mt HYP SPACE &mo NUM
       >;
     };
 
@@ -172,9 +135,9 @@
     pc_base {
       bindings = <
         &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &kp O &kp M      &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &lt DSM DE_AE &kp DE_OE &kp P              &lt DSM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &td_dsm
+        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &kp O     &kp M          &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
+        &kp V       &kp X         &kp DE_UE   &lt DSM DE_AE &kp DE_OE &kp P          &lt DSM F       &kp DE_Z    &kp K         &kp DE_Y
+        &mt HYP SPACE &mo NUM
       >;
     };
 
@@ -192,7 +155,7 @@
       bindings = <
         &kp TAB     &kp Q &kp W &kp E         &kp R         &kp N1  &kp N2      &lt FUN N3  &kp N4  &kp N5
         &kp CAPS    &kp A &kp S &kp D         &kp F         &kp N6  &kp N7      &kp N8      &kp N9  &kp N0
-        &kp LSHIFT  &kp Z &kp X &kp C         &kp LCTRL     &kp M   &kp ESC     &kp I       _____   _____
+        &kp LSHIFT  &kp Z &kp X &kp C         &kp LCTRL     &kp M   &kp ESC     &kp I       &kp DE_SLSH   _____
         &lt NUM SPACE &kp ENTER
       >;
     };
