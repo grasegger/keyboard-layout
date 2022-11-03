@@ -73,8 +73,8 @@
 #define PC  1
 #define SYM 2
 #define DSM 3
-#define NUM 5
-#define FUN 6
+#define NUM 4
+#define FUN 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
