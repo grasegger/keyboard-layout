@@ -73,7 +73,6 @@
 #define PC  1
 #define SYM 2
 #define DSM 3
-#define GAM 4
 #define NUM 5
 #define FUN 6
 
