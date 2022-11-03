@@ -70,8 +70,8 @@
 #define _____ &none
 
 #define ALP 0
-#define SYM 1
-#define PC  2
+#define PC  1
+#define SYM 2
 #define DSM 3
 #define GAM 4
 #define NUM 5
@@ -115,48 +115,39 @@
 
     mac_base {
       bindings = <
-        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W   &kp B           &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C  &mt LSHIFT R  &mt LCTRL I &mt LGUI E    &kp O     &kp M   &mt LGUI N      &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &lt SYM DE_AE &kp DE_OE &kp P   &lt SYM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &mo NUM
+        &kp J         &kp L         &lt FUN U   &kp A      &kp Q     &kp W &kp B      &lt FUN D   &kp G         &kp DE_SS
+        &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &kp O     &kp M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &kp V         &kp X         &kp DE_UE   &kp DE_AE  &kp DE_OE &kp P &lt SYM F  &kp DE_Z    &kp K         &kp DE_Y
+        &lt NUM SPACE &sl SYM
+      >;
+    };
+
+    pc_base {
+      bindings = <
+        &trans     &trans       &trans     &trans      &trans &trans &trans      &trans     &trans       &trans
+        &mt LALT C &mt LSHIFT R &mt LGUI I &mt LCTRL E &trans &trans &mt LCTRL N &mt LGUI T &mt LSHIFT S &mt LALT H
+        &trans     &trans       &trans     &trans      &trans &trans &trans      &trans     &trans       &trans
+        &trans     &sl DSM
       >;
     };
 
 
     mac_sym {
       bindings = < 
-        &kp DE_CIRC     &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
-        &kp MAC_BSLS    &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH     &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp MAC_AT      &kp DE_PERC
+        &kp DE_CIRC  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp MAC_BSLS &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH  &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+        &kp MAC_AT   &to NUM // &kp DE_PERC
       >;
     };
 
-    pc_base {
-      bindings = <
-        &kp J       &kp L         &lt FUN U   &kp A         &kp Q     &kp W          &kp B           &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C  &mt LSHIFT R  &mt LGUI I  &mt LCTRL E   &kp O     &kp M          &mt LCTRL N     &mt LGUI T  &mt LSHIFT S  &mt LALT H
-        &kp V       &kp X         &kp DE_UE   &lt DSM DE_AE &kp DE_OE &kp P          &lt DSM F       &kp DE_Z    &kp K         &kp DE_Y
-        &mt HYP SPACE &mo NUM
-      >;
-    };
 
     pc_sym {
       bindings = <
-        &kp DE_CIRC     &kp DE_UNDS &kp  DE_LBRC  &kp  DE_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
-        &kp  DE_BSLS    &kp DE_SLSH &kp  DE_LCBR  &kp  DE_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
-        &kp DE_HASH     &kp DE_DLR  &kp  DE_PIPE  &kp  DE_TILD  &kp DE_GRV  &kp DE_AMPR &kp  DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-        &kp  DE_AT      &kp DE_PERC
-      >;
-    };
-    
-
-    gaming {
-      bindings = <
-        &kp TAB     &kp Q &kp W &kp E         &kp R         &kp N1  &kp N2      &lt FUN N3  &kp N4  &kp N5
-        &kp CAPS    &kp A &kp S &kp D         &kp F         &kp N6  &kp N7      &kp N8      &kp N9  &kp N0
-        &kp LSHIFT  &kp Z &kp X &kp C         &kp LCTRL     &kp M   &kp ESC     &kp I       &kp DE_SLSH   _____
-        &lt NUM SPACE &kp ENTER
+        &trans      &trans &kp DE_LBRC &kp DE_RBRC &trans &trans &trans  &trans &trans  &trans
+        &kp DE_BSLS &trans &kp DE_LCBR &kp DE_RCBR &trans &trans &trans      &trans &trans &trans
+        &trans      &trans &kp DE_PIPE &kp DE_TILD &trans &trans &kp DE_EURO &trans &trans &trans
+        &kp DE_AT   &trans
       >;
     };
     
@@ -173,7 +164,7 @@
       bindings = <
         &kp F1        &kp F2        &kp F3            &kp F4        &kp F5          &kp F6        &kp F7        &kp F8      &kp F9        &kp F10
         &kp F11       &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LS(LC(TAB)) &kp LC(TAB)   &kp C_VOL_UP  &kp C_MUTE  &kp C_VOL_DN  &kp F12
-        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_TOG  &reset          _____         &to ALP       &to PC      &to GAM       &bt BT_CLR
+        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &out OUT_TOG  &reset          _____         &to ALP       &to PC      _____         &bt BT_CLR
         &bootloader  &bootloader
       >;
     };
