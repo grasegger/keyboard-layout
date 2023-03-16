@@ -1,6 +1,0 @@
-# Copyright (c) 2022 Karl Grasegger
-# SPDX-License-Identifier: MIT
-
-config BOARD_NRF52833
-	bool "NRF52833"
-	depends on SOC_NRF52833_QIAA
