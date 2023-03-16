@@ -3,6 +3,6 @@ id: anna 7 macro left
 name: blubb ...
 type: shield
 url: https://github.com/grasegger/keyboards
-requires: [xiao_ble]
+requires: [seeeduino_xiao_ble]
 features:
   - keys
