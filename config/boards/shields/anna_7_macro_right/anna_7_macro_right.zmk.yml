@@ -1,0 +1,8 @@
+file_format: "1"
+id: anna 7 macro left
+name: blubb ...
+type: shield
+url: https://github.com/grasegger/keyboards
+requires: [xiao_ble]
+features:
+  - keys

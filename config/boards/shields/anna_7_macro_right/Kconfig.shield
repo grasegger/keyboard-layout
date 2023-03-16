@@ -1,0 +1,2 @@
+config ANNA7MACRORIGHT
+    def_bool $(shields_list_contains,anna_7_macro_right)

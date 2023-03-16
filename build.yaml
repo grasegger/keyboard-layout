@@ -14,7 +14,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: anna_butter_left
-  - board: nice_nano_v2
-    shield: anna_butter_right
+#  - board: nice_nano_v2
+#    shield: anna_butter_left
+#  - board: nice_nano_v2
+#    shield: anna_butter_right
+  - board: xiao_ble
+    shield: anna_7_macro_right
