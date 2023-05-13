@@ -7,5 +7,5 @@
 #include "anna_7.dtsi"
 
 &default_transform {
-	col-offset = <16>;
+	col-offset = <18>;
 };
