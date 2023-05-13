@@ -13,10 +13,12 @@
 #     shield: reviung41
 #
 ---
-include:
+#include:
 #  - board: nice_nano_v2
 #    shield: anna_butter_left
 #  - board: nice_nano_v2
 #    shield: anna_butter_right
   - board: puchi_ble_v1
-    shield: anna_7
+    shield: anna_7_left
+  - board: puchi_ble_v1
+    shield: anna_7_right
