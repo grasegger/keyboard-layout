@@ -1,8 +1,0 @@
-file_format: "1"
-id: anna 7 macro
-name: anna 7 macro
-type: shield
-url: https://github.com/grasegger/keyboards
-requires: [seeeduino_xiao_ble]
-features:
-  - keys

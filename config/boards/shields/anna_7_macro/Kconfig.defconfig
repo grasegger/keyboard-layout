@@ -1,5 +1,0 @@
-if ANNA7MACRORIGHT
-
-config ZMK_KEYBOARD_NAME
-    default "anna macro"
-endif
