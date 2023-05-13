@@ -1,0 +1,11 @@
+file_format: "1"
+id: anna_7
+name: Anna 7
+type: shield
+url: github.com/grasegger/keyboards
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - anna_7_left
+  - anna_7_right
