@@ -155,7 +155,7 @@
         &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W   &kp B      &lt FUN D   &kp G         &tdss
         &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &kp O     &kp M   &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
         &kp V         &kp X         &kp DE_UE   &kp DE_AE  &tdoe     &kp P   &lt SYM F  &kp DE_Z    &kp K         &tdy
-                                    &sk LGUI    &sl NUM    &kp SPACE &sl SYM &sk LSHIFT &caps_word
+                                    &key_repeat &sl NUM    &kp SPACE &sl SYM &sk LSHIFT &caps_word
       >;
     };
 
@@ -164,7 +164,7 @@
         &trans     &trans       &trans     &trans      &trans    &trans  &trans      &trans     &trans       &trans
         &mt LALT C &mt LSHIFT R &mt LGUI I &mt LCTRL E &trans    &trans  &mt LCTRL N &mt LGUI T &mt LSHIFT S &mt LALT H
         &trans     &trans       &trans     &trans      &trans    &trans  &trans      &trans     &trans       &trans
-                                &sk LCTRL  &trans      &trans    &sl DSM &trans      &trans    
+                                &trans     &trans      &trans    &sl DSM &trans      &trans    
       >;
     };
 
