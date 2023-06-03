@@ -129,7 +129,7 @@
             label = "TAP_DANCE_Y";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp Y>, <&kp ENTER>;
+            bindings = <&kp DE_Y>, <&kp ENTER>;
         };
         tdq: tap_dance_q {
             compatible = "zmk,behavior-tap-dance";
