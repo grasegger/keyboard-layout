@@ -181,10 +181,10 @@
 
     pc_sym {
       bindings = <
-        &trans      &trans &kp DE_LBRC &kp DE_RBRC &trans &trans &trans      &trans &trans &trans
-        &kp DE_BSLS &trans &kp DE_LCBR &kp DE_RCBR &trans &trans &trans      &trans &trans &trans
-        &trans      &trans &kp DE_PIPE &kp DE_TILD &trans &trans &kp DE_EURO &trans &trans &trans
-                    &trans &kp DE_AT   &trans      &trans &trans &trans  
+        &kp DE_CIRC  &kp DE_UNDS &kp DE_LBRC  &kp DE_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp DE_BSLS  &kp DE_SLSH &kp DE_LCBR  &kp DE_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
+        &kp DE_HASH  &kp DE_DLR  &kp DE_PIPE  &kp DE_TILD  &kp DE_GRV  &kp DE_AMPR &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
+                     _____       &kp DE_AT    &kp PERIOD   &kp COMMA   _____       _____  
       >;
     };
     
