@@ -152,7 +152,7 @@
 
     mac_base {
       bindings = <
-        &tdj          &kp L         &lt FUN U   &kp A      &tbq      &kp W   &kp B      &lt FUN D   &kp G         &tdss
+        &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W   &kp B      &lt FUN D   &kp G         &tdss
         &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &kp O     &kp M   &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
         &kp V         &kp X         &kp DE_UE   &kp DE_AE  &kp DE_OE &kp P   &lt SYM F  &kp DE_Z    &kp K         &tdy
                                     &sk LGUI    &sl NUM    &kp SPACE &sl SYM &sk LSHIFT &caps_word
