@@ -115,36 +115,43 @@
             label = "TAP_DANCE_J";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp J>, <&kp ESC>;
-        };
-        tdss: tap_dance_ss {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DE_SS>, <&kp BACKSPACE>;
-        };
-        tdy: tap_dance_y {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_Y";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DE_Y>, <&kp DELETE>;
+            bindings = <&kp J>, <&kp DELETE>;
         };
         tdq: tap_dance_q {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_Q";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&kp TAB>;
+            bindings = <&kp Q>, <&kp BACKSPACE>;
+        };
+        tdv: tap_dance_v {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_V";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>, <&kp INSERT>;
         };
         tdoe: tap_dance_oe {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_OE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DE_OE>, <&kp ENTER>;
+            bindings = <&kp DE_OE>, <&kp TAB>;
         };
+        tdae: tap_dance_ae {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_AE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DE_AE>, <&kp ENTER>;
+        }
+        tdue: tap_dance_ue {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_UE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DE_UE>, <&kp ESC>;
+        }
     };
     
   keymap {
@@ -152,9 +159,9 @@
 
     mac_base {
       bindings = <
-        &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W   &kp B      &lt FUN D   &kp G         &tdss
+        &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W   &kp B      &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &kp O     &kp M   &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &kp V         &kp X         &kp DE_UE   &kp DE_AE  &tdoe     &kp P   &lt SYM F  &kp DE_Z    &kp K         &tdy
+        &tdv          &kp X         &kp DE_UE   &tdae      &tdoe     &kp P   &lt SYM F  &kp DE_Z    &kp K         &kp DE_Y
                                     &key_repeat &sl NUM    &kp SPACE &sl SYM &sk LSHIFT &caps_word
       >;
     };
