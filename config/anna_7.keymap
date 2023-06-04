@@ -144,14 +144,14 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DE_AE>, <&kp ENTER>;
-        }
+        };
         tdue: tap_dance_ue {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_UE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DE_UE>, <&kp ESC>;
-        }
+        };
     };
     
   keymap {
