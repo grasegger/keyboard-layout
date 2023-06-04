@@ -161,7 +161,7 @@
       bindings = <
         &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W   &kp B      &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &kp O     &kp M   &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &tdv          &kp X         $tdue       &tdae      &tdoe     &kp P   &lt SYM F  &kp DE_Z    &kp K         &kp DE_Y
+        &tdv          &kp X         &tdue       &tdae      &tdoe     &kp P   &lt SYM F  &kp DE_Z    &kp K         &kp DE_Y
                                     &key_repeat &sl NUM    &kp SPACE &sl SYM &sk LSHIFT &caps_word
       >;
     };
