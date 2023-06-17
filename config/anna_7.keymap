@@ -178,10 +178,10 @@
 
     mac_sym {
       bindings = < 
-        &kp DE_CIRC  &kp DE_UNDS &kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
+        &kp DE_CIRC  &kp DE_UNDS ü&kp MAC_LBRC  &kp MAC_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK  &kp DE_RABK &kp DE_EQL  &kp DE_DEG
         &kp MAC_BSLS &kp DE_SLSH &kp MAC_LCBR  &kp MAC_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN  &kp DE_RPRN &kp DE_MINS &kp DE_COLN
         &kp DE_HASH  &kp DE_DLR  &kp MAC_PIPE  &kp MAC_TILD  &kp DE_GRV  &kp DE_AMPR &kp MAC_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-                     _____       &kp MAC_AT    &kp PERIOD    &kp COMMA   _____       _____  
+                     _____       &kp MAC_AT    &kp PERIOD    &kp COMMA   &kp DE_PERC _____  
       >;
     };
 
@@ -191,16 +191,16 @@
         &kp DE_CIRC  &kp DE_UNDS &kp DE_LBRC  &kp DE_RBRC  &kp DE_PLUS &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_DEG
         &kp DE_BSLS  &kp DE_SLSH &kp DE_LCBR  &kp DE_RCBR  &kp DE_ASTR &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_MINS &kp DE_COLN
         &kp DE_HASH  &kp DE_DLR  &kp DE_PIPE  &kp DE_TILD  &kp DE_GRV  &kp DE_AMPR &kp DE_EURO &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN
-                     _____       &kp DE_AT    &kp PERIOD   &kp COMMA   _____       _____  
+                     _____       &kp DE_AT    &kp PERIOD   &kp COMMA   &kp DE_PERC _____  
       >;
     };
     
     num {
       bindings = <
-        &kp N1      &kp N2      &kp N3      &kp N4      &kp N5 &kp N6    &kp N7     &kp N8    &kp N9    &kp N0  
-        &kp DE_SLSH &kp DE_ASTR &kp DE_MINS &kp DE_PLUS _____  _____     &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT 
-        _____       _____       _____       _____       _____  _____     &kp HOME   &kp PG_DN &kp PG_UP &kp END
-                                _____       _____       _____  &kp COMMA &kp PERIOD _____ 
+        &kp N1      &kp N2      &kp N3      &kp N4      &kp N5 &kp N6    &kp N7      &kp N8    &kp N9    &kp N0  
+        &kp DE_SLSH &kp DE_ASTR &kp DE_MINS &kp DE_PLUS _____  _____     &kp LEFT    &kp DOWN  &kp UP    &kp RIGHT 
+        _____       _____       _____       _____       _____  _____     &kp HOME    &kp PG_DN &kp PG_UP &kp END
+                                _____       _____       _____  &kp COMMA &kp DE_PERC &kp PERIOD 
       >;
     };
 
