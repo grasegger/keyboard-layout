@@ -132,28 +132,28 @@
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
             layers = <0 1>;
-        }
+        };
 
         combo_esc {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp ESCAPE>;
             layers = <0 1>;
-        }
+        };
 
         combo_tab {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
             layers = <0 1>;
-        }
+        };
 
-        combo_acps {
+        combo_caps {
             timeout-ms = <50>;
             key-positions = <1 2 13>;
             bindings = <&caps_word>;
             layers = <0 1>;
-        }
+        };
 
         
     }
