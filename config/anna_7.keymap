@@ -109,7 +109,6 @@
     quick-release;
 };
 
-/*
 /{
     combos {
         compatible = "zmk,combos";
@@ -158,7 +157,7 @@
 
         
     };
-};*/
+};
 
 /{   
   keymap {
@@ -181,7 +180,6 @@
                       &trans     &trans      &trans    &sl DSM &trans      &trans    
       >;
     };
-
 
     mac_sym {
       bindings = < 
