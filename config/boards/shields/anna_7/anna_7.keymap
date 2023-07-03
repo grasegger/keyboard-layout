@@ -157,7 +157,7 @@
       bindings = <
         &kp J      &kp L         &lt FUN U   &kp A      &kp Q     &kp W     &kp B      &lt FUN D   &kp G         &kp DE_SS
         &mt LALT C &mt LSHIFT R  &mt LCTRL I &mt LGUI E &mt HYP O &mt HYP M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &mt HYP V  &kp X         &kp DE_UE   &kp DE_AEj &kp DE_OE &kp P     &lt NNM F  &kp DE_Z    &kp K         &mt HYP DE_Y
+        &mt HYP V  &kp X         &kp DE_UE   &kp DE_AE  &kp DE_OE &kp P     &lt NNM F  &kp DE_Z    &kp K         &mt HYP DE_Y
                                  _____       _____      &kp SPACE &sl SYM   &sk LSHIFT _____
       >;
     };
