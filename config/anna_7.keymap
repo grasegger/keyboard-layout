@@ -75,6 +75,7 @@
 #define DSM 3
 #define NUM 4
 #define FUN 5
+#define NNM 6
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -109,69 +110,72 @@
 };
 
 /{
-    behaviors {
-        tdj: tap_dance_j {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_J";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp J>, <&kp DELETE>;
+    combos {
+        compatible = "zmk,combos";
+
+        combo_bsp {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp BACKSPACE>;
+            layers = <0 1>;
         };
-        tdq: tap_dance_q {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_Q";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&kp BACKSPACE>;
+
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <16 7 8>;
+            bindings = <&kp DELETE>;
+            layers = <0 1>;
         };
-        tdv: tap_dance_v {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_V";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp V>, <&kp INSERT>;
-        };
-        tdoe: tap_dance_oe {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_OE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DE_OE>, <&kp TAB>;
-        };
-        tdae: tap_dance_ae {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_AE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DE_AE>, <&kp ENTER>;
-        };
-        tdue: tap_dance_ue {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_UE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DE_UE>, <&kp ESC>;
-        };
-    };
+
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp ENTER>;
+            layers = <0 1>;
+        }
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESCAPE>;
+            layers = <0 1>;
+        }
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp TAB>;
+            layers = <0 1>;
+        }
+
+        combo_acps {
+            timeout-ms = <50>;
+            key-positions = <1 2 13>;
+            bindings = <&caps_word>;
+            layers = <0 1>;
+        }
+
+        
+    }
     
   keymap {
     compatible = "zmk,keymap";
 
     mac_base {
       bindings = <
-        &tdj          &kp L         &lt FUN U   &kp A      &tdq      &kp W     &kp B      &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C    &mt LSHIFT R  &mt LCTRL I &mt LGUI E &mt HYP O &mt HYP M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &tdv          &kp X         &tdue       &tdae      &tdoe     &kp P     &kp F      &kp DE_Z    &kp K         &kp DE_Y
-                                    &key_repeat &sl NUM    &kp SPACE &sl SYM   &sk LSHIFT &caps_word
+        &kp J      &kp L         &lt FUN U   &kp A      &kp Q     &kp W     &kp B      &lt FUN D   &kp G         &kp DE_SS
+        &mt LALT C &mt LSHIFT R  &mt LCTRL I &mt LGUI E &mt HYP O &mt HYP M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
+        &mt HYP V  &kp X         &kp DE_UE   &kp DE_AEj &kp DE_OE &kp P     &lt NNM F  &kp DE_Z    &kp K         &mt HYP DE_Y
+                                 _____       _____      &kp SPACE &sl SYM   &sk LSHIFT _____
       >;
     };
 
     pc_base {
       bindings = <
-        &trans     &trans       &trans     &trans      &trans    &trans  &trans      &trans     &trans       &trans
-        &mt LALT C &mt LSHIFT R &mt LGUI I &mt LCTRL E &trans    &trans  &mt LCTRL N &mt LGUI T &mt LSHIFT S &mt LALT H
-        &trans     &trans       &trans     &trans      &trans    &trans  &trans      &trans     &trans       &trans
-                                &trans     &trans      &trans    &sl DSM &trans      &trans    
+        &trans &trans &trans     &trans      &trans    &trans  &trans      &trans     &trans &trans
+        &trans &trans &mt LGUI I &mt LCTRL E &trans    &trans  &mt LCTRL N &mt LGUI T &trans &trans
+        &trans &trans &trans     &trans      &trans    &trans  &trans      &trans     &trans &trans
+                      &trans     &trans      &trans    &sl DSM &trans      &trans    
       >;
     };
 
@@ -213,5 +217,13 @@
       >;
     };
 
+    num_new {
+      bindings = <
+        _____ &kp 7 &kp 8 &kp 9 _____ _____ _____ &kp DE_ASTR &kp DE_SLSH _____
+        _____ &kp 4 &kp 5 &kp 6 _____ _____ _____ &kp DOT     &kp COMMA   &kp BACKSPACE
+        _____ &kp 1 &kp 2 &kp 3 _____ _____ _____ &kp PLUS    &kp MINUS   &kp ENTER
+                    _____ &kp 0 _____ _____ _____ _____
+      >;
+    };
   };
 };
