@@ -76,6 +76,7 @@
 #define NUM 4
 #define FUN 5
 #define NNM 6
+#define NAV 7
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -97,8 +98,6 @@
 &lt {
   quick-tap-ms = <125>;
   global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <250>;
 };
 
 &sk {
@@ -117,36 +116,42 @@
             timeout-ms = <50>;
             key-positions = <7 8>;
             bindings = <&kp BACKSPACE>;
+            layers = <0 1>;
         };
 
         combo_del {
             timeout-ms = <50>;
             key-positions = <16 7 8>;
             bindings = <&kp DELETE>;
+            layers = <0 1>;
         };
 
         combo_enter {
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
+            layers = <0 1>;
         };
 
         combo_esc {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp ESCAPE>;
+            layers = <0 1>;
         };
 
         combo_tab {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
+            layers = <0 1>;
         };
 
         combo_caps {
             timeout-ms = <50>;
             key-positions = <1 2 13>;
             bindings = <&caps_word>;
+            layers = <0 1>;
         };
     };
   
@@ -155,10 +160,10 @@
 
     mac_base {
       bindings = <
-        &kp J      &kp L         &lt FUN U   &kp A      &kp Q     &kp W     &kp B      &lt FUN D   &kp G         &kp DE_SS
-        &mt LALT C &mt LSHIFT R  &mt LCTRL I &mt LGUI E &mt HYP O &mt HYP M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &mt LALT H
-        &mt HYP V  &kp X         &kp DE_UE   &kp DE_AE  &kp DE_OE &kp P     &lt NNM F  &kp DE_Z    &kp K         &mt HYP DE_Y
-                                 _____       _____      &kp SPACE &sl SYM   &sk LSHIFT _____
+        &kp J      &kp L        &lt FUN U   &kp A      &kp Q          &kp W     &kp B      &lt FUN D   &kp G         &kp DE_SS
+        &lt NAV C &mt LSHIFT R  &mt LCTRL I &mt LGUI E &mt HYP O      &mt HYP M &mt LGUI N &mt LCTRL T &mt LSHIFT S  &lt NNM H
+        &mt HYP V &kp X         &kp DE_UE   &kp DE_AE  &mt LALT DE_OE &kp P     &mt LALT F &kp DE_Z    &kp K         &mt HYP DE_Y
+                                 _____       _____     &kp SPACE      &sl SYM   &sk LSHIFT _____
       >;
     };
 
@@ -167,7 +172,7 @@
         &trans &trans &trans     &trans      &trans    &trans  &trans      &trans     &trans &trans
         &trans &trans &mt LGUI I &mt LCTRL E &trans    &trans  &mt LCTRL N &mt LGUI T &trans &trans
         &trans &trans &trans     &trans      &trans    &trans  &trans      &trans     &trans &trans
-                      &trans     &trans      &trans    &sl DSM &trans      &trans    
+                      &trans     &trans      &trans    &sl DSM &trans      &trans
       >;
     };
 
@@ -210,11 +215,20 @@
 
     num_new {
       bindings = <
-        _____ &kp 7 &kp 8 &kp 9 _____ _____ _____ &kp DE_ASTR &kp DE_SLSH _____
-        _____ &kp 4 &kp 5 &kp 6 _____ _____ _____ &kp DOT     &kp COMMA   &kp BACKSPACE
-        _____ &kp 1 &kp 2 &kp 3 _____ _____ _____ &kp PLUS    &kp MINUS   &kp ENTER
-                    _____ &kp 0 _____ _____ _____ _____
+        _____ &kp N7 &kp N8 &kp N9 _____ _____ &kp DE_ASTR &kp DE_SLSH &kp ENTER _____
+        _____ &kp N4 &kp N5 &kp N6 _____ _____ &kp DOT     &kp COMMA   &kp BACKSPACE _____
+        _____ &kp N1 &kp N2 &kp N3 _____ _____ &kp DE_PLUS &kp DE_MINS _____ _____
+                     _____  &kp N0 _____ _____ _____ _____
       >;
+    };
+
+    nav {
+      bindings = <
+              _____ _____ _____ _____ _____ _____ &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT)
+              _____ _____ _____ _____ _____ _____ &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+              _____ _____ _____ _____ _____ _____ &kp HOME     &kp PG_DN    &kp PG_UP  &kp END
+                          _____ _____ _____ _____ _____ _____
+      >;    
     };
   };
 };
