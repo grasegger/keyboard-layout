@@ -5,10 +5,16 @@ config ZMK_KEYBOARD_NAME
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
+
 endif
 
 if SHIELD_ANNA_POP_LEFT || SHIELD_ANNA_POP_RIGHT
 
 config ZMK_SPLIT
     default y
+
+
+config ZMK_USB
+	default y
+    
 endif
