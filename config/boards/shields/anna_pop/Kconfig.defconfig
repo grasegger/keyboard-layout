@@ -1,0 +1,14 @@
+if SHIELD_ANNA_POP_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "ANNA POP"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+endif
+
+if SHIELD_ANNA_POP_LEFT || SHIELD_ANNA_POP_RIGHT
+
+config ZMK_SPLIT
+    default y
+endif

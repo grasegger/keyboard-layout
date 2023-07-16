@@ -1,0 +1,15 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "anna_pop.dtsi"
+
+&encoder_left_left {
+    status = "okay";
+};
+
+&encoder_left_right {
+    status = "okay";
+};

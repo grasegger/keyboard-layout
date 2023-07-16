@@ -1,0 +1,11 @@
+file_format: "1"
+id: anna_pop
+name: ANNA POP
+type: shield
+url: github.com/grasegger/keyboards
+requires: [seeed_xiao]
+features:
+  - keys
+siblings:
+  - anna_pop_left
+  - anna_pop_right

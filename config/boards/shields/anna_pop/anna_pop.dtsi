@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan {
+            compatible = "zmk,kscan-gpio-matrix";
+            label = "KSCAN";
+            diode-direction = "row2col";
+            
+			col-gpios
+                = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                ;
+
+            row-gpios
+                = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+                , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+                , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+                , <&xiao_d 7 GPIO_ACTIVE_HIGH>
+                ;
+		};
+
+    encoder_left_left: encoder_left_left {
+        compatible = "alps,ec11";
+        label = "LEFT_LEFT_ENCODER";
+        b-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+    };    
+    
+    encoder_left_right: encoder_left_right {
+        compatible = "alps,ec11";
+        label = "LEFT_RIGHT_ENCODER";
+        b-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+    };
+
+        sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_left_left &encoder_left_right>;
+        triggers-per-rotation = <20>;
+    };
+};
+
+
+&xiao_spi { status = "disabled"; };
+&xiao_serial { status = "disabled"; };
