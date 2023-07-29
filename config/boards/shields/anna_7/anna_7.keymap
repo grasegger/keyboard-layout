@@ -298,10 +298,10 @@
 
     base {
       bindings = <
-        &kp P     &kp L         &lt FUN U     &kp A       _____ _____ &kp B       &lt FUN D    &kp G        &kp M     
-        &lt NAV C &mt LSHIFT R  &mt LALT I    &mt LCTRL E _____ _____ &mt LCTRL N &mt LALT T   &mt LSHIFT S &lt NNM H
-        &mt HYP V &mt MEH X     &mt DUH W     &mt LGUI O  _____ _____ &mt LGUI F  &mt DUH DE_Z &mt MEH K    &mt HYP DE_Y
-                                 _____        &kp SPACE   _____ _____ &sl DSM     _____
+        &kp W      &kp L         &lt FUN U     &kp A       _____ _____ &kp B       &lt FUN D    &kp G        &kp F
+        &lt LALT C &mt LSHIFT R  &mt NAV I     &mt LCTRL E _____ _____ &mt LCTRL N &mt NNM T    &mt LSHIFT S &lt LALT H
+        &mt HYP V  &mt MEH X     &mt DUH P     &mt LGUI O  _____ _____ &mt LGUI M  &mt DUH DE_Z &mt MEH K    &mt HYP DE_Y
+                                 _____         &kp SPACE   _____ _____ &sl DSM     _____
       >;
     };
 
