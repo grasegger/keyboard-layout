@@ -303,35 +303,35 @@
             key-positions = <1 2>;
             bindings = <&kp DE_SLSH>;
             layers = <5>;
-        }
+        };
 
         num_plus {
             timeout-ms = <10>;
             key-positions = <12 13>;
             bindings = <&kp DE_PLUS>;
             layers = <5>;
-        }
+        };
 
         num_mins {
             timeout-ms = <10>;
             key-positions = <11 12>;
             bindings = <&kp DE_MINS>;
             layers = <5>;
-        }
+        };
 
         num_ent {
             timeout-ms = <10>;
             key-positions = <22 23>;
             bindings = <&kp ENTER>;
             layers = <5>;
-        }
+        };
 
         num_back {
             timeout-ms = <10>;
             key-positions = <21 22>;
             bindings = <&kp BACKSPACE>;
             layers = <5>;
-        }
+        };
     };
 
 
