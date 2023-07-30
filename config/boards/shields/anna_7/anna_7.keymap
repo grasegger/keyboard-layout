@@ -75,7 +75,6 @@
 #define DSM 2
 #define FUN 4
 #define NNM 5
-#define NAV 6
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -290,6 +289,49 @@
             bindings = <&kp DE_DLR>;
             layers = <2 3>;
         };
+
+
+        num_times {
+            timeout-ms = <10>;
+            key-positions = <2 3>;
+            bindings = <&kp DE_ASTR>;
+            layers = <5>;
+        };
+
+        num_div {
+            timeout-ms = <10>;
+            key-positions = <1 2>;
+            bindings = <&kp DE_SLSH>;
+            layers = <5>;
+        }
+
+        num_plus {
+            timeout-ms = <10>;
+            key-positions = <12 13>;
+            bindings = <&kp DE_PLUS>;
+            layers = <5>;
+        }
+
+        num_mins {
+            timeout-ms = <10>;
+            key-positions = <11 12>;
+            bindings = <&kp DE_MINS>;
+            layers = <5>;
+        }
+
+        num_ent {
+            timeout-ms = <10>;
+            key-positions = <22 23>;
+            bindings = <&kp ENTER>;
+            layers = <5>;
+        }
+
+        num_back {
+            timeout-ms = <10>;
+            key-positions = <21 22>;
+            bindings = <&kp BACKSPACE>;
+            layers = <5>;
+        }
     };
 
 
@@ -299,7 +341,7 @@
     base {
       bindings = <
         &kp W      &kp L         &lt FUN U     &kp A       _____ _____ &kp B       &lt FUN D    &kp G        &kp F
-        &mt LALT C &mt LSHIFT R  &lt NAV I     &mt LCTRL E _____ _____ &mt LCTRL N &lt NNM T    &mt LSHIFT S &mt LALT H
+        &mt LALT C &mt LSHIFT R  &lt NNM I     &mt LCTRL E _____ _____ &mt LCTRL N &lt NNM T    &mt LSHIFT S &mt LALT H
         &mt HYP V  &mt MEH X     &mt DUH P     &mt LGUI O  _____ _____ &mt LGUI M  &mt DUH DE_Z &mt MEH K    &mt HYP DE_Y
                                  _____         &kp SPACE   _____ _____ &sl DSM     _____
       >;
@@ -346,20 +388,11 @@
 
     num_new {
       bindings = <
-        _____ &kp N7 &kp N8 &kp N9 _____ _____ &kp DE_ASTR &kp DE_SLSH &kp ENTER _____
-        _____ &kp N4 &kp N5 &kp N6 _____ _____ &kp DOT     &kp COMMA   &kp BACKSPACE _____
-        _____ &kp N1 &kp N2 &kp N3 _____ _____ &kp DE_PLUS &kp DE_MINS _____ _____
-                     _____  &kp N0 _____ _____ _____       _____
+        &kp DOT    &kp N7 &kp N8 &kp N9 _____ _____ &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT)
+        &kp COMMA  &kp N4 &kp N5 &kp N6 _____ _____ &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
+        &kp ENTER  &kp N1 &kp N2 &kp N3 _____ _____ &kp HOME     &kp PG_DN    &kp PG_UP  &kp END
+                           _____ &kp N0 _____ _____ &kp SPACE    _____
       >;
-    };
-
-    nav {
-      bindings = <
-        _____ _____      _____     _____         _____ _____ &kp LC(LEFT) &kp LC(DOWN) &kp LC(UP) &kp LC(RIGHT)
-        _____ &kp ESCAPE &kp ENTER &kp BACKSPACE _____ _____ &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT
-        _____ _____      _____     _____         _____ _____ &kp HOME     &kp PG_DN    &kp PG_UP  &kp END
-                         _____     &kp SPACE     _____ _____ _____ _____
-      >;    
     };
   };
 };

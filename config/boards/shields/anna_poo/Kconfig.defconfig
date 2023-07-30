@@ -1,0 +1,4 @@
+if SHIELD_ANNA_POO
+config ZMK_KEYBOARD_NAME
+    default "ANNA POO"
+endif

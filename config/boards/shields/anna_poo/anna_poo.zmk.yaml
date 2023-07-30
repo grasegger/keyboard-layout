@@ -1,0 +1,12 @@
+file_format: "1"
+id: anna_poo
+name: ANNA POO
+type: shield
+url: github.com/grasegger/keyboards
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+  - encoder
+siblings:
+  - anna_poo_left
+  - anna_poo_right
