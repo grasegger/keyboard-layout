@@ -302,7 +302,7 @@
             timeout-ms = <10>;
             key-positions = <1 2>;
             bindings = <&kp LS(NUMBER_7)>;
-            layers = <5>
+            layers = <5>;
         };
 
         num_plus {
