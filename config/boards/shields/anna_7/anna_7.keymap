@@ -74,7 +74,7 @@
 #define SYM 3
 #define DSM 2
 #define FUN 4
-#define NNM 5
+#define NUM 5
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -312,12 +312,6 @@
             layers = <5>;
         };
 
-        num_mins {
-            timeout-ms = <10>;
-            key-positions = <11 12>;
-            bindings = <&kp SLASH>;
-            layers = <5>;
-        };
 
         num_ent {
             timeout-ms = <10>;
@@ -332,6 +326,13 @@
             bindings = <&kp BACKSPACE>;
             layers = <5>;
         };
+        
+        num_mins {
+            timeout-ms = <10>;
+            key-positions = <11 12>;
+            bindings = <&kp SLASH>;
+            layers = <5>;
+        };
     };
 
 
@@ -341,7 +342,7 @@
     base {
       bindings = <
         &kp W      &kp L         &lt FUN U     &kp A       _____ _____ &kp B       &lt FUN D    &kp G        &kp F
-        &mt LALT C &mt LSHIFT R  &lt NNM I     &mt LCTRL E _____ _____ &mt LCTRL N &lt NNM T    &mt LSHIFT S &mt LALT H
+        &mt LALT C &mt LSHIFT R  &lt NUM I     &mt LCTRL E _____ _____ &mt LCTRL N &lt NUM T    &mt LSHIFT S &mt LALT H
         &mt HYP V  &mt MEH X     &mt DUH P     &mt LGUI O  _____ _____ &mt LGUI M  &mt DUH DE_Z &mt MEH K    &mt HYP DE_Y
                                  _____         &kp SPACE   _____ _____ &sl DSM     _____
       >;
