@@ -400,7 +400,7 @@
     wm {
       bindings = <
         &kp LS(PSCRN)    &kp LS(LA(LC(R))) &kp LA(PSCRN)     &kp PSCRN        _____ _____ _____           _____        _____      _____
-        &kp LG(HOME)     &kp LG(PG_UP)     &kp LG(PG_DN)     &kp LG(HOME)     _____ _____ &kp LG(LEFT)    &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT)
+        &kp LG(HOME)     &kp LG(PG_UP)     &kp LG(PG_DN)     &kp LG(END)     _____ _____ &kp LG(LEFT)    &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT)
         &kp LS(LG(HOME)) &kp LS(LG(PG_UP)) &kp LS(LG(PG_DN)) &kp LS(LG(HOME)) _____ _____ &kp LS(LC(F11)) _____        _____      &kp LA(F4)
                                            _____             _____            _____ _____ _____           _____
       >;
