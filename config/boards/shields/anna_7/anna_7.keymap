@@ -75,6 +75,7 @@
 #define DSM 2
 #define FUN 4
 #define NUM 5
+#define WM 6
 
 #define DE_UE DE_UDIA
 #define DE_AE DE_ADIA
@@ -344,7 +345,7 @@
         &kp W      &kp L         &lt FUN U     &kp A       _____ _____ &kp B       &lt FUN D    &kp G        &kp F
         &mt LALT C &mt LSHIFT R  &lt NUM I     &mt LCTRL E _____ _____ &mt LCTRL N &lt NUM T    &mt LSHIFT S &mt LALT H
         &mt HYP V  &mt MEH X     &mt DUH P     &mt LGUI O  _____ _____ &mt LGUI M  &mt DUH DE_Z &mt MEH K    &mt HYP DE_Y
-                                 _____         &kp SPACE   _____ _____ &sl DSM     _____
+                                 _____         &kp SPACE   _____ _____ &sl DSM     &sl WM
       >;
     };
 
@@ -395,5 +396,14 @@
                            _____ &kp N0 _____ _____ &kp SPACE    _____
       >;
     };
+    
+    wm {
+      bindings = <
+        &kp LS(PSCRN)    &kp LS(LA(LC(R))) &kp LA(PSCRN)     &kp PSCRN        _____ _____ _____           _____        _____      _____
+        &kp LG(HOME)     &kp LG(PG_UP)     &kp LG(PG_DN)     &kp LG(HOME)     _____ _____ &kp LG(LEFT)    &kp LG(DOWN) &kp LG(UP) &kp LG(RIGHT)
+        &kp LS(LG(HOME)) &kp LS(LG(PG_UP)) &kp LS(LG(PG_DN)) &kp LS(LG(HOME)) _____ _____ &kp LS(LC(F11)) _____        _____      &kp LA(F4)
+                                           _____             _____            _____ _____ _____           _____
+      >;
+    }
   };
 };
