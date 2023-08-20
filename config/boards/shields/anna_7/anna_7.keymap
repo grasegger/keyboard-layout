@@ -404,6 +404,6 @@
         &kp LS(LG(HOME)) &kp LS(LG(PG_UP)) &kp LS(LG(PG_DN)) &kp LS(LG(HOME)) _____ _____ &kp LS(LC(F11)) _____        _____      &kp LA(F4)
                                            _____             _____            _____ _____ _____           _____
       >;
-    }
+    };
   };
 };
